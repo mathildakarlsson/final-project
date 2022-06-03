@@ -70,7 +70,9 @@
     font-weight: 300;
     font-style: italic;
     margin-top: 270px;
-  
-  
   }
   
+  .product {
+    color: black;
+    font-size: 25px;
+  }

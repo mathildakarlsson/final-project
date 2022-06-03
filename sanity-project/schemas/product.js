@@ -18,6 +18,14 @@ export default {
       },
     },
     {
+      name: 'mainImage',
+      title: 'Main Image',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
+    },
+    {
       title: 'Default variant',
       name: 'defaultProductVariant',
       type: 'productVariant',

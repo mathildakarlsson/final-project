@@ -6,11 +6,11 @@ import { Link } from 'react-router-dom';
 // import product from '../../sanity-project/schemas/product.js';
 
 const Rentals = () => {
-    const [rental, setRental] = useState(null);
+    const [product, setProduct] = useState([]);
 
     useEffect(() => {
-        sanityClient
-            .fetch(`*[_type == "product"]{
+        sanityClient.fetch(
+            `*[_type == "product"]{
                 title,
                 slug,
                 mainImage{
@@ -18,24 +18,37 @@ const Rentals = () => {
                         _id,
                         url
                     },
-                alt
-            }
-    }`)
-    .then((data) => setRental(data))
-    .catch(console.error)
-}, [])
+                }
+            }`
+        )
+            .then(data => {
+                setProduct(data)
+            })     
+    }, []);
 
     return (
         <main>
-          <section>
-              <Link to={"/product/" + product.slug.current} key={product.slug.current}>
-              <h1 className='hello'>Web shop page with rentals!!!</h1>
-              <img
-              src={product.mainImage.asset.url}
-              alt={product.mainImage.alt}
-              />
-              </Link>
-        </section>  
+            <section>
+                <h1>Web shop page</h1>
+                <h2>Welcome to the rentals web shop!</h2>
+                <div>
+                    {product.map((product, index) => {
+                        {/* <article key={product._id}> */}
+                            {/* <Link to={"/product/" + product.slug.current} key={product.slug.current}> */}
+                                <span key={index}>
+                                    <img
+                                    src={product.mainImage.asset.url}
+                                    alt={product.title}
+                                    />
+                                    {/* <span> */}
+                                        <h3 className="product">{product.title}</h3>
+                                    {/* </span> */}
+                                </span>
+                            {/* </Link> */}
+                        {/* </article> */}
+                    })}
+                </div>
+            </section>  
         </main>
 
 
