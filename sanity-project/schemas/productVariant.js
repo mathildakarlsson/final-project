@@ -8,11 +8,11 @@ export default {
       name: 'title',
       type: 'string',
     },
-    {
-      title: 'Weight in grams',
-      name: 'grams',
-      type: 'number',
-    },
+    // {
+    //   title: 'Weight in grams',
+    //   name: 'grams',
+    //   type: 'number',
+    // },
     {
       title: 'Price',
       name: 'price',
@@ -23,11 +23,11 @@ export default {
       name: 'sku',
       type: 'string',
     },
-    {
-      title: 'Taxable',
-      name: 'taxable',
-      type: 'boolean',
-    },
+    // {
+    //   title: 'Taxable',
+    //   name: 'taxable',
+    //   type: 'boolean',
+    // },
     {
       name: 'images',
       title: 'Images',
@@ -41,10 +41,10 @@ export default {
         },
       ],
     },
-    {
-      title: 'Bar code',
-      name: 'barcode',
-      type: 'barcode',
-    },
+    // {
+    //   title: 'Bar code',
+    //   name: 'barcode',
+    //   type: 'barcode',
+    // },
   ],
 }

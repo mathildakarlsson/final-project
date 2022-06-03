@@ -26,6 +26,12 @@
     align-items: center;
   }
   
+  .flex-parent {
+    padding: 1rem;
+    display: flex;
+    gap: 1rem;
+  }
+
   .flex-child {
     display: inline-flex;
     align-items: center;
