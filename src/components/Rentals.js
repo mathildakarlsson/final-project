@@ -37,8 +37,7 @@ const Rentals = () => {
                 <div className="product-grid">
 
                     {productData && productData.map((product, index) => (
-                        // <article key={product._id}>
-                        <article>
+                        <article key={index}>
                             <Link to={"/product/" + product.slug.current} key={product.slug.current}>
                                 <span className="product-span" key={index}>
                                     <img className="product-image"

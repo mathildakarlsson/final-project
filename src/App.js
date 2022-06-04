@@ -13,7 +13,7 @@ export const App = () => {
     <NavBar />
       <Routes>
         <Route element={<Home />} path='/'/>
-        <Route element={<SingleRentalsItem />} path='rentals/:slug' />
+        <Route element={<SingleRentalsItem />} path='product/:slug' />
         <Route element={<Rentals />} path='/rentals' />
       </Routes>
     </BrowserRouter>

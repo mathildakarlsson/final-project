@@ -8,9 +8,9 @@ const builder = imageUrlBuilder(sanityClient);
 function urlFor(source) {
     return builder.image(source)
 }
-
 const SingleRentalsItem = () => {
-   
+    
+    //kanske ändra till singleProduct
 const [singleRental, setSingleRental] = useState(null);
 const { slug } = useParams();
 
@@ -21,6 +21,15 @@ useEffect(() => {
         title,
         _id,
         slug,
+        category,
+        defaultProductVariant{
+            material,
+            price,
+            sku,
+            dimensions,
+            quantity,
+            color
+        },
         mainImage{
             asset->{
                 _id,
@@ -30,8 +39,9 @@ useEffect(() => {
         body,
         "name": product->name,
         "productImage": product-> image
-    }`).then((data) => 
-    setSingleRental(data[0]))
+    }`).then((data) => setSingleRental(data[0]))
+
+    //kanske category istället för product här uppe
 
     .catch(console.error);
 
@@ -41,24 +51,29 @@ useEffect(() => {
 if (!singleRental) return <div>Loading...</div>
 
     return (
-        <main>
+        <main className="single-main">
             <article>
                 <header>
                     <div>
                         <div>
-                        <h1>{singleRental.title}Product details</h1>
+                        <h1>{singleRental.title}</h1>
                         <div>
-                            <img src={urlFor(singleRental.productImage).url()}
-                            alt={singleRental.title}
-                        />
-                         <p>{singleRental.title}</p>
-                        <p>TESTY MCtester</p>
+                            <img src={singleRental.mainImage.asset.url}
+                                alt={singleRental.title}
+                            />
+                            <p>Material: {singleRental.defaultProductVariant.material}</p>
+                            <p>Price: {singleRental.defaultProductVariant.price} {singleRental.defaultProductVariant.sku}/dag</p>
+                            {/* <p>Dimensions: {singleRental.defualtProductVariant.dimensions}</p> FUNKAR INTE */}
+                            <p>Quantity: {singleRental.defaultProductVariant.quantity}st</p>
+                            <p>Color: {singleRental.defaultProductVariant.color}</p>
+                            <p>{singleRental.category}</p>
+                            <p>♥️ TESTY MCtester ♥️</p>  
                         </div>
                     </div>
                     </div>
-                    <img src={singleRental.mainImage.asset.url}
+                    {/* <img src={singleRental.mainImage.asset.url}
                     alt={singleRental.title}
-                    />
+                    /> */}
                 </header>
                 <div>
                     <BlockContent 
