@@ -76,3 +76,43 @@
     color: black;
     font-size: 25px;
   }
+
+  /* ------------Shop page -------------*/
+  .product-container {
+    margin: auto;
+    /* display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 15px; */
+  }
+
+  .product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;  
+  }
+
+  .product-span{
+  display:block;
+  }
+
+  .title-span {
+  display:block;
+  position:relative;
+   display: flex; 
+   justify-content: center;
+    justify-items: end;
+    padding: 4px;
+  }
+
+  .product-title {
+    color: black;
+    font-size: 25px;
+  }
+
+  .product-image {
+    position: absolute;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
