@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import React from 'react';
 
 import Home from './components/Home';
@@ -13,7 +13,7 @@ export const App = () => {
     <NavBar />
       <Routes>
         <Route element={<Home />} path='/'/>
-        <Route element={<SingleRentalsItem />} path='/item/:slug' />
+        <Route element={<SingleRentalsItem />} path='rentals/:slug' />
         <Route element={<Rentals />} path='/rentals' />
       </Routes>
     </BrowserRouter>
