@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 // import product from '../../sanity-project/schemas/product.js';
 
 const Rentals = () => {
-    const [productData, setProductData] = useState(null);
+    const [productData, setProductData] = useState();
 
     useEffect(() => {
         sanityClient.fetch(
@@ -31,9 +31,9 @@ const Rentals = () => {
 
     return (
         <main>
+            <h1>Web shop page</h1>
+            <h2>Welcome to the rentals web shop!</h2>
             <section className="product-container">
-                <h1>Web shop page</h1>
-                <h2>Welcome to the rentals web shop!</h2>
                 <div className="product-grid">
 
                     {productData && productData.map((product, index) => (
