@@ -3,10 +3,13 @@ import { createSlice } from '@reduxjs/toolkit'
 export const wishlist = createSlice({
     name: 'wishlist',
     initialState: {
-        items: []
+        items: [],
     },
+
     reducers: {
         addItem: (state, action) => {
+
+            // const { product } = action.payload (från Jonnarus projekt)
             const existingProduct = state.items.find((item) => item.id === action.payload.id)
        
             if (existingProduct) {

@@ -1,6 +1,6 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import React from 'react';
 import { Provider } from 'react-redux'
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 
 import Home from './components/Home';
@@ -20,15 +20,15 @@ const store = configureStore({ reducer });
 export const App = () => {
   return (
     <Provider store={store}>
-    <BrowserRouter>
-    <NavBar />
-      <Routes>
-        <Route element={<Home />} path='/'/>
-        <Route element={<SingleRentalsItem />} path='product/:slug' />
-        <Route element={<Rentals />} path='/rentals' />
-        <Route element={<WishList />} path='/wishlist' />
-      </Routes>
-    </BrowserRouter>
+      <BrowserRouter>
+        <NavBar />
+        <Routes>
+          <Route element={<Home />} path='/'/>
+          <Route element={<SingleRentalsItem />} path='product/:slug' />
+          <Route element={<Rentals />} path='/rentals' />
+          <Route element={<WishList />} path='/wishlist' />
+        </Routes>
+      </BrowserRouter>
     </Provider>
   );
 };

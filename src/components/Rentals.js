@@ -3,10 +3,14 @@
 import React, { useState, useEffect } from 'react';
 import sanityClient from '../client.js';
 import { Link } from 'react-router-dom';
+// import { useSelector } from 'react-redux';
 // import product from '../../sanity-project/schemas/product.js';
 
 const Rentals = () => {
     const [productData, setProductData] = useState();
+
+    // const allProducts = useSelector((state) => state.products)
+
 
     useEffect(() => {
         sanityClient.fetch(
