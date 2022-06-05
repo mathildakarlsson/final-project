@@ -13,10 +13,17 @@ const NavBar = () => {
                     >
                         Home
                     </NavLink>
+
                     <NavLink to='/rentals' 
                        activeClassName='active'
                    >
                         Shop
+                    </NavLink>
+
+                    <NavLink to='/wishlist' 
+                       activeClassName='active'
+                   >
+                        Wishlist
                     </NavLink>
                 </nav>
                 <div className='social-icons'>
