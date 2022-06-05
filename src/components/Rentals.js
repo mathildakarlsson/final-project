@@ -48,6 +48,12 @@ const Rentals = () => {
                                         <h3 className="product-title">{product.title}</h3>
                                      </span> 
                                 </span>
+                                <button
+                                    type="button"
+                                    disabled={product.inventory === 0}
+                                    onClick={() => dispatch(wishlist.actions.addItem(product))}>
+                                    Add to wishlist
+                                </button>
                              </Link> 
                          </article>
                         

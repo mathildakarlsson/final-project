@@ -77,6 +77,12 @@ if (!singleProduct) return <div>Loading...</div>
                             {/* <p>Body:{singleProduct.body}</p> */}
 
                         </div>
+                            {/* <button
+                                type="button"
+                                disabled={singleProduct.inventory === 0}
+                                onClick={() => dispatch(wishlist.actions.addItem(singleProduct))}>
+                                Add to wishlist
+                            </button> */}
                     </div>
                     </div>
                     {/* <img src={singleProduct.mainImage.asset.url}
