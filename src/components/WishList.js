@@ -18,7 +18,9 @@ const WishList = () => {
             </div>
             <ul>
                 {products.map((product) => {
-                    <WishListItem key={product.id} product={product} />
+                    return(
+                        <WishListItem key={product.id} product={product} />
+                    )
                 })}
             </ul>
         </section>
