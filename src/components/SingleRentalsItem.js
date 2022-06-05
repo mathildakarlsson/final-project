@@ -1,17 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import sanityClient from '../client.js';
-import imageUrlBuilder from '@sanity/image-url';
-import BlockContent from '@sanity/block-content-to-react';
+// import imageUrlBuilder from '@sanity/image-url';
+import BlockContent from "@sanity/block-content-to-react";
 
-const builder = imageUrlBuilder(sanityClient);
-function urlFor(source) {
-    return builder.image(source)
-}
+// const builder = imageUrlBuilder(sanityClient);
+// function urlFor(source) {
+//     return builder.image(source)
+// }
 const SingleRentalsItem = () => {
-    
-    //kanske ändra till singleProduct
-const [singleRental, setSingleRental] = useState(null);
+
+const [singleProduct, setsingleProduct] = useState(null);
 const { slug } = useParams();
 
 
@@ -39,7 +38,7 @@ useEffect(() => {
         body,
         "name": product->name,
         "productImage": product-> image
-    }`).then((data) => setSingleRental(data[0]))
+    }`).then((data) => setsingleProduct(data[0]))
 
     //kanske category istället för product här uppe
 
@@ -48,7 +47,7 @@ useEffect(() => {
 }, [slug]);
 
 
-if (!singleRental) return <div>Loading...</div>
+if (!singleProduct) return <div>Loading...</div>
 
     return (
         <main className="single-main">
@@ -56,28 +55,28 @@ if (!singleRental) return <div>Loading...</div>
                 <header>
                     <div>
                         <div>
-                        <h1>{singleRental.title}</h1>
+                        <h1>{singleProduct.title}</h1>
                         <div>
-                            <img src={singleRental.mainImage.asset.url}
-                                alt={singleRental.title}
+                            <img src={singleProduct.mainImage.asset.url}
+                                alt={singleProduct.title}
                             />
-                            <p>Material: {singleRental.defaultProductVariant.material}</p>
-                            <p>Price: {singleRental.defaultProductVariant.price} {singleRental.defaultProductVariant.sku}/dag</p>
-                            {/* <p>Dimensions: {singleRental.defualtProductVariant.dimensions}</p> FUNKAR INTE */}
-                            <p>Quantity: {singleRental.defaultProductVariant.quantity}st</p>
-                            <p>Color: {singleRental.defaultProductVariant.color}</p>
-                            <p>{singleRental.category}</p>
+                            <p>Material: {singleProduct.defaultProductVariant.material}</p>
+                            <p>Price: {singleProduct.defaultProductVariant.price} {singleProduct.defaultProductVariant.sku}/dag</p>
+                            <p>Dimensions: {singleProduct.defaultProductVariant.dimensions}</p>
+                            <p>Quantity: {singleProduct.defaultProductVariant.quantity}st</p>
+                            <p>Color: {singleProduct.defaultProductVariant.color}</p>
+                            <p>{singleProduct.category}</p>
                             <p>♥️ TESTY MCtester ♥️</p>  
                         </div>
                     </div>
                     </div>
-                    {/* <img src={singleRental.mainImage.asset.url}
-                    alt={singleRental.title}
+                    {/* <img src={singleProduct.mainImage.asset.url}
+                    alt={singleProduct.title}
                     /> */}
                 </header>
                 <div>
                     <BlockContent 
-                    blocks={singleRental.body}
+                    blocks={singleProduct.body}
                     projectId="ei5784pj"
                     dataset="production"
                     />
