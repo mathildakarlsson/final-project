@@ -15,6 +15,8 @@ const reducer = combineReducers({
 	wishlist: wishlist.reducer,
 });
 
+// solving merging conflicts
+
 const store = configureStore({ reducer });
 
 export const App = () => {
