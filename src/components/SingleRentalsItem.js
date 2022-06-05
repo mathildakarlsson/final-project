@@ -21,13 +21,15 @@ useEffect(() => {
         _id,
         slug,
         category,
+        body,
         defaultProductVariant{
             material,
             price,
             sku,
             dimensions,
             quantity,
-            color
+            color,
+            description
         },
         mainImage{
             asset->{
@@ -35,7 +37,9 @@ useEffect(() => {
                 url
             }
         },
-        body,
+        defaultBlockContent{
+          body,  
+        },
         "name": product->name,
         "productImage": product-> image
     }`).then((data) => setsingleProduct(data[0]))
@@ -65,8 +69,13 @@ if (!singleProduct) return <div>Loading...</div>
                             <p>Dimensions: {singleProduct.defaultProductVariant.dimensions}</p>
                             <p>Quantity: {singleProduct.defaultProductVariant.quantity}st</p>
                             <p>Color: {singleProduct.defaultProductVariant.color}</p>
+                            <p>Description: {singleProduct.defaultProductVariant.description}</p>   
                             <p>{singleProduct.category}</p>
                             <p>♥️ TESTY MCtester ♥️</p>  
+                            {/* <p>Body:{singleProduct.defaultBlockContent.body}</p> */}
+                            <p>Body:{singleProduct.defaultProductVariant.body}</p>
+                            {/* <p>Body:{singleProduct.body}</p> */}
+
                         </div>
                     </div>
                     </div>
@@ -77,6 +86,9 @@ if (!singleProduct) return <div>Loading...</div>
                 <div>
                     <BlockContent 
                     blocks={singleProduct.body}
+                    // blocks={singleProduct.defaultBlockContent.body}
+                    // blocks={singleProduct.defaultProductVariant.body}
+
                     projectId="ei5784pj"
                     dataset="production"
                     />

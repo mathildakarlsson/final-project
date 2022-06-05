@@ -43,6 +43,12 @@ export default {
       name: 'color',
       type: 'string',
     },
+
+    {
+      title: 'Description',
+      name: 'description',
+      type: 'text',
+    },
     // {
     //   title: 'Taxable',
     //   name: 'taxable',
