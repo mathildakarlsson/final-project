@@ -191,7 +191,7 @@
 
 
 
-/* WISHLIST/BOOKING FORM STYLING */
+/* BOOKING FORM STYLING */
 
 ul {
   list-style-type: none;
@@ -237,6 +237,7 @@ input, textarea {
   padding: .5em;
   border: none;
   outline: none;
+  text-align: center;
 }
 
 textarea {
