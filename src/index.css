@@ -97,7 +97,8 @@
 
   .add-button {
     width: 35%;
-    margin-top: 20px;
+    margin: 15px 0 65px 0;
+    cursor: pointer;
   }
 
   .product-grid {
@@ -124,7 +125,6 @@
   }
 
   .product-image {
-    /* position: absolute; */
     object-fit: cover;
     width: 250px;
     height: 250px;
@@ -162,7 +162,7 @@
     text-align: center;
   }
 
-  ul {
+  .wishlist-ul {
     list-style-type: none;
     display: grid;
     grid-template-columns: repeat(3,1fr);
@@ -179,7 +179,7 @@
 
   h4 {
     padding-bottom: 40px;
-    font-size: 35px;
+    font-size: 40px;
   }
 
   .total {
@@ -187,3 +187,103 @@
     font-size: 16px;
     font-weight: 600;
   }
+
+
+
+
+/* WISHLIST/BOOKING FORM STYLING */
+
+ul {
+  list-style-type: none;
+}
+
+.get-in-touch-1 {
+  font-size: 25px;
+  margin: 0;
+  padding: 4em 0 .5em 0;
+}
+.get-in-touch-2 {
+  padding-bottom: .3em;
+  font-size: 17px;
+  font-weight: 300;
+  margin: 0;
+}
+
+.form-container {
+  display: flex;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+}
+
+.form {
+  position: relative;
+  width: 45vw;
+  margin: 1em 0 2em 0;
+  border: solid rgb(173, 113, 113);
+  padding: 1em 1em 7em 1em;
+  font-size: 15px;
+  border-radius: .5em;
+}
+
+input, textarea {
+  display: block;
+  font-size: 15px;
+  color: #532f2f;
+  font-family: 'PT Sans', sans-serif;
+  min-width: 30vw;
+  padding: .5em;
+  border: none;
+  outline: none;
+}
+
+textarea {
+  margin: 0 0 1em 0.8em;
+  border: 1px solid rgb(173, 113, 113);
+  height: 7em;
+  border-radius: .5em;
+  resize: none;
+  width: 31vw;
+}
+
+.input {
+  margin-top: .8em;
+  padding: .5em;
+  border-bottom: 1px solid rgb(173, 113, 113);
+}
+
+label {
+  display: block;
+  padding: 1em;
+}
+
+label a:hover {
+  font-weight: bold;
+}
+
+.terms {
+  font-size: 15px;
+  flex-wrap: nowrap;
+}
+
+.newsletter {
+  font-size: 15px;
+}
+
+.check-box {
+  margin-right: 1em;
+  display: inline-block;
+  min-width: 1em;
+}
+
+.submit-btn {
+  width: 100px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.submit-btn:hover {
+  background-color: rgb(110, 76, 76);
+}

@@ -1,5 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import BookingForm from './BookingForm';
 import WishListItem from './WishListItem';
 
 const WishList = () => {
@@ -12,14 +13,15 @@ const WishList = () => {
     return (
         <section className="wishlist">
             <h4>Wishlist</h4>
-            <ul>
+            <ul className="wishlist-ul">
                 {products.map((product, index) => {
                     return(
                         <WishListItem key={index} product={product} />
                     )
                 })}
             </ul>
-                <p className="total">Total cost: {totalPrice} SEK</p>
+            <p className="total">Total cost: {totalPrice} SEK</p>
+            <BookingForm />
         </section>
     )
 };
