@@ -30,6 +30,7 @@ const SingleRentalsItem = () => {
             slug,
             category,
             body,
+            price,
             defaultProductVariant{
                 material,
                 price,

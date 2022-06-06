@@ -17,9 +17,9 @@ const WishList = () => {
                 <p>Total: {totalPrice} SEK</p>
             </div>
             <ul>
-                {products.map((product) => {
+                {products.map((product, index) => {
                     return(
-                        <WishListItem key={product.id} product={product} />
+                        <WishListItem key={index} product={product} />
                     )
                 })}
             </ul>

@@ -25,6 +25,10 @@ const Rentals = () => {
                 slug,
                 price,
                 _id,
+                defaultProductVariant{
+                    price,
+                    sku,
+                },
                 mainImage{
                     asset->{
                         _id,
@@ -58,7 +62,8 @@ const Rentals = () => {
                                     />
                                      <span className="title-span" key={index}> 
                                         <h3 className="product-title">{product.title}</h3>
-                                     </span> 
+                                     </span>
+                                     <p>{product.defaultProductVariant.price} {product.defaultProductVariant.sku}/day</p>
                                 </span>
                              </Link> 
                              <button

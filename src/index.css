@@ -132,3 +132,8 @@
   .single-main {
     background-color: rgb(184, 182, 182);
   }
+
+  p {
+    font-size: 14px;
+    font-weight: 300;
+  }
