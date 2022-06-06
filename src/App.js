@@ -8,15 +8,12 @@ import SingleRentalsItem from './components/SingleRentalsItem';
 import Rentals from './components/Rentals';
 import NavBar from './components/NavBar';
 import WishList from './components/WishList';
-// import WishListItem from './components/WishListItem';
 
 import { wishlist } from './reducers/wishlist'
 
 const reducer = combineReducers({
 	wishlist: wishlist.reducer,
 });
-
-// solving merging conflicts
 
 const store = configureStore({ reducer });
 

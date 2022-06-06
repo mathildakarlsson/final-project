@@ -3,21 +3,18 @@
 import React, { useState, useEffect } from 'react';
 import sanityClient from '../client.js';
 import { Link } from 'react-router-dom';
-// import { useSelector } from 'react-redux';
-// import product from '../../sanity-project/schemas/product.js';
 import { useDispatch } from 'react-redux'
 import { wishlist } from '../reducers/wishlist';
 
 const Rentals = () => {
     const [productData, setProductData] = useState();
-
-    // const allProducts = useSelector((state) => state.products)
-
     const dispatch = useDispatch()
 
-    // const handleAddItem = () => {
-    //     dispatch(wishlist.actions.addItem(singleProduct))
+    //Denna handler fungerar inte "product is not defined"
+    // const handleAddItems = () => {
+    //     dispatch(wishlist.actions.addItem(product))
     // }
+
     useEffect(() => {
         sanityClient.fetch(
             `*[_type == "product"]{
@@ -43,8 +40,6 @@ const Rentals = () => {
             })     
     }, []);
 
-    
-
     return (
         <main>
             <h1>Web shop page</h1>
@@ -57,40 +52,41 @@ const Rentals = () => {
                             <Link to={"/product/" + product.slug.current} key={product.slug.current}>
                                 <span className="product-span" key={index}>
                                     <img className="product-image"
-                                    src={product.mainImage.asset.url}
-                                    alt={product.title}
+                                        src={product.mainImage.asset.url}
+                                        alt={product.title}
                                     />
                                      <span className="title-span" key={index}> 
                                         <h3 className="product-title">{product.title}</h3>
                                      </span>
                                      <p>{product.defaultProductVariant.price} {product.defaultProductVariant.sku}/day</p>
                                 </span>
-                             </Link> 
-                             <button
-                                    type="button"
-                                    disabled={product.inventory === 0}
-                                    onClick={() => dispatch(wishlist.actions.addItem(product))}>
-                                    Add to wishlist
-                                </button>
-                         </article>
-                        
+                            </Link> 
+                            <button
+                                type="button"
+                                disabled={product.inventory === 0}
+                                onClick={() => dispatch(wishlist.actions.addItem(product))}>
+                                Add to wishlist
+                            </button>
+                         </article> 
                     ))}
+                    
                 </div>
-                {/* <div className="products">
-                    {allProducts.map((product) => (
-                        <product key={product._id} product={product} /> //ändrat till product och _id här */}
-                    {/* ))} */}
-
-                {/* <div className="products">
-                    {allProducts.map((product, index) => (
-                        <product key={index} product={index} /> //ändrat till index och _id här
-                    ))}
-                </div> */}
             </section>  
         </main>
-
-
     )
 };
 
 export default Rentals;
+
+// ------------------- deleted code - saving in case of error messages -----------------------//
+
+{/* <div className="products">
+        {allProducts.map((product) => (
+            <product key={product._id} product={product} /> //ändrat till product och _id här */}
+        {/* ))} */}
+
+{/* <div className="products">
+        {allProducts.map((product, index) => (
+            <product key={index} product={index} /> //ändrat till index och _id här
+        ))}
+     </div> */}

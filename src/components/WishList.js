@@ -9,7 +9,6 @@ const WishList = () => {
         store.wishlist.items.reduce((total, item) => (total + (item.price * item.quantity)), 0)
     ))
 
-
     return (
         <section>
             <div>

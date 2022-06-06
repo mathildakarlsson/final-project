@@ -3,24 +3,17 @@ import { useParams } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import sanityClient from '../client.js';
 import { wishlist } from '../reducers/wishlist';
-// import imageUrlBuilder from '@sanity/image-url';
-import BlockContent from "@sanity/block-content-to-react";
 
-// const builder = imageUrlBuilder(sanityClient);
-// function urlFor(source) {
-//     return builder.image(source)
-// }
+
 const SingleRentalsItem = () => {
-
-    const dispatch = useDispatch()
-
     const [singleProduct, setsingleProduct] = useState(null);
+    const dispatch = useDispatch()
+    
     const { slug } = useParams();
 
     const handleAddItem = () => {
         dispatch(wishlist.actions.addItem(singleProduct))
     }
-
 
     useEffect(() => {
         sanityClient.fetch(
@@ -52,11 +45,8 @@ const SingleRentalsItem = () => {
             "name": product->name,
             "productImage": product-> image
         }`).then((data) => setsingleProduct(data[0]))
-
         .catch(console.error);
-
     }, [slug]);
-
 
     if (!singleProduct) return <div>Loading...</div>
 
@@ -65,7 +55,6 @@ const SingleRentalsItem = () => {
                 <article>
                     <header>
                         <div>
-                            <div>
                             <h1>{singleProduct.title}</h1>
                             <div>
                                 <img src={singleProduct.mainImage.asset.url}
@@ -79,37 +68,46 @@ const SingleRentalsItem = () => {
                                 <p>Description: {singleProduct.defaultProductVariant.description}</p>   
                                 <p>{singleProduct.category}</p>
                                 <p>♥️ TESTY MCtester ♥️</p>  
-                                {/* <p>Body:{singleProduct.defaultBlockContent.body}</p> */}
                                 <p>Body:{singleProduct.defaultProductVariant.body}</p>
-                                {/* <p>Body:{singleProduct.body}</p> */}
-
                             </div>
-                                <button
-                                    type="button"
-                                    disabled={singleProduct.inventory === 0}
-                                    onClick={handleAddItem}>
-                                    Add to wishlist
-                                </button>
+                            <button
+                                type="button"
+                                disabled={singleProduct.inventory === 0}
+                                onClick={handleAddItem}>
+                                Add to wishlist
+                            </button>
                         </div>
-                        </div>
-                        {/* <img src={singleProduct.mainImage.asset.url}
-                        alt={singleProduct.title}
-                        /> */}
                     </header>
-                    <div>
-                        <BlockContent 
-                        blocks={singleProduct.body}
-                        // blocks={singleProduct.defaultBlockContent.body}
-                        // blocks={singleProduct.defaultProductVariant.body}
-
-                        projectId="ei5784pj"
-                        dataset="production"
-                        />
-                    </div>
-                    
                 </article>
             </main>
         )
 };
 
 export default SingleRentalsItem;
+
+
+
+
+// ------------------- deleted code - saving in case of error messages -----------------------//
+
+
+// import imageUrlBuilder from '@sanity/image-url';
+// import BlockContent from "@sanity/block-content-to-react";
+
+
+{/* <p>Body:{singleProduct.defaultBlockContent.body}</p> */}
+{/* <p>Body:{singleProduct.body}</p> */}
+
+{/* <img src={singleProduct.mainImage.asset.url}
+        alt={singleProduct.title}
+    /> */}
+
+{/* <div>
+        <BlockContent 
+            blocks={singleProduct.body}
+            blocks={singleProduct.defaultBlockContent.body}
+            blocks={singleProduct.defaultProductVariant.body}
+            projectId="ei5784pj"
+            dataset="production"
+        />
+    </div> */}

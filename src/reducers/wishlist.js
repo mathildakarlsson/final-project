@@ -7,11 +7,9 @@ export const wishlist = createSlice({
     },
 
     reducers: {
-        addItem: (state, action) => {
 
-            // const { product } = action.payload (från Jonnarus projekt)
+        addItem: (state, action) => {
             const existingProduct = state.items.find((item) => item._id === action.payload._id)
-       
             if (existingProduct) {
                 // increment quantity
                 existingProduct.quantity += 1
@@ -19,9 +17,9 @@ export const wishlist = createSlice({
                 state.items.push({ ...action.payload, quantity: 1 })
             }
         },
+
         removeItem: (state, action) => {
             const existingProduct = state.items.find((item) => item._id === action.payload._id)
-
             if (existingProduct && existingProduct.quantity === 1) {
                 //remove it
                 state.items = state.items.filter((item) => item._id !== action.payload._id)
@@ -29,5 +27,6 @@ export const wishlist = createSlice({
                 existingProduct.quantity -= 1
             }
         }
+
     }
-})
+});
