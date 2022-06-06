@@ -2,7 +2,7 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { wishlist } from '../reducers/wishlist';
 
-const WishListItem = ({ product, id }) => {
+const WishListItem = ({ product }) => {
     const dispatch = useDispatch()
 
     const addItem = () => {
@@ -17,6 +17,10 @@ const WishListItem = ({ product, id }) => {
         <li>
             <p>{product.title}</p>
             <div>
+                <img className="product-image"
+                    src={product.mainImage.asset.url}
+                    alt={product.title}
+                />
                 <p>x{product.quantity}</p>
                 <p>{product.price * product.quantity} SEK</p>
             </div>
