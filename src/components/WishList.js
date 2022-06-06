@@ -5,8 +5,8 @@ import WishListItem from './WishListItem';
 const WishList = () => {
 
     const products = useSelector((store) => store.wishlist.items)
-    const totalPrice = useSelector((store) = (
-        store.cart.items.reduce((total, item) => (total + (item.price * item.quantity)), 0)
+    const totalPrice = useSelector((store) => (
+        store.wishlist.items.reduce((total, item) => (total + (item.price * item.quantity)), 0)
     ))
 
 
