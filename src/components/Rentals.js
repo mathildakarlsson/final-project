@@ -42,13 +42,12 @@ const Rentals = () => {
 
     return (
         <main>
-            <h1>Web shop page</h1>
             <h2>Welcome to the rentals web shop!</h2>
             <section className="product-container">
                 <div className="product-grid">
 
                     {productData && productData.map((product, index) => (
-                        <article key={index}>
+                        <article className="product-card" key={index}>
                             <Link to={"/product/" + product.slug.current} key={product.slug.current}>
                                 <span className="product-span" key={index}>
                                     <img className="product-image"
@@ -62,12 +61,13 @@ const Rentals = () => {
                                 </span>
                             </Link> 
                             <button
+                                className="add-button"
                                 type="button"
                                 disabled={product.inventory === 0}
                                 onClick={() => dispatch(wishlist.actions.addItem(product))}>
                                 Add to wishlist
                             </button>
-                         </article> 
+                        </article> 
                     ))}
                     
                 </div>

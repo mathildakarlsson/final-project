@@ -14,32 +14,34 @@ const WishListItem = ({ product }) => {
     }
 
     return(
-        <li>
-            <p>{product.title}</p>
-            <div>
-                <img className="product-image"
-                    src={product.mainImage.asset.url}
-                    alt={product.title}
-                />
-                <p>x{product.quantity}</p>
-                <p>{product.price * product.quantity} SEK</p>
-            </div>
-
-            <div>
-                <button
-                    type="button"
-                    onClick={removeItem}
-                >
-                -
-                </button>
-                <button
-                    type="button"
-                    onClick={addItem} 
-                >
-                +
-                </button>
-            </div>
-        </li>
+        <article>
+                <li>
+                    <div>
+                        <p>{product.title} x {product.quantity}</p>
+                        <p>{product.price * product.quantity} SEK</p>
+                        <img className="product-image"
+                            src={product.mainImage.asset.url}
+                            alt={product.title}
+                        />
+                    </div>
+                    <div>
+                        <button
+                            className="qty-button"
+                            type="button"
+                            onClick={removeItem}
+                        >
+                        -
+                        </button>
+                        <button
+                            className="qty-button"
+                            type="button"
+                            onClick={addItem} 
+                        >
+                        +
+                        </button>
+                    </div>
+                </li>
+        </article>
     )
 };
 

@@ -10,11 +10,8 @@ const WishList = () => {
     ))
 
     return (
-        <section>
-            <div>
-                <h4>Shopping cart</h4>
-                <p>Total: {totalPrice} SEK</p>
-            </div>
+        <section className="wishlist">
+            <h4>Wishlist</h4>
             <ul>
                 {products.map((product, index) => {
                     return(
@@ -22,6 +19,7 @@ const WishList = () => {
                     )
                 })}
             </ul>
+                <p className="total">Total cost: {totalPrice} SEK</p>
         </section>
     )
 };
