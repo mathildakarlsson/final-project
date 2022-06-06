@@ -10,7 +10,7 @@ export const wishlist = createSlice({
         addItem: (state, action) => {
 
             // const { product } = action.payload (från Jonnarus projekt)
-            const existingProduct = state.items.find((item) => item.id === action.payload.id)
+            const existingProduct = state.items.find((item) => item._id === action.payload._id)
        
             if (existingProduct) {
                 // increment quantity
@@ -20,11 +20,11 @@ export const wishlist = createSlice({
             }
         },
         removeItem: (state, action) => {
-            const existingProduct = state.items.find((item) => item.id === action.payload.id)
+            const existingProduct = state.items.find((item) => item._id === action.payload._id)
 
             if (existingProduct && existingProduct.quantity === 1) {
                 //remove it
-                state.items = state.items.filter((item) => item.id !== action.payload.id)
+                state.items = state.items.filter((item) => item._id !== action.payload._id)
             } else if (existingProduct) {
                 existingProduct.quantity -= 1
             }

@@ -17,6 +17,10 @@ const SingleRentalsItem = () => {
     const [singleProduct, setsingleProduct] = useState(null);
     const { slug } = useParams();
 
+    const handleAddItem = () => {
+        dispatch(wishlist.actions.addItem(singleProduct))
+    }
+
 
     useEffect(() => {
         sanityClient.fetch(
@@ -82,7 +86,7 @@ const SingleRentalsItem = () => {
                                 <button
                                     type="button"
                                     disabled={singleProduct.inventory === 0}
-                                    onClick={() => dispatch(wishlist.actions.addItem(singleProduct))}>
+                                    onClick={handleAddItem}>
                                     Add to wishlist
                                 </button>
                         </div>

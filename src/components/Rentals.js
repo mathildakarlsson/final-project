@@ -55,7 +55,6 @@ const Rentals = ({ product }) => {
                                         <h3 className="product-title">{product.title}</h3>
                                      </span> 
                                 </span>
-                         
                              </Link> 
                              <button
                                     type="button"
@@ -72,11 +71,11 @@ const Rentals = ({ product }) => {
                         <product key={product._id} product={product} /> //ändrat till product och _id här */}
                     {/* ))} */}
 
-                <div className="products">
+                {/* <div className="products">
                     {allProducts.map((product, index) => (
                         <product key={index} product={index} /> //ändrat till index och _id här
                     ))}
-                </div>
+                </div> */}
             </section>  
         </main>
 

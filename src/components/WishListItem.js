@@ -2,8 +2,16 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { wishlist } from '../reducers/wishlist';
 
-const WishListItem = ({ product }) => {
+const WishListItem = ({ product, id }) => {
     const dispatch = useDispatch()
+
+    const addItem = () => {
+        dispatch(wishlist.actions.addItem(product))
+    }
+
+    const removeItem = () => {
+        dispatch(wishlist.actions.removeItem(product))
+    }
 
     return(
         <li>
@@ -16,13 +24,13 @@ const WishListItem = ({ product }) => {
             <div>
                 <button
                     type="button"
-                    onClick={() => dispatch(wishlist.actions.removeItem(product))}
+                    onClick={removeItem}
                 >
                 -
                 </button>
                 <button
                     type="button"
-                    onClick={() => dispatch(wishlist.actions.addItem(product))}
+                    onClick={addItem} 
                 >
                 +
                 </button>
