@@ -3,14 +3,17 @@
 import React, { useState, useEffect } from 'react';
 import sanityClient from '../client.js';
 import { Link } from 'react-router-dom';
-// import { useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 // import product from '../../sanity-project/schemas/product.js';
+import { useDispatch } from 'react-redux'
+import { wishlist } from '../reducers/wishlist';
 
-const Rentals = () => {
+const Rentals = ({ product }) => {
     const [productData, setProductData] = useState();
 
-    // const allProducts = useSelector((state) => state.products)
+    const allProducts = useSelector((state) => state.products)
 
+    const dispatch = useDispatch()
 
     useEffect(() => {
         sanityClient.fetch(
@@ -52,15 +55,26 @@ const Rentals = () => {
                                         <h3 className="product-title">{product.title}</h3>
                                      </span> 
                                 </span>
-                                <button
+                         
+                             </Link> 
+                             <button
                                     type="button"
                                     disabled={product.inventory === 0}
                                     onClick={() => dispatch(wishlist.actions.addItem(product))}>
                                     Add to wishlist
                                 </button>
-                             </Link> 
                          </article>
                         
+                    ))}
+                </div>
+                {/* <div className="products">
+                    {allProducts.map((product) => (
+                        <product key={product._id} product={product} /> //ändrat till product och _id här */}
+                    {/* ))} */}
+
+                <div className="products">
+                    {allProducts.map((product, index) => (
+                        <product key={index} product={index} /> //ändrat till index och _id här
                     ))}
                 </div>
             </section>  
