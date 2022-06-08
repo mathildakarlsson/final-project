@@ -8,10 +8,12 @@ const BookingForm = () => {
             <div class="form-container">
                 <div class="form">
                     <form
-                        id="form"
-                        action="http://httpbin.org/anything"
+                        name="wishlist-form"
+                        id="wishlist-form"
                         method="post">
-              
+                            
+                            <input type="hidden" name="form-name" value="wishlist-form" />
+
                         <ul>
                             <li>
                             <label>
