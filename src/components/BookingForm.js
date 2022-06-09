@@ -18,21 +18,21 @@ const BookingForm = () => {
                             <li>
                             <label>
                                 Name
-                                <input class="input" id="nameInput" required name="name"/>
+                                <input type="text" name="name" required/>
                             </label>
                             </li>
                     
                             <li>
                             <label>
                                 Phone number
-                                <input class="input" type="tel" name="phone-number"/>
+                                <input type="tel" name="phone-number"/>
                             </label>
                             </li>
                     
                             <li>
                             <label>
                                 Email
-                                <input class="input" type="email" required name="email"/>
+                                <input type="email" name="email" required/>
                             </label>
                             </li>
     
@@ -40,7 +40,7 @@ const BookingForm = () => {
                             <label>
                                 Message
                             </label>
-                            <textarea class="message">
+                            <textarea name="message">
                             </textarea>
                             </li>
                     
