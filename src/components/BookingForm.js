@@ -15,7 +15,7 @@ const BookingForm = () => {
                      >
                          
                          
-                           <input type="hidden" name="wishlistform" value="wishlistform" />
+                           <input type="hidden" name="form-name" value="wishlistform" />
 
                         <ul>
                             <li>
