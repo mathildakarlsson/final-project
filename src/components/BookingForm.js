@@ -53,7 +53,6 @@ const BookingForm = () => {
                                         name="terms"
                                         value="terms"
                                     />
-                                    I agree with our <a href="#">Terms and Conditions</a>
                                 </label>
                             </li>
                     
@@ -74,10 +73,7 @@ const BookingForm = () => {
                             <li>
                                 <button class="submit-btn" type="submit">Send</button>
                             </li>
-                    
-                            <li>
-                                <h3 id="thankYou"></h3>
-                            </li>
+                
                     
                         </ul>
                     </form>

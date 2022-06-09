@@ -95,14 +95,14 @@ export default SingleRentalsItem;
 // import BlockContent from "@sanity/block-content-to-react";
 
 
-{/* <p>Body:{singleProduct.defaultBlockContent.body}</p> */}
-{/* <p>Body:{singleProduct.body}</p> */}
+/* <p>Body:{singleProduct.defaultBlockContent.body}</p> */
+/* <p>Body:{singleProduct.body}</p> */
 
-{/* <img src={singleProduct.mainImage.asset.url}
+/* <img src={singleProduct.mainImage.asset.url
         alt={singleProduct.title}
-    /> */}
+    /> */
 
-{/* <div>
+/* <div>
         <BlockContent 
             blocks={singleProduct.body}
             blocks={singleProduct.defaultBlockContent.body}
@@ -110,4 +110,4 @@ export default SingleRentalsItem;
             projectId="ei5784pj"
             dataset="production"
         />
-    </div> */}
+    </div> */
