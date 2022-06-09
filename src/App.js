@@ -8,6 +8,7 @@ import SingleRentalsItem from './components/SingleRentalsItem';
 import Rentals from './components/Rentals';
 import NavBar from './components/NavBar';
 import WishList from './components/WishList';
+import SuccessPage from './components/SuccessPage';
 
 import { wishlist } from './reducers/wishlist'
 
@@ -27,6 +28,7 @@ export const App = () => {
           <Route element={<SingleRentalsItem />} path='product/:slug' />
           <Route element={<Rentals />} path='/rentals' />
           <Route element={<WishList />} path='/wishlist' />
+          <Route element={<SuccessPage />} path='/success' />
         </Routes>
       </BrowserRouter>
     </Provider>
