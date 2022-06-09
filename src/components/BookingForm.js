@@ -12,6 +12,8 @@ const BookingForm = () => {
                         name="wishlistform"
                         id="wishlistform"
                      method="post"
+                     action="/success"
+
                      >
                          
                          
