@@ -1,11 +1,35 @@
 import React from 'react';
+import styled from 'styled-components';
+
+import Carousel1 from '../assets/Karusell/KARUSELL1.jpg';
+
 
 const Home = () => {
     return (
-        <section className='home-container'>
-            <h1 className='hello'>Welcome to Nordic Spells Decor!</h1>
-        </section>
+        <HomeContainer>
+            <Image src={Carousel1}/>
+            <Welcome>Välkommen till Nordic Spells Decor!</Welcome>
+        </HomeContainer>
     )
 };
 
 export default Home;
+
+
+const HomeContainer = styled.section `
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+`
+
+const Image = styled.img `
+    width: 75%;
+    height: 75%;
+    margin: 50px 0;
+`
+
+const Welcome = styled.h1 `
+    font-weight: 300;
+    margin-bottom: 90px;
+`

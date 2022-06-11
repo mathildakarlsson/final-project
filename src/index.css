@@ -30,15 +30,18 @@ color light beige: #F1EEEB  */
     list-style-type: none;
   }
 
+  .active {
+   font-weight: 500;
+  }
 
 
 
 
 /* ------------ Navbar ------------- */
-.header {
+/* .header {
     background-color: rgb(58, 72, 95);
     height: 50px;
-  }
+  } */
   
   .container {
     display: flex;
@@ -60,9 +63,7 @@ color light beige: #F1EEEB  */
     margin-right: 4px;
   }
   
-  .active {
-    color: white;
-  }
+ 
   
 
   

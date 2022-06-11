@@ -9,6 +9,11 @@ import Rentals from './components/Rentals';
 import NavBar from './components/NavBar';
 import WishList from './components/WishList';
 import SuccessPage from './components/SuccessPage';
+import About from './components/About';
+import Flowers from './components/Flowers';
+import Contact from './components/Contact';
+import Services from './components/Services';
+
 
 import { wishlist } from './reducers/wishlist'
 
@@ -29,6 +34,10 @@ export const App = () => {
           <Route element={<Rentals />} path='/rentals' />
           <Route element={<WishList />} path='/wishlist' />
           <Route element={<SuccessPage />} path='/success' />
+          <Route element={<Services />} path='/services' />
+          <Route element={<Flowers />} path='/flowers' />
+          <Route element={<About />} path='/about' />
+          <Route element={<Contact />} path='/contact' />
         </Routes>
       </BrowserRouter>
     </Provider>
