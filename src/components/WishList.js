@@ -12,7 +12,6 @@ const WishList = () => {
 
     return (
         <section className="wishlist">
-            <h4>Wishlist</h4>
             <ul className="wishlist-ul">
                 {products.map((product, index) => {
                     return(

@@ -26,6 +26,10 @@ color light beige: #F1EEEB  */
     color: black;
   }
 
+  a:hover {
+    font-weight: 500;
+  }
+
   ul {
     list-style-type: none;
   }
@@ -111,12 +115,14 @@ color light beige: #F1EEEB  */
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-top: 100px;
   }
 
   /* .add-button {
     width: 35%;
     margin: 15px 0 65px 0;
     cursor: pointer;
+
   } */
 
   .product-grid {
@@ -166,6 +172,7 @@ color light beige: #F1EEEB  */
   .single-product-card {
   padding: 4rem;
   width: 100vh;
+  padding-top: 100px;
 
   }
 
@@ -189,7 +196,7 @@ color light beige: #F1EEEB  */
   }
 
   .wishlist {
-    margin-top: 50px;
+    padding-top: 100px;
     display: flex;
     flex-direction: column;
     text-align: center;

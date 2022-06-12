@@ -26,7 +26,7 @@ const HomeContainer = styled.section `
 const Image = styled.img `
     width: 75%;
     height: 75%;
-    margin: 50px 0;
+    margin: 120px 0;
 `
 
 const Welcome = styled.h1 `
