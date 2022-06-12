@@ -220,17 +220,47 @@ color light beige: #F1EEEB  */
   padding: 4em 0 .5em 0;
 }
 .get-in-touch-2 {
-  padding-bottom: .3em;
+  padding-bottom: 3em;
   font-size: 17px;
   font-weight: 300;
   margin: 0;
+}
+
+.custom-field {
+  font-size: 14px;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  text-transform: uppercase;
+  font-weight: 300;
+
+}
+
+.custom-field input {
+  border: none;
+  background: white;
+  padding: 10px;
+  border-radius: 3px;
+  width: 500px;
+  font-size: 14px;
+  margin: 15px;
+}
+
+textarea {
+  border: none;
+  background: white;
+  padding: 10px;
+  border-radius: 3px;
+  width: 500px;
+  font-size: 14px;
+  resize: none;
+  margin: 15px;
 }
 
 /* .form-container {
   display: flex;
 }
 
-form {
+.form-c {
   display: flex;
   justify-content: center;
 }
@@ -255,22 +285,22 @@ form {
   border: none;
   outline: none;
   text-align: center;
-}
+}*/
 
-textarea {
+/* textarea {
   margin: 0 0 1em 0.8em;
   border: 1px solid rgb(173, 113, 113);
   height: 7em;
   border-radius: .5em;
   resize: none;
   width: 31vw;
-} */
+} 
 
 .input {
   margin-top: .8em;
   padding: .5em;
   border-bottom: 1px solid rgb(173, 113, 113);
-}
+} */
 
 /* label {
   display: block;
@@ -281,22 +311,22 @@ label a:hover {
   font-weight: bold;
 } */
 
-.terms {
+/* .terms {
   font-size: 15px;
   flex-wrap: nowrap;
-}
+} */
 
-.newsletter {
+/* .newsletter {
   font-size: 15px;
-}
+} */
 
-.check-box {
+/* .check-box {
   margin-right: 1em;
   display: inline-block;
   min-width: 1em;
-}
+} */
 
-.submit-btn {
+/* .submit-btn {
   width: 100px;
   height: 40px;
   cursor: pointer;
@@ -304,4 +334,4 @@ label a:hover {
 
 .submit-btn:hover {
   background-color: rgb(110, 76, 76);
-}
+} */

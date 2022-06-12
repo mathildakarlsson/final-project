@@ -31,7 +31,7 @@ const BookingForm = () => {
             <h2 class="get-in-touch-1">Planning a wedding or an event?</h2>
             <h2 class="get-in-touch-2">Send your booking request down below!</h2>
             <div class="form-container">
-                <div class="form">
+                <div class="form-container-2">
                     <form
                         name="wishlistform"
                         id="wishlistform"
@@ -45,35 +45,35 @@ const BookingForm = () => {
 
                         <ul>
                             <li>
-                            <label>
+                            <label class="custom-field">
                                 Name
                                 <input type="text" name="name" required/>
                             </label>
                            </li>
                  
                             <li>
-                            <label>
+                            <label class="custom-field">
                                 Phone number
                                 <input type="tel" name="phonenumber"/>
                             </label>
                             </li>
                  
                             <li>
-                            <label>
+                            <label class="custom-field">
                                 Email
                                 <input type="email" name="email" required/>
                             </label>
                              </li>
     
                             <li>
-                            <label>
+                            <label class="custom-field">
                                 Message
                             </label>
-                            <textarea name="message">
+                            <textarea>
                             </textarea>
                         </li>
                  
-                            <p class= "terms"></p>
+                            {/* <p class= "terms"></p>
                             <li>
                                 <label>
                                     <input required
@@ -83,10 +83,10 @@ const BookingForm = () => {
                                         value="terms"
                                     />
                                 </label>
-                            </li>
+                            </li> */}
                     
                  
-                            <p class="newsletter"></p>
+                            {/* <p class="newsletter"></p>
                             <li>
                                 <label>
                                     <input
@@ -97,7 +97,7 @@ const BookingForm = () => {
                                     />
                                     Sign up for Newsletter
                                 </label>
-                             </li>
+                             </li> */}
                  
                             <li>
                                 <FormButton class="submit-btn" type="submit">Send</FormButton>
