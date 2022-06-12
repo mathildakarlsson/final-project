@@ -113,11 +113,11 @@ color light beige: #F1EEEB  */
     align-items: center;
   }
 
-  .add-button {
+  /* .add-button {
     width: 35%;
     margin: 15px 0 65px 0;
     cursor: pointer;
-  }
+  } */
 
   .product-grid {
     display: grid;
@@ -163,6 +163,12 @@ color light beige: #F1EEEB  */
     background-color: rgb(184, 182, 182);
   }
 
+  .single-product-card {
+  padding: 4rem;
+  width: 100vh;
+
+  }
+
   /* p {
     font-size: 14px;
     font-weight: 300;
@@ -174,9 +180,6 @@ color light beige: #F1EEEB  */
   }
 
   /* WISHLIST */
-
-
-
 
   .wishlist-ul {
     list-style-type: none;

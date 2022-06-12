@@ -4,6 +4,29 @@ import { useDispatch } from 'react-redux';
 import sanityClient from '../client.js';
 import { wishlist } from '../reducers/wishlist';
 
+import styled from 'styled-components';
+
+
+const AddButton = styled.button`
+    width: 55%;
+    margin: 15px 0 65px 0;
+    cursor: pointer;
+    border: none;
+    font-size: 16px;
+
+    padding: 1rem;
+    color: black;
+    background-color: rgb(179,99,90);
+    text-transform: uppercase;
+    font-weight: 450;
+    
+    &:hover {
+    background-color: black;
+    color: white;
+    transition: 0.7s ease;
+    heigth: 30px;
+    }
+`;
 
 const SingleRentalsItem = () => {
     const [singleProduct, setsingleProduct] = useState(null);
@@ -54,7 +77,7 @@ const SingleRentalsItem = () => {
             <main className="single-main">
                 <article>
                     <header>
-                        <div>
+                        <div className="single-product-card">
                             <h1>{singleProduct.title}</h1>
                             <div>
                                 <img src={singleProduct.mainImage.asset.url}
@@ -70,12 +93,11 @@ const SingleRentalsItem = () => {
                                 <p>♥️ TESTY MCtester ♥️</p>  
                                 <p>Body:{singleProduct.defaultProductVariant.body}</p>
                             </div>
-                            <button
-                                type="button"
+                            <AddButton
                                 disabled={singleProduct.inventory === 0}
                                 onClick={handleAddItem}>
                                 Add to wishlist
-                            </button>
+                            </AddButton>
                         </div>
                     </header>
                 </article>

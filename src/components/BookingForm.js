@@ -1,5 +1,29 @@
 import React from 'react';
 
+import styled from 'styled-components';
+
+
+const FormButton = styled.button`
+    width: 55%;
+    margin: 15px 0 65px 0;
+    cursor: pointer;
+    border: none;
+    font-size: 16px;
+
+    padding: 1rem;
+    color: black;
+    background-color: rgb(179,99,90);
+    text-transform: uppercase;
+    font-weight: 450;
+    
+    &:hover {
+    background-color: black;
+    color: white;
+    transition: 0.7s ease;
+    heigth: 30px;
+    }
+`;
+
 const BookingForm = () => {
     return (
 
@@ -76,7 +100,7 @@ const BookingForm = () => {
                              </li>
                  
                             <li>
-                                <button class="submit-btn" type="submit">Send</button>
+                                <FormButton class="submit-btn" type="submit">Send</FormButton>
                              </li>
                 
                  

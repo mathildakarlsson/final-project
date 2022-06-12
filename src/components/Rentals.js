@@ -6,6 +6,30 @@ import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux'
 import { wishlist } from '../reducers/wishlist';
 
+import styled from 'styled-components';
+
+
+const AddButton = styled.button`
+    width: 55%;
+    margin: 15px 0 65px 0;
+    cursor: pointer;
+    border: none;
+    font-size: 16px;
+
+    padding: 1rem;
+    color: black;
+    background-color: rgb(179,99,90);
+    text-transform: uppercase;
+    font-weight: 450;
+    
+    &:hover {
+    background-color: black;
+    color: white;
+    transition: 0.7s ease;
+    heigth: 30px;
+    }
+`;
+
 const Rentals = () => {
     const [productData, setProductData] = useState();
     const dispatch = useDispatch()
@@ -60,13 +84,13 @@ const Rentals = () => {
                                      <p>{product.defaultProductVariant.price} {product.defaultProductVariant.sku}/day</p>
                                 </span>
                             </Link> 
-                            <button
-                                className="add-button"
-                                type="button"
+                            <AddButton
+                                // className="add-button"
+                                // type="button"
                                 disabled={product.inventory === 0}
                                 onClick={() => dispatch(wishlist.actions.addItem(product))}>
                                 Add to wishlist
-                            </button>
+                            </AddButton>
                         </article> 
                     ))}
                     
