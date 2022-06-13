@@ -24,7 +24,7 @@ const AddButton = styled.button`
     background-color: black;
     color: white;
     transition: 0.7s ease;
-    heigth: 30px;
+    height: 30px;
     }
 `;
 
