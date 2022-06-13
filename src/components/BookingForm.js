@@ -1,67 +1,103 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import styled from 'styled-components';
 
-
-const FormButton = styled.button`
-    width: 55%;
-    margin: 15px 0 65px 0;
-    cursor: pointer;
-    border: none;
-    font-size: 16px;
-
-    padding: 1rem;
-    color: black;
-    background-color: rgb(179,99,90);
-    text-transform: uppercase;
-    font-weight: 450;
-    
-    &:hover {
-    background-color: black;
-    color: white;
-    transition: 0.7s ease;
-    heigth: 30px;
-    }
-`;
-
 const BookingForm = () => {
-    return (
+        
+    const [mailerState, setMailerState] = useState ({
+        name: "",
+        email: "",
+        message: "",
+    });
 
-        <section class="section-container">
-            <h2 class="get-in-touch-1">Planning a wedding or an event?</h2>
-            <h2 class="get-in-touch-2">Send your booking request down below!</h2>
-            <div class="form-container">
-                <div class="form-container-2">
+    const handleStateChange = (e) => {
+        setMailerState((prevState) => ({
+            ...prevState,
+            [e.target.name]: e.target.value,
+        }));
+    } 
+
+    const submitEmail = async (e) => {
+        e.preventDefault();
+        console.log({ mailerState });
+        const response = await fetch("http://localhost:8090/send", {
+            method: "POST",
+            headers: {
+                "Content-type": "application/json",
+            },
+            body: JSON.stringify({ mailerState }),
+        })
+        .then((res) => res.json())
+        .then(async (res) => {
+            const resData = await res;
+            console.log(resData);
+            if (resData.status === "success") {
+                alert("Message Sent!");
+            } else if (resData.status === "fail") {
+                alert("Message failed to send");
+            }
+        })
+        .then(() => {
+            setMailerState({
+                email: "",
+                name: "",
+                message: "",
+            });
+        });
+    };
+
+
+    return (
+        <section>
+            <h2>Planning a wedding or an event?</h2>
+            <h2>Send your booking request down below!</h2>
+            <div>
+                <div>
                     <form
                         name="wishlistform"
                         id="wishlistform"
-                     method="post"
-                     action="/success"
-
-                     >
-                         
-                         
+                        method="post"
+                        action="/success"
+                        onSubmit={submitEmail}
+                     >    
                            <input type="hidden" name="form-name" value="wishlistform" />
-
                         <ul>
                             <li>
                             <label class="custom-field">
                                 Name
-                                <input type="text" name="name" required/>
+                                <input 
+                                    type="text"
+                                    name="name"
+                                    placeholder="namn"
+                                    value={mailerState.name}
+                                    onChange={handleStateChange}
+                                    required
+                                />
                             </label>
                            </li>
                  
-                            <li>
+                            {/* <li>
                             <label class="custom-field">
                                 Phone number
-                                <input type="tel" name="phonenumber"/>
+                                <input
+                                    type="tel" 
+                                    name="phonenumber"
+                                    placeholder="telefonnummer"
+                                />
                             </label>
-                            </li>
+                            </li> */}
                  
                             <li>
                             <label class="custom-field">
                                 Email
-                                <input type="email" name="email" required/>
+                                <input 
+                                    type="email" 
+                                    name="email" 
+                                    placeholder="email"
+                                    value={mailerState.email}
+                                    onChange={handleStateChange}
+                                    required
+                                />
                             </label>
                              </li>
     
@@ -69,7 +105,12 @@ const BookingForm = () => {
                             <label class="custom-field">
                                 Message
                             </label>
-                            <textarea>
+                            <textarea
+                                placeholder="Skriv ett meddelande här"
+                                name="message"
+                                value={mailerState.message}
+                                onChange={handleStateChange}    
+                            >
                             </textarea>
                         </li>
                  
@@ -100,7 +141,7 @@ const BookingForm = () => {
                              </li> */}
                  
                             <li>
-                                <FormButton class="submit-btn" type="submit">Send</FormButton>
+                                <FormButton type="submit">Send</FormButton>
                              </li>
                 
                  
@@ -113,3 +154,25 @@ const BookingForm = () => {
 };
 
 export default BookingForm;
+
+
+const FormButton = styled.button`
+    width: 55%;
+    margin: 15px 0 65px 0;
+    cursor: pointer;
+    border: none;
+    font-size: 16px;
+
+    padding: 1rem;
+    color: black;
+    background-color: rgb(179,99,90);
+    text-transform: uppercase;
+    font-weight: 450;
+    
+    &:hover {
+    background-color: black;
+    color: white;
+    transition: 0.7s ease;
+    height: 30px;
+    }
+`;

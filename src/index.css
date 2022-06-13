@@ -252,7 +252,7 @@ color light beige: #F1EEEB  */
   margin: 15px;
 }
 
-textarea {
+/* textarea {
   border: none;
   background: white;
   padding: 10px;
@@ -261,7 +261,7 @@ textarea {
   font-size: 14px;
   resize: none;
   margin: 15px;
-}
+} */
 
 /* .form-container {
   display: flex;
