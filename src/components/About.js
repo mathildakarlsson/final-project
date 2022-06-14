@@ -1,12 +1,32 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
+import sanityClient from '../client.js';
 import AboutImage from '../assets/About/OURSTORY.jpg'
 
 const About = () => {
+    const [productData, setProductData] = useState();
+
+    useEffect(() => {
+        sanityClient.fetch(
+            `*[_type == "figure"]{
+                title,
+                image,
+                photografer,
+            }`
+        )
+            .then(data => {
+                setProductData(data)
+                console.log(data)
+            })     
+    }, []);
     return (
         <AboutContainer>
             <Wrapper>
                 <Image src={AboutImage}/>
+                {/* <img className="product-image"
+                    src={figure.image.asset.url}
+                    alt={figure.title}
+                /> */}
                 <TextWrapper>
                     <AboutHeader><LetterSpan>O</LetterSpan>UR &nbsp;<LetterSpan>S</LetterSpan>TORY</AboutHeader>
                     <AboutText>
