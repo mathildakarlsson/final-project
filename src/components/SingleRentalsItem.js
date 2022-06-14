@@ -7,27 +7,6 @@ import { wishlist } from '../reducers/wishlist';
 import styled from 'styled-components';
 
 
-const AddButton = styled.button`
-    width: 55%;
-    margin: 15px 0 65px 0;
-    cursor: pointer;
-    border: none;
-    font-size: 16px;
-
-    padding: 1rem;
-    color: black;
-    background-color: rgb(179,99,90);
-    text-transform: uppercase;
-    font-weight: 450;
-    
-    &:hover {
-    background-color: black;
-    color: white;
-    transition: 0.7s ease;
-    height: 30px;
-    }
-`;
-
 const SingleRentalsItem = () => {
     const [singleProduct, setsingleProduct] = useState(null);
     const dispatch = useDispatch()
@@ -107,7 +86,26 @@ const SingleRentalsItem = () => {
 
 export default SingleRentalsItem;
 
+const AddButton = styled.button`
+    width: 55%;
+    margin: 15px 0 65px 0;
+    cursor: pointer;
+    border: none;
+    font-size: 16px;
 
+    padding: 1rem;
+    color: black;
+    background-color: rgb(179,99,90);
+    text-transform: uppercase;
+    font-weight: 450;
+    
+    &:hover {
+    background-color: black;
+    color: white;
+    transition: 0.7s ease;
+    /* height: 30px; */
+    }
+`;
 
 
 // ------------------- deleted code - saving in case of error messages -----------------------//

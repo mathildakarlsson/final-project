@@ -1,18 +1,18 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
-import BookingForm from './BookingForm';
-import WishListItem from './WishListItem';
+// import { useSelector } from 'react-redux';
+// import BookingForm from './BookingForm';
+// import WishListItem from './WishListItem';
 
 const WishList = () => {
 
-    const products = useSelector((store) => store.wishlist.items)
-    const totalPrice = useSelector((store) => (
-        store.wishlist.items.reduce((total, item) => (total + (item.price * item.quantity)), 0)
-    ))
+    // const products = useSelector((store) => store.wishlist.items)
+    // const totalPrice = useSelector((store) => (
+    //     store.wishlist.items.reduce((total, item) => (total + (item.price * item.quantity)), 0)
+    // ))
 
     return (
-        <section className="wishlist">
-            <ul className="wishlist-ul">
+        <section>
+            {/* <ul className="wishlist-ul">
                 {products.map((product, index) => {
                     return(
                         <WishListItem key={index} product={product} />
@@ -20,7 +20,7 @@ const WishList = () => {
                 })}
             </ul>
             <p className="total">Total cost: {totalPrice} SEK</p>
-            <BookingForm />
+            <BookingForm /> */}
         </section>
     )
 };

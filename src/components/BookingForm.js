@@ -1,13 +1,34 @@
 import React, { useState } from 'react';
-
+import { useSelector } from 'react-redux';
 import styled from 'styled-components';
 
+import WishListItem from './WishListItem';
+
+import { wishlist } from '../reducers/wishlist';
+
+
+
+
 const BookingForm = () => {
+
+
+
+    const products = useSelector((store) => store.wishlist.items)
+    const totalPrice = useSelector((store) => (
+        store.wishlist.items.reduce((total, item) => (total + (item.price * item.quantity)), 0)
+    ))
+
+   
+
         
     const [mailerState, setMailerState] = useState ({
         name: "",
         email: "",
+        phonenumber: "",
+        startdate: "",
+        enddate: "",
         message: "",
+        rentalitems: {products},
     });
 
     const handleStateChange = (e) => {
@@ -39,16 +60,20 @@ const BookingForm = () => {
         })
         .then(() => {
             setMailerState({
-                email: "",
                 name: "",
+                email: "",
+                phonenumber: "",
+                startdate: "",
+                enddate: "",
                 message: "",
+                rentalitems: {products},
             });
         });
     };
 
 
     return (
-        <section>
+        <section className="formy-form">
             <h2>Planning a wedding or an event?</h2>
             <h2>Send your booking request down below!</h2>
             <div>
@@ -76,16 +101,18 @@ const BookingForm = () => {
                             </label>
                            </li>
                  
-                            {/* <li>
+                            <li>
                             <label class="custom-field">
                                 Phone number
                                 <input
                                     type="tel" 
                                     name="phonenumber"
                                     placeholder="telefonnummer"
+                                    value={mailerState.phonenumber}
+                                    onChange={handleStateChange}
                                 />
                             </label>
-                            </li> */}
+                            </li>
                  
                             <li>
                             <label class="custom-field">
@@ -100,57 +127,80 @@ const BookingForm = () => {
                                 />
                             </label>
                              </li>
+
+                             <li>
+                                <label class="custom-field">
+                                   Från
+                                    <input 
+                                        type="date" 
+                                        name="startdate" 
+                                        value={mailerState.startdate}
+                                        onChange={handleStateChange}
+                                        // required
+                                    />
+                                </label>
+                             </li>
+
+                             <li>
+                                <label class="custom-field">
+                                    till
+                                    <input 
+                                        type="date" 
+                                        name="enddate" 
+                                        value={mailerState.enddate}
+                                        onChange={handleStateChange}
+                                        // required
+                                    />
+                                </label>
+                             </li>
     
                             <li>
-                            <label class="custom-field">
-                                Message
-                            </label>
-                            <textarea
-                                placeholder="Skriv ett meddelande här"
-                                name="message"
-                                value={mailerState.message}
-                                onChange={handleStateChange}    
-                            >
-                            </textarea>
-                        </li>
-                 
-                            {/* <p class= "terms"></p>
-                            <li>
-                                <label>
-                                    <input required
-                                        class="check-box"
-                                        type="checkbox"
-                                        name="terms"
-                                        value="terms"
-                                    />
+                                <label class="custom-field">
+                                    Message
                                 </label>
-                            </li> */}
-                    
-                 
-                            {/* <p class="newsletter"></p>
+                                <textarea
+                                    placeholder="Skriv ett meddelande här"
+                                    name="message"
+                                    value={mailerState.message}
+                                    onChange={handleStateChange}    
+                                >
+                                </textarea>
+                            </li>
+
                             <li>
-                                <label>
-                                    <input
-                                        class="check-box"
-                                        type="checkbox"
-                                        name="newsletter"
-                                        value="newsletter"
-                                    />
-                                    Sign up for Newsletter
+                                <label class="custom-field">
+                                    Hyrsaker
                                 </label>
-                             </li> */}
+                                <textarea
+                                    name="rentalitems"
+                                    value={mailerState.rentalitems}
+                                    onChange={handleStateChange}    
+                                >
+
+                                </textarea>
+                            </li>
                  
                             <li>
                                 <FormButton type="submit">Send</FormButton>
                              </li>
-                
                  
                         </ul>
                     </form>
                 </div>
             </div>
+            <section className="wishlist">
+                <ul className="wishlist-ul">
+                    {products.map((product, index) => {
+                        return(
+                            <WishListItem key={index} product={product} />
+                        )
+                    })}
+                </ul>
+                <p className="total">Total cost: {totalPrice} SEK</p>
+            </section>
         </section>
     )
+
 };
 
 export default BookingForm;
@@ -173,6 +223,6 @@ const FormButton = styled.button`
     background-color: black;
     color: white;
     transition: 0.7s ease;
-    height: 30px;
+    /* height: 30px; */
     }
 `;
