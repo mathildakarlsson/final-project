@@ -92,7 +92,7 @@ const AddButton = styled.button`
 
     padding: 1rem;
     color: black;
-    background-color: rgb(179,99,90);
+    background-color: rgb(197,191,184);
     text-transform: uppercase;
     font-weight: 450;
     

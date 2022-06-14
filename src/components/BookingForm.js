@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 import WishListItem from './WishListItem';
 
-import { wishlist } from '../reducers/wishlist';
+// import { wishlist } from '../reducers/wishlist';
 
 
 
@@ -79,13 +79,13 @@ const BookingForm = () => {
             <div>
                 <div>
                     <form
-                        name="wishlistform"
-                        id="wishlistform"
-                        method="post"
-                        action="/success"
+                        // name="wishlistform"
+                        // id="wishlistform"
+                        // method="post"
+                        // action="/success"
                         onSubmit={submitEmail}
                      >    
-                           <input type="hidden" name="form-name" value="wishlistform" />
+                           {/* <input type="hidden" name="form-name" value="wishlistform" /> */}
                         <ul>
                             <li>
                             <label class="custom-field">
