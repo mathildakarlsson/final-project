@@ -28,7 +28,7 @@ const BookingForm = () => {
         startdate: "",
         enddate: "",
         message: "",
-        rentalitems: {products},
+        // rentalitems: {products},
     });
 
     const handleStateChange = (e) => {
@@ -41,12 +41,16 @@ const BookingForm = () => {
     const submitEmail = async (e) => {
         e.preventDefault();
         console.log({ mailerState });
+
+        const data = mailerState;
+        data.products= {products}
+
         const response = await fetch("http://localhost:8090/send", {
             method: "POST",
             headers: {
                 "Content-type": "application/json",
             },
-            body: JSON.stringify({ mailerState }),
+            body: JSON.stringify({ data }),
         })
         .then((res) => res.json())
         .then(async (res) => {
@@ -66,7 +70,7 @@ const BookingForm = () => {
                 startdate: "",
                 enddate: "",
                 message: "",
-                rentalitems: {products},
+                // rentalitems: {products},
             });
         });
     };
