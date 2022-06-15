@@ -28,7 +28,7 @@ const BookingForm = () => {
         startdate: "",
         enddate: "",
         message: "",
-        // rentalitems: {products},
+        products: {},
     });
 
     const handleStateChange = (e) => {
@@ -43,7 +43,7 @@ const BookingForm = () => {
         console.log({ mailerState });
 
         const data = mailerState;
-        data.products= {products}
+        data.products = {products}
 
         const response = await fetch("http://localhost:8090/send", {
             method: "POST",
@@ -70,7 +70,7 @@ const BookingForm = () => {
                 startdate: "",
                 enddate: "",
                 message: "",
-                // rentalitems: {products},
+                products: {},
             });
         });
     };
@@ -177,7 +177,7 @@ const BookingForm = () => {
                                 </label>
                                 <textarea
                                     name="rentalitems"
-                                    value={mailerState.rentalitems}
+                                    value={mailerState.products}
                                     onChange={handleStateChange}    
                                 >
 
