@@ -28,7 +28,7 @@ const BookingForm = () => {
         startdate: "",
         enddate: "",
         message: "",
-        // rentalitems: {products},
+        products: {},
     });
 
     const handleStateChange = (e) => {
@@ -43,7 +43,7 @@ const BookingForm = () => {
         console.log({ mailerState });
 
         const data = mailerState;
-        data.products= {products}
+        data.products = {products}
 
         const replacer = (key, value) => {
             // Filtering out properties
@@ -79,7 +79,7 @@ const BookingForm = () => {
                 startdate: "",
                 enddate: "",
                 message: "",
-                // rentalitems: {products},
+                products: {},
             });
         });
     };
@@ -186,7 +186,7 @@ const BookingForm = () => {
                                 </label>
                                 <textarea
                                     name="rentalitems"
-                                    value={mailerState.rentalitems}
+                                    value={mailerState.products}
                                     onChange={handleStateChange}    
                                 >
 
