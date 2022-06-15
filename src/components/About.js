@@ -4,42 +4,57 @@ import sanityClient from '../client.js';
 import AboutImage from '../assets/About/OURSTORY.jpg'
 
 const About = () => {
-    const [productData, setProductData] = useState();
+    const [aboutUsData, setAboutUsData] = useState(null);
 
-    useEffect(() => {
-        sanityClient.fetch(
-            `*[_type == "figure"]{
-                title,
-                image,
-                photografer,
-            }`
-        )
-            .then(data => {
-                setProductData(data)
-                console.log(data)
-            })     
-    }, []);
+    // useEffect(() => {
+    //     sanityClient.fetch(
+    //         `*[_type == "aboutUs"]{
+    //             title,
+    //             photografer,
+    //             _id,
+    //             image{
+    //                 figure->{
+    //                     _id,
+    //                     url,
+    //                     _ref
+    //                 },
+    //                 alt
+    //             }
+    //         }`
+    //     )
+    //         .then(data => {
+    //             setAboutUsData(data)
+    //             console.log(data)
+    //         })     
+    // }, []);
+
     return (
         <AboutContainer>
+                {aboutUsData && aboutUsData.map((aboutUs, index) => (
             <Wrapper>
-                <Image src={AboutImage}/>
-                {/* <img className="product-image"
-                    src={figure.image.asset.url}
-                    alt={figure.title}
-                /> */}
-                <TextWrapper>
+                {/* <Image src={AboutImage}/> */}
+                    <div key={index}>
+                        <img
+                            className="about-image"
+                            src={aboutUs.image.asset.url}
+                            alt={aboutUs.title}
+                        />
+                        <p>{aboutUs.title}</p>
+                    </div>
+                {/* <TextWrapper>
                     <AboutHeader><LetterSpan>O</LetterSpan>UR &nbsp;<LetterSpan>S</LetterSpan>TORY</AboutHeader>
                     <AboutText>
                         Att en råkall februarikväll kunde vara så fylld av hopp och förväntan. Bland sömniga trädgårdar och gatlyktors sken växte tanken om ett företag, snällt mot plånboken och miljön, samtidigt drömlikt och modigt i sitt utförande.
-                    </AboutText>
-                    <AboutText>
+                        </AboutText>
+                        <AboutText>
                         Linnéa florist med förkärlek för naturen och svalkande bad. Caroline, kreatör som trivs med pulsen i staden och förundras av vackra byggnader. Olika, men lika i kärleken för skapandet, frihetslängtan, för färg och form och för att få se glädjen i människors ögon när dröm blir verklighet.
-                    </AboutText>
-                    <AboutText>
+                        </AboutText>
+                        <AboutText>
                         Vi blev Nordic Spells Decor. Visionen var och förblir, att genom säsongens växter, återbruk av vackra ting och kreativitet få vara Västkustens förmedlare av dekoration till personliga och pintrestvänliga event!
-                    </AboutText>
-                </TextWrapper>
+                        </AboutText>
+                    </TextWrapper> */}
             </Wrapper>
+                    ))}
         </AboutContainer>
     )
 };

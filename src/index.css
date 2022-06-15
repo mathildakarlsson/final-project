@@ -252,6 +252,11 @@ color light beige: #F1EEEB  */
   margin: 15px;
 }
 
+.about-image {
+  height: 400px;
+  width: 700px;
+}
+
 textarea {
   border: none;
   background: white;
