@@ -45,12 +45,21 @@ const BookingForm = () => {
         const data = mailerState;
         data.products= {products}
 
+        const replacer = (key, value) => {
+            // Filtering out properties
+            if (typeof value === '_id') {
+              return undefined;
+            }
+            return value;
+          }
+
+
         const response = await fetch("http://localhost:8090/send", {
             method: "POST",
             headers: {
                 "Content-type": "application/json",
             },
-            body: JSON.stringify({ data }),
+            body: JSON.stringify({ data, replacer }),
         })
         .then((res) => res.json())
         .then(async (res) => {
