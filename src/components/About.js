@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import sanityClient from '../client.js';
-import AboutImage from '../assets/About/OURSTORY.jpg'
 
 const About = () => {
     const [aboutUsData, setAboutUsData] = useState(null);
@@ -11,7 +10,25 @@ const About = () => {
             `*[_type == "aboutUs"] {
                 _id,
                 title,
-                image{
+                photoOne{
+                    photographer,
+                    image{
+                        asset->{
+                            _id,
+                            url
+                        },
+                    },
+                },
+                photoTwo{
+                    photographer,
+                    image{
+                        asset->{
+                            _id,
+                            url
+                        },
+                    },
+                },
+                photoThree{
                     photographer,
                     image{
                         asset->{
@@ -32,16 +49,24 @@ const About = () => {
         <AboutContainer>
                 {aboutUsData && aboutUsData.map((aboutUs, index) => (
             <Wrapper>
-                {/* <Image src={AboutImage}/> */}
-                    <div key={index}>
-                        <img
-                            className="about-image"
-                            src={aboutUs.image.image.asset.url}
+                    <ImageWrapper key={index}>
+                        <Image
+                            src={aboutUs.photoOne.image.asset.url}
                             alt={aboutUs.title}
                         />
-                        <p>Foto: {aboutUs.image.photographer}</p>
-                    </div>
-                {/* <TextWrapper>
+                        <p>Foto: {aboutUs.photoOne.photographer}</p>
+                        <Image
+                            src={aboutUs.photoTwo.image.asset.url}
+                            alt={aboutUs.title}
+                        />
+                        <p>Foto: {aboutUs.photoTwo.photographer}</p>
+                        <Image
+                            src={aboutUs.photoThree.image.asset.url}
+                            alt={aboutUs.title}
+                        />
+                        <p>Foto: {aboutUs.photoThree.photographer}</p>
+                    </ImageWrapper>
+                <TextWrapper>
                     <AboutHeader><LetterSpan>O</LetterSpan>UR &nbsp;<LetterSpan>S</LetterSpan>TORY</AboutHeader>
                     <AboutText>
                         Att en råkall februarikväll kunde vara så fylld av hopp och förväntan. Bland sömniga trädgårdar och gatlyktors sken växte tanken om ett företag, snällt mot plånboken och miljön, samtidigt drömlikt och modigt i sitt utförande.
@@ -52,7 +77,7 @@ const About = () => {
                         <AboutText>
                         Vi blev Nordic Spells Decor. Visionen var och förblir, att genom säsongens växter, återbruk av vackra ting och kreativitet få vara Västkustens förmedlare av dekoration till personliga och pintrestvänliga event!
                         </AboutText>
-                    </TextWrapper> */}
+                    </TextWrapper>
             </Wrapper>
                     ))}
         </AboutContainer>
@@ -71,13 +96,20 @@ const Wrapper = styled.div `
     align-items: center;
 `
 
+const ImageWrapper = styled.div `
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; */
+`
+
 const TextWrapper = styled.div `
     flex-direction: column;
 `
 
 const Image = styled.img `
-    width: 40%;
-    height: 40%;
+    width: 50%;
+    height: 50%;
     margin: 120px 0 30px 140px;
 `
 
