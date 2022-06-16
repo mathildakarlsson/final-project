@@ -46,20 +46,34 @@ const BookingForm = () => {
         data.products = {products}
 
         const replacer = (key, value) => {
-            // Filtering out properties
-            if (typeof value === '_id') {
+            if (key === products.mainImage) {
+                console.log(key)
               return undefined;
             }
             return value;
           }
 
-
+        // const response = await fetch("http://localhost:8090/send", {
+        //     method: "POST",
+        //     headers: {
+        //         "Content-type": "application/json",
+        //     },
+        //     body: JSON.stringify( data, (key, value) => {
+            
+        //         if (key === "url") {
+        //           return undefined;
+        //         }
+        //         return value;
+        //     }),
+        // })
+         
         const response = await fetch("http://localhost:8090/send", {
             method: "POST",
             headers: {
                 "Content-type": "application/json",
             },
-            body: JSON.stringify({ data, replacer }),
+            body: JSON.stringify({ data, replacer })
+
         })
         .then((res) => res.json())
         .then(async (res) => {
