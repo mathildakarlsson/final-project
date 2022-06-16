@@ -253,8 +253,9 @@ color light beige: #F1EEEB  */
 }
 
 .about-image {
-  height: 400px;
-  width: 700px;
+  height: 800px;
+  width: 500px;
+  padding: 150px 0 0 50px;
 }
 
 textarea {

@@ -6,27 +6,27 @@ import AboutImage from '../assets/About/OURSTORY.jpg'
 const About = () => {
     const [aboutUsData, setAboutUsData] = useState(null);
 
-    // useEffect(() => {
-    //     sanityClient.fetch(
-    //         `*[_type == "aboutUs"]{
-    //             title,
-    //             photografer,
-    //             _id,
-    //             image{
-    //                 figure->{
-    //                     _id,
-    //                     url,
-    //                     _ref
-    //                 },
-    //                 alt
-    //             }
-    //         }`
-    //     )
-    //         .then(data => {
-    //             setAboutUsData(data)
-    //             console.log(data)
-    //         })     
-    // }, []);
+    useEffect(() => {
+        sanityClient.fetch(
+            `*[_type == "aboutUs"] {
+                _id,
+                title,
+                image{
+                photographer,
+                image{
+                asset->{
+                _id,
+                url
+              }
+              }
+              }
+              }`
+        )
+            .then(data => {
+                setAboutUsData(data)
+                console.log(data)
+            })     
+    }, []);
 
     return (
         <AboutContainer>
@@ -36,10 +36,10 @@ const About = () => {
                     <div key={index}>
                         <img
                             className="about-image"
-                            src={aboutUs.image.asset.url}
+                            src={aboutUs.image.image.asset.url}
                             alt={aboutUs.title}
                         />
-                        <p>{aboutUs.title}</p>
+                        <p>Foto: {aboutUs.image.photographer}</p>
                     </div>
                 {/* <TextWrapper>
                     <AboutHeader><LetterSpan>O</LetterSpan>UR &nbsp;<LetterSpan>S</LetterSpan>TORY</AboutHeader>
