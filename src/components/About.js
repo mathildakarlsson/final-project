@@ -12,15 +12,15 @@ const About = () => {
                 _id,
                 title,
                 image{
-                photographer,
-                image{
-                asset->{
-                _id,
-                url
-              }
-              }
-              }
-              }`
+                    photographer,
+                    image{
+                        asset->{
+                            _id,
+                            url
+                        },
+                    },
+                },
+            }`
         )
             .then(data => {
                 setAboutUsData(data)
