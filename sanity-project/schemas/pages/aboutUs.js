@@ -9,11 +9,15 @@ export default {
         title: 'Title',
       },
       {
-        name: 'image',
+        name: 'photoOne',
         type: 'figure',
       },
       {
-        name: 'imageTwo',
+        name: 'photoTwo',
+        type: 'figure',
+      },
+      {
+        name: 'photoThree',
         type: 'figure',
       },
     ],
