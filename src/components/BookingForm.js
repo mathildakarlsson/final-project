@@ -45,13 +45,13 @@ const BookingForm = () => {
         const data = mailerState;
         data.products = {products}
 
-        const replacer = (key, value) => {
-            if (key === products.mainImage) {
-                console.log(key)
-              return undefined;
-            }
-            return value;
-          }
+        // const replacer = (key, value) => {
+        //     if (key === products.mainImage) {
+        //         console.log(key)
+        //       return undefined;
+        //     }
+        //     return value;
+        //   }
 
         // const response = await fetch("http://localhost:8090/send", {
         //     method: "POST",
@@ -72,7 +72,7 @@ const BookingForm = () => {
             headers: {
                 "Content-type": "application/json",
             },
-            body: JSON.stringify({ data, replacer })
+            body: JSON.stringify({ data })
 
         })
         .then((res) => res.json())
