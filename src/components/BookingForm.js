@@ -115,7 +115,7 @@ const BookingForm = () => {
                            {/* <input type="hidden" name="form-name" value="wishlistform" /> */}
                         <ul>
                             <li>
-                            <label class="custom-field">
+                            <label className="custom-field">
                                 Name
                                 <input 
                                     type="text"
@@ -129,7 +129,7 @@ const BookingForm = () => {
                            </li>
                  
                             <li>
-                            <label class="custom-field">
+                            <label className="custom-field">
                                 Phone number
                                 <input
                                     type="tel" 
@@ -142,7 +142,7 @@ const BookingForm = () => {
                             </li>
                  
                             <li>
-                            <label class="custom-field">
+                            <label className="custom-field">
                                 Email
                                 <input 
                                     type="email" 
@@ -156,7 +156,7 @@ const BookingForm = () => {
                              </li>
 
                              <li>
-                                <label class="custom-field">
+                                <label className="custom-field">
                                    Från
                                     <input 
                                         type="date" 
@@ -169,7 +169,7 @@ const BookingForm = () => {
                              </li>
 
                              <li>
-                                <label class="custom-field">
+                                <label className="custom-field">
                                     till
                                     <input 
                                         type="date" 
@@ -182,7 +182,7 @@ const BookingForm = () => {
                              </li>
     
                             <li>
-                                <label class="custom-field">
+                                <label className="custom-field">
                                     Message
                                 </label>
                                 <textarea
@@ -195,7 +195,7 @@ const BookingForm = () => {
                             </li>
 
                             <li>
-                                <label class="custom-field">
+                                <label className="custom-field">
                                     Hyrsaker
                                 </label>
                                 <textarea

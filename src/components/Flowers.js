@@ -10,7 +10,7 @@ const Flowers = () => {
     useEffect(() => {
         sanityClient.fetch(
             `*[_type == "flowers"] {
-                
+                _id,
                 title,
                 flowerImages[]{
                     asset->{
@@ -30,14 +30,14 @@ const Flowers = () => {
 
     return (
         <Section>
-            {flowersData && flowersData.map((nested, flowers) => nested.flowerImages.map((asset, _id) => (
-                <div key={_id}>
-                    <Header>{flowers.title}</Header>
-                    {/* <img
-                        key={asset._id}
-                        src={asset.url}
-                        alt={flowers.title}
-                    /> */}
+            {flowersData && flowersData.map((nested) => nested.flowerImages.map((flowerImages, index) => (
+                <div key={index}>
+                    <Header>{flowerImages.title}</Header>
+                    <Image
+                        key={index}
+                        src={flowerImages.asset.url}
+                        alt={flowerImages}
+                    />
                 </div>
             )))}
         </Section>
@@ -46,12 +46,17 @@ const Flowers = () => {
 
 export default Flowers;
 
-
+const Image = styled.img `
+height: 400px;
+width: 550px;
+padding: 0;
+margin: 0;
+`
 
 const Section = styled.div `
     /* height: 1000px; */
 `
 
 const Header = styled.h1 `
-    padding-top: 300px;
+    /* padding-top: 300px; */
 `

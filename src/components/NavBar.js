@@ -15,13 +15,12 @@ const NavBar = () => {
                     <LogoContainer>
                         <NavLink
                             to='/' 
-                            activeClassName='active'
                         >
                             <img 
-                            src={logo}
-                            className="logo"
+                                src={logo}
+                                className="logo"
+                                style={linkStyle}
                             />
-                            
                         </NavLink>
                     </LogoContainer>
 
@@ -88,17 +87,19 @@ const NavContainer = styled.nav`
     justify-content: space-between;
     position: fixed;
     width: 100vw;
+    height: 17vh;
 `
 
 const LogoContainer = styled.div `
-    margin: 20px;
+    margin: 10px 20px 0 20px;
+    padding: 0;
 
 `
 
 const LinkContainer = styled.div `
     display: flex;
     gap: 30px;
-    margin: 45px 70px 10px 0;
+    margin: 45px 70px 0px 0;
     z-index: 999;
 `
 
@@ -109,10 +110,10 @@ const linkStyle = {
     textTransform: "uppercase",
 }
 
-const logoStyle = {
-    width: "50px",
-    height: "70px",
-}
+// const logoStyle = {
+//     width: "50px",
+//     height: "70px",
+// }
 
 
 

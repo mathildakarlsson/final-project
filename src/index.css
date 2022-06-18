@@ -45,8 +45,14 @@ color light beige: #F1EEEB  */
   }
 
   .logo {
-    height: 120px;
-    width: 150px;
+    height: 100px;
+    width: 130px;
+    color: #f1eeeb00;
+  }
+
+  .logo a {
+    display: none;
+    background-color: #f1eeeb00;
   }
 
 
@@ -161,8 +167,8 @@ color light beige: #F1EEEB  */
 
   .product-image {
     object-fit: cover;
-    width: 250px;
-    height: 250px;
+    width: 150px;
+    height: 150px;
   }
 
   .product-title {
@@ -206,8 +212,9 @@ color light beige: #F1EEEB  */
     gap: 90px;
   }
 
+
   .wishlist {
-    padding-top: 100px;
+    padding-top: 150px;
     display: flex;
     flex-direction: column;
     text-align: center;

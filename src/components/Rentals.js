@@ -3,14 +3,22 @@
 import React, { useState, useEffect } from 'react';
 import sanityClient from '../client.js';
 import { Link } from 'react-router-dom';
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { wishlist } from '../reducers/wishlist';
+import WishListItem from './WishListItem';
 
 import styled from 'styled-components';
 
 
 const Rentals = () => {
+    const products = useSelector((store) => store.wishlist.items)
+
+    const totalPrice = useSelector((store) => (
+        store.wishlist.items.reduce((total, item) => (total + (item.price * item.quantity)), 0)
+    ))
+
     const [productData, setProductData] = useState();
+
     const dispatch = useDispatch()
 
     //Denna handler fungerar inte "product is not defined"
@@ -46,6 +54,17 @@ const Rentals = () => {
     return (
         <main>
             <h2>Welcome to the rentals web shop!</h2>
+            <section className="wishlist">
+                <h2>Din varukorg</h2>
+                <ul className="wishlist-ul">
+                    {products.map((product, index) => {
+                        return(
+                            <WishListItem key={index} product={product} />
+                        )
+                    })}
+                </ul>
+                <p className="total">Total cost: {totalPrice} SEK</p>
+            </section>
             <section className="product-container">
                 <div className="product-grid">
 
