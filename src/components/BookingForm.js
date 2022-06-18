@@ -67,7 +67,7 @@ const BookingForm = () => {
         //     }),
         // })
          
-        const response = await fetch("http://localhost:8090/send", {
+        const response = await fetch("https://final-project-nsd.herokuapp.com/send", {
             method: "POST",
             headers: {
                 "Content-type": "application/json",
