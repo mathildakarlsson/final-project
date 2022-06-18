@@ -3,6 +3,10 @@ import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 // import HamburgerMenu from '../assets/Logos/icons8-menu.svg'
 // import { SocialIcon } from 'react-social-icons';
+import logo from '../assets/NSDlogga.png';
+// import PersistentDrawerRight from './Drawer.js';
+import Sidebar from './Sidebar';
+
 
 const NavBar = () => {
     return (
@@ -12,9 +16,12 @@ const NavBar = () => {
                         <NavLink
                             to='/' 
                             activeClassName='active'
-                            style={logoStyle}
                         >
-                            Nordic Spells Decor
+                            <img 
+                            src={logo}
+                            className="logo"
+                            />
+                            
                         </NavLink>
                     </LogoContainer>
 
@@ -57,6 +64,12 @@ const NavBar = () => {
                         </NavLink>
                     </LinkContainer>
                 {/* <Hamburger src={HamburgerMenu}/> */}
+                {/* <PersistentDrawerRight/> */}
+                <div className="App" id="outer-container">
+                <Sidebar pageWrapId={'page-wrap'} outerContainerId={'outer-container'} />
+                <div id="page-wrap">
+                    </div>
+                    </div>
             </NavContainer>
         </Header>
     )
@@ -78,7 +91,7 @@ const NavContainer = styled.nav`
 `
 
 const LogoContainer = styled.div `
-    margin: 15px 0 10px 70px;
+    margin: 20px;
 
 `
 
@@ -97,10 +110,8 @@ const linkStyle = {
 }
 
 const logoStyle = {
-    color: "black",
-    fontSize: "40px",
-    fontWeight: "300",
-    textTransform: "uppercase",
+    width: "50px",
+    height: "70px",
 }
 
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import Carousel1 from '../assets/Karusell/KARUSELL1.jpg';
+import Carousel1 from '../assets/KARUSELL1.jpg';
 
 
 const Home = () => {

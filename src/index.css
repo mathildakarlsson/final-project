@@ -21,6 +21,12 @@ color light beige: #F1EEEB  */
     background-color: #F1EEEB;
 }
 
+#page-wrap {
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+
+
   a {
     text-decoration: none;
     color: black;
@@ -36,6 +42,11 @@ color light beige: #F1EEEB  */
 
   .active {
    font-weight: 500;
+  }
+
+  .logo {
+    height: 120px;
+    width: 150px;
   }
 
 
