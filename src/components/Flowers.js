@@ -1,3 +1,4 @@
+import { Container } from '@mui/system';
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import sanityClient from '../client.js';
@@ -17,6 +18,12 @@ const Flowers = () => {
                         _id,
                         url,
                     }   
+                },
+                flowerImagesMobile[]{
+                    asset->{
+                        _id,
+                        url,
+                    }   
                 }
             }`
         )
@@ -29,32 +36,61 @@ const Flowers = () => {
     
 
     return (
-        <Section>
-            {flowersData && flowersData.map((nested) => nested.flowerImages.map((flowerImages, index) => (
-                <div key={index}>
-                    <Header>{flowerImages.title}</Header>
-                    <Image
-                        key={index}
-                        src={flowerImages.asset.url}
-                        alt={flowerImages}
-                    />
-                </div>
-            )))}
-        </Section>
+        // <Section>
+        //     {flowersData && flowersData.map((nested) => nested.flowerImages.map((flowerImages, index) => (
+        //         <div key={index}>
+        //             <Header>{flowerImages.title}</Header>
+        //             <Image
+        //                 key={index}
+        //                 src={flowerImages.asset.url}
+        //                 alt={flowerImages}
+        //             />
+        //         </div>
+        //     )))}
+        // </Section>
+        
+            <ImageContainer>
+                {flowersData && flowersData.map((nested) => nested.flowerImagesMobile.map((flowerImagesMobile, index) => (
+                    <Section key={index}>
+                    {/* <Header>{flowerImagesMobile.title}</Header> */}
+                        <Image
+                            key={index}
+                            src={flowerImagesMobile.asset.url}
+                            alt={flowerImagesMobile}
+                        />
+                    </Section>
+                )))}
+            </ImageContainer>
+
     )
 };
 
 export default Flowers;
 
+const ImageContainer = styled.div `
+    display: flex;
+    /* justify-content: center; */
+    flex-direction: column;
+    /* align-items: center; */
+
+`
+
 const Image = styled.img `
-height: 400px;
-width: 550px;
-padding: 0;
-margin: 0;
+    height: 70%;
+    width: 70%;
+    padding: 0;
+    margin-top: 30px;
+    /* margin-left: 50px; */
+    border-radius: 1%;
+    
 `
 
 const Section = styled.div `
-    /* height: 1000px; */
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    /* align-items: center; */
+    justify-content: center;
+    
 `
 
 const Header = styled.h1 `

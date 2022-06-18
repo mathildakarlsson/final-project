@@ -21,5 +21,18 @@ export default {
           },
         ],
       },
+      {
+        name: 'flowerImagesMobile',
+        title: 'flowersMobile',
+        type: 'array',
+        of: [
+          {
+            type: 'image',
+            options: {
+              hotspot: true,
+            },
+          },
+        ],
+      },
     ],
   };
