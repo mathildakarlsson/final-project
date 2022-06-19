@@ -5,6 +5,7 @@ import styled from 'styled-components';
 // import { SocialIcon } from 'react-social-icons';
 import logo from '../assets/NSDlogga.png';
 import { MdMenu } from 'react-icons/md'
+import { GiFallingStar } from 'react-icons/gi'
 import { Link } from 'react-router-dom'; 
 // import { useDispatch } from 'react-redux';
 // import { useSelector } from 'react-redux'
@@ -60,6 +61,13 @@ const HamburgerIcon = styled(MdMenu)`
   color: #fff;
 `
 
+const StarIcon = styled(GiFallingStar)`
+  cursor: pointer;
+  color: #fff;
+  font-size: 2.5rem;
+
+`
+
 const NavMenu = styled.ul`
   display: none;
   @media (min-width: 668px) {
@@ -79,6 +87,17 @@ padding: 0 1rem;
     border-bottom: 3px solid white;
   }
 `
+const StarLink = styled(Link)`
+display: block;
+position: absolute;
+top: 2rem;
+right: 5rem;
+transform: translate(-50%, 25%);
+  @media (min-width: 668px) {  
+      display: none;
+}
+`
+
 const linkStyle = {
     color: "black",
     fontSize: "15px",
@@ -87,26 +106,7 @@ const linkStyle = {
 }
 
 
-// const BagButton = styled.button`
-//   font-family: 'Roboto', sans-serif;
-//   background: none;
-//   font-size: 16px;
-//   border: none;
-//   margin-left: 10px;
-//   padding: 0;
-//   outline: none;
-//   transition: all .2s ease-in-out; 
-//   &:hover {
-//     cursor: pointer;
-//     color: #ecd6ba;
-//   }
-// `
-
 const NavBar = ({ toggle }) => {
-
-    // const dispatch = useDispatch()
-    // const totalItems = useSelector((store) => (
-    //   store.cart.items.reduce((total, item) => (total + (item.quantity)), 0)))
 
     return (
         <Nav>
@@ -129,7 +129,13 @@ const NavBar = ({ toggle }) => {
                     <Hamburger onClick={toggle}>
                     <HamburgerIcon />
                   </Hamburger>
-
+                  <StarLink to='/wishlist' 
+                            activeClassName='active'
+                            style={linkStyle}
+                        >
+                        <TotalWishlistItems />
+                        <StarIcon />
+                        </StarLink>
                     <NavMenu>
 
                         <NavLinks to='/rentals' 
@@ -166,13 +172,10 @@ const NavBar = ({ toggle }) => {
                             activeClassName='active'
                             style={linkStyle}
                         >
-                            Varukorg
+                            Önskelista
                             <TotalWishlistItems />
                         </NavLinks>
-                        
-
-                        {/* <BagButton onClick={() => dispatch(ui.actions.openCart())}>Cart({totalItems})</BagButton> */}
-                        </NavMenu>
+                    </NavMenu>
                     </LinkContainer>
                
             </NavContainer>

@@ -76,7 +76,7 @@ const Sidebar = ({ isOpen, toggle }) => {
               Kontakt
             </SideLinks> 
             <SideLinks to='/wishlist'>
-              Varukorg
+              Önskelista
             </SideLinks>
 
           </SidebarList>
