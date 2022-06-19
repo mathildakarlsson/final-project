@@ -52,6 +52,7 @@ const Home = () => {
 
     return (
         <HomeContainer>
+            
             <Welcome>Välkommen till Nordic Spells Decor!</Welcome>
             <p>This is the Carousel images</p>
             {homePage && homePage.map((nested) => nested.carousel.map((carousel, index) => (
@@ -82,7 +83,7 @@ const Home = () => {
                     </div>
                     ))}
         </div>
-    
+        <div class="elfsight-app-55ce35a0-0d2a-41cf-a6be-b1ff2d427fcf"></div>
         </HomeContainer>
     )
 };

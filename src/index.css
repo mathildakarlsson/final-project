@@ -18,7 +18,7 @@ color light beige: #F1EEEB  */
     -webkit-box-sizing: border-box;
     -moz-box-sizing: content-box; 
     text-rendering: optimizeLegibility;
-    background-color: #F1EEEB;
+    /* background-color: #F1EEEB; */
 }
 
 
