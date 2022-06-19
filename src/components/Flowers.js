@@ -1,4 +1,4 @@
-import { Container } from '@mui/system';
+// import { Container } from '@mui/system';
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import sanityClient from '../client.js';
@@ -93,6 +93,6 @@ const Section = styled.div `
     
 `
 
-const Header = styled.h1 `
-    /* padding-top: 300px; */
-`
+// const Header = styled.h1 `
+//     /* padding-top: 300px; */
+// `
