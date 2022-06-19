@@ -18,6 +18,7 @@ import Header from './components/Header';
 import { wishlist } from './reducers/wishlist'
 
 
+
 const reducer = combineReducers({
 	wishlist: wishlist.reducer,
 });

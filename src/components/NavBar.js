@@ -6,6 +6,10 @@ import styled from 'styled-components';
 import logo from '../assets/NSDlogga.png';
 import { MdMenu } from 'react-icons/md'
 import { Link } from 'react-router-dom'; 
+// import { useDispatch } from 'react-redux';
+// import { useSelector } from 'react-redux'
+// import { ui } from '../reducers/ui'
+import { TotalWishlistItems } from "./TotalWishlistItems";
 
 
 const Nav = styled.nav`
@@ -83,7 +87,26 @@ const linkStyle = {
 }
 
 
+// const BagButton = styled.button`
+//   font-family: 'Roboto', sans-serif;
+//   background: none;
+//   font-size: 16px;
+//   border: none;
+//   margin-left: 10px;
+//   padding: 0;
+//   outline: none;
+//   transition: all .2s ease-in-out; 
+//   &:hover {
+//     cursor: pointer;
+//     color: #ecd6ba;
+//   }
+// `
+
 const NavBar = ({ toggle }) => {
+
+    // const dispatch = useDispatch()
+    // const totalItems = useSelector((store) => (
+    //   store.cart.items.reduce((total, item) => (total + (item.quantity)), 0)))
 
     return (
         <Nav>
@@ -121,17 +144,17 @@ const NavBar = ({ toggle }) => {
                         >
                             Blommor
                         </NavLinks>
-                        <NavLinks to='/about' 
-                            activeClassName='active'
-                            style={linkStyle}
-                        >
-                            Om oss
-                        </NavLinks>
                         <NavLinks to='/services' 
                             activeClassName='active'
                             style={linkStyle}
                         >
                             Tjänster
+                        </NavLinks>
+                        <NavLinks to='/about' 
+                            activeClassName='active'
+                            style={linkStyle}
+                        >
+                            Om oss
                         </NavLinks>
                         <NavLinks to='/contact' 
                             activeClassName='active'
@@ -144,7 +167,11 @@ const NavBar = ({ toggle }) => {
                             style={linkStyle}
                         >
                             Varukorg
+                            <TotalWishlistItems />
                         </NavLinks>
+                        
+
+                        {/* <BagButton onClick={() => dispatch(ui.actions.openCart())}>Cart({totalItems})</BagButton> */}
                         </NavMenu>
                     </LinkContainer>
                

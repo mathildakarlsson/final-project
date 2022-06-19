@@ -66,12 +66,12 @@ const Sidebar = ({ isOpen, toggle }) => {
             <SideLinks to='/flowers'>
               Blommor
             </SideLinks>
-            <SideLinks to='/about'>
-              Om oss
-            </SideLinks>
             <SideLinks to='/services'>
               Tjänster
             </SideLinks> 
+            <SideLinks to='/about'>
+              Om oss
+            </SideLinks>
             <SideLinks to='/contact'>
               Kontakt
             </SideLinks> 
