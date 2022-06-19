@@ -12,6 +12,8 @@ import productVariant from './productVariant'
 import figure from './figure'
 import aboutUs from './pages/aboutUs'
 import flowers from './pages/flowers'
+import portfolio from './pages/portfolio'
+import homePage from './pages/homepage'
 
 import localeString from './locale/String'
 import localeText from './locale/Text'
@@ -39,5 +41,7 @@ export default createSchema({
     productVariant,
     figure,
     flowers,
+    portfolio,
+    homePage,
   ]),
 })
