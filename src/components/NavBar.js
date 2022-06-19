@@ -20,6 +20,7 @@ const NavBar = () => {
                                 src={logo}
                                 className="logo"
                                 style={linkStyle}
+                                alt="logo"
                             />
                         </NavLink>
                     </LogoContainer>
