@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import sanityClient from '../client.js';
+import Carousel from './Carousel';
 
 
 const Home = () => {
@@ -54,6 +55,7 @@ const Home = () => {
         <HomeContainer>
             
             <Welcome>Välkommen till Nordic Spells Decor!</Welcome>
+            <Carousel />
             <p>This is the Carousel images</p>
             {homePage && homePage.map((nested) => nested.carousel.map((carousel, index) => (
                 <Section key={index}>
