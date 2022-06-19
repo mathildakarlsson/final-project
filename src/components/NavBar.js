@@ -4,13 +4,89 @@ import styled from 'styled-components';
 // import HamburgerMenu from '../assets/Logos/icons8-menu.svg'
 // import { SocialIcon } from 'react-social-icons';
 import logo from '../assets/NSDlogga.png';
-// import PersistentDrawerRight from './Drawer.js';
-import Sidebar from './Sidebar';
+import { MdMenu } from 'react-icons/md'
+import { Link } from 'react-router-dom'; 
 
 
-const NavBar = () => {
+const Nav = styled.nav`
+  background: #F1EEEB;
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+    width: 100vw;
+    height: 17vh;
+`
+
+const NavContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  @media (min-width: 668px) {
+    max-width: 1300px;
+  }
+`
+
+const LogoContainer = styled.div `
+    margin: 10px 20px 0 20px;
+    padding: 0;
+`
+
+const LinkContainer = styled.div `
+    display: flex;
+    gap: 30px;
+    margin: 45px 70px 0px 0;
+    z-index: 999;
+`
+
+const Hamburger = styled.div`
+display: block;
+position: absolute;
+top: 0;
+right: 0;
+  transform: translate(-100%, 70%);
+  font-size: 2.5rem;
+  cursor: pointer;
+  @media (min-width: 668px) {
+    display: none;
+  }
+`
+
+const HamburgerIcon = styled(MdMenu)`
+  cursor: pointer;
+  color: #fff;
+`
+
+const NavMenu = styled.ul`
+  display: none;
+  @media (min-width: 668px) {
+    display: flex;
+    align-items: center;
+
+  }
+`
+
+const NavLinks = styled(Link)`
+display: flex;
+align-items: center;
+text-decoration: none;
+padding: 0 1rem;
+  cursor: pointer;
+  :hover {
+    border-bottom: 3px solid white;
+  }
+`
+const linkStyle = {
+    color: "black",
+    fontSize: "15px",
+    fontWeight: "300",
+    textTransform: "uppercase",
+}
+
+
+const NavBar = ({ toggle }) => {
+
     return (
-        <Header>
+        <Nav>
             <NavContainer>
                     <LogoContainer>
                         <NavLink
@@ -26,99 +102,66 @@ const NavBar = () => {
                     </LogoContainer>
 
                     <LinkContainer>
-                        <NavLink to='/rentals' 
+
+                    <Hamburger onClick={toggle}>
+                    <HamburgerIcon />
+                  </Hamburger>
+
+                    <NavMenu>
+
+                        <NavLinks to='/rentals' 
                             activeClassName='active'
                             style={linkStyle}
                         >
                             Hyrsaker
-                        </NavLink>
-                        <NavLink to='/flowers' 
+                        </NavLinks>
+                        <NavLinks to='/flowers' 
                             activeClassName='active'
                             style={linkStyle}
                         >
                             Blommor
-                        </NavLink>
-                        <NavLink to='/about' 
+                        </NavLinks>
+                        <NavLinks to='/about' 
                             activeClassName='active'
                             style={linkStyle}
                         >
                             Om oss
-                        </NavLink>
-                        <NavLink to='/services' 
+                        </NavLinks>
+                        <NavLinks to='/services' 
                             activeClassName='active'
                             style={linkStyle}
                         >
                             Tjänster
-                        </NavLink>
-                        <NavLink to='/contact' 
+                        </NavLinks>
+                        <NavLinks to='/contact' 
                             activeClassName='active'
                             style={linkStyle}
                         >
                             Kontakt
-                        </NavLink>
-                        <NavLink to='/wishlist' 
+                        </NavLinks>
+                        <NavLinks to='/wishlist' 
                             activeClassName='active'
                             style={linkStyle}
                         >
                             Varukorg
-                        </NavLink>
+                        </NavLinks>
+                        </NavMenu>
                     </LinkContainer>
-                {/* <Hamburger src={HamburgerMenu}/> */}
-                {/* <PersistentDrawerRight/> */}
-                <div className="App" id="outer-container">
-                <Sidebar pageWrapId={'page-wrap'} outerContainerId={'outer-container'} />
-                <div id="page-wrap">
-                    </div>
-                    </div>
+               
             </NavContainer>
-        </Header>
+        </Nav>
     )
 };
 
 export default NavBar;
-
-const Header = styled.header `
-    /* display: flex; */
-    /* justify-content: space-between; */
-
-    `
-
-const NavContainer = styled.nav`
-    display: flex;
-    justify-content: space-between;
-    position: fixed;
-    width: 100vw;
-    height: 17vh;
-`
-
-const LogoContainer = styled.div `
-    margin: 10px 20px 0 20px;
-    padding: 0;
-
-`
-
-const LinkContainer = styled.div `
-    display: flex;
-    gap: 30px;
-    margin: 45px 70px 0px 0;
-    z-index: 999;
-`
-
-const linkStyle = {
-    color: "black",
-    fontSize: "15px",
-    fontWeight: "300",
-    textTransform: "uppercase",
-}
 
 // const logoStyle = {
 //     width: "50px",
 //     height: "70px",
 // }
 
-
-
-
+/* <Hamburger src={HamburgerMenu}/> */
+                /* <PersistentDrawerRight/> */
 
 
                 // KOD TILL HAMBURGER MENU

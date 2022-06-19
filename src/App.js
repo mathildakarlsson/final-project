@@ -6,7 +6,6 @@ import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import Home from './components/Home';
 import SingleRentalsItem from './components/SingleRentalsItem';
 import Rentals from './components/Rentals';
-import NavBar from './components/NavBar';
 import BookingForm from './components/BookingForm';
 // import WishList from './components/WishList';
 import SuccessPage from './components/SuccessPage';
@@ -14,7 +13,7 @@ import About from './components/About';
 import Flowers from './components/Flowers';
 import Contact from './components/Contact';
 import Services from './components/Services';
-
+import Header from './components/Header';
 
 import { wishlist } from './reducers/wishlist'
 
@@ -29,7 +28,7 @@ export const App = () => {
   return (
     <Provider store={store}>
       <BrowserRouter>
-        <NavBar />
+        <Header />
         <Routes>
           <Route element={<Home />} path='/'/>
           <Route element={<SingleRentalsItem />} path='product/:slug' />
