@@ -1,14 +1,88 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-
-import Carousel1 from '../assets/KARUSELL1.jpg';
+import sanityClient from '../client.js';
 
 
 const Home = () => {
+    const [homePage, setHomePage] = useState(null);
+
+    useEffect(() => {
+        sanityClient.fetch(
+            `*[_type == "homePage"] {
+                _id,
+                carousel[]{
+                  asset->{
+                  _id,
+                  url,
+                },
+                },
+              homeOne{
+                image{
+                asset->{
+                url,
+              },
+              },
+              },
+              homeTwo{
+                image{
+                asset->{
+                url,
+              },
+              },
+              },
+              homeThree{
+                image{
+                asset->{
+                url,
+              },
+              },
+              },
+              }`
+        )
+            .then((data) => {
+                setHomePage(data)
+             
+                console.log(data)
+            })     
+    }, []);
+
+
+    
+
+
     return (
         <HomeContainer>
-            <Image src={Carousel1}/>
             <Welcome>Välkommen till Nordic Spells Decor!</Welcome>
+            <p>This is the Carousel images</p>
+            {homePage && homePage.map((nested) => nested.carousel.map((carousel, index) => (
+                <Section key={index}>
+                <Image
+                    key={index}
+                    src={carousel.asset.url}
+                    alt={carousel}
+                />
+            </Section>
+        )))}
+        <p>This is the other images</p>
+        <div>
+                {homePage && homePage.map((homePage, index) => (
+                    <div key={index}>
+                        <Image
+                            src={homePage.homeOne.image.asset.url}
+                            alt={homePage.title}
+                        />
+                        <Image
+                            src={homePage.homeTwo.image.asset.url}
+                            alt={homePage.title}
+                        />
+                        <Image
+                            src={homePage.homeThree.image.asset.url}
+                            alt={homePage.title}
+                        />
+                    </div>
+                    ))}
+        </div>
+    
         </HomeContainer>
     )
 };
@@ -22,6 +96,13 @@ const HomeContainer = styled.section `
     align-items: center;
     flex-direction: column;
 `
+const Section = styled.div `
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    /* align-items: center; */
+    justify-content: center;
+    
+`
 
 const Image = styled.img `
     width: 75%;
@@ -31,5 +112,5 @@ const Image = styled.img `
 
 const Welcome = styled.h1 `
     font-weight: 300;
-    margin-bottom: 90px;
+    padding-top: 200px;
 `

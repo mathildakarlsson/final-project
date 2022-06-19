@@ -20,5 +20,9 @@ export default {
         name: 'portfolioThree',
         type: 'figure',
       },
+      {
+        name: 'portfolioFour',
+        type: 'figure',
+      },
     ],
   };
