@@ -6,20 +6,11 @@ import WishListItem from './WishListItem';
 // import swal from '@sweetalert/with-react';
 // import { wishlist } from '../reducers/wishlist';
 
-
-
-
 const BookingForm = () => {
-
-
-
     const products = useSelector((store) => store.wishlist.items)
     const totalPrice = useSelector((store) => (
         store.wishlist.items.reduce((total, item) => (total + (item.price * item.quantity)), 0)
     ))
-
-   
-
         
     const [mailerState, setMailerState] = useState ({
         name: "",
@@ -44,14 +35,6 @@ const BookingForm = () => {
 
         const data = mailerState;
         data.products = {products}
-
-        // const replacer = (key, value) => {
-        //     if (key === products.mainImage) {
-        //         console.log(key)
-        //       return undefined;
-        //     }
-        //     return value;
-        //   }
 
         // const response = await fetch("http://localhost:8090/send", {
         //     method: "POST",
@@ -113,11 +96,12 @@ const BookingForm = () => {
 
 
     return (
-        <section className="formy-form">
-            <h2>Planning a wedding or an event?</h2>
-            <h2>Send your booking request down below!</h2>
+        <FormyForm>
             <div>
-                <div>
+            <FormHeader>Don't be a stranger!</FormHeader>
+        <FormText>Skriv till oss om dina önskemål så återkommer vi inom det närmaste.</FormText>
+        </div>
+                <Formwrapper>
                     <form
                         // name="wishlistform"
                         // id="wishlistform"
@@ -126,10 +110,11 @@ const BookingForm = () => {
                         onSubmit={submitEmail}
                      >    
                            {/* <input type="hidden" name="form-name" value="wishlistform" /> */}
+                           <div>
                         <ul>
                             <li>
                             <label className="custom-field">
-                                Name
+                                Namn
                                 <input 
                                     type="text"
                                     name="name"
@@ -143,7 +128,7 @@ const BookingForm = () => {
                  
                             <li>
                             <label className="custom-field">
-                                Phone number
+                                Telefonnummer
                                 <input
                                     type="tel" 
                                     name="phonenumber"
@@ -196,11 +181,13 @@ const BookingForm = () => {
     
                             <li>
                                 <label className="custom-field">
-                                    Message
+                                    Meddelande
                                 </label>
                                 <textarea
                                     placeholder="Skriv ett meddelande här"
                                     name="message"
+                                    maxlength="2000"
+                                    rows="10"
                                     value={mailerState.message}
                                     onChange={handleStateChange}    
                                 >
@@ -208,7 +195,7 @@ const BookingForm = () => {
                             </li>
 
                             <li>
-                                <label className="custom-field">
+                                {/* <label className="custom-field">
                                     Hyrsaker
                                 </label>
                                 <textarea
@@ -217,38 +204,93 @@ const BookingForm = () => {
                                     onChange={handleStateChange}    
                                 >
 
-                                </textarea>
+                                </textarea> */}
                             </li>
                  
                             <li>
-                                <FormButton type="submit">Send</FormButton>
+                                <ButtonWrapper>
+                                <FormButton type="submit">Skicka</FormButton>
+                                </ButtonWrapper>
                              </li>
                  
                         </ul>
+                        </div>
                     </form>
-                </div>
-            </div>
-            <section className="wishlist">
-                <ul className="wishlist-ul">
+                </Formwrapper>
+           
+            <section>
+            <FormButtonText>Total kostnad: {totalPrice} SEK</FormButtonText>
+                <div>
+                    <ul className="form-products">
                     {products.map((product, index) => {
                         return(
                             <WishListItem key={index} product={product} />
                         )
                     })}
-                </ul>
-                <p className="total">Total cost: {totalPrice} SEK</p>
+                    </ul>
+                </div>
             </section>
-        </section>
+        </FormyForm>
     )
 
 };
 
 export default BookingForm;
 
+const FormyForm = styled.section`
+padding-top: 8rem;
+@media (min-width: 768px) {
+    padding-top: 10rem;
+  }
+ 
+`
+
+const FormHeader = styled.h2 `
+    display: flex;
+    justify-content: center;
+    font-weight: 300;
+    font-size: 25px;
+    padding-bottom: 20px;
+    @media (max-width: 768px) {
+        font-size: 35px;
+      }
+`
+
+const FormText = styled.p`
+    display: flex;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 300;
+    margin: 1rem 0px 0 3rem;
+    line-height: 1.8em;
+    padding-bottom: 1rem;
+`
+const Formwrapper = styled.form`
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+`
+
+const ButtonWrapper = styled.div`
+display: flex;
+justify-content: center;
+`
+
+const FormButtonText = styled.h4`
+    display: flex;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.8em;
+    padding-bottom: 1rem;
+`
 
 const FormButton = styled.button`
-    width: 55%;
-    margin: 15px 0 65px 0;
+    display: flex;
+    justify-content: center;
+    align-item: center;
+    width: 100%;
+    margin: 2rem 0 2rem 0;
     cursor: pointer;
     border: none;
     font-size: 16px;
@@ -265,4 +307,11 @@ const FormButton = styled.button`
     transition: 0.7s ease;
     /* height: 30px; */
     }
-`;
+`
+// const FormWishlistItems = styled.div`
+//     display: grid;
+//     justify-content: center;
+//     align-item: center;
+// `
+
+;

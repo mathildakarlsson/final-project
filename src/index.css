@@ -18,7 +18,7 @@ color light beige: #F1EEEB  */
     -webkit-box-sizing: border-box;
     -moz-box-sizing: content-box; 
     text-rendering: optimizeLegibility;
-    /* background-color: #F1EEEB; */
+    background-color: #F1EEEB;
 }
 
 
@@ -538,7 +538,7 @@ color light beige: #F1EEEB  */
   background: white;
   padding: 10px;
   border-radius: 3px;
-  width: 500px;
+  width: 15rem;
   font-size: 14px;
   margin: 15px;
 }
@@ -554,11 +554,44 @@ textarea {
   background: white;
   padding: 10px;
   border-radius: 3px;
-  width: 500px;
+  width: 15rem;
   font-size: 14px;
   resize: none;
   margin: 15px;
 }
+
+.form-products {
+  display: grid;
+     justify-content: center;
+       align-items: center;
+
+  /* display: grid;
+  grid-template-columns: repeat(1,1fr);
+    justify-content: center;
+    align-items: center;
+    padding: 2rem; */
+}
+
+
+@media (min-width: 768px) {
+
+  textarea {
+    width: 20rem;
+  }
+  .custom-field input {
+    width: 20rem;
+
+  }
+
+  .form-products {
+    list-style-type: none;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 90px;
+  }
+  
+}
+
 
 /* .form-container {
   display: flex;
@@ -640,10 +673,6 @@ label a:hover {
   background-color: rgb(110, 76, 76);
 } */
 
-
-.formy-form {
-  padding-top: 200px;
-}
 
 .swal-button--confirm {
   width: 8rem;
