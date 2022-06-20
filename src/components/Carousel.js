@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import styled from 'styled-components';
+// import styled from 'styled-components';
 import sanityClient from '../client.js';
 
 // import carousel1 from "../assets/hero-image.jpg";

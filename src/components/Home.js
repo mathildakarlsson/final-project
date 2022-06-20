@@ -82,13 +82,13 @@ const HomeContainer = styled.section `
     align-items: center;
     flex-direction: column;
 `
-const Section = styled.div `
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    /* align-items: center; */
-    justify-content: center;
+// const Section = styled.div `
+//     display: grid;
+//     grid-template-columns: repeat(1, 1fr);
+//     /* align-items: center; */
+//     justify-content: center;
     
-`
+// `
 
 const Image = styled.img `
     width: 75%;
