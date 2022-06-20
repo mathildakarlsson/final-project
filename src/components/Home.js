@@ -32,6 +32,13 @@ const Home = () => {
                         },
                     },
                 },
+                homeFour{
+                    image{
+                        asset->{
+                            url,
+                        },
+                    },
+                },
             }`
         )
             .then((data) => {
@@ -48,7 +55,12 @@ const Home = () => {
     return (
         <HomeContainer>
             <Carousel />
-        {/* <Container> */}
+            <InfoContainer>
+                    <Header>Vi är</Header>
+                    <Header>Nordic Spells Decor</Header>
+                    <Info>Ett team entusiastiska kreatörer. Vi kombinerar eventdesign, floristtjänster och handplockade hyrsaker för att skapa personliga och pintrestvänliga event! Hyr dekoration av oss, beställ blomsterarrangemang eller låt oss skapa hela atmosfären.</Info>
+                    <Info>Vi gör din dag alldeles särskilt mycket du!</Info>
+                </InfoContainer>
                 {homePage && homePage.map((homePage, index) => (
                     <ImageContainer key={index}>
                         <ImageWrapper>
@@ -69,6 +81,12 @@ const Home = () => {
                                 alt={homePage.title}
                             />
                         </ImageWrapper>
+                        <ImageWrapper>
+                            <Image
+                                src={homePage.homeFour.image.asset.url}
+                                alt={homePage.title}
+                            />
+                        </ImageWrapper>
                     </ImageContainer>
                     ))}
         {/* </Container> */}
@@ -79,46 +97,82 @@ const Home = () => {
 
 export default Home;
 
-const ImageWrapper = styled.div `
-    max-width: 40vw;
+const InfoContainer = styled.div `
+    padding: 100px 0 80px 0;
+    margin: 0px 30px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-self: center;
+    justify-self: center;
+
+    @media (min-width: 668px) {
+        width: 900px;
+    }
 `
 
-// const Container = styled.section `
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-// `
+const Header = styled.h1 `
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: 30px;
+    letter-spacing: .15em;
+
+    @media (min-width: 668px) {
+        font-size: 37px;
+        letter-spacing: .2em;
+    }
+
+`
+
+const Info = styled.h4 `
+    font-weight: 300;
+    margin: 12px 0;
+    line-height: 28px;
+    padding-top: 15px;
+
+    @media (min-width: 668px) {
+        font-size: 18px;
+        letter-spacing: .03em
+    }
+`
+
+const ImageWrapper = styled.div `
+    max-width: 40vw;
+    display: flex;
+    justify-content: center;
+`
 
 const ImageContainer = styled.div `
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(1, 1fr);
     gap: 50px;
-    /* justify-content: space-between; */
-    /* margin-left: 50px; */
-    /* align-items: center; */
-    /* align-content: center; */
     align-self: center;
+
+    @media (min-width: 668px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (min-width: 992px) {
+        gap: 100px;
+    }
+
+  
 `
 
 
 const HomeContainer = styled.section `
     display: flex;
     justify-content: center;
-    /* align-items: center; */
     flex-direction: column;
     background-color: #F1EEEB;
 `
-// const Section = styled.div `
-//     display: grid;
-//     grid-template-columns: repeat(1, 1fr);
-//     /* align-items: center; */
-//     justify-content: center;
-    
-// `
 
 const Image = styled.img `
-    max-width: 100%;
     width: auto;
-    margin: 120px 0;
     object-fit: contain;
+    max-height: 80vh;
+
+    @media (min-width: 992px) {
+        max-height: 100vh;
+    }
 `

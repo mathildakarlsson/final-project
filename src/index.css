@@ -62,7 +62,7 @@ body {
   height: auto;
   padding-top: 105px;
   overflow: visible;
-  margin-bottom: 300px;
+  /* margin-bottom: 300px; */
 }
 
 .slides {
