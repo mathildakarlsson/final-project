@@ -14,6 +14,7 @@ import aboutUs from './pages/aboutUs'
 import flowers from './pages/flowers'
 import portfolio from './pages/portfolio'
 import homePage from './pages/homepage'
+import carousel from './pages/carousel'
 
 import localeString from './locale/String'
 import localeText from './locale/Text'
@@ -43,5 +44,6 @@ export default createSchema({
     flowers,
     portfolio,
     homePage,
+    carousel,
   ]),
 })
