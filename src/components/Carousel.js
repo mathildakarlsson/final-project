@@ -2,10 +2,6 @@ import React, { useState, useEffect } from 'react';
 // import styled from 'styled-components';
 import sanityClient from '../client.js';
 
-// import carousel1 from "../assets/hero-image.jpg";
-// import carousel2 from "../assets/nathan-dumlao-5BB_atDT4oA-unsplash.jpg";
-// import carousel3 from "../assets/second-desktop-image.jpg";
-// import carousel4 from "../assets/sinitta-leunen-dS87qokCAC4-unsplash.jpg";
 
 const Carousel = () => {
     const [carouselData, setCarouselData] = useState(null);

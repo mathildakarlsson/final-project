@@ -48,49 +48,106 @@ const Flowers = () => {
         //         </div>
         //     )))}
         // </Section>
-        
-            <ImageContainer>
+        <Section>
+                <InfoContainer>
+                    <Header>Blommor</Header>
+                    <Info>Nordic Spells Decor erbjuder liv och rörelse till bröllop och event genom säsongens blommor och blad! Blomsterbågar, bordsdekoration, buketter, kransar, corsager och mycket där till.</Info>
+                    <Info>Välkommen att höra av dig till oss med dina önskemål så återkommer vi med offert för dig att ta ställning. Låt dig gärna inspireras av bilderna här!</Info>
+                </InfoContainer>
+
+            <Container>
                 {flowersData && flowersData.map((nested) => nested.flowerImagesMobile.map((flowerImagesMobile, index) => (
-                    <Section key={index}>
+                    <ImageContainer key={index}>
                     {/* <Header>{flowerImagesMobile.title}</Header> */}
                         <Image
                             key={index}
                             src={flowerImagesMobile.asset.url}
                             alt={flowerImagesMobile}
                         />
-                    </Section>
+                    </ImageContainer>
                 )))}
-            </ImageContainer>
-
+            </Container>
+            </Section>
     )
 };
 
 export default Flowers;
 
-const ImageContainer = styled.div `
+const Section = styled.section `
     display: flex;
-    /* justify-content: center; */
     flex-direction: column;
-    /* align-items: center; */
 
+
+`
+
+const InfoContainer = styled.div `
+    padding-top: 170px;
+    margin: 0px 30px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-self: center;
+    justify-self: center;
+
+    @media (min-width: 668px) {
+        width: 800px;
+    }
+`
+
+const Header = styled.h1 `
+    text-transform: uppercase;
+    font-weight: 300;
+    padding-bottom: 15px;
+    font-size: 32px;
+    letter-spacing: .15em;
+
+    @media (min-width: 668px) {
+        font-size: 37px;
+        letter-spacing: .2em;
+    }
+
+`
+
+const Info = styled.h4 `
+    font-weight: 300;
+    margin: 12px 0;
+    line-height: 28px;
+
+    @media (min-width: 668px) {
+        font-size: 18px;
+        letter-spacing: .03em;
+    }
+`
+
+const ImageContainer = styled.div `
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    justify-self: center;
 `
 
 const Image = styled.img `
-    height: 70%;
-    width: 70%;
-    padding: 0;
-    margin-top: 30px;
-    /* margin-left: 50px; */
-    border-radius: 1%;
-    
+    max-width: 100%;
+    width: auto;
+    object-fit: contain;
+    max-height: 80vh;
 `
 
-const Section = styled.div `
+const Container = styled.section `
+    padding-top: 50px;
     display: grid;
     grid-template-columns: repeat(1, 1fr);
-    /* align-items: center; */
-    justify-content: center;
-    
+    gap: 20px;
+    margin: 30px;
+
+    @media (min-width: 668px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (min-width: 992px) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+  
 `
 
 // const Header = styled.h1 `
