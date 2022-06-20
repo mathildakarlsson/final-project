@@ -21,6 +21,10 @@ color light beige: #F1EEEB  */
     /* background-color: #F1EEEB; */
 }
 
+body {
+  background-color: #F1EEEB;
+}
+
 
   a {
     text-decoration: none;
@@ -54,9 +58,9 @@ color light beige: #F1EEEB  */
 /* --------- IMAGE CAROUSEL WILL CHANGE CODE----------- */
 
 .slider {
-  width: 800px;
-  height: 500px;
-  padding-top: 200px;
+  width: 100vw;
+  height: auto;
+  padding-top: 105px;
   overflow: visible;
   margin-bottom: 300px;
 }
@@ -72,13 +76,14 @@ color light beige: #F1EEEB  */
 }
 
 .slide {
-  width: 20%;
+  width: auto;
   transition: 2s;
 }
 
 .slide img {
-  width: 800px;
-  height: 500px;
+  width: auto;
+  height: 70vh;
+  object-fit: contain;
 }
 
 

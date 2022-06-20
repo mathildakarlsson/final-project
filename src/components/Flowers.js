@@ -49,18 +49,18 @@ const Flowers = () => {
         //     )))}
         // </Section>
         
-            <ImageContainer>
+            <Container>
                 {flowersData && flowersData.map((nested) => nested.flowerImagesMobile.map((flowerImagesMobile, index) => (
-                    <Section key={index}>
+                    <ImageContainer key={index}>
                     {/* <Header>{flowerImagesMobile.title}</Header> */}
                         <Image
                             key={index}
                             src={flowerImagesMobile.asset.url}
                             alt={flowerImagesMobile}
                         />
-                    </Section>
+                    </ImageContainer>
                 )))}
-            </ImageContainer>
+            </Container>
 
     )
 };
@@ -68,29 +68,26 @@ const Flowers = () => {
 export default Flowers;
 
 const ImageContainer = styled.div `
-    display: flex;
-    /* justify-content: center; */
-    flex-direction: column;
-    /* align-items: center; */
-
+  justify-content: center;
+    align-items: center;
+    align-self: center;
+    justify-self: center;
 `
 
 const Image = styled.img `
-    height: 70%;
-    width: 70%;
-    padding: 0;
-    margin-top: 30px;
-    /* margin-left: 50px; */
-    border-radius: 1%;
-    
+    max-width: 100%;
+    width: auto;
+    object-fit: contain;
+    max-height: 80vh;
 `
 
-const Section = styled.div `
+const Container = styled.section `
+    padding-top: 120px;
     display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    /* align-items: center; */
-    justify-content: center;
-    
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin: 20px;
+  
 `
 
 // const Header = styled.h1 `
