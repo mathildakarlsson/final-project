@@ -260,7 +260,7 @@ const FormText = styled.p`
     display: flex;
     justify-content: center;
     font-size: 16px;
-    font-weight: 300;
+    font-weight: 305;
     margin: 1rem 0px 0 3rem;
     line-height: 1.8em;
     padding-bottom: 1rem;
