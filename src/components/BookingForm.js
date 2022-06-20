@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import styled from 'styled-components';
 
 import WishListItem from './WishListItem';
-import swal from '@sweetalert/with-react';
+// import swal from '@sweetalert/with-react';
 // import { wishlist } from '../reducers/wishlist';
 
 
@@ -79,22 +79,22 @@ const BookingForm = () => {
             const resData = await res;
             console.log(resData);
             if (resData.status === "success") {
-                // alert("Message Sent!");
-                swal({
-                    title: 'Din förfrågan har skickats!',
-                    text: 'Tack för ditt mail! Vi hör av oss inom kort när vi sett över dina önskemål och tillgänglighet!',
-                    // icon: 'success',
-                    button: 'Ok',
-                });
+                alert("Message Sent!");
+                // swal({
+                //     title: 'Din förfrågan har skickats!',
+                //     text: 'Tack för ditt mail! Vi hör av oss inom kort när vi sett över dina önskemål och tillgänglighet!',
+                //     // icon: 'success',
+                //     button: 'Ok',
+                // });
 
             } else if (resData.status === "fail") {
-                // alert("Message failed to send");
-                swal({
-                    title: 'Din förfrågan kunde inte skickas.',
-                    text: 'Ajdå, något verkar ha gått fel! Kontakta oss gärna direkt på nordicspellsdecor@gmail.com så pratar vi vidare där!',
-                    // icon: 'success',
-                    button: 'Ok',
-                });
+                alert("Message failed to send");
+                // swal({
+                //     title: 'Din förfrågan kunde inte skickas.',
+                //     text: 'Ajdå, något verkar ha gått fel! Kontakta oss gärna direkt på nordicspellsdecor@gmail.com så pratar vi vidare där!',
+                //     // icon: 'success',
+                //     button: 'Ok',
+                // });
             }
         })
         .then(() => {
