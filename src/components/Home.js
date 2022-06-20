@@ -11,34 +11,28 @@ const Home = () => {
         sanityClient.fetch(
             `*[_type == "homePage"] {
                 _id,
-                carousel[]{
-                  asset->{
-                  _id,
-                  url,
+                homeOne{
+                    image{
+                        asset->{
+                            url,
+                        },
+                    },
                 },
+                homeTwo{
+                    image{
+                        asset->{
+                            url,
+                        },
+                    },
                 },
-              homeOne{
-                image{
-                asset->{
-                url,
-              },
-              },
-              },
-              homeTwo{
-                image{
-                asset->{
-                url,
-              },
-              },
-              },
-              homeThree{
-                image{
-                asset->{
-                url,
-              },
-              },
-              },
-              }`
+                homeThree{
+                    image{
+                        asset->{
+                            url,
+                        },
+                    },
+                },
+            }`
         )
             .then((data) => {
                 setHomePage(data)
@@ -56,17 +50,6 @@ const Home = () => {
             
             <Welcome>Välkommen till Nordic Spells Decor!</Welcome>
             <Carousel />
-            <p>This is the Carousel images</p>
-            {homePage && homePage.map((nested) => nested.carousel.map((carousel, index) => (
-                <Section key={index}>
-                <Image
-                    key={index}
-                    src={carousel.asset.url}
-                    alt={carousel}
-                />
-            </Section>
-        )))}
-        <p>This is the other images</p>
         <div>
                 {homePage && homePage.map((homePage, index) => (
                     <div key={index}>

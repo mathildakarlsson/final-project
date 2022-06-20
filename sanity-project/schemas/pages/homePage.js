@@ -9,19 +9,6 @@ export default {
         title: 'Title',
       },
       {
-        name: 'carousel',
-        title: 'carousel',
-        type: 'array',
-        of: [
-          {
-            type: 'image',
-            options: {
-              hotspot: true,
-            },
-          },
-        ],
-      },
-      {
         name: 'homeOne',
         type: 'figure',
       },
