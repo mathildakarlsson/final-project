@@ -56,8 +56,9 @@ color light beige: #F1EEEB  */
 .slider {
   width: 800px;
   height: 500px;
-  border-radius: 10px;
-  overflow: hidden;
+  padding-top: 200px;
+  overflow: visible;
+  margin-bottom: 300px;
 }
 
 .slides {

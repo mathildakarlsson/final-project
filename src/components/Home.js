@@ -47,27 +47,31 @@ const Home = () => {
 
     return (
         <HomeContainer>
-            
-            <Welcome>Välkommen till Nordic Spells Decor!</Welcome>
             <Carousel />
-        <div>
+        {/* <Container> */}
                 {homePage && homePage.map((homePage, index) => (
-                    <div key={index}>
-                        <Image
-                            src={homePage.homeOne.image.asset.url}
-                            alt={homePage.title}
-                        />
-                        <Image
-                            src={homePage.homeTwo.image.asset.url}
-                            alt={homePage.title}
-                        />
-                        <Image
-                            src={homePage.homeThree.image.asset.url}
-                            alt={homePage.title}
-                        />
-                    </div>
+                    <ImageContainer key={index}>
+                        <ImageWrapper>
+                            <Image
+                                src={homePage.homeOne.image.asset.url}
+                                alt={homePage.title}
+                            />
+                        </ImageWrapper>
+                        <ImageWrapper>
+                            <Image
+                                src={homePage.homeTwo.image.asset.url}
+                                alt={homePage.title}
+                            />
+                        </ImageWrapper>
+                        <ImageWrapper>
+                            <Image
+                                src={homePage.homeThree.image.asset.url}
+                                alt={homePage.title}
+                            />
+                        </ImageWrapper>
+                    </ImageContainer>
                     ))}
-        </div>
+        {/* </Container> */}
         {/* <div class="elfsight-app-55ce35a0-0d2a-41cf-a6be-b1ff2d427fcf"></div> */}
         </HomeContainer>
     )
@@ -75,28 +79,46 @@ const Home = () => {
 
 export default Home;
 
+const ImageWrapper = styled.div `
+    max-width: 40vw;
+`
+
+// const Container = styled.section `
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+// `
+
+const ImageContainer = styled.div `
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 50px;
+    /* justify-content: space-between; */
+    /* margin-left: 50px; */
+    /* align-items: center; */
+    /* align-content: center; */
+    align-self: center;
+`
+
 
 const HomeContainer = styled.section `
     display: flex;
     justify-content: center;
-    align-items: center;
-    flex-direction: column;
-`
-const Section = styled.div `
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
     /* align-items: center; */
-    justify-content: center;
-    
+    flex-direction: column;
+    background-color: #F1EEEB;
 `
+// const Section = styled.div `
+//     display: grid;
+//     grid-template-columns: repeat(1, 1fr);
+//     /* align-items: center; */
+//     justify-content: center;
+    
+// `
 
 const Image = styled.img `
-    width: 75%;
-    height: 75%;
+    max-width: 100%;
+    width: auto;
     margin: 120px 0;
-`
-
-const Welcome = styled.h1 `
-    font-weight: 300;
-    padding-top: 200px;
+    object-fit: contain;
 `

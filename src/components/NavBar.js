@@ -14,12 +14,15 @@ import { TotalWishlistItems } from "./TotalWishlistItems";
 
 
 const Nav = styled.nav`
-  background: #F1EEEB;
-  display: flex;
-  justify-content: space-between;
-  position: fixed;
+    background: #F1EEEB;
+    display: flex;
+    overflow: scroll;
+    justify-content: space-between;
+    position: fixed;
     width: 100vw;
-    height: 17vh;
+    height: 15vh;
+    z-index: 999;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
 `
 
 const NavContainer = styled.div`
@@ -32,7 +35,7 @@ const NavContainer = styled.div`
 `
 
 const LogoContainer = styled.div `
-    margin: 10px 20px 0 20px;
+    margin: 0 20px 10px 20px;
     padding: 0;
 `
 
@@ -105,6 +108,12 @@ const linkStyle = {
     textTransform: "uppercase",
 }
 
+const logoStyle = {
+    height: "auto",
+    width: "140px",
+    // margin: "0 20px 10px 20px",
+}
+
 
 const NavBar = ({ toggle }) => {
 
@@ -118,7 +127,7 @@ const NavBar = ({ toggle }) => {
                             <img 
                                 src={logo}
                                 className="logo"
-                                style={linkStyle}
+                                style={logoStyle}
                                 alt="logo"
                             />
                         </NavLink>
