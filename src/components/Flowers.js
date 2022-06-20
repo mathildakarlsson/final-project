@@ -48,7 +48,13 @@ const Flowers = () => {
         //         </div>
         //     )))}
         // </Section>
-        
+        <Section>
+                <InfoContainer>
+                    <Header>Blommor</Header>
+                    <Info>Nordic Spells Decor erbjuder liv och rörelse till bröllop och event genom säsongens blommor och blad! Blomsterbågar, bordsdekoration, buketter, kransar, corsager och mycket där till.</Info>
+                    <Info>Välkommen att höra av dig till oss med dina önskemål så återkommer vi med offert för dig att ta ställning. Låt dig gärna inspireras av bilderna här!</Info>
+                </InfoContainer>
+
             <Container>
                 {flowersData && flowersData.map((nested) => nested.flowerImagesMobile.map((flowerImagesMobile, index) => (
                     <ImageContainer key={index}>
@@ -61,14 +67,60 @@ const Flowers = () => {
                     </ImageContainer>
                 )))}
             </Container>
-
+            </Section>
     )
 };
 
 export default Flowers;
 
+const Section = styled.section `
+    display: flex;
+    flex-direction: column;
+
+
+`
+
+const InfoContainer = styled.div `
+    padding-top: 170px;
+    margin: 0px 30px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-self: center;
+    justify-self: center;
+
+    @media (min-width: 668px) {
+        width: 800px;
+    }
+`
+
+const Header = styled.h1 `
+    text-transform: uppercase;
+    font-weight: 300;
+    padding-bottom: 15px;
+    font-size: 32px;
+    letter-spacing: .15em;
+
+    @media (min-width: 668px) {
+        font-size: 37px;
+        letter-spacing: .2em;
+    }
+
+`
+
+const Info = styled.h4 `
+    font-weight: 300;
+    margin: 12px 0;
+    line-height: 28px;
+
+    @media (min-width: 668px) {
+        font-size: 18px;
+        letter-spacing: .03em;
+    }
+`
+
 const ImageContainer = styled.div `
-  justify-content: center;
+    justify-content: center;
     align-items: center;
     align-self: center;
     justify-self: center;
@@ -82,11 +134,19 @@ const Image = styled.img `
 `
 
 const Container = styled.section `
-    padding-top: 120px;
+    padding-top: 50px;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-    margin: 20px;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+    margin: 30px;
+
+    @media (min-width: 668px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (min-width: 992px) {
+        grid-template-columns: repeat(3, 1fr);
+    }
   
 `
 

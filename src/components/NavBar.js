@@ -116,6 +116,8 @@ const logoStyle = {
 }
 
 
+
+
 const NavBar = ({ toggle }) => {
 
     return (
