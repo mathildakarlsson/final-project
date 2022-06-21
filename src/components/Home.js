@@ -61,11 +61,11 @@ const Home = () => {
                     <Header>Nordic Spells Decor</Header>
                     <Info>Ett team entusiastiska kreatörer. Vi kombinerar eventdesign, floristtjänster och handplockade hyrsaker för att skapa personliga och pintrestvänliga event! Hyr dekoration av oss, beställ blomsterarrangemang eller låt oss skapa hela atmosfären.</Info>
                     <Info>Vi gör din dag alldeles särskilt mycket du!</Info>
-                </InfoContainer>
-                {homePage && homePage.map((homePage, index) => (
-                    <ImageContainer key={index}>
-                        <ImageWrapper>
-                            <NavLink to='/flowers'>
+            </InfoContainer>
+            {homePage && homePage.map((homePage, index) => (
+                <ImageContainer key={index}>
+                    <ImageWrapper>
+                        <NavLink to='/flowers'>
                                 <Image
                                     src={homePage.homeOne.image.asset.url}
                                     alt={homePage.title}
@@ -90,10 +90,8 @@ const Home = () => {
                                     src={homePage.homeThree.image.asset.url}
                                     alt={homePage.title}
                                 />
-                                {/* <Hover> */}
                                     <Overlay></Overlay>
                                     <CardInfo>HYRSAKER</CardInfo>
-                                {/* </Hover> */}
                             </NavLink>
                         </ImageWrapper>
                         <ImageWrapper>
@@ -104,12 +102,11 @@ const Home = () => {
                                 />
                                 <Overlay></Overlay>
                                 <CardInfo>OM OSS</CardInfo>
-                            </NavLink>
-                        </ImageWrapper>
-                    </ImageContainer>
-                    ))}
-        {/* </Container> */}
-        {/* <div class="elfsight-app-55ce35a0-0d2a-41cf-a6be-b1ff2d427fcf"></div> */}
+                        </NavLink>
+                     </ImageWrapper>
+                </ImageContainer>
+            ))}
+                <div className="elfsight-app-55ce35a0-0d2a-41cf-a6be-b1ff2d427fcf"></div>
         </HomeContainer>
     )
 };
@@ -163,12 +160,18 @@ const Overlay = styled.div `
     left: 0;
     transition: 0.5s ease;
     background-color: rgba(0,0,0,0.5);
-    opacity: 0;
+    
     z-index: 5;
 
-    &:hover {
+  
+
+    @media (min-width: 992px) {
+        opacity: 0;
+        
+        &:hover {
         opacity: 100;
     }
+    } 
 `
 
 
@@ -203,14 +206,17 @@ const CardInfo = styled.div `
     height: 8vh;
     font-weight: 300;
     line-height: 28px;
-    padding-top: 15px;
     color: white;
-    font-size: 36px;
+    font-size: 30px;
     letter-spacing: .15em;
     z-index: 5;
+    /* margin: 0; */
+    padding: 0;
 
-    @media (min-width: 992px) {
+    @media (min-width: 668px) {
         bottom: 10%;
+        font-size: 36px;
+        max-width: 18vw;
     }
 `
 
@@ -219,6 +225,7 @@ const ImageContainer = styled.div `
     grid-template-columns: repeat(1, 1fr);
     gap: 50px;
     align-self: center;
+    margin-bottom: 100px;
 
     @media (min-width: 668px) {
         grid-template-columns: repeat(2, 1fr);
@@ -226,17 +233,16 @@ const ImageContainer = styled.div `
 
     @media (min-width: 992px) {
         gap: 100px;
-    }
-
-  
+    }  
 `
-
 
 const HomeContainer = styled.section `
     display: flex;
     justify-content: center;
     flex-direction: column;
     background-color: #F1EEEB;
+    align-items: center;
 `
+
 
 

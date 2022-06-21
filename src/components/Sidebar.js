@@ -5,7 +5,7 @@ import { MdClose } from 'react-icons/md'
 
 const SidebarContainer = styled.aside`
   position: fixed;
-  z-index: 999;
+  z-index: 1000;
   width: 100%;
   height: 100%;
   background: #F1EEEB;

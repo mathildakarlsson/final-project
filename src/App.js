@@ -14,6 +14,7 @@ import Flowers from './components/Flowers';
 import Contact from './components/Contact';
 import Services from './components/Services';
 import Header from './components/Header';
+import Footer from './components/Footer';
 
 import { wishlist } from './reducers/wishlist'
 
@@ -42,6 +43,7 @@ export const App = () => {
           <Route element={<BookingForm />} path='/wishlist' />
         </Routes>
       </BrowserRouter>
+      <Footer />
     </Provider>
   );
 };

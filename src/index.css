@@ -54,6 +54,24 @@ body {
   }
 
 
+  /* -------- INSTAGRAM EMBED ------- */
+
+.elfsight-app-55ce35a0-0d2a-41cf-a6be-b1ff2d427fcf {
+  display: none;
+
+}
+
+@media (min-width: 668px) {
+
+  .elfsight-app-55ce35a0-0d2a-41cf-a6be-b1ff2d427fcf {
+    display: flex;
+    margin-top: 50px;
+    margin-left: 50px;
+    width: 100vw;
+  }
+}
+
+
 /* --------- IMAGE CAROUSEL WILL CHANGE CODE----------- */
 
 .slider {
@@ -183,10 +201,10 @@ body {
 /* --------- IMAGE CAROUSEL MOBILE WILL CHANGE CODE----------- */
 
 .mobile-slider {
-  width: 370px;
-  height: 700px;
+  width: 100vw;
+  height: auto;
   /* border-radius: 10px; */
-  overflow: hidden;
+  overflow: scroll;
 }
 
 .mobile-slides {
