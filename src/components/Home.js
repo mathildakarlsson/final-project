@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { NavLink } from 'react-router-dom'; 
 import styled from 'styled-components';
 import sanityClient from '../client.js';
 import Carousel from './Carousel';
@@ -64,28 +65,45 @@ const Home = () => {
                 {homePage && homePage.map((homePage, index) => (
                     <ImageContainer key={index}>
                         <ImageWrapper>
+                        <NavLink to='/flowers'>
+                        <Overlay>
+                            <CardInfo>BLOMMOR</CardInfo>
+                        </Overlay>
                             <Image
                                 src={homePage.homeOne.image.asset.url}
                                 alt={homePage.title}
                             />
+                        </NavLink>
                         </ImageWrapper>
                         <ImageWrapper>
+                        <NavLink to='/services'>
+                            <Overlay></Overlay>
+                            <CardInfo>TJÄNSTER</CardInfo>
                             <Image
                                 src={homePage.homeTwo.image.asset.url}
                                 alt={homePage.title}
                             />
+                        </NavLink>
                         </ImageWrapper>
                         <ImageWrapper>
+                        <NavLink to='/rentals'>
+                        <Overlay></Overlay>
+                            <CardInfo>HYRSAKER</CardInfo>
                             <Image
                                 src={homePage.homeThree.image.asset.url}
                                 alt={homePage.title}
                             />
+                        </NavLink>
                         </ImageWrapper>
                         <ImageWrapper>
+                        <NavLink to='/about'>
+                        <Overlay></Overlay>
+                            <CardInfo>OM OSS</CardInfo>
                             <Image
                                 src={homePage.homeFour.image.asset.url}
                                 alt={homePage.title}
                             />
+                        </NavLink>
                         </ImageWrapper>
                     </ImageContainer>
                     ))}
@@ -121,8 +139,33 @@ const Header = styled.h1 `
         font-size: 37px;
         letter-spacing: .2em;
     }
+`
+
+const CardInfo = styled.div `
+    font-weight: 600;
+    margin: 12px 0;
+    line-height: 28px;
+    padding-top: 15px;
+    color: white;
+`
+
+const Overlay = styled.div `
+    position: absolute;
+    height: 690px;
+    width: 460px;
+    align-items: center;
+    /* grid-template-columns: repeat(3,1fr); */
+    /* transform: scale(0); */
+    background-color: rgba(0,0,0,0.5);
 
 `
+
+// .overlay {
+//   } 
+  
+//   .overlay:hover {
+//     transform: scale(1);
+//   }
 
 const Info = styled.h4 `
     font-weight: 300;
