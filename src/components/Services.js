@@ -6,9 +6,12 @@ const Services = () => {
         <Section>
             <InfoContainer>
                 <Header>Tjänster</Header>
-                <ExtraInfo>Priserna nedan inkluderar 25% moms.
+                <ExtraInfo>För bokningsförfrågningar gällande paketen nedan gå till kontaktformuläret 
+                    och skriv ner dina önskemål. Förfrågan är inte bindande.
+                    Priserna nedan inkluderar 25% moms.
                     Vid resor utanför Göteborgs kommun tillkommer 18:- per mil.</ExtraInfo>
 
+                <WeddingRentalContainer>
                 <WeddingHeader>Lilla designpaketet bröllop</WeddingHeader>
                 <Info>Skapa ert drömbröllop med lite stöd i den första fasen av bröllopsplaneringen. Vi gör
                     ett besök på vigsel- och festplats under 1,5 h, skapar med grund i era önskemål en
@@ -43,6 +46,7 @@ const Services = () => {
                 <Info>Om så önskas finns möjlighet att lägga till hyrsakspaketet nedan alternativt välja
                     individuella hyrsaker till dess specifika kostnad. Även blomsterarrangemang går att beställa
                     och ni får då en offert av oss att ta ställning till.</Info>
+                    </WeddingRentalContainer>
 
                 <PartiesContainer>
                     <PartiesHeader>Lilla designpaketet fest/event</PartiesHeader>
@@ -74,8 +78,15 @@ const Services = () => {
                         14 250:-</PartiesInfo>
                     <PartiesInfo>Om så önskas finns möjlighet att lägga till hyrsakspaketet nedan alternativt välja
                         individuella hyrsaker till dess specifika kostnad. Även blomsterarrangemang går att beställa och ni får då en offert av oss att ta ställning till.</PartiesInfo>
-
                 </PartiesContainer>
+
+                <WeddingRentalContainer>
+                <RentalHeader>Hyrsakspaketet</RentalHeader>
+                <Info>Låna allt du vill från vårt förråd till ditt event. 10 000:-. Som kund hämtar och lämnar du själv själv varorna i Nordic Spells förråd. Val av hyrsaker bokas senast 1,5 månad innan event, efter det kan inte Nordic Spells Decor garantera att hyrasaken finns i lager det specifika datumet.
+                    Lånetiden är tre dagar.</Info>
+                    <Info>Dekoration av lokal, 1000:-/timme för två personers jobb.</Info>
+                    <Info>Specialbeställda dekorationer som skyltar, vimplar och blomsterarrangemang pris efter överenskommelse.</Info>
+                    </WeddingRentalContainer>
             </InfoContainer>
 
 
@@ -93,7 +104,7 @@ const Section = styled.section `
 `
 
 const InfoContainer = styled.div `
-    padding: 8rem 0 2rem 0;
+    padding: 8rem 2rem 0 2rem;
     margin: 0px 30px;
     display: flex;
     flex-direction: column;
@@ -145,6 +156,10 @@ const WeddingHeader = styled.h1 `
 
 `
 
+const WeddingRentalContainer = styled.div`
+padding: 2rem;
+`
+
 const PartiesContainer = styled.div`
 background-color: white;
 padding: 2rem;
@@ -190,6 +205,16 @@ background-color: white;
     letter-spacing: .03em;
 }
 ` 
+const RentalHeader = styled.h1 `
+text-transform: uppercase;
+font-weight: 300;
+font-size: 25px;
+letter-spacing: .15em;
+padding-top: 2rem;
 
+@media (min-width: 668px) {
+    font-size: 30px;
+    letter-spacing: .2em;
+}
 
-
+`
