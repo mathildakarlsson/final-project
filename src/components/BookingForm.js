@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 import styled from 'styled-components';
 
 import WishListItem from './WishListItem';
+
 // import swal from '@sweetalert/with-react';
 // import { wishlist } from '../reducers/wishlist';
 
@@ -96,7 +97,7 @@ const BookingForm = () => {
 
 
     return (
-        <FormyForm>
+        <section>
             <div>
             <FormHeader>Don't be a stranger!</FormHeader>
         <FormText>Skriv till oss om dina önskemål så återkommer vi inom det närmaste.</FormText>
@@ -230,20 +231,20 @@ const BookingForm = () => {
                     </ul>
                 </div>
             </section>
-        </FormyForm>
+        </section>
     )
 
 };
 
 export default BookingForm;
 
-const FormyForm = styled.section`
-padding-top: 8rem;
-@media (min-width: 768px) {
-    padding-top: 10rem;
-  }
+// const FormyForm = styled.section`
+// padding-top: 8rem;
+// @media (min-width: 768px) {
+//     padding-top: 10rem;
+//   }
  
-`
+// `
 
 const FormHeader = styled.h2 `
     display: flex;
@@ -269,7 +270,7 @@ const FormText = styled.p`
     line-height: 1.8em;
     padding-bottom: 1rem;
 `
-const Formwrapper = styled.form`
+const Formwrapper = styled.div`
     display: flex;
     justify-content: center;
     margin-top: 1rem;

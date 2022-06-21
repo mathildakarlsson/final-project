@@ -223,7 +223,7 @@ const FormText = styled.p`
     line-height: 1.8em;
     padding-bottom: 1rem;
 `
-const Formwrapper = styled.form`
+const Formwrapper = styled.div`
     display: flex;
     justify-content: center;
     margin-top: 1rem;
