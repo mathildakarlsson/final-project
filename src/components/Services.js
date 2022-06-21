@@ -61,7 +61,7 @@ const Services = () => {
                         individuella hyrsaker till dess specifika kostnad. Även blomsterarrangemang går att beställa och ni får då en offert av oss att ta ställning till.</PartiesInfo>
 
 
-                        <PartiesHeader>Stora dekorationspaketet fest/event</PartiesHeader>
+                    <PartiesHeader>Stora dekorationspaketet fest/event</PartiesHeader>
                     <PartiesInfo>Designkonsultation till fest och event på plats i lokal under 1h. Vi skapar med grund i
                         era önskemål en personlig dekorationsidé och ni får en moodboard med tankarna som
                         inspiration för dekoreringen av festen/eventet.
@@ -72,14 +72,14 @@ const Services = () => {
                         förverkligar dekorationsplanen vi skapat tillsammans med er. Vid behov kan det finnas
                         möjlighet att lägga till extra timmar för en kostnad av 1000:-/h för två personers jobb.
                         14 250:-</PartiesInfo>
-                        <PartiesInfo>Om så önskas finns möjlighet att lägga till hyrsakspaketet nedan alternativt välja
+                    <PartiesInfo>Om så önskas finns möjlighet att lägga till hyrsakspaketet nedan alternativt välja
                         individuella hyrsaker till dess specifika kostnad. Även blomsterarrangemang går att beställa och ni får då en offert av oss att ta ställning till.</PartiesInfo>
 
                 </PartiesContainer>
-                </InfoContainer>
-                
+            </InfoContainer>
 
-                </Section>
+
+        </Section>
     )
 };
 
@@ -93,7 +93,7 @@ const Section = styled.section `
 `
 
 const InfoContainer = styled.div `
-    padding-top: 170px;
+    padding: 8rem 0 2rem 0;
     margin: 0px 30px;
     display: flex;
     flex-direction: column;

@@ -680,7 +680,7 @@ label a:hover {
 } */
 
 
-.swal-button--confirm {
+.swal-button {
   width: 8rem;
   margin: 15px 0 65px 0;
   cursor: pointer;
@@ -689,38 +689,30 @@ label a:hover {
 
   padding: 0.8rem;
   text-transform: uppercase;
-  color: black;
-  background-color: #C5BFB8;
+  color: white;
+  background-color: black;
   font-weight: 450;
-
-  /* a:hover {
-    background-color: black;
-    color: white;
-    transition: 0.7s ease;
-  } */
-  text-shadow: 0px -1px 0px  black;
 }
+
+.swal-button:hover {
+  background-color: black;
+  transition: 0.7s;
+}
+
 
 .swal-title {
   margin: 0px;
   font-size: 16px;
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.21);
   margin-bottom: 28px;
+  background-color: white;
 }
+  /* box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.21); */
 
 .swal-text {
-  background-color: #F1EEEB;
+  background-color: white;
   padding: 17px;
-  /* border: 1px solid #F0E1A1; */
   display: block;
   margin: 22px;
   text-align: center;
   color: black;
 }
-
-/* .swal-footer {
-  background-color: rgb(245, 248, 250);
-  margin-top: 32px;
-  border-top: 1px solid #E9EEF1;
-  overflow: hidden;
-} */

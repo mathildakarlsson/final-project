@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 import styled from 'styled-components';
 
 import WishListItem from './WishListItem';
+import swal from 'sweetalert';
 
 // import swal from '@sweetalert/with-react';
 // import { wishlist } from '../reducers/wishlist';
@@ -63,22 +64,22 @@ const BookingForm = () => {
             const resData = await res;
             console.log(resData);
             if (resData.status === "success") {
-                alert("Message Sent!");
-                // swal({
-                //     title: 'Din förfrågan har skickats!',
-                //     text: 'Tack för ditt mail! Vi hör av oss inom kort när vi sett över dina önskemål och tillgänglighet!',
-                //     // icon: 'success',
-                //     button: 'Ok',
-                // });
+                // alert("Message Sent!");
+                swal({
+                    title: 'Din förfrågan har skickats till Nordic Spells Decor!',
+                    text: 'Tack för ditt mail! Vi hör av oss inom kort när vi sett över dina önskemål och tillgänglighet!',
+                    // icon: 'success',
+                    button: 'Ok',
+                });
 
             } else if (resData.status === "fail") {
-                alert("Message failed to send");
-                // swal({
-                //     title: 'Din förfrågan kunde inte skickas.',
-                //     text: 'Ajdå, något verkar ha gått fel! Kontakta oss gärna direkt på nordicspellsdecor@gmail.com så pratar vi vidare där!',
-                //     // icon: 'success',
-                //     button: 'Ok',
-                // });
+                // alert("Message failed to send");
+                swal({
+                    title: 'Din förfrågan kunde inte skickas.',
+                    text: 'Ajdå, något verkar ha gått fel! Kontakta oss gärna direkt på nordicspellsdecor@gmail.com så pratar vi vidare där!',
+                    // icon: 'success',
+                    button: 'Ok',
+                });
             }
         })
         .then(() => {
@@ -97,89 +98,88 @@ const BookingForm = () => {
 
 
     return (
-        <section>
-            <div>
+        <FormyForm>
             <FormHeader>Don't be a stranger!</FormHeader>
-        <FormText>Skriv till oss om dina önskemål så återkommer vi inom det närmaste.</FormText>
-        </div>
-                <Formwrapper>
-                    <form
-                        // name="wishlistform"
-                        // id="wishlistform"
-                        // method="post"
-                        // action="/success"
-                        onSubmit={submitEmail}
-                     >    
-                           {/* <input type="hidden" name="form-name" value="wishlistform" /> */}
-                           <div>
+            <FormText>Skriv till oss om dina önskemål så återkommer vi inom det närmaste.</FormText>
+
+            <Formwrapper>
+                <form
+                    // name="wishlistform"
+                    // id="wishlistform"
+                    // method="post"
+                    // action="/success"
+                    onSubmit={submitEmail}
+                >
+                    {/* <input type="hidden" name="form-name" value="wishlistform" /> */}
+                    <div>
                         <ul>
                             <li>
-                            <label className="custom-field">
-                                Namn
-                                <input 
-                                    type="text"
-                                    name="name"
-                                    placeholder="namn"
-                                    value={mailerState.name}
-                                    onChange={handleStateChange}
-                                    required
-                                />
-                            </label>
-                           </li>
-                 
-                            <li>
-                            <label className="custom-field">
-                                Telefonnummer
-                                <input
-                                    type="tel" 
-                                    name="phonenumber"
-                                    placeholder="telefonnummer"
-                                    value={mailerState.phonenumber}
-                                    onChange={handleStateChange}
-                                />
-                            </label>
-                            </li>
-                 
-                            <li>
-                            <label className="custom-field">
-                                Email
-                                <input 
-                                    type="email" 
-                                    name="email" 
-                                    placeholder="email"
-                                    value={mailerState.email}
-                                    onChange={handleStateChange}
-                                    required
-                                />
-                            </label>
-                             </li>
-
-                             <li>
                                 <label className="custom-field">
-                                   Från
-                                    <input 
-                                        type="date" 
-                                        name="startdate" 
+                                    Namn
+                                    <input
+                                        type="text"
+                                        name="name"
+                                        placeholder="namn"
+                                        value={mailerState.name}
+                                        onChange={handleStateChange}
+                                        required
+                                    />
+                                </label>
+                            </li>
+
+                            <li>
+                                <label className="custom-field">
+                                    Telefonnummer
+                                    <input
+                                        type="tel"
+                                        name="phonenumber"
+                                        placeholder="telefonnummer"
+                                        value={mailerState.phonenumber}
+                                        onChange={handleStateChange}
+                                    />
+                                </label>
+                            </li>
+
+                            <li>
+                                <label className="custom-field">
+                                    Email
+                                    <input
+                                        type="email"
+                                        name="email"
+                                        placeholder="email"
+                                        value={mailerState.email}
+                                        onChange={handleStateChange}
+                                        required
+                                    />
+                                </label>
+                            </li>
+
+                            <li>
+                                <label className="custom-field">
+                                    Från
+                                    <input
+                                        type="date"
+                                        name="startdate"
                                         value={mailerState.startdate}
                                         onChange={handleStateChange}
-                                        // required
+                                    // required
                                     />
                                 </label>
-                             </li>
+                            </li>
 
-                             <li>
+                            <li>
                                 <label className="custom-field">
                                     till
-                                    <input 
-                                        type="date" 
-                                        name="enddate" 
+                                    <input
+                                        type="date"
+                                        name="enddate"
                                         value={mailerState.enddate}
                                         onChange={handleStateChange}
-                                        // required
+                                    // required
                                     />
                                 </label>
-                             </li>
-    
+                            </li>
+
                             <li>
                                 <label className="custom-field">
                                     Meddelande
@@ -190,7 +190,7 @@ const BookingForm = () => {
                                     maxlength="2000"
                                     rows="10"
                                     value={mailerState.message}
-                                    onChange={handleStateChange}    
+                                    onChange={handleStateChange}
                                 >
                                 </textarea>
                             </li>
@@ -207,44 +207,44 @@ const BookingForm = () => {
 
                                 </textarea> */}
                             </li>
-                 
+
                             <li>
                                 <ButtonWrapper>
-                                <FormButton type="submit">Skicka</FormButton>
+                                    <FormButton type="submit">Skicka</FormButton>
                                 </ButtonWrapper>
-                             </li>
-                 
+                            </li>
+
                         </ul>
-                        </div>
-                    </form>
-                </Formwrapper>
-           
+                    </div>
+                </form>
+            </Formwrapper>
+
             <section>
-            <FormButtonText>Total kostnad: {totalPrice} SEK</FormButtonText>
+                <FormButtonText>Total kostnad: {totalPrice} SEK</FormButtonText>
                 <div>
                     <ul className="form-products">
-                    {products.map((product, index) => {
-                        return(
-                            <WishListItem key={index} product={product} />
-                        )
-                    })}
+                        {products.map((product, index) => {
+                            return (
+                                <WishListItem key={index} product={product} />
+                            )
+                        })}
                     </ul>
                 </div>
             </section>
-        </section>
+        </FormyForm>
     )
 
 };
 
 export default BookingForm;
 
-// const FormyForm = styled.section`
-// padding-top: 8rem;
-// @media (min-width: 768px) {
-//     padding-top: 10rem;
-//   }
+const FormyForm = styled.section`
+padding-top: 8rem;
+@media (min-width: 768px) {
+    padding-top: 10rem;
+  }
  
-// `
+`
 
 const FormHeader = styled.h2 `
     display: flex;
