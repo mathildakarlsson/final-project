@@ -65,45 +65,46 @@ const Home = () => {
                 {homePage && homePage.map((homePage, index) => (
                     <ImageContainer key={index}>
                         <ImageWrapper>
-                        <NavLink to='/flowers'>
-                        <Overlay>
-                            <CardInfo>BLOMMOR</CardInfo>
-                        </Overlay>
-                            <Image
-                                src={homePage.homeOne.image.asset.url}
-                                alt={homePage.title}
-                            />
-                        </NavLink>
+                            <NavLink to='/flowers'>
+                                <Image
+                                    src={homePage.homeOne.image.asset.url}
+                                    alt={homePage.title}
+                                />
+                                <Overlay></Overlay>
+                                <CardInfo>BLOMMOR</CardInfo>
+                            </NavLink>
                         </ImageWrapper>
                         <ImageWrapper>
-                        <NavLink to='/services'>
-                            <Overlay></Overlay>
-                            <CardInfo>TJÄNSTER</CardInfo>
-                            <Image
-                                src={homePage.homeTwo.image.asset.url}
-                                alt={homePage.title}
-                            />
-                        </NavLink>
+                            <NavLink to='/services'>
+                                <Image
+                                    src={homePage.homeTwo.image.asset.url}
+                                    alt={homePage.title}
+                                />
+                                <Overlay></Overlay>
+                                <CardInfo>TJÄNSTER</CardInfo>
+                            </NavLink>
                         </ImageWrapper>
                         <ImageWrapper>
-                        <NavLink to='/rentals'>
-                        <Overlay></Overlay>
-                            <CardInfo>HYRSAKER</CardInfo>
-                            <Image
-                                src={homePage.homeThree.image.asset.url}
-                                alt={homePage.title}
-                            />
-                        </NavLink>
+                            <NavLink to='/rentals'>
+                                <Image
+                                    src={homePage.homeThree.image.asset.url}
+                                    alt={homePage.title}
+                                />
+                                {/* <Hover> */}
+                                    <Overlay></Overlay>
+                                    <CardInfo>HYRSAKER</CardInfo>
+                                {/* </Hover> */}
+                            </NavLink>
                         </ImageWrapper>
                         <ImageWrapper>
-                        <NavLink to='/about'>
-                        <Overlay></Overlay>
-                            <CardInfo>OM OSS</CardInfo>
-                            <Image
-                                src={homePage.homeFour.image.asset.url}
-                                alt={homePage.title}
-                            />
-                        </NavLink>
+                            <NavLink to='/about'>
+                                <Image
+                                    src={homePage.homeFour.image.asset.url}
+                                    alt={homePage.title}
+                                />
+                                <Overlay></Overlay>
+                                <CardInfo>OM OSS</CardInfo>
+                            </NavLink>
                         </ImageWrapper>
                     </ImageContainer>
                     ))}
@@ -141,31 +142,6 @@ const Header = styled.h1 `
     }
 `
 
-const CardInfo = styled.div `
-    font-weight: 600;
-    margin: 12px 0;
-    line-height: 28px;
-    padding-top: 15px;
-    color: white;
-`
-
-const Overlay = styled.div `
-    position: absolute;
-    height: 690px;
-    width: 460px;
-    align-items: center;
-    /* grid-template-columns: repeat(3,1fr); */
-    /* transform: scale(0); */
-    background-color: rgba(0,0,0,0.5);
-
-`
-
-// .overlay {
-//   } 
-  
-//   .overlay:hover {
-//     transform: scale(1);
-//   }
 
 const Info = styled.h4 `
     font-weight: 300;
@@ -179,10 +155,63 @@ const Info = styled.h4 `
     }
 `
 
+const Overlay = styled.div `
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transition: 0.5s ease;
+    background-color: rgba(0,0,0,0.5);
+    opacity: 0;
+    z-index: 5;
+
+    &:hover {
+        opacity: 100;
+    }
+`
+
+
 const ImageWrapper = styled.div `
-    max-width: 40vw;
-    display: flex;
+    position: relative;
+    display: grid;
+    align-items: center;
     justify-content: center;
+    text-align: center;
+    /* max-width: 40vw; */
+   
+`
+
+const Image = styled.img `
+    width: auto;
+    /* display: inherit; */
+    object-fit: contain;
+    max-height: 80vh;
+
+    @media (min-width: 992px) {
+        max-height: 100vh;
+    }
+`
+
+const CardInfo = styled.div `
+    position: absolute;
+    top: 0%;
+    margin: auto;
+    left: 0%;
+    right: 0%;
+    bottom: 1%;
+    height: 8vh;
+    font-weight: 300;
+    line-height: 28px;
+    padding-top: 15px;
+    color: white;
+    font-size: 36px;
+    letter-spacing: .15em;
+    z-index: 5;
+
+    @media (min-width: 992px) {
+        bottom: 10%;
+    }
 `
 
 const ImageContainer = styled.div `
@@ -210,12 +239,4 @@ const HomeContainer = styled.section `
     background-color: #F1EEEB;
 `
 
-const Image = styled.img `
-    width: auto;
-    object-fit: contain;
-    max-height: 80vh;
 
-    @media (min-width: 992px) {
-        max-height: 100vh;
-    }
-`
