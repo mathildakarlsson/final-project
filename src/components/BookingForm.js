@@ -251,8 +251,12 @@ const FormHeader = styled.h2 `
     font-weight: 300;
     font-size: 25px;
     padding-bottom: 20px;
-    @media (max-width: 768px) {
+    text-transform: uppercase;
+    letter-spacing: .15em;
+
+    @media (min-width: 668px) {
         font-size: 35px;
+        letter-spacing: .2em;
       }
 `
 
