@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
+
 const Services = () => {
     return (
         <Section>
@@ -10,6 +11,7 @@ const Services = () => {
                     och skriv ner dina önskemål. Förfrågan är inte bindande.
                     Priserna nedan inkluderar 25% moms.
                     Vid resor utanför Göteborgs kommun tillkommer 18:- per mil.</ExtraInfo>
+
 
                 <WeddingRentalContainer>
                 <WeddingHeader>Lilla designpaketet bröllop</WeddingHeader>

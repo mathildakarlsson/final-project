@@ -53,42 +53,96 @@ const SingleRentalsItem = () => {
     if (!singleProduct) return <div>Loading...</div>
 
         return (
-            <main className="single-main">
-                <article>
-                    <header>
-                        <div className="single-product-card">
-                            <h1>{singleProduct.title}</h1>
-                            <div>
+            <Main>
+                <ArticleContainer>
+                      <Header>Hyrsaker</Header>
+                        <CardContainer>
+                            
                                 <img src={singleProduct.mainImage.asset.url}
                                     alt={singleProduct.title}
                                 />
-                                <p>Material: {singleProduct.defaultProductVariant.material}</p>
-                                <p>Price: {singleProduct.defaultProductVariant.price} {singleProduct.defaultProductVariant.sku}/dag</p>
-                                <p>Dimensions: {singleProduct.defaultProductVariant.dimensions}</p>
-                                <p>Quantity: {singleProduct.defaultProductVariant.quantity}st</p>
-                                <p>Color: {singleProduct.defaultProductVariant.color}</p>
-                                <p>Description: {singleProduct.defaultProductVariant.description}</p>   
-                                <p>{singleProduct.category}</p>
-                                <p>♥️ TESTY MCtester ♥️</p>  
-                                <p>Body:{singleProduct.defaultProductVariant.body}</p>
-                            </div>
+                                <Info>Namn: {singleProduct.title}</Info>
+                                <Info>Material: {singleProduct.defaultProductVariant.material}</Info>
+                                <Info>Pris: {singleProduct.defaultProductVariant.price} {singleProduct.defaultProductVariant.sku}/dag</Info>
+                                <Info>Storlek: {singleProduct.defaultProductVariant.dimensions}</Info>
+                                <Info>Antal i lager: {singleProduct.defaultProductVariant.quantity}st</Info>
+                                <Info>Färg: {singleProduct.defaultProductVariant.color}</Info>
+                                <Info>Beskrivning: {singleProduct.defaultProductVariant.description}</Info>   
+                                <Info>Kategori: {singleProduct.category}</Info>
+                                {/* <p>♥️ TESTY MCtester ♥️</p>   */}
+                                {/* <Info>Body:{singleProduct.defaultProductVariant.body}</Info> */}
+                            
                             <AddButton
                                 disabled={singleProduct.inventory === 0}
                                 onClick={handleAddItem}>
-                                Add to wishlist
+                                Lägg till i önskelistan
                             </AddButton>
-                        </div>
-                    </header>
-                </article>
-            </main>
+                        </CardContainer>
+                </ArticleContainer>
+            </Main>
         )
 };
 
 export default SingleRentalsItem;
 
+const Main = styled.main`
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+`
+
+const ArticleContainer = styled.article`
+    padding: 8rem 2rem 0 2rem;
+    margin: 0px 30px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-self: center;
+    justify-self: center;
+
+   
+`
+
+const Header = styled.h1 `
+    text-transform: uppercase;
+    font-weight: 300;
+    padding-bottom: 2.5rem;
+    font-size: 32px;
+    letter-spacing: .15em;
+
+    @media (min-width: 668px) {
+        font-size: 37px;
+        letter-spacing: .2em;
+        
+    }
+
+`
+
+const CardContainer = styled.div`
+background-color: white;
+width: 55vh;
+padding: 1rem;
+
+@media (min-width: 1024px) {
+    width: 100vh;
+}
+`
+
+const Info = styled.h4 `
+padding: 1rem;
+    font-weight: 300;
+    margin: 12px 0;
+    line-height: 28px;
+
+    @media (min-width: 668px) {
+        font-size: 18px;
+        letter-spacing: .03em;
+    }
+`
+
 const AddButton = styled.button`
-    width: 55%;
-    margin: 15px 0 65px 0;
+    width: 100%;
+    margin: 2rem 0 2rem 0;
     cursor: pointer;
     border: none;
     font-size: 16px;
@@ -105,7 +159,8 @@ const AddButton = styled.button`
     transition: 0.7s ease;
     /* height: 30px; */
     }
-`;
+`
+;
 
 
 // ------------------- deleted code - saving in case of error messages -----------------------//
