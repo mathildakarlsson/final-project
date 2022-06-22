@@ -23,26 +23,26 @@ export default {
       name: 'sku',
       type: 'string',
     },
-    {
-      title: 'Material',
-      name: 'material',
-      type: 'string',
-    },
+    // {
+    //   title: 'Material',
+    //   name: 'material',
+    //   type: 'string',
+    // },
     {
       title: 'Dimensions',
       name: 'dimensions',
       type: 'string',
     },
-    {
-      title: 'Quantity',
-      name: 'quantity',
-      type: 'number',
-    },
-    {
-      title: 'Color',
-      name: 'color',
-      type: 'string',
-    },
+    // {
+    //   title: 'Quantity',
+    //   name: 'quantity',
+    //   type: 'number',
+    // },
+    // {
+    //   title: 'Color',
+    //   name: 'color',
+    //   type: 'string',
+    // },
 
     {
       title: 'Description',

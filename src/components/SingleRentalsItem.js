@@ -55,20 +55,20 @@ const SingleRentalsItem = () => {
         return (
             <Main>
                 <ArticleContainer>
-                      <Header>Hyrsaker</Header>
+                      <Header>{singleProduct.title}</Header>
                         <CardContainer>
                             
                                 <img src={singleProduct.mainImage.asset.url}
                                     alt={singleProduct.title}
                                 />
-                                <Info>Namn: {singleProduct.title}</Info>
-                                <Info>Material: {singleProduct.defaultProductVariant.material}</Info>
+                                {/* <Info>Namn: {singleProduct.title}</Info> */}
+                                {/* <Info>Material: {singleProduct.defaultProductVariant.material}</Info> */}
                                 <Info>Pris: {singleProduct.defaultProductVariant.price} {singleProduct.defaultProductVariant.sku}/dag</Info>
                                 <Info>Storlek: {singleProduct.defaultProductVariant.dimensions}</Info>
                                 <Info>Antal i lager: {singleProduct.defaultProductVariant.quantity}st</Info>
-                                <Info>Färg: {singleProduct.defaultProductVariant.color}</Info>
+                                {/* <Info>Färg: {singleProduct.defaultProductVariant.color}</Info> */}
                                 <Info>Beskrivning: {singleProduct.defaultProductVariant.description}</Info>   
-                                <Info>Kategori: {singleProduct.category}</Info>
+                                {/* <Info>Kategori: {singleProduct.category}</Info> */}
                                 {/* <p>♥️ TESTY MCtester ♥️</p>   */}
                                 {/* <Info>Body:{singleProduct.defaultProductVariant.body}</Info> */}
                             
@@ -129,7 +129,7 @@ padding: 1rem;
 `
 
 const Info = styled.h4 `
-padding: 1rem;
+padding: .8rem;
     font-weight: 300;
     margin: 12px 0;
     line-height: 28px;

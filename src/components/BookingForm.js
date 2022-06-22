@@ -98,7 +98,7 @@ const BookingForm = () => {
 
 
     return (
-        <FormyForm>
+        <FormContainer>
             <FormHeader>Don't be a stranger!</FormHeader>
             <FormText>Skriv till oss om dina önskemål så återkommer vi inom det närmaste.</FormText>
 
@@ -119,7 +119,7 @@ const BookingForm = () => {
                                     <input
                                         type="text"
                                         name="name"
-                                        placeholder="namn"
+                                        // placeholder="namn"
                                         value={mailerState.name}
                                         onChange={handleStateChange}
                                         required
@@ -133,7 +133,7 @@ const BookingForm = () => {
                                     <input
                                         type="tel"
                                         name="phonenumber"
-                                        placeholder="telefonnummer"
+                                        // placeholder="telefonnummer"
                                         value={mailerState.phonenumber}
                                         onChange={handleStateChange}
                                     />
@@ -146,7 +146,7 @@ const BookingForm = () => {
                                     <input
                                         type="email"
                                         name="email"
-                                        placeholder="email"
+                                        // placeholder="email"
                                         value={mailerState.email}
                                         onChange={handleStateChange}
                                         required
@@ -162,7 +162,7 @@ const BookingForm = () => {
                                         name="startdate"
                                         value={mailerState.startdate}
                                         onChange={handleStateChange}
-                                    // required
+                                    required
                                     />
                                 </label>
                             </li>
@@ -175,7 +175,7 @@ const BookingForm = () => {
                                         name="enddate"
                                         value={mailerState.enddate}
                                         onChange={handleStateChange}
-                                    // required
+                                        required
                                     />
                                 </label>
                             </li>
@@ -185,7 +185,7 @@ const BookingForm = () => {
                                     Meddelande
                                 </label>
                                 <textarea
-                                    placeholder="Skriv ett meddelande här"
+                                    // placeholder="Skriv ett meddelande här"
                                     name="message"
                                     maxlength="2000"
                                     rows="10"
@@ -237,14 +237,14 @@ const BookingForm = () => {
                 {/* </RentalsContainer> */}
                 </article>
             </section>
-        </FormyForm>
+        </FormContainer>
     )
 
 };
 
 export default BookingForm;
 
-const FormyForm = styled.section`
+const FormContainer = styled.section`
 padding-top: 8rem;
 @media (min-width: 768px) {
     padding-top: 10rem;
@@ -299,7 +299,7 @@ justify-content: center;
 const FormButton = styled.button`
     display: flex;
     justify-content: center;
-    align-item: center;
+    align-items: center;
     width: 100%;
     margin: 2rem 0 2rem 0;
     cursor: pointer;

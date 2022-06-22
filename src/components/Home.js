@@ -242,6 +242,7 @@ const HomeContainer = styled.section `
     flex-direction: column;
     background-color: #F1EEEB;
     align-items: center;
+    overflow: hidden;
 `
 
 

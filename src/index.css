@@ -22,6 +22,7 @@ color light beige: #F1EEEB  */
 
 body {
   background-color: #F1EEEB;
+  
 }
 
 
@@ -570,7 +571,7 @@ body {
   border-radius: 3px;
   width: 15rem;
   font-size: 14px;
-  margin: 15px;
+  margin: 15px 15px 15px 0;
 }
 
 .about-image {
@@ -587,7 +588,7 @@ textarea {
   width: 15rem;
   font-size: 14px;
   resize: none;
-  margin: 15px;
+  margin: 15px 15px 15px 0;
 }
 
 /* .form-products {

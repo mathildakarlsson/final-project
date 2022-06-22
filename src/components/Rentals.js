@@ -84,6 +84,7 @@ const Main = styled.main`
     display: flex;
     flex-direction: column;
     margin: 1rem;
+    background-color: white;
 `
 
 const ArticleContainer = styled.article`
