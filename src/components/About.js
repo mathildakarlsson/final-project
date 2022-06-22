@@ -50,6 +50,7 @@ const About = () => {
                 {aboutUsData && aboutUsData.map((aboutUs, index) => (
                     <Wrapper key={index}>
                         <ContentWrapper>
+                            <AboutHeaderMobile><LetterSpan>O</LetterSpan>UR &nbsp;<LetterSpan>S</LetterSpan>TORY</AboutHeaderMobile>
                             <Image
                                     src={aboutUs.photoOne.image.asset.url}
                                     alt={aboutUs.title}
@@ -73,7 +74,10 @@ const About = () => {
                                 alt={aboutUs.title}
                             />
                             <TextWrapper>
-                                <AboutHeader><LetterSpan>C</LetterSpan>aroline, kreativ designer</AboutHeader>
+                                <AboutHeaderMobile><LetterSpan>C</LetterSpan>aroline,</AboutHeaderMobile>
+                                <AboutHeaderMobile>kreativ designer</AboutHeaderMobile>
+                                <AboutHeader><LetterSpan>C</LetterSpan>aroline,</AboutHeader>
+                                <AboutHeader>kreativ designer</AboutHeader>
                                 <AboutText>
                                     Caroline heter jag och jag är kreativ designer i Nordic Spells Decor. Jag fullkomligt älskar chansen att få ta tag i nya kreativa projekt och låta idéerna flöda! Om du önskar hjälp med att planera dekorationen ditt drömevent eller bara någon att bolla tankar kring dekoration med så finns jag här!
                                 </AboutText>
@@ -88,6 +92,7 @@ const About = () => {
                                 alt={aboutUs.title}
                             />
                             <TextWrapper>
+                            <AboutHeaderMobile><LetterSpan>L</LetterSpan>innéa, florist</AboutHeaderMobile>
                             <AboutHeader><LetterSpan>L</LetterSpan>innéa, florist</AboutHeader>
                                 <AboutText>
                                     Linnéa heter jag och jag är kreativ designer i Nordic Spells Decor. Jag fullkomligt älskar chansen att få ta tag i nya kreativa projekt och låta idéerna flöda! Om du önskar hjälp med att planera dekorationen ditt drömevent eller bara någon att bolla tankar kring dekoration med så finns jag här!
@@ -114,15 +119,18 @@ const Wrapper = styled.div `
     padding-top: 105px;
     flex-direction: column;
     margin: 50px;
-
-
 `
 
 const ContentWrapper = styled.div `
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     margin: 50px;
     align-items: center;
+
+    @media (min-width: 800px) {
+        flex-direction: row;
+        margin: 50px 0 0 0;
+    }
 `
 
 const TextWrapper = styled.div `
@@ -132,34 +140,63 @@ const TextWrapper = styled.div `
 `
 
 const Image = styled.img `
-    max-width: 100%;
     width: auto;
     object-fit: contain;
     max-height: 90vh;
-    margin-right: 70px;
+    margin-top: 50px;
+    
+    @media (min-width: 800px) {
+        margin: 0 70px;
+    }
 `
 
 const AboutHeader = styled.h1 `
     align-self: center;
     font-weight: 300;
-    font-size: 50px;
+    font-size: 30px;
     display: flex;
-    /* flex-direction: row; */
     align-items: baseline;
+    display: none;
+
+    @media (min-width: 800px) {
+        font-size: 50px;
+        display: flex;
+    }
+`
+const AboutHeaderMobile = styled.h1 `
+    align-self: center;
+    font-weight: 300;
+    font-size: 38px;
+    display: flex;
+    align-items: baseline;
+    display: flex;
+    /* padding-bottom: 50px; */
+    padding-top: 10px;
+    
+    @media (min-width: 668px) {
+        display: none;
+    }
 `
 
+
+
 const LetterSpan = styled.div `
-    font-size: 60px;
+    font-size: 45px;
+
+    @media (min-width: 668px) {
+        font-size: 60px;
+    }
 `
 
 const AboutText = styled.p`
-    max-width: 40vw;
     font-weight: 300;
     margin: 12px 0;
     line-height: 28px;
     padding-top: 15px;
-
+    width: 70vw;
+    
     @media (min-width: 668px) {
+        max-width: 40vw;
         font-size: 16px;
         letter-spacing: .03em
     }
