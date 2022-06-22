@@ -63,8 +63,6 @@ const Rentals = () => {
                                 </span>
                             </Link> 
                             <AddButton
-                                // className="add-button"
-                                // type="button"
                                 disabled={product.inventory === 0}
                                 onClick={() => dispatch(wishlist.actions.addItem(product))}>
                                 Lägg i önskelistan
@@ -186,28 +184,3 @@ const AddButton = styled.button`
     /* height: 30px; */
     }
 `;
-
-// ------------------- deleted code - saving in case of error messages -----------------------//
-
-{/* <div className="products">
-        {allProducts.map((product) => (
-            <product key={product._id} product={product} /> //ändrat till product och _id här */}
-        {/* ))} */}
-
-{/* <div className="products">
-        {allProducts.map((product, index) => (
-            <product key={index} product={index} /> //ändrat till index och _id här
-        ))}
-     </div> */}
-
-       {/* <section className="wishlist">
-                <h2>Din varukorg</h2>
-                <ul className="wishlist-ul">
-                    {products.map((product, index) => {
-                        return(
-                            <WishListItem key={index} product={product} />
-                        )
-                    })}
-                </ul>
-                <p className="total">Total cost: {totalPrice} SEK</p>
-            </section> */}
