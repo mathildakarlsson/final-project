@@ -221,9 +221,11 @@ const BookingForm = () => {
 
             <section>
             <article>
+                <RentalsTextContainer>
                 <RentalsInfoText>Total kostnad: {totalPrice} SEK</RentalsInfoText>
+                </RentalsTextContainer>
                 {/* <RentalsContainer> */}
-                <CardContainer>
+                <div>
                     <ul className="form-products">
                         {products.map((product, index) => {
                             return (
@@ -231,7 +233,7 @@ const BookingForm = () => {
                             )
                         })}
                     </ul>
-                </CardContainer>
+                </div>
                 {/* </RentalsContainer> */}
                 </article>
             </section>
@@ -328,6 +330,14 @@ const FormButton = styled.button`
 //     justify-self: center;
 // `
 
+const RentalsTextContainer = styled.div`
+display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 1rem;
+    background-color: white;
+`
+
 const RentalsInfoText = styled.h1 `
     text-transform: uppercase;
     font-weight: 300;
@@ -354,21 +364,21 @@ const RentalsInfoText = styled.h1 `
 // }
 // `
 
-const CardContainer = styled.div`
-background-color: white;
-width: 55vh;
-padding: 1rem 1 rem 1 rem 0;
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-margin: 1.5rem;
+// const CardContainer = styled.div`
+// background-color: white;
+// width: 55vh;
+// padding: 1rem 1 rem 1 rem 0;
+// display: flex;
+// flex-direction: column;
+// justify-content: center;
+// align-items: center;
+// margin: 1.5rem;
 
-@media (min-width: 668px) {
-    width: 35vh;
-    padding: o.5rem 0.5 rem 0.5rem 0;
+// @media (min-width: 668px) {
+//     width: 35vh;
+//     padding: o.5rem 0.5 rem 0.5rem 0;
 
-}
-`
+// }
+// `
 
 ;
