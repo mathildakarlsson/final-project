@@ -116,7 +116,7 @@ const AboutContainer = styled.section `
 
 const Wrapper = styled.div `
     display: flex;
-    padding-top: 105px;
+    padding-top: 90px;
     flex-direction: column;
     margin: 50px;
 `
@@ -171,7 +171,7 @@ const AboutHeaderMobile = styled.h1 `
     align-items: baseline;
     display: flex;
     /* padding-bottom: 50px; */
-    padding-top: 10px;
+    /* padding-top: 10px; */
     
     @media (min-width: 668px) {
         display: none;

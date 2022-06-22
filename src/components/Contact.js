@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import contactImage from '../assets/Young and Wild_Stylad bröllopsfotografering_Sneak peek_2.jpg'
 
 // import Portfolio from './Portfolio';
 // import swal from '@sweetalert/with-react';
@@ -10,8 +11,8 @@ const Contact = () => {
         name: "",
         email: "",
         phonenumber: "",
-        startdate: "",
-        enddate: "",
+        // startdate: "",
+        // enddate: "",
         message: "",
         // products: {},
     });
@@ -67,8 +68,8 @@ const Contact = () => {
                     email: "",
                     phonenumber: "",
                     startdate: "",
-                    enddate: "",
-                    message: "",
+                    // enddate: "",
+                    // message: "",
                     // products: {},
                 });
             });
@@ -80,11 +81,17 @@ const Contact = () => {
         //     <Header>Contact Page</Header>
         //     <Portfolio />
         // </section>
-        <FormyForm>
             <div>
                 <FormHeader>Don't be a stranger!</FormHeader>
                 <FormText>Skriv till oss om dina önskemål så återkommer vi inom det närmaste.</FormText>
-            </div>
+            
+        <FormyForm>
+        <ImageWrapper>
+                <Image
+                    src={contactImage}
+                    alt="Linnea och Caroline"
+                />
+            </ImageWrapper>
             <Formwrapper>
                 <form
                     onSubmit={submitEmail}
@@ -97,7 +104,7 @@ const Contact = () => {
                                     <input
                                         type="text"
                                         name="name"
-                                        placeholder="namn"
+                                        // placeholder="namn"
                                         value={mailerState.name}
                                         onChange={handleStateChange}
                                         required
@@ -111,7 +118,7 @@ const Contact = () => {
                                     <input
                                         type="tel"
                                         name="phonenumber"
-                                        placeholder="telefonnummer"
+                                        // placeholder="telefonnummer"
                                         value={mailerState.phonenumber}
                                         onChange={handleStateChange}
                                     />
@@ -124,7 +131,7 @@ const Contact = () => {
                                     <input
                                         type="email"
                                         name="email"
-                                        placeholder="email"
+                                        // placeholder="email"
                                         value={mailerState.email}
                                         onChange={handleStateChange}
                                         required
@@ -132,7 +139,7 @@ const Contact = () => {
                                 </label>
                             </li>
 
-                            <li>
+                            {/* <li>
                                 <label className="custom-field">
                                     Från
                                     <input
@@ -156,14 +163,14 @@ const Contact = () => {
                                     // required
                                     />
                                 </label>
-                            </li>
+                            </li> */}
 
                             <li>
                                 <label className="custom-field">
                                     Meddelande
                                 </label>
                                 <textarea
-                                    placeholder="Skriv ett meddelande här"
+                                    // placeholder="Skriv ett meddelande här"
                                     name="message"
                                     maxlength="2000"
                                     rows="10"
@@ -182,6 +189,7 @@ const Contact = () => {
                 </form>
             </Formwrapper>
         </FormyForm>
+        </div>
     )
 };
 
@@ -193,45 +201,81 @@ export default Contact;
 
 const FormyForm = styled.section`
 padding-top: 8rem;
+display: flex;
+flex-direction: column;
+
 @media (min-width: 768px) {
-    padding-top: 10rem;
+    padding-top: 0;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 100px;
+    /* align-items: center; */
   }
  
 `
+const Image = styled.img `
+    height: auto;
+    object-fit: contain;
+    max-width: 44vw;
+    
+    @media (min-width: 800px) {
+        padding-top: 34px;
+    }
+`
+
+const ImageWrapper = styled.div `
+`
+
 
 const FormHeader = styled.h2 `
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
     font-weight: 300;
     font-size: 25px;
     padding-bottom: 20px;
     text-transform: uppercase;
     letter-spacing: .15em;
-
+    
     @media (min-width: 668px) {
+        text-align: center;
         font-size: 35px;
         letter-spacing: .2em;
+        padding-bottom: 0;
+        padding-top: 150px;
+        justify-content: center;
       }
 `
 
 const FormText = styled.p`
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
     font-size: 16px;
     font-weight: 305;
-    margin: 1rem 0px 0 3rem;
+    margin-top: 1rem;
     line-height: 1.8em;
     padding-bottom: 1rem;
+
+    @media (min-width: 668px) {
+        text-align: center;
+        justify-content: center;
+      }
+    
 `
 const Formwrapper = styled.div`
     display: flex;
     justify-content: center;
     margin-top: 1rem;
+    flex-direction: column;
+
+    @media (min-width: 668px) {
+        margin-top: 0;
+      }
 `
 
 const ButtonWrapper = styled.div`
 display: flex;
 justify-content: center;
+
 `
 
 // const FormButtonText = styled.h4`
@@ -246,7 +290,7 @@ justify-content: center;
 const FormButton = styled.button`
     display: flex;
     justify-content: center;
-    align-item: center;
+    align-items: center;
     width: 100%;
     margin: 2rem 0 2rem 0;
     cursor: pointer;
