@@ -16,7 +16,7 @@ import { TotalWishlistItems } from "./TotalWishlistItems";
 const Nav = styled.nav`
     background: #F1EEEB;
     display: flex;
-    overflow: scroll;
+    /* overflow: scroll; */
     justify-content: space-between;
     position: fixed;
     width: 100vw;
