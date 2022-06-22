@@ -5,9 +5,6 @@ import styled from 'styled-components';
 import WishListItem from './WishListItem';
 import swal from 'sweetalert';
 
-// import swal from '@sweetalert/with-react';
-// import { wishlist } from '../reducers/wishlist';
-
 const BookingForm = () => {
     const products = useSelector((store) => store.wishlist.items)
     const totalPrice = useSelector((store) => (
@@ -37,20 +34,6 @@ const BookingForm = () => {
 
         const data = mailerState;
         data.products = {products}
-
-        // const response = await fetch("http://localhost:8090/send", {
-        //     method: "POST",
-        //     headers: {
-        //         "Content-type": "application/json",
-        //     },
-        //     body: JSON.stringify( data, (key, value) => {
-            
-        //         if (key === "url") {
-        //           return undefined;
-        //         }
-        //         return value;
-        //     }),
-        // })
          
         const response = await fetch("https://final-project-nsd.herokuapp.com/send", {
             method: "POST",
@@ -64,20 +47,16 @@ const BookingForm = () => {
             const resData = await res;
             console.log(resData);
             if (resData.status === "success") {
-                // alert("Message Sent!");
                 swal({
                     title: 'Din förfrågan har skickats till Nordic Spells Decor!',
                     text: 'Tack för ditt mail! Vi hör av oss inom kort när vi sett över dina önskemål och tillgänglighet!',
-                    // icon: 'success',
                     button: 'Ok',
                 });
 
             } else if (resData.status === "fail") {
-                // alert("Message failed to send");
                 swal({
                     title: 'Din förfrågan kunde inte skickas.',
                     text: 'Ajdå, något verkar ha gått fel! Kontakta oss gärna direkt på nordicspellsdecor@gmail.com så pratar vi vidare där!',
-                    // icon: 'success',
                     button: 'Ok',
                 });
             }
@@ -104,13 +83,8 @@ const BookingForm = () => {
 
             <Formwrapper>
                 <form
-                    // name="wishlistform"
-                    // id="wishlistform"
-                    // method="post"
-                    // action="/success"
                     onSubmit={submitEmail}
                 >
-                    {/* <input type="hidden" name="form-name" value="wishlistform" /> */}
                     <div>
                         <ul>
                             <li>
@@ -119,7 +93,6 @@ const BookingForm = () => {
                                     <input
                                         type="text"
                                         name="name"
-                                        // placeholder="namn"
                                         value={mailerState.name}
                                         onChange={handleStateChange}
                                         required
@@ -133,7 +106,6 @@ const BookingForm = () => {
                                     <input
                                         type="tel"
                                         name="phonenumber"
-                                        // placeholder="telefonnummer"
                                         value={mailerState.phonenumber}
                                         onChange={handleStateChange}
                                     />
@@ -146,7 +118,6 @@ const BookingForm = () => {
                                     <input
                                         type="email"
                                         name="email"
-                                        // placeholder="email"
                                         value={mailerState.email}
                                         onChange={handleStateChange}
                                         required
@@ -185,7 +156,6 @@ const BookingForm = () => {
                                     Meddelande
                                 </label>
                                 <textarea
-                                    // placeholder="Skriv ett meddelande här"
                                     name="message"
                                     maxlength="2000"
                                     rows="10"
@@ -194,20 +164,6 @@ const BookingForm = () => {
                                 >
                                 </textarea>
                             </li>
-
-                            <li>
-                                {/* <label className="custom-field">
-                                    Hyrsaker
-                                </label>
-                                <textarea
-                                    name="rentalitems"
-                                    value={mailerState.products}
-                                    onChange={handleStateChange}    
-                                >
-
-                                </textarea> */}
-                            </li>
-
                             <li>
                                 <ButtonWrapper>
                                     <FormButton type="submit">Skicka</FormButton>
@@ -287,15 +243,6 @@ display: flex;
 justify-content: center;
 `
 
-// const FormButtonText = styled.h4`
-//     display: flex;
-//     justify-content: center;
-//     font-size: 20px;
-//     font-weight: 400;
-//     line-height: 1.8em;
-//     padding-bottom: 1rem;
-// `
-
 const FormButton = styled.button`
     display: flex;
     justify-content: center;
@@ -320,16 +267,6 @@ const FormButton = styled.button`
     }
 `
 
-// const ArticleContainer = styled.article`
-//     padding: 8rem 2rem 0 2rem;
-//     margin: 0px 30px;
-//     display: flex;
-//     flex-direction: column;
-//     text-align: center;
-//     align-self: center;
-//     justify-self: center;
-// `
-
 const RentalsTextContainer = styled.div`
 display: flex;
     flex-direction: column;
@@ -351,34 +288,5 @@ const RentalsInfoText = styled.h1 `
     }
 
 `
-
-// const RentalsContainer = styled.div`
-// @media (min-width: 768px) {
-//     display: grid;
-//     grid-template-columns: repeat(3, 1fr)
-// }
-
-// @media (min-width: 1024px) {
-//     display: grid;
-//     grid-template-columns: repeat(4, 1fr)
-// }
-// `
-
-// const CardContainer = styled.div`
-// background-color: white;
-// width: 55vh;
-// padding: 1rem 1 rem 1 rem 0;
-// display: flex;
-// flex-direction: column;
-// justify-content: center;
-// align-items: center;
-// margin: 1.5rem;
-
-// @media (min-width: 668px) {
-//     width: 35vh;
-//     padding: o.5rem 0.5 rem 0.5rem 0;
-
-// }
-// `
 
 ;
