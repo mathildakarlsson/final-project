@@ -69,7 +69,6 @@ const StarIcon = styled(GiFallingStar)`
   cursor: pointer;
   color: #fff;
   font-size: 2.5rem;
-
 `
 
 const NavMenu = styled.ul`
@@ -147,7 +146,7 @@ const NavBar = ({ toggle }) => {
                         >
                         <TotalWishlistItems />
                         <StarIcon />
-                        </StarLink>
+                    </StarLink>
                     <NavMenu>
 
                         <NavLinks to='/rentals' 
