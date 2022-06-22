@@ -161,7 +161,7 @@ margin: 1.5rem;
 
 @media (min-width: 668px) {
     width: 35vh;
-    padding: o.5rem 0.5 rem 0.5rem 0;
+    padding: .5rem 0.5rem 0.5rem 0;
 
 }
 `

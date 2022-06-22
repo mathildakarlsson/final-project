@@ -78,7 +78,7 @@ body {
 .slider {
   width: 100vw;
   height: auto;
-  padding-top: 105px;
+  padding-top: 100px;
   overflow: scroll;
   /* margin-bottom: 300px; */
 }

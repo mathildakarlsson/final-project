@@ -24,5 +24,17 @@ export default {
         name: 'homeFour',
         type: 'figure',
       },
+      {
+        name: 'contactImage',
+        type: 'figure',
+      },
+      {
+        name: 'serviceImageOne',
+        type: 'figure',
+      },
+      {
+        name: 'serviceImageTwo',
+        type: 'figure',
+      },
     ],
   };
