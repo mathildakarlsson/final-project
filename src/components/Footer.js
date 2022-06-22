@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const Footer = () => {
     return (
         <Container>
-            <Header>Tack till våra fotografer</Header>
+            <Header>Tack till våra fotografer Sandra Lööf youngandwild.wedding, Felicia Engberg och Rebecka Wendesten</Header>
         </Container>
     )
 };
