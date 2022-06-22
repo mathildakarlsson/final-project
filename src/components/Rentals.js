@@ -1,5 +1,4 @@
 /* eslint-disable */
-
 import React, { useState, useEffect } from 'react';
 import sanityClient from '../client.js';
 import { Link } from 'react-router-dom';
@@ -10,9 +9,7 @@ import styled from 'styled-components';
 
 
 const Rentals = () => {
-
     const [productData, setProductData] = useState();
-
     const dispatch = useDispatch()
 
     useEffect(() => {
@@ -36,7 +33,6 @@ const Rentals = () => {
         )
             .then(data => {
                 setProductData(data)
-                console.log(data)
             })     
     }, []);
 
@@ -148,14 +144,14 @@ const RentalsInfoText = styled.h1 `
 `
 
 const CardContainer = styled.div`
-background-color: white;
-width: 55vh;
-padding: 1rem 1 rem 1 rem 0;
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-margin: 1.5rem;
+    background-color: white;
+    width: 55vh;
+    padding: 1rem 1 rem 1 rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1.5rem;
 
 @media (min-width: 668px) {
     width: 35vh;
@@ -181,6 +177,5 @@ const AddButton = styled.button`
     background-color: black;
     color: white;
     transition: 0.7s ease;
-    /* height: 30px; */
     }
 `;

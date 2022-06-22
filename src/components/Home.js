@@ -49,10 +49,6 @@ const Home = () => {
             })     
     }, []);
 
-
-    
-
-
     return (
         <HomeContainer>
             <Carousel />
@@ -170,7 +166,7 @@ const Overlay = styled.div `
         
         &:hover {
         opacity: 100;
-    }
+        }
     } 
 `
 
@@ -181,13 +177,10 @@ const ImageWrapper = styled.div `
     align-items: center;
     justify-content: center;
     text-align: center;
-    /* max-width: 40vw; */
-   
 `
 
 const Image = styled.img `
     width: auto;
-    /* display: inherit; */
     object-fit: contain;
     max-height: 80vh;
 
@@ -210,7 +203,6 @@ const CardInfo = styled.div `
     font-size: 30px;
     letter-spacing: .15em;
     z-index: 5;
-    /* margin: 0; */
     padding: 0;
 
     @media (min-width: 668px) {
@@ -244,6 +236,3 @@ const HomeContainer = styled.section `
     align-items: center;
     overflow: hidden;
 `
-
-
-

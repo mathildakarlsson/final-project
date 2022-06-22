@@ -8,11 +8,6 @@ export default {
       name: 'title',
       type: 'string',
     },
-    // {
-    //   title: 'Weight in grams',
-    //   name: 'grams',
-    //   type: 'number',
-    // },
     {
       title: 'Price',
       name: 'price',
@@ -23,37 +18,16 @@ export default {
       name: 'sku',
       type: 'string',
     },
-    // {
-    //   title: 'Material',
-    //   name: 'material',
-    //   type: 'string',
-    // },
     {
       title: 'Dimensions',
       name: 'dimensions',
       type: 'string',
     },
-    // {
-    //   title: 'Quantity',
-    //   name: 'quantity',
-    //   type: 'number',
-    // },
-    // {
-    //   title: 'Color',
-    //   name: 'color',
-    //   type: 'string',
-    // },
-
     {
       title: 'Description',
       name: 'description',
       type: 'text',
     },
-    // {
-    //   title: 'Taxable',
-    //   name: 'taxable',
-    //   type: 'boolean',
-    // },
     {
       name: 'images',
       title: 'Images',
@@ -67,10 +41,5 @@ export default {
         },
       ],
     },
-    // {
-    //   title: 'Bar code',
-    //   name: 'barcode',
-    //   type: 'barcode',
-    // },
   ],
 }

@@ -4,10 +4,10 @@ import styled from 'styled-components';
 
 
 const StyledTotalItems = styled.div`
-display: flex;
-align-items: center;
-text-decoration: none;
-padding: 0 1rem;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  padding: 0 1rem;
   cursor: pointer;
   font-weight: bold;
   color: #6E6D6C;

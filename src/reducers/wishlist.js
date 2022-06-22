@@ -11,7 +11,6 @@ export const wishlist = createSlice({
         addItem: (state, action) => {
             const existingProduct = state.items.find((item) => item._id === action.payload._id)
             if (existingProduct) {
-                // increment quantity
                 existingProduct.quantity += 1
             } else {
                 state.items.push({ ...action.payload, quantity: 1 })
@@ -21,7 +20,6 @@ export const wishlist = createSlice({
         removeItem: (state, action) => {
             const existingProduct = state.items.find((item) => item._id === action.payload._id)
             if (existingProduct && existingProduct.quantity === 1) {
-                //remove it
                 state.items = state.items.filter((item) => item._id !== action.payload._id)
             } else if (existingProduct) {
                 existingProduct.quantity -= 1

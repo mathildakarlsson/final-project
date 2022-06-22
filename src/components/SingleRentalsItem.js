@@ -42,7 +42,7 @@ const SingleRentalsItem = () => {
                 }
             },
             defaultBlockContent{
-            body,  
+                body,  
             },
             "name": product->name,
             "productImage": product-> image
@@ -61,16 +61,11 @@ const SingleRentalsItem = () => {
                                 <img src={singleProduct.mainImage.asset.url}
                                     alt={singleProduct.title}
                                 />
-                                {/* <Info>Namn: {singleProduct.title}</Info> */}
-                                {/* <Info>Material: {singleProduct.defaultProductVariant.material}</Info> */}
+                    
                                 <Info>Pris: {singleProduct.defaultProductVariant.price} {singleProduct.defaultProductVariant.sku}/dag</Info>
                                 <Info>Storlek: {singleProduct.defaultProductVariant.dimensions}</Info>
                                 <Info>Antal i lager: {singleProduct.defaultProductVariant.quantity}st</Info>
-                                {/* <Info>Färg: {singleProduct.defaultProductVariant.color}</Info> */}
                                 <Info>Beskrivning: {singleProduct.defaultProductVariant.description}</Info>   
-                                {/* <Info>Kategori: {singleProduct.category}</Info> */}
-                                {/* <p>♥️ TESTY MCtester ♥️</p>   */}
-                                {/* <Info>Body:{singleProduct.defaultProductVariant.body}</Info> */}
                             
                             <AddButton
                                 disabled={singleProduct.inventory === 0}
@@ -99,8 +94,6 @@ const ArticleContainer = styled.article`
     text-align: center;
     align-self: center;
     justify-self: center;
-
-   
 `
 
 const Header = styled.h1 `
@@ -113,23 +106,21 @@ const Header = styled.h1 `
     @media (min-width: 668px) {
         font-size: 37px;
         letter-spacing: .2em;
-        
     }
-
 `
 
 const CardContainer = styled.div`
-background-color: white;
-width: 55vh;
-padding: 1rem;
+    background-color: white;
+    width: 55vh;
+    padding: 1rem;
 
-@media (min-width: 1024px) {
-    width: 100vh;
-}
+    @media (min-width: 1024px) {
+        width: 100vh;
+    }
 `
 
 const Info = styled.h4 `
-padding: .8rem;
+    padding: .8rem;
     font-weight: 300;
     margin: 12px 0;
     line-height: 28px;
@@ -162,27 +153,3 @@ const AddButton = styled.button`
 `
 ;
 
-
-// ------------------- deleted code - saving in case of error messages -----------------------//
-
-
-// import imageUrlBuilder from '@sanity/image-url';
-// import BlockContent from "@sanity/block-content-to-react";
-
-
-/* <p>Body:{singleProduct.defaultBlockContent.body}</p> */
-/* <p>Body:{singleProduct.body}</p> */
-
-/* <img src={singleProduct.mainImage.asset.url
-        alt={singleProduct.title}
-    /> */
-
-/* <div>
-        <BlockContent 
-            blocks={singleProduct.body}
-            blocks={singleProduct.defaultBlockContent.body}
-            blocks={singleProduct.defaultProductVariant.body}
-            projectId="ei5784pj"
-            dataset="production"
-        />
-    </div> */

@@ -180,7 +180,6 @@ const BookingForm = () => {
                 <RentalsTextContainer>
                 <RentalsInfoText>Total kostnad: {totalPrice} SEK</RentalsInfoText>
                 </RentalsTextContainer>
-                {/* <RentalsContainer> */}
                 <div>
                     <ul className="form-products">
                         {products.map((product, index) => {
@@ -190,22 +189,21 @@ const BookingForm = () => {
                         })}
                     </ul>
                 </div>
-                {/* </RentalsContainer> */}
                 </article>
             </section>
         </FormContainer>
     )
-
 };
 
 export default BookingForm;
 
+
 const FormContainer = styled.section`
-padding-top: 8rem;
-@media (min-width: 768px) {
-    padding-top: 10rem;
-  }
- 
+    padding-top: 8rem;
+    
+    @media (min-width: 768px) {
+        padding-top: 10rem;
+    }
 `
 
 const FormHeader = styled.h2 `
@@ -237,10 +235,9 @@ const Formwrapper = styled.div`
     justify-content: center;
     margin-top: 1rem;
 `
-
 const ButtonWrapper = styled.div`
-display: flex;
-justify-content: center;
+    display: flex;
+    justify-content: center;
 `
 
 const FormButton = styled.button`
@@ -263,12 +260,11 @@ const FormButton = styled.button`
     background-color: black;
     color: white;
     transition: 0.7s ease;
-    /* height: 30px; */
     }
 `
 
 const RentalsTextContainer = styled.div`
-display: flex;
+    display: flex;
     flex-direction: column;
     text-align: center;
     padding: 1rem;
@@ -286,7 +282,6 @@ const RentalsInfoText = styled.h1 `
         font-size: 15px;
         letter-spacing: .2em;
     }
-
 `
 
 ;

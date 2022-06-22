@@ -16,8 +16,8 @@ const SidebarContainer = styled.aside`
   top: ${({ isOpen }) => (isOpen ? '0' : '-100%')};
 `
 const HamburgerClosingIcon = styled(MdClose)`
-cursor: pointer;
-color: #6E6D6C;
+  cursor: pointer;
+  color: #6E6D6C;
 `
 
 const ClosingIcon = styled.div`
@@ -40,6 +40,7 @@ const SideLinks = styled(Link)`
   text-decoration: none;
   color: #6E6D6C;
   cursor: pointer;
+  
   &:hover {
     color: #B3635A;
     transition: 0.3s ease-in-out;

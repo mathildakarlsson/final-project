@@ -46,30 +46,6 @@ export default {
         },
       ],
     },
-    // {
-    //   title: 'Tags',
-    //   name: 'tags',
-    //   type: 'array',
-    //   of: [
-    //     {
-    //       type: 'string',
-    //     },
-    //   ],
-    //   options: {
-    //     layout: 'tags',
-    //   },
-    // },
-    // {
-    //   name: 'vendor',
-    //   title: 'Vendor',
-    //   type: 'reference',
-    //   to: {type: 'vendor'},
-    // },
-    // {
-    //   name: 'blurb',
-    //   title: 'Blurb',
-    //   type: 'localeString',
-    // },
     {
       name: 'categories',
       title: 'Categories',

@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-// import styled from 'styled-components';
 import sanityClient from '../client.js';
 
 
@@ -123,14 +122,7 @@ const Carousel = () => {
     <>
         <div className="slider">
             {carouselData && carouselData.map((carousel, index) => (
-                <div key={index} className="slides">
-                    {/* <input type="radio" name="radio-btn" id="radio1"/>
-                    <input type="radio" name="radio-btn" id="radio2"/>
-                    <input type="radio" name="radio-btn" id="radio3"/>
-                    <input type="radio" name="radio-btn" id="radio4"/>
-                    <input type="radio" name="radio-btn" id="radio5"/>
-                    <input type="radio" name="radio-btn" id="radio6"/> */}
-                    
+                <div key={index} className="slides">  
                     <div className="slide">
                         <img
                             src={carousel.desktopTwo.image.asset.url}
@@ -167,40 +159,13 @@ const Carousel = () => {
                             alt="carousel five"
                         />
                     </div>
-
-                    {/* <div className="navigation-auto">
-                        <div className="auto-btn1"></div>
-                        <div className="auto-btn2"></div>
-                        <div className="auto-btn3"></div>
-                        <div className="auto-btn4"></div>
-                        <div className="auto-btn5"></div>
-                        <div className="auto-btn6"></div>
-                    </div> */}
-
                 </div>
             ))}
-
-            {/* <div className="navigation-manual">
-                <label for="mobile-radio1" className="manual-btn"></label>
-                <label for="mobile-radio2" className="manual-btn"></label>
-                <label for="mobile-radio3" className="manual-btn"></label>
-                <label for="mobile-radio4" className="manual-btn"></label>
-                <label for="mobile-radio5" className="manual-btn"></label>
-                <label for="mobile-radio6" className="manual-btn"></label>
-            </div> */}
-
         </div>
 
         <div className="mobile-slider">
             {carouselData && carouselData.map((mobileCarousel, index) => (
                 <div key={index} className="mobile-slides">
-                    {/* <input type="radio" className="mobile-radio-btn" id="mobile-radio1"/>
-                    <input type="radio" className="mobile-radio-btn" id="mobile-radio2"/>
-                    <input type="radio" classnName="mobile-radio-btn" id="mobile-radio3"/>
-                    <input type="radio" className="mobile-radio-btn" id="mobile-radio4"/>
-                    <input type="radio" className="mobile-radio-btn" id="mobile-radio5"/>
-                    <input type="radio" className="mobile-radio-btn" id="mobile-radio6"/> */}
-                    
                     <div className="mobile-slide first">
                         <img
                             src={mobileCarousel.mobileOne.image.asset.url}
@@ -237,28 +202,8 @@ const Carousel = () => {
                             alt="carousel six"
                         />
                     </div>
-
-                    {/* <div className="mobile-navigation-auto">
-                        <div className="mobile-auto-btn1"></div>
-                        <div className="mobile-auto-btn2"></div>
-                        <div className="mobile-auto-btn3"></div>
-                        <div className="mobile-auto-btn4"></div>
-                        <div className="mobile-auto-btn5"></div>
-                        <div className="mobile-auto-btn6"></div>
-                    </div> */}
-
                 </div>
             ))}
-
-            {/* <div className="mobile-navigation-manual">
-                <label for="mobile-radio1" className="mobile-manual-btn"></label>
-                <label for="mobile-radio2" className="mobile-manual-btn"></label>
-                <label for="mobile-radio3" className="mobile-manual-btn"></label>
-                <label for="mobile-radio4" className="mobile-manual-btn"></label>
-                <label for="mobile-radio5" className="mobile-manual-btn"></label>
-                <label for="mobile-radio6" className="mobile-manual-btn"></label>
-            </div> */}
-
         </div>
     </>
     )

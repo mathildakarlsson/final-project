@@ -18,7 +18,6 @@ const WishListItem = ({ product }) => {
     return(
         <Main>
         <ArticleContainer>
-            {/* <RentalsContainer> */}
                 <CardContainer>
                     <div>
                     <img className="product-image"
@@ -31,24 +30,18 @@ const WishListItem = ({ product }) => {
                     </div>
                     <div>
                         <AddButton
-
-                            // className="qty-button"
-                            // type="button"
                             onClick={addItem} 
 
                         >
                         + Lägg till
                         </AddButton>
                         <RemoveButton
-                            // className="qty-button"
-                            // type="button"
                             onClick={removeItem}
                         >
                         - Ta bort
                         </RemoveButton>
                     </div>
                 </CardContainer>
-                {/* </RentalsContainer> */}
         </ArticleContainer>
         </Main>
     )
@@ -72,18 +65,6 @@ const ArticleContainer = styled.article`
     align-self: center;
     justify-self: center;
 `
-
-// const RentalsContainer = styled.div`
-// @media (min-width: 768px) {
-//     display: grid;
-//     grid-template-columns: repeat(3, 1fr)
-// }
-
-// @media (min-width: 1024px) {
-//     display: grid;
-//     grid-template-columns: repeat(4, 1fr)
-// }
-// `
 
 const CardContainer = styled.div`
 background-color: white;

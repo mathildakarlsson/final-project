@@ -159,27 +159,26 @@ const WeddingHeader = styled.h1 `
 `
 
 const WeddingRentalContainer = styled.div`
-padding: 2rem;
+    padding: 2rem;
 `
 
 const PartiesContainer = styled.div`
-background-color: white;
-padding: 2rem;
+    background-color: white;
+    padding: 2rem;
 `
 
 const PartiesHeader = styled.h1 `
-text-transform: uppercase;
-font-weight: 300;
-font-size: 25px;
-letter-spacing: .15em;
-background-color: white;
-margin-top: 2rem;
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: 25px;
+    letter-spacing: .15em;
+    background-color: white;
+    margin-top: 2rem;
 
-
-@media (min-width: 668px) {
-    font-size: 30px;
-    letter-spacing: .2em;
-}
+    @media (min-width: 668px) {
+        font-size: 30px;
+        letter-spacing: .2em;
+    }
 
 `
 
@@ -196,27 +195,26 @@ const Info = styled.h4 `
 `
 
 const PartiesInfo = styled.h4 `
-font-weight: 300;
-margin: 12px 0;
-line-height: 28px;
-padding-bottom: 2.5rem;
-background-color: white;
+    font-weight: 300;
+    margin: 12px 0;
+    line-height: 28px;
+    padding-bottom: 2.5rem;
+    background-color: white;
 
-@media (min-width: 668px) {
-    font-size: 18px;
-    letter-spacing: .03em;
-}
+    @media (min-width: 668px) {
+        font-size: 18px;
+        letter-spacing: .03em;
+    }
 ` 
 const RentalHeader = styled.h1 `
-text-transform: uppercase;
-font-weight: 300;
-font-size: 25px;
-letter-spacing: .15em;
-padding-top: 2rem;
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: 25px;
+    letter-spacing: .15em;
+    padding-top: 2rem;
 
-@media (min-width: 668px) {
-    font-size: 30px;
-    letter-spacing: .2em;
-}
-
+    @media (min-width: 668px) {
+        font-size: 30px;
+        letter-spacing: .2em;
+    }
 `

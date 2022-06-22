@@ -123,13 +123,14 @@ const LinkContainer = styled.div `
 `
 
 const Hamburger = styled.div`
-display: block;
-position: absolute;
-top: 0;
-right: 0;
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
   transform: translate(-100%, 70%);
   font-size: 2.5rem;
   cursor: pointer;
+  
   @media (min-width: 668px) {
     display: none;
   }
@@ -148,32 +149,34 @@ const StarIcon = styled(GiFallingStar)`
 
 const NavMenu = styled.ul`
   display: none;
+  
   @media (min-width: 668px) {
     display: flex;
     align-items: center;
-
   }
 `
 
 const NavLinks = styled(Link)`
-display: flex;
-align-items: center;
-text-decoration: none;
-padding: 0 1rem;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  padding: 0 1rem;
   cursor: pointer;
+  
   :hover {
     border-bottom: 3px solid white;
   }
 `
 const StarLink = styled(Link)`
-display: block;
-position: absolute;
-top: 2rem;
-right: 5rem;
-transform: translate(-50%, 25%);
-  @media (min-width: 668px) {  
-      display: none;
-}
+    display: block;
+    position: absolute;
+    top: 2rem;
+    right: 5rem;
+    transform: translate(-50%, 25%);
+    
+    @media (min-width: 668px) {  
+        display: none;
+    }
 `
 
 const linkStyle = {
