@@ -220,8 +220,10 @@ const BookingForm = () => {
             </Formwrapper>
 
             <section>
-                <FormButtonText>Total kostnad: {totalPrice} SEK</FormButtonText>
-                <div>
+            <article>
+                <RentalsInfoText>Total kostnad: {totalPrice} SEK</RentalsInfoText>
+                {/* <RentalsContainer> */}
+                <CardContainer>
                     <ul className="form-products">
                         {products.map((product, index) => {
                             return (
@@ -229,7 +231,9 @@ const BookingForm = () => {
                             )
                         })}
                     </ul>
-                </div>
+                </CardContainer>
+                {/* </RentalsContainer> */}
+                </article>
             </section>
         </FormyForm>
     )
@@ -281,14 +285,14 @@ display: flex;
 justify-content: center;
 `
 
-const FormButtonText = styled.h4`
-    display: flex;
-    justify-content: center;
-    font-size: 20px;
-    font-weight: 400;
-    line-height: 1.8em;
-    padding-bottom: 1rem;
-`
+// const FormButtonText = styled.h4`
+//     display: flex;
+//     justify-content: center;
+//     font-size: 20px;
+//     font-weight: 400;
+//     line-height: 1.8em;
+//     padding-bottom: 1rem;
+// `
 
 const FormButton = styled.button`
     display: flex;
@@ -313,10 +317,58 @@ const FormButton = styled.button`
     /* height: 30px; */
     }
 `
-// const FormWishlistItems = styled.div`
-//     display: grid;
-//     justify-content: center;
-//     align-item: center;
+
+// const ArticleContainer = styled.article`
+//     padding: 8rem 2rem 0 2rem;
+//     margin: 0px 30px;
+//     display: flex;
+//     flex-direction: column;
+//     text-align: center;
+//     align-self: center;
+//     justify-self: center;
 // `
+
+const RentalsInfoText = styled.h1 `
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: 20px;
+    letter-spacing: .15em;
+    background-color: white;
+
+    @media (min-width: 668px) {
+        font-size: 15px;
+        letter-spacing: .2em;
+    }
+
+`
+
+// const RentalsContainer = styled.div`
+// @media (min-width: 768px) {
+//     display: grid;
+//     grid-template-columns: repeat(3, 1fr)
+// }
+
+// @media (min-width: 1024px) {
+//     display: grid;
+//     grid-template-columns: repeat(4, 1fr)
+// }
+// `
+
+const CardContainer = styled.div`
+background-color: white;
+width: 55vh;
+padding: 1rem 1 rem 1 rem 0;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+margin: 1.5rem;
+
+@media (min-width: 668px) {
+    width: 35vh;
+    padding: o.5rem 0.5 rem 0.5rem 0;
+
+}
+`
 
 ;
