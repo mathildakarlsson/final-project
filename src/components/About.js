@@ -48,38 +48,57 @@ const About = () => {
     return (
         <AboutContainer>
                 {aboutUsData && aboutUsData.map((aboutUs, index) => (
-            <Wrapper>
-                    <ImageWrapper key={index}>
-                        <Image
-                            src={aboutUs.photoOne.image.asset.url}
-                            alt={aboutUs.title}
-                        />
-                        <p>Foto: {aboutUs.photoOne.photographer}</p>
-                        <Image
-                            src={aboutUs.photoTwo.image.asset.url}
-                            alt={aboutUs.title}
-                        />
-                        <p>Foto: {aboutUs.photoTwo.photographer}</p>
-                        <Image
-                            src={aboutUs.photoThree.image.asset.url}
-                            alt={aboutUs.title}
-                        />
-                        <p>Foto: {aboutUs.photoThree.photographer}</p>
-                    </ImageWrapper>
-                <TextWrapper>
-                    <AboutHeader><LetterSpan>O</LetterSpan>UR &nbsp;<LetterSpan>S</LetterSpan>TORY</AboutHeader>
-                    <AboutText>
-                        Att en råkall februarikväll kunde vara så fylld av hopp och förväntan. Bland sömniga trädgårdar och gatlyktors sken växte tanken om ett företag, snällt mot plånboken och miljön, samtidigt drömlikt och modigt i sitt utförande.
-                        </AboutText>
-                        <AboutText>
-                        Linnéa florist med förkärlek för naturen och svalkande bad. Caroline, kreatör som trivs med pulsen i staden och förundras av vackra byggnader. Olika, men lika i kärleken för skapandet, frihetslängtan, för färg och form och för att få se glädjen i människors ögon när dröm blir verklighet.
-                        </AboutText>
-                        <AboutText>
-                        Vi blev Nordic Spells Decor. Visionen var och förblir, att genom säsongens växter, återbruk av vackra ting och kreativitet få vara Västkustens förmedlare av dekoration till personliga och pintrestvänliga event!
-                        </AboutText>
-                    </TextWrapper>
-            </Wrapper>
-                    ))}
+                    <Wrapper key={index}>
+                        <ContentWrapper>
+                            <Image
+                                    src={aboutUs.photoOne.image.asset.url}
+                                    alt={aboutUs.title}
+                            />
+                            <TextWrapper>
+                                <AboutHeader><LetterSpan>O</LetterSpan>UR &nbsp;<LetterSpan>S</LetterSpan>TORY</AboutHeader>
+                                <AboutText>
+                                    Att en råkall februarikväll kunde vara så fylld av hopp och förväntan. Bland sömniga trädgårdar och gatlyktors sken växte tanken om ett företag, snällt mot plånboken och miljön, samtidigt drömlikt och modigt i sitt utförande.
+                                </AboutText>
+                                <AboutText>
+                                    Linnéa florist med förkärlek för naturen och svalkande bad. Caroline, kreatör som trivs med pulsen i staden och förundras av vackra byggnader. Olika, men lika i kärleken för skapandet, frihetslängtan, för färg och form och för att få se glädjen i människors ögon när dröm blir verklighet.
+                                </AboutText>
+                                <AboutText>
+                                    Vi blev Nordic Spells Decor. Visionen var och förblir, att genom säsongens växter, återbruk av vackra ting och kreativitet få vara Västkustens förmedlare av dekoration till personliga och pintrestvänliga event!
+                                </AboutText>
+                            </TextWrapper>
+                        </ContentWrapper>
+                        <ContentWrapper>
+                            <Image
+                                src={aboutUs.photoTwo.image.asset.url}
+                                alt={aboutUs.title}
+                            />
+                            <TextWrapper>
+                                <AboutHeader><LetterSpan>C</LetterSpan>aroline, kreativ designer</AboutHeader>
+                                <AboutText>
+                                    Caroline heter jag och jag är kreativ designer i Nordic Spells Decor. Jag fullkomligt älskar chansen att få ta tag i nya kreativa projekt och låta idéerna flöda! Om du önskar hjälp med att planera dekorationen ditt drömevent eller bara någon att bolla tankar kring dekoration med så finns jag här!
+                                </AboutText>
+                                <AboutText>
+                                    Extra svag är jag för dekoration med attityd och personlighet, för kontraster och för dekoration som förstärker identiteten hos dig som kund! Jag tror starkt på omgivningens kraft att påverka stämningar, så varför inte ge den en extra knuff mot känslan du vill att dina gäster ska minnas när de tänker tillbaka om tio, tjugo år?
+                                </AboutText>
+                            </TextWrapper>
+                        </ContentWrapper>
+                        <ContentWrapper>
+                            <Image
+                                src={aboutUs.photoThree.image.asset.url}
+                                alt={aboutUs.title}
+                            />
+                            <TextWrapper>
+                            <AboutHeader><LetterSpan>L</LetterSpan>innéa, florist</AboutHeader>
+                                <AboutText>
+                                    Linnéa heter jag och jag är kreativ designer i Nordic Spells Decor. Jag fullkomligt älskar chansen att få ta tag i nya kreativa projekt och låta idéerna flöda! Om du önskar hjälp med att planera dekorationen ditt drömevent eller bara någon att bolla tankar kring dekoration med så finns jag här!
+                                </AboutText>
+                                <AboutText>
+                                    Extra svag är jag för dekoration med attityd och personlighet, för kontraster och för dekoration som förstärker identiteten hos dig som kund! Jag tror starkt på omgivningens kraft att påverka stämningar, så varför inte ge den en extra knuff mot känslan du vill att dina gäster ska minnas när de tänker tillbaka om tio, tjugo år?
+                                </AboutText>
+                            </TextWrapper>
+                        </ContentWrapper>
+                    </Wrapper>
+                ))}
         </AboutContainer>
     )
 };
@@ -92,47 +111,56 @@ const AboutContainer = styled.section `
 
 const Wrapper = styled.div `
     display: flex;
-    flex-direction: row;
-    align-items: center;
+    padding-top: 105px;
+    flex-direction: column;
+    margin: 50px;
+
+
 `
 
-const ImageWrapper = styled.div `
-    /* display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center; */
+const ContentWrapper = styled.div `
+    display: flex;
+    flex-direction: row;
+    margin: 50px;
+    align-items: center;
 `
 
 const TextWrapper = styled.div `
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
 `
 
 const Image = styled.img `
-    width: 50%;
-    height: 50%;
-    margin: 120px 0 30px 140px;
+    max-width: 100%;
+    width: auto;
+    object-fit: contain;
+    max-height: 90vh;
+    margin-right: 70px;
 `
 
 const AboutHeader = styled.h1 `
-    text-align: center;
-    font-weight: 400;
-    font-size: 55px;
-    margin: 20px 0 20px 40px;
+    align-self: center;
+    font-weight: 300;
+    font-size: 50px;
     display: flex;
-    flex-direction: row;
+    /* flex-direction: row; */
     align-items: baseline;
-    padding-bottom: 40px;
 `
 
 const LetterSpan = styled.div `
-    font-size: 70px;
+    font-size: 60px;
 `
 
 const AboutText = styled.p`
-    font-size: 16px;
-    text-align: left;
+    max-width: 40vw;
     font-weight: 300;
-    margin: 20px 0 20px 40px;
-    line-height: 1.8em;
-    width: 40vw;
+    margin: 12px 0;
+    line-height: 28px;
+    padding-top: 15px;
+
+    @media (min-width: 668px) {
+        font-size: 16px;
+        letter-spacing: .03em
+    }
 `
