@@ -10,6 +10,7 @@ import styled from 'styled-components';
 
 const Rentals = () => {
     const [productData, setProductData] = useState();
+    const [filterByCateogry, setFilterByCategory] = useState([]);
     const dispatch = useDispatch()
 
     useEffect(() => {
@@ -19,6 +20,7 @@ const Rentals = () => {
                 slug,
                 price,
                 _id,
+                categories,
                 defaultProductVariant{
                     price,
                     sku,
@@ -33,8 +35,17 @@ const Rentals = () => {
         )
             .then(data => {
                 setProductData(data)
+                setFilterByCategory(data);
             })     
     }, []);
+
+    const filterOnChange = (value) => {
+        if (value === "visa alla") {
+            setFilterByCategory(productData)
+        } else {
+            setFilterByCategory(productData.filter(product => product.categories === value))
+        }
+    }
 
     return (
         <Main>
@@ -43,6 +54,23 @@ const Rentals = () => {
                 <Info>Yes! Dags att välja dekoration!
                     Lägg sådant du önskar i din önskelista och skicka den sen till oss så återkommer vi med
                     offert för dig att ta ställning till.</Info>
+                    <div>
+                        {filterCategory.map(({ index, value }) => { 
+                            <div key={index} >
+                                <p>Välj kategori här</p>
+                                <select value={category} onChange{() => filterOnChange(value)}>
+                                    <option value="visa alla">Visa alla</option>
+                                    <option value="vaser och skålar">Vaser och skålar</option>
+                                    <option value="ljusstakar och ljuslyktor">Ljusstakar och ljuslyktor</option>
+                                    <option value="flaskor">Flaskor</option>
+                                    <option value="mattor">Mattor</option>
+                                    <option value="möbler">Möbler</option>
+                                    <option value="skyltar">Skyltar</option>
+                                    <option value="textil">Textil</option>
+                                </select>
+                            </div>
+                        })}
+                    </div>
                     <RentalsContainer>
                     {productData && productData.map((product, index) => (
                         <CardContainer key={index}>
