@@ -21,6 +21,7 @@ const Container = styled.section `
     justify-content: center;
     align-items: center;
     margin-top: 100px;
+    flex-direction: column;
 `
 
 const Header = styled.p `

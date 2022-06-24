@@ -21,7 +21,25 @@ const reducer = combineReducers({
 	wishlist: wishlist.reducer,
 });
 
-const store = configureStore({ reducer });
+
+// Get local storage and sets as preloadedState
+const persistedStateJSON = localStorage.getItem("userStore");
+let preloadedState = {};
+if (persistedStateJSON) {
+  preloadedState = JSON.parse(persistedStateJSON);
+}
+
+// Configure store with preloadedState
+export const store = configureStore({ reducer, preloadedState });
+
+// Store the state in local storage on Redux state change
+store.subscribe(() => {
+  localStorage.setItem("userStore", JSON.stringify(store.getState()));
+});
+
+
+
+// const store = configureStore({ reducer });
 
 export const App = () => {
   return (
