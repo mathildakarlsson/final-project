@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const Footer = () => {
     return (
         <Container>
-            <Header>Tack till våra fotografer</Header>
+            <Header>Tack till våra fotografer!</Header>
             <Header>Sandra Lööf - youngandwild.wedding, </Header>
             <Header>Felicia Engberg och Rebecka Wendesten</Header>
         </Container>
