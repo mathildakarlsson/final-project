@@ -10,7 +10,7 @@ import styled from 'styled-components';
 
 const Rentals = () => {
     const [productData, setProductData] = useState();
-    const [filterByCateogry, setFilterByCategory] = useState([]);
+    const [filterProducts, setFilterProducts] = useState([]);
     const dispatch = useDispatch()
 
     useEffect(() => {
@@ -35,15 +35,97 @@ const Rentals = () => {
         )
             .then(data => {
                 setProductData(data)
-                setFilterByCategory(data);
+                setFilterProducts(data);
             })     
     }, []);
 
-    const filterOnChange = (value) => {
+    useEffect(() => {
+        sanityClient.fetch(
+            `*["Mattor" in categories[]->title]{
+                "categories": categories[]->title,
+                title
+              }`
+        )
+            .then(data => {
+                console.log(data)
+                setFilterProducts(data);
+            })     
+    }, []);
+
+    useEffect(() => {
+        sanityClient.fetch(
+            `*["Skyltar" in categories[]->title]{
+                "categories": categories[]->title,
+                title
+              }`
+        )
+            .then(data => {
+                console.log(data)
+                setFilterProducts(data);
+            })     
+    }, []);
+
+    useEffect(() => {
+        sanityClient.fetch(
+            `*["Textil" in categories[]->title]{
+                "categories": categories[]->title,
+                title
+              }`
+        )
+            .then(data => {
+                console.log(data)
+                setFilterProducts(data);
+            })     
+    }, []);
+
+    useEffect(() => {
+        sanityClient.fetch(
+            `*["Flaskor" in categories[]->title]{
+                "categories": categories[]->title,
+                title
+              }`
+        )
+            .then(data => {
+                console.log(data)
+                setFilterProducts(data);
+            })     
+    }, []);
+
+    useEffect(() => {
+        sanityClient.fetch(
+            `*["Vaser & Skålar" in categories[]->title]{
+                "categories": categories[]->title,
+                title
+              }`
+        )
+            .then(data => {
+                console.log(data)
+                setFilterProducts(data);
+            })     
+    }, []);
+
+    useEffect(() => {
+        sanityClient.fetch(
+            `*["Ljusstakar & ljuslyktor" in categories[]->title]{
+                "categories": categories[]->title,
+                title
+              }`
+        )
+            .then(data => {
+                console.log(data)
+                setFilterProducts(data);
+            })     
+    }, []);
+
+
+
+
+
+    const filterByCategory = (value) => {
         if (value === "visa alla") {
-            setFilterByCategory(productData)
+            setFilterProducts(productData)
         } else {
-            setFilterByCategory(productData.filter(product => product.categories === value))
+            setFilterProducts(productData.filter(product => product.categories === value))
         }
     }
 
@@ -55,21 +137,16 @@ const Rentals = () => {
                     Lägg sådant du önskar i din önskelista och skicka den sen till oss så återkommer vi med
                     offert för dig att ta ställning till.</Info>
                     <div>
-                        {filterCategory.map(({ index, value }) => { 
-                            <div key={index} >
-                                <p>Välj kategori här</p>
-                                <select value={category} onChange{() => filterOnChange(value)}>
-                                    <option value="visa alla">Visa alla</option>
-                                    <option value="vaser och skålar">Vaser och skålar</option>
-                                    <option value="ljusstakar och ljuslyktor">Ljusstakar och ljuslyktor</option>
-                                    <option value="flaskor">Flaskor</option>
-                                    <option value="mattor">Mattor</option>
-                                    <option value="möbler">Möbler</option>
-                                    <option value="skyltar">Skyltar</option>
-                                    <option value="textil">Textil</option>
-                                </select>
+                            <div>
+                                <button value="Visa alla" onClick={() => filterByCategory()}>Visa alla</button>
+                                <button value="Vaser och skålar" onClick={() => filterByCategory()}>Vaser och skålar</button>
+                                <button value="Ljuslyktor och ljusstakar" onClick={() => filterByCategory()}>Ljusstakar och ljuslyktor</button>
+                                <button value="Flaskor" onClick={() => filterByCategory()}>Flaskor</button>
+                                <button value="Mattor" onClick={() => filterByCategory()}>Mattor</button>
+                                <button value="Möbler" onClick={() => filterByCategory()}>Möbler</button>
+                                <button value="Skyltar" onClick={() => filterByCategory()}>Skyltar</button>
+                                <button value="Textil" onClick={() => filterByCategory()}>Textil</button> 
                             </div>
-                        })}
                     </div>
                     <RentalsContainer>
                     {productData && productData.map((product, index) => (
@@ -146,15 +223,16 @@ const Info = styled.h4 `
 `
 
 const RentalsContainer = styled.div`
-@media (min-width: 768px) {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr)
-}
 
-@media (min-width: 1024px) {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr)
-}
+    @media (min-width: 768px) {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr)
+    }
+
+    @media (min-width: 1024px) {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr)
+    }
 `
 
 const RentalsInfoText = styled.h1 `
@@ -184,8 +262,7 @@ const CardContainer = styled.div`
 @media (min-width: 668px) {
     width: 35vh;
     padding: .5rem 0.5rem 0.5rem 0;
-
-}
+    }
 `
 
 const AddButton = styled.button`
@@ -202,8 +279,18 @@ const AddButton = styled.button`
     font-weight: 450;
     
     &:hover {
-    background-color: black;
-    color: white;
-    transition: 0.7s ease;
+        background-color: black;
+        color: white;
+        transition: 0.7s ease;
     }
-`;
+`
+       {/* <select value={value} onChange="filterOnChange(value)">
+                                    <option value="visa alla">Visa alla</option>
+                                    <option value="vaser och skålar">Vaser och skålar</option>
+                                    <option value="ljusstakar och ljuslyktor">Ljusstakar och ljuslyktor</option>
+                                    <option value="flaskor">Flaskor</option>
+                                    <option value="mattor">Mattor</option>
+                                    <option value="möbler">Möbler</option>
+                                    <option value="skyltar">Skyltar</option>
+                                    <option value="textil">Textil</option>
+</select>*/}
