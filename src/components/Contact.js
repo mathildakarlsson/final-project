@@ -18,17 +18,22 @@ const Contact = () => {
             [e.target.name]: e.target.value,
         }));
     }
+    
+    const data = mailerState;
 
     const submitEmail = async (e) => {
         e.preventDefault();
-        console.log({ mailerState });
+        console.log({ data });
 
-        const response = await fetch("https://final-project-nsd.herokuapp.com/send", {
+        // "https://final-project-nsd.herokuapp.com/send"
+
+
+        const response = await fetch("http://localhost:8090/send", {
             method: "POST",
             headers: {
                 "Content-type": "application/json",
             },
-            body: JSON.stringify({ mailerState }) 
+            body: JSON.stringify({ data }) 
         })
             .then((res) => res.json())
             .then(async (res) => {
@@ -48,7 +53,7 @@ const Contact = () => {
                     name: "",
                     email: "",
                     phonenumber: "",
-                    startdate: "",
+                    message: "",
                 });
             });
     };
