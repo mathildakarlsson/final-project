@@ -91,11 +91,10 @@ export default NavBar;
 const Nav = styled.nav`
     background: #F1EEEB;
     display: flex;
-    /* overflow: scroll; */
     justify-content: space-between;
     position: fixed;
     width: 100vw;
-    height: 15vh;
+    max-height: 120px;
     z-index: 999;
     box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
     top: 0;
@@ -111,14 +110,14 @@ const NavContainer = styled.div`
 `
 
 const LogoContainer = styled.div `
-    margin: 0 20px 10px 20px;
+    margin: 0 20px 5px 20px;
     padding: 0;
 `
 
 const LinkContainer = styled.div `
     display: flex;
     gap: 30px;
-    margin: 45px 70px 0px 0;
+    margin: 45px 70px 0 0;
     z-index: 999;
 `
 

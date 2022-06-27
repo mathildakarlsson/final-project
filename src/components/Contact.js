@@ -130,7 +130,7 @@ const Contact = () => {
                                 </label>
                                 <textarea
                                     name="message"
-                                    maxlength="2000"
+                                    maxLength="2000"
                                     rows="10"
                                     value={mailerState.message}
                                     onChange={handleStateChange}
