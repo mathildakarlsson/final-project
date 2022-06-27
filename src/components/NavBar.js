@@ -27,59 +27,60 @@ const NavBar = ({ toggle }) => {
                     </LogoContainer>
 
                     <LinkContainer>
-
-                    <Hamburger onClick={toggle}>
-                    <HamburgerIcon />
-                  </Hamburger>
-                  <StarLink to='/wishlist' 
+                        <Hamburger onClick={toggle}>
+                            <HamburgerIcon />
+                        </Hamburger>
+                        <StarLink to='/wishlist' 
                             activeClassName='active'
                             style={linkStyle}
-                        >
-                        <TotalWishlistItems />
-                        <StarIcon />
-                    </StarLink>
-                    <NavMenu>
-
-                        <NavLinks to='/rentals' 
-                            activeClassName='active'
-                            style={linkStyle}
-                        >
-                            Hyrsaker
-                        </NavLinks>
-                        <NavLinks to='/flowers' 
-                            activeClassName='active'
-                            style={linkStyle}
-                        >
-                            Blommor
-                        </NavLinks>
-                        <NavLinks to='/services' 
-                            activeClassName='active'
-                            style={linkStyle}
-                        >
-                            Tjänster
-                        </NavLinks>
-                        <NavLinks to='/about' 
-                            activeClassName='active'
-                            style={linkStyle}
-                        >
-                            Om oss
-                        </NavLinks>
-                        <NavLinks to='/contact' 
-                            activeClassName='active'
-                            style={linkStyle}
-                        >
-                            Kontakt
-                        </NavLinks>
-                        <NavLinks to='/wishlist' 
-                            activeClassName='active'
-                            style={linkStyle}
-                        >
-                            Önskelista
-                            <TotalWishlistItems />
-                        </NavLinks>
-                    </NavMenu>
+                            >
+                                <div>
+                                    <StarIcon />
+                                </div>
+                                <div>
+                                    <TotalWishlistItems />
+                                </div>
+                        </StarLink>
+                        <NavMenu>
+                            <NavLinks to='/rentals' 
+                                activeClassName='active'
+                                style={linkStyle}
+                            >
+                                Hyrsaker
+                            </NavLinks>
+                            <NavLinks to='/flowers' 
+                                activeClassName='active'
+                                style={linkStyle}
+                            >
+                                Blommor
+                            </NavLinks>
+                            <NavLinks to='/services' 
+                                activeClassName='active'
+                                style={linkStyle}
+                            >
+                                Tjänster
+                            </NavLinks>
+                            <NavLinks to='/about' 
+                                activeClassName='active'
+                                style={linkStyle}
+                            >
+                                Om oss
+                            </NavLinks>
+                            <NavLinks to='/contact' 
+                                activeClassName='active'
+                                style={linkStyle}
+                            >
+                                Kontakt
+                            </NavLinks>
+                            <NavLinks to='/wishlist' 
+                                activeClassName='active'
+                                style={linkStyle}
+                            >
+                                Önskelista
+                                <TotalWishlistItems />
+                            </NavLinks>
+                        </NavMenu>
                     </LinkContainer>
-               
             </NavContainer>
         </Nav>
     )
@@ -130,7 +131,7 @@ const Hamburger = styled.div`
   font-size: 2.5rem;
   cursor: pointer;
   
-  @media (min-width: 668px) {
+  @media (min-width: 830px) {
     display: none;
   }
 `
@@ -149,7 +150,7 @@ const StarIcon = styled(GiFallingStar)`
 const NavMenu = styled.ul`
   display: none;
   
-  @media (min-width: 668px) {
+  @media (min-width: 830px) {
     display: flex;
     align-items: center;
   }
@@ -167,13 +168,16 @@ const NavLinks = styled(Link)`
   }
 `
 const StarLink = styled(Link)`
-    display: block;
+    /* display: block; */
     position: absolute;
     top: 2rem;
-    right: 5rem;
+    right: 4rem;
     transform: translate(-50%, 25%);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     
-    @media (min-width: 668px) {  
+    @media (min-width: 830px) {  
         display: none;
     }
 `
