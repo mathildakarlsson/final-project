@@ -61,11 +61,11 @@ const Rentals = () => {
                     offert för dig att ta ställning till.</Info>
                     <RentalsContainer> 
                         <div>
-                            <FilterButtons onClick={() => filterByCategory("Visa alla")}>Visa alla</FilterButtons>
+                            <FilteringButtons onClick={() => filterByCategory("Visa alla")}>Visa alla</FilteringButtons>
                         </div>
                         {category && category.map((category, index) => (
                             <div key={index}>
-                                <FilterButtons onClick={() => filterByCategory(category)}>{category}</FilterButtons>
+                                <FilteringButtons onClick={() => filterByCategory(category)}>{category}</FilteringButtons>
                             </div>
                         ))}
 
@@ -98,21 +98,22 @@ const Rentals = () => {
 
 export default Rentals;
 
-const FilterButtons = styled.button`
-font-weight: 400;
-  margin: 5px;
+const FilteringButtons = styled.button`
+  font-weight: 400;
+  margin: 10px;
   border: none;
   outline: none;
   height: auto;
-  font-size: 16px;
-  background: #8CA4B3;
-  padding: 10px;
+  font-size: 15px;
+  background: #6E6D6C;
+  color: white;
+  padding: 7px;
   transition: all .25s ease-in-out;
-  width: 170px;
+  width: 165px;
   cursor: pointer;
 
   &:hover {
-    background: #ecd6ba;
+    background: black;
   }
 `
 
