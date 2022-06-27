@@ -35,7 +35,7 @@ const BookingForm = () => {
         const data = mailerState;
         data.products = {products}
          
-        const response = await fetch("https://final-project-nsd.herokuapp.com/send", {
+        const response = await fetch("https://final-project-nsd.herokuapp.com/send2", {
             method: "POST",
             headers: {
                 "Content-type": "application/json",
