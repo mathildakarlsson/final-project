@@ -10,8 +10,10 @@ import styled from 'styled-components';
 
 const Rentals = () => {
     const [productData, setProductData] = useState();
-    const [filterProducts, setFilterProducts] = useState([]);
+    // const [filterProducts, setFilterProducts] = useState([]);
     const dispatch = useDispatch()
+    const [category, setCategory] = useState();
+
 
     useEffect(() => {
         sanityClient.fetch(
@@ -20,7 +22,7 @@ const Rentals = () => {
                 slug,
                 price,
                 _id,
-                categories,
+                "categories": categories[]->title,
                 defaultProductVariant{
                     price,
                     sku,
@@ -35,97 +37,22 @@ const Rentals = () => {
         )
             .then(data => {
                 setProductData(data)
-                setFilterProducts(data);
-            })     
-    }, []);
-
-    useEffect(() => {
-        sanityClient.fetch(
-            `*["Mattor" in categories[]->title]{
-                "categories": categories[]->title,
-                title
-              }`
-        )
-            .then(data => {
+                setCategory(data)
                 console.log(data)
-                setFilterProducts(data);
             })     
     }, []);
 
-    useEffect(() => {
-        sanityClient.fetch(
-            `*["Skyltar" in categories[]->title]{
-                "categories": categories[]->title,
-                title
-              }`
-        )
-            .then(data => {
-                console.log(data)
-                setFilterProducts(data);
-            })     
-    }, []);
-
-    useEffect(() => {
-        sanityClient.fetch(
-            `*["Textil" in categories[]->title]{
-                "categories": categories[]->title,
-                title
-              }`
-        )
-            .then(data => {
-                console.log(data)
-                setFilterProducts(data);
-            })     
-    }, []);
-
-    useEffect(() => {
-        sanityClient.fetch(
-            `*["Flaskor" in categories[]->title]{
-                "categories": categories[]->title,
-                title
-              }`
-        )
-            .then(data => {
-                console.log(data)
-                setFilterProducts(data);
-            })     
-    }, []);
-
-    useEffect(() => {
-        sanityClient.fetch(
-            `*["Vaser & Skålar" in categories[]->title]{
-                "categories": categories[]->title,
-                title
-              }`
-        )
-            .then(data => {
-                console.log(data)
-                setFilterProducts(data);
-            })     
-    }, []);
-
-    useEffect(() => {
-        sanityClient.fetch(
-            `*["Ljusstakar & ljuslyktor" in categories[]->title]{
-                "categories": categories[]->title,
-                title
-              }`
-        )
-            .then(data => {
-                console.log(data)
-                setFilterProducts(data);
-            })     
-    }, []);
-
-
-
+    // const filterButtons = [
+    //     { name: "Visa alla", value: "Visa alla" },
+    //     { name: ${categories.title}, value: "whatever" },
+    //   ]
 
 
     const filterByCategory = (value) => {
-        if (value === "visa alla") {
+        if (value === "Visa alla") {
             setFilterProducts(productData)
         } else {
-            setFilterProducts(productData.filter(product => product.categories === value))
+            setFilterProducts(productData.filter(productData => categories[0] === value))
         }
     }
 
@@ -137,7 +64,14 @@ const Rentals = () => {
                     Lägg sådant du önskar i din önskelista och skicka den sen till oss så återkommer vi med
                     offert för dig att ta ställning till.</Info>
                     <div>
-                            <div>
+
+
+                        <div>
+                        {/* {filterProducts.map((product) => (
+                            <CardContainer key={index} product={product} />
+                        ))} */}
+                        </div>
+                            {/* <div>
                                 <button value="Visa alla" onClick={() => filterByCategory()}>Visa alla</button>
                                 <button value="Vaser och skålar" onClick={() => filterByCategory()}>Vaser och skålar</button>
                                 <button value="Ljuslyktor och ljusstakar" onClick={() => filterByCategory()}>Ljusstakar och ljuslyktor</button>
@@ -146,10 +80,24 @@ const Rentals = () => {
                                 <button value="Möbler" onClick={() => filterByCategory()}>Möbler</button>
                                 <button value="Skyltar" onClick={() => filterByCategory()}>Skyltar</button>
                                 <button value="Textil" onClick={() => filterByCategory()}>Textil</button> 
-                            </div>
+                            </div> */}
                     </div>
-                    <RentalsContainer>
+                    <RentalsContainer> 
+                        {/* {flowersData && flowersData.map((nested) => nested.flowerImagesMobile.map((flowerImagesMobile, index) => ( */}
+                            {/* {filterButtons.map(({ name, value }) => (
+                                <FilterButtons key={name} onClick={() => filterByCategory(value)}>
+                                {product.categories[0]}
+                                </FilterButtons>
+                            ))} */}
+                    {category && category.map((category, index) => (
+                        <div key={index}>
+                            <button onClick={() => filterByCategory}>{category.categories[0]}</button>
+                        </div>
+
+                    ))}
+
                     {productData && productData.map((product, index) => (
+                            
                         <CardContainer key={index}>
                             <Link to={"/product/" + product.slug.current} key={product.slug.current}>
                                 <span className="product-span" key={index}>
@@ -159,8 +107,9 @@ const Rentals = () => {
                                     />
                                      <span className="title-span" key={index}> 
                                         <RentalsInfoText>{product.title}</RentalsInfoText>
+                                        {/* <RentalsInfoText>{product.categories[0]}</RentalsInfoText> */}
                                      </span>
-                                     <RentalsInfoText>{product.defaultProductVariant.price} {product.defaultProductVariant.sku}/dag</RentalsInfoText>
+                                    <RentalsInfoText>{product.defaultProductVariant.price} {product.defaultProductVariant.sku}/dag</RentalsInfoText>
                                 </span>
                             </Link> 
                             <AddButton
@@ -178,6 +127,20 @@ const Rentals = () => {
 
 export default Rentals;
 
+const FilterButtons = styled.button`
+  font-family: 'Roboto', sans-serif;
+  margin: 5px;
+  border: none;
+  outline: none;
+  height: 30px;
+  font-size: 16px;
+  background: #8CA4B3;
+  padding: 0 30px;
+  transition: all .25s ease-in-out; 
+  &:hover {
+    background: #ecd6ba;
+  }
+  `
 
 const Main = styled.main`
     display: flex;
@@ -294,3 +257,81 @@ const AddButton = styled.button`
                                     <option value="skyltar">Skyltar</option>
                                     <option value="textil">Textil</option>
 </select>*/}
+
+    // useEffect(() => {
+    //     sanityClient.fetch(
+    //         `*["Mattor" in categories[]->title]{
+    //             "categories": categories[]->title,
+    //             title
+    //         }`
+    //     )
+    //         .then(data => {
+    //             console.log(data)
+    //             setFilterProducts(data);
+    //         })     
+    // }, []);
+
+    // useEffect(() => {
+    //     sanityClient.fetch(
+    //         `*["Skyltar" in categories[]->title]{
+    //             "categories": categories[]->title,
+    //             title
+    //         }`
+    //     )
+    //         .then(data => {
+    //             console.log(data)
+    //             setFilterProducts(data);
+    //         })     
+    // }, []);
+
+    // useEffect(() => {
+    //     sanityClient.fetch(
+    //         `*["Textil" in categories[]->title]{
+    //             "categories": categories[]->title,
+    //             title
+    //         }`
+    //     )
+    //         .then(data => {
+    //             console.log(data)
+    //             setFilterProducts(data);
+    //         })     
+    // }, []);
+
+    // useEffect(() => {
+    //     sanityClient.fetch(
+    //         `*["Flaskor" in categories[]->title]{
+    //             "categories": categories[]->title,
+    //             title
+    //         }`
+    //     )
+    //         .then(data => {
+    //             console.log(data)
+    //             setFilterProducts(data);
+    //         })     
+    // }, []);
+
+    // useEffect(() => {
+    //     sanityClient.fetch(
+    //         `*["Vaser & Skålar" in categories[]->title]{
+    //             "categories": categories[]->title,
+    //             title
+    //         }`
+    //     )
+    //         .then(data => {
+    //             console.log(data)
+    //             setFilterProducts(data);
+    //         })     
+    // }, []);
+
+    // useEffect(() => {
+    //     sanityClient.fetch(
+    //         `*["Ljusstakar & ljuslyktor" in categories[]->title]{
+    //             "categories": categories[]->title,
+    //             title
+    //         }`
+    //     )
+    //         .then(data => {
+    //             console.log(data)
+    //             setFilterProducts(data);
+    //         })     
+    // }, []);
