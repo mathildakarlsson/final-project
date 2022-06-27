@@ -78,8 +78,8 @@ const BookingForm = () => {
 
     return (
         <FormContainer>
-            <FormHeader>Don't be a stranger!</FormHeader>
-            <FormText>Skriv till oss om dina önskemål så återkommer vi inom det närmaste.</FormText>
+            <FormHeader>SKICKA IN DIN ÖNSKELISTA</FormHeader>
+            <FormText>Skriv till oss om dina önskemål så återkommer vi inom det närmaste. Förfrågan är inte bindande.</FormText>
 
             <Formwrapper>
                 <form

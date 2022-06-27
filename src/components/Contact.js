@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import swal from 'sweetalert';
 import contactImage from '../assets/Young and Wild_Stylad bröllopsfotografering_Sneak peek_2.jpg'
 
 
@@ -40,10 +41,18 @@ const Contact = () => {
                 const resData = await res;
                 console.log(resData);
                 if (resData.status === "success") {
-                    alert("Message Sent!");
+                    swal({
+                        title: 'Ditt meddelande har skickats till Nordic Spells Decor!',
+                        text: 'Tack för ditt mail, vi hör av oss inom kort!',
+                        button: 'Ok',
+                    });
                     
                 } else if (resData.status === "fail") {
-                    alert("Message failed to send");
+                    swal({
+                        title: 'Ditt meddelande kunde inte skickas.',
+                        text: 'Ajdå, något verkar ha gått fel! Kontakta oss gärna direkt på nordicspellsdecor@gmail.com så pratar vi vidare där!',
+                        button: 'Ok',
+                    });
                    
                 }
             })
