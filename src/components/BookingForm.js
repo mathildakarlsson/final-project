@@ -176,19 +176,19 @@ const BookingForm = () => {
             </Formwrapper>
 
             <section>
-            <article>
-                <RentalsTextContainer>
-                <RentalsInfoText>Total kostnad: {totalPrice} SEK</RentalsInfoText>
-                </RentalsTextContainer>
-                <div>
-                    <ul className="form-products">
-                        {products.map((product, index) => {
-                            return (
-                                <WishListItem key={index} product={product} />
-                            )
-                        })}
-                    </ul>
-                </div>
+                <article>
+                    <RentalsTextContainer>
+                        <RentalsInfoText>Total kostnad: {totalPrice} SEK</RentalsInfoText>
+                    </RentalsTextContainer>
+                    <ItemContainer>
+                        <ul className="form-products">
+                            {products.map((product, index) => {
+                                return (
+                                    <WishListItem key={index} product={product} />
+                                )
+                            })}
+                        </ul>
+                    </ItemContainer>
                 </article>
             </section>
         </FormContainer>
@@ -196,6 +196,10 @@ const BookingForm = () => {
 };
 
 export default BookingForm;
+
+const ItemContainer = styled.div `
+
+`
 
 
 const FormContainer = styled.section`
@@ -257,9 +261,9 @@ const FormButton = styled.button`
     font-weight: 450;
     
     &:hover {
-    background-color: black;
-    color: white;
-    transition: 0.7s ease;
+        background-color: black;
+        color: white;
+        transition: 0.7s ease;
     }
 `
 

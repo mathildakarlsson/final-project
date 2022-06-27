@@ -17,32 +17,32 @@ const WishListItem = ({ product }) => {
 
     return(
         <Main>
-        <ArticleContainer>
+            {/* <ArticleContainer> */}
                 <CardContainer>
                     <div>
                     <img className="product-image"
                             src={product.mainImage.asset.url}
                             alt={product.title}
                         />
-                        <RentalsInfoText>{product.title} x {product.quantity}</RentalsInfoText>
-                        <RentalsInfoText>{product.price * product.quantity} SEK</RentalsInfoText>
+                        <RentalsInfoText>{product.title}</RentalsInfoText> 
+                        <RentalsInfoText>x {product.quantity}</RentalsInfoText>
+                        <RentalsInfoText>{product.price * product.quantity} SEK/dag</RentalsInfoText>
                      
                     </div>
-                    <div>
+                    <ButtonWrapper>
                         <AddButton
                             onClick={addItem} 
-
                         >
-                        + Lägg till
+                            + Lägg till
                         </AddButton>
                         <RemoveButton
                             onClick={removeItem}
                         >
-                        - Ta bort
+                            - Ta bort
                         </RemoveButton>
-                    </div>
+                    </ButtonWrapper>
                 </CardContainer>
-        </ArticleContainer>
+            {/* </ArticleContainer> */}
         </Main>
     )
 };
@@ -53,34 +53,42 @@ const Main = styled.main`
     display: flex;
     flex-direction: column;
     margin: 1rem;
-
 `
 
-const ArticleContainer = styled.article`
+const ButtonWrapper = styled.div `
+    width: inherit;
+    justify-self: center;
+    align-self: center;
+`
 
-    margin: 0px 30px;
+// const ArticleContainer = styled.article`
+    /* margin: 0px 30px;
     display: flex;
     flex-direction: column;
     text-align: center;
     align-self: center;
     justify-self: center;
-`
+    background-color: red; */
+// `
 
 const CardContainer = styled.div`
-background-color: white;
-width: 55vh;
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-margin: 1.5rem;
-padding-top: 1rem;
+    background-color: white;
+    width: 70vw;
+    display: flex;
+    flex-direction: column;
+    margin: 1.5rem;
+    padding-top: 1rem;
+    text-align: center;
+    align-self: center;
 
-@media (min-width: 668px) {
-    width: 35vh;
-    padding: o.5rem 0.5 rem 0.5rem 0;
-
-}
+    @media (min-width: 668px) {
+        width: 35vw;
+        max-height: 400px;
+    }
+    
+    @media (min-width: 1024px) {
+        width: 22vw;
+    }
 `
 
 const RentalsInfoText = styled.h1 `
@@ -98,7 +106,7 @@ const RentalsInfoText = styled.h1 `
 `
 
 const AddButton = styled.button`
-    width: 100%;
+    width: inherit;
     cursor: pointer;
     border: none;
     font-size: 15px;
@@ -111,10 +119,10 @@ const AddButton = styled.button`
     font-weight: 450;
     
     &:hover {
-    background-color: black;
-    color: white;
-    transition: 0.7s ease;
-    /* height: 30px; */
+        background-color: black;
+        color: white;
+        transition: 0.7s ease;
+        /* height: 30px; */
     }
 `
 
@@ -131,9 +139,9 @@ const RemoveButton = styled.button`
     font-weight: 450;
     
     &:hover {
-    background-color: black;
-    color: white;
-    transition: 0.7s ease;
-    /* height: 30px; */
+        background-color: black;
+        color: white;
+        transition: 0.7s ease;
+        /* height: 30px; */
     }
 `
