@@ -228,9 +228,8 @@ const Formwrapper = styled.div`
 `
 
 const ButtonWrapper = styled.div`
-display: flex;
-justify-content: center;
-
+    display: flex;
+    justify-content: center;
 `
 
 const FormButton = styled.button`
