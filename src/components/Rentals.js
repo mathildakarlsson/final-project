@@ -10,9 +10,9 @@ import styled from 'styled-components';
 
 const Rentals = () => {
     const [productData, setProductData] = useState();
-    // const [filterProducts, setFilterProducts] = useState([]);
-    const dispatch = useDispatch()
     const [category, setCategory] = useState();
+    const [filterProducts, setFilterProducts] = useState([]);
+    const dispatch = useDispatch()
 
 
     useEffect(() => {
@@ -37,7 +37,8 @@ const Rentals = () => {
         )
             .then(data => {
                 setProductData(data)
-                setCategory(data)
+                setFilterProducts(data)
+                setCategory([...new Set([].concat.apply([], data.map((item) => item.categories)))])
                 console.log(data)
             })     
     }, []);
@@ -49,10 +50,11 @@ const Rentals = () => {
 
 
     const filterByCategory = (value) => {
+        console.log(value)
         if (value === "Visa alla") {
             setFilterProducts(productData)
         } else {
-            setFilterProducts(productData.filter(productData => categories[0] === value))
+            setFilterProducts(productData.filter(product => product.categories[0]  === value))
         }
     }
 
@@ -89,14 +91,17 @@ const Rentals = () => {
                                 {product.categories[0]}
                                 </FilterButtons>
                             ))} */}
+                                                    <div>
+                            <button onClick={() => filterByCategory("Visa alla")}>Visa alla</button>
+                        </div>
                     {category && category.map((category, index) => (
                         <div key={index}>
-                            <button onClick={() => filterByCategory}>{category.categories[0]}</button>
+                            <button onClick={() => filterByCategory(category)}>{category}</button>
                         </div>
 
                     ))}
 
-                    {productData && productData.map((product, index) => (
+                    {filterProducts && filterProducts.map((product, index) => (
                             
                         <CardContainer key={index}>
                             <Link to={"/product/" + product.slug.current} key={product.slug.current}>
@@ -222,10 +227,11 @@ const CardContainer = styled.div`
     align-items: center;
     margin: 1.5rem;
 
-@media (min-width: 668px) {
-    width: 35vh;
-    padding: .5rem 0.5rem 0.5rem 0;
+    @media (min-width: 668px) {
+        width: 35vh;
+        padding: .5rem 0.5rem 0.5rem 0;
     }
+
 `
 
 const AddButton = styled.button`
