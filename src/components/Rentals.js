@@ -60,15 +60,15 @@ const Rentals = () => {
                     Lägg sådant du önskar i din önskelista och skicka den sen till oss så återkommer vi med
                     offert för dig att ta ställning till.</Info>
                     <RentalsContainer> 
-                        <div>
-                            <FilteringButtons onClick={() => filterByCategory("Visa alla")}>Visa alla</FilteringButtons>
-                        </div>
-                        {category && category.map((category, index) => (
-                            <div key={index}>
-                                <FilteringButtons onClick={() => filterByCategory(category)}>{category}</FilteringButtons>
-                            </div>
-                        ))}
-
+                        <ButtonContainer>
+                            <FilteringButtons activeClassName='active' onClick={() => filterByCategory("Visa alla")}>Visa alla</FilteringButtons>
+                            {category && category.map((category, index) => (
+                                <div key={index}>
+                                    <FilteringButtons activeClassName='active' onClick={() => filterByCategory(category)}>{category}</FilteringButtons>
+                                </div>
+                            ))}
+                        </ButtonContainer>
+                        <ItemContainer>
                         {filterProducts && filterProducts.map((product, index) => (
                             <CardContainer key={index}>
                                 <Link to={"/product/" + product.slug.current} key={product.slug.current}>
@@ -90,6 +90,7 @@ const Rentals = () => {
                                 </AddButton>
                             </CardContainer> 
                         ))}
+                        </ItemContainer>
                     </RentalsContainer>
             </ArticleContainer>
         </Main>
@@ -98,9 +99,66 @@ const Rentals = () => {
 
 export default Rentals;
 
+const ButtonContainer = styled.div `
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 70vw;
+    justify-content: center;
+    align-self: center;
+    gap: 20px;
+    justify-content: baseline;
+    margin: 25px 0 10px 0;
+    overflow: hidden;
+
+    @media (min-width: 768px) {
+        margin: 30px 0;
+        grid-template-columns: repeat(4, 1fr);
+        max-width: 90vw;
+    }
+
+    @media (min-width: 1024px) {
+        grid-template-columns: repeat(8, auto);
+        gap: 20px;
+    }
+
+`
+
+// -------------- Alternative styling for buttons ------------- //
+
+// const FilteringButtons = styled.button`
+//     font-weight: 400;
+//     margin: 10px;
+//     border: none;
+//     outline: none;
+//     font-size: 13px;
+//     background: none;
+//     transition: ease .5s;
+//     cursor: pointer;
+//     text-transform: uppercase;
+//     color: #6E6D6C;
+
+//     @media (min-width: 768px) {
+//         font-size: 15px;
+//         width: 170px;
+//     }
+
+//     &:hover {
+//         text-decoration: underline;
+//         text-underline-offset: .3em;
+//         color: black;
+//     }
+
+//     &.active {
+//         text-decoration: underline;
+//         text-underline-offset: .3em;
+//         color: black;
+//     }
+// `
+
 const FilteringButtons = styled.button`
   font-weight: 400;
-  margin: 10px;
   border: none;
   outline: none;
   height: auto;
@@ -109,8 +167,13 @@ const FilteringButtons = styled.button`
   color: white;
   padding: 7px;
   transition: all .25s ease-in-out;
-  width: 165px;
+  width: 160px;
   cursor: pointer;
+
+  @media (min-width: 1024px) {
+    width: auto;
+    padding: 7px 13px;
+}
 
   &:hover {
     background: black;
@@ -132,6 +195,7 @@ const ArticleContainer = styled.article`
     text-align: center;
     align-self: center;
     justify-self: center;
+    max-width: 100vw;
 `
 
 const Header = styled.h1 `
@@ -160,16 +224,29 @@ const Info = styled.h4 `
     }
 `
 
-const RentalsContainer = styled.div`
+const ItemContainer = styled.div `
+    display: grid;
+    flex-direction: column;
+    grid-template-columns: repeat(1, 1fr);
 
     @media (min-width: 768px) {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr)
+        grid-template-columns: repeat(3, 1fr);
     }
 
     @media (min-width: 1024px) {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr)
+        /* display: grid; */
+        grid-template-columns: repeat(4, 1fr);
+    }
+`
+
+const RentalsContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+
+    @media (min-width: 768px) {
+    }
+
+    @media (min-width: 1024px) {
     }
 `
 
@@ -190,7 +267,7 @@ const RentalsInfoText = styled.h1 `
 const CardContainer = styled.div`
     background-color: white;
     width: 55vh;
-    padding: 1rem 1 rem 1 rem 0;
+    padding: 1rem 1rem 1rem 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -207,15 +284,15 @@ const CardContainer = styled.div`
 const AddButton = styled.button`
     width: 100%;
     margin: 15px 0 0 0;
-    cursor: pointer;
     border: none;
     font-size: 16px;
-
+    
     padding: 1rem;
     color: black;
     background-color: rgb(197,191,184);
     text-transform: uppercase;
     font-weight: 450;
+    cursor: pointer;
     
     &:hover {
         background-color: black;
