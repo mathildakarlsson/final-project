@@ -1,17 +1,58 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
+import sanityClient from '../client.js';
 
 
 const Services = () => {
+    const [homePage, setHomePage] = useState(null);
+
+    useEffect(() => {
+        sanityClient.fetch(
+            `*[_type == "homePage"] {
+                _id,
+                serviceImageOne{
+                    image{
+                        asset->{
+                            url,
+                        },
+                    },
+                },
+                serviceImageTwo{
+                    image{
+                        asset->{
+                            url,
+                        },
+                    },
+                },
+            }`
+        )
+            .then((data) => {
+                setHomePage(data)
+             
+                console.log(data)
+            })     
+    }, []);
+
+    
+
+
+
+
     return (
         <Section>
+            {homePage && homePage.map((service, index) => (
             <InfoContainer>
                 <Header>Tjänster</Header>
                 <ExtraInfo>För bokningsförfrågningar gällande paketen nedan gå till kontaktformuläret 
                     och skriv ner dina önskemål. Förfrågan är inte bindande.
                     Priserna nedan inkluderar 25% moms.
                     Vid resor utanför Göteborgs kommun tillkommer 18:- per mil.</ExtraInfo>
-
+                <ImageWrapper key={index}>
+                    <Image
+                        src={service.serviceImageTwo.image.asset.url}
+                        alt={service.title}
+                    />
+                </ImageWrapper>
 
                 <WeddingRentalContainer>
                 <WeddingHeader>Lilla designpaketet bröllop</WeddingHeader>
@@ -50,6 +91,12 @@ const Services = () => {
                     och ni får då en offert av oss att ta ställning till.</Info>
                     </WeddingRentalContainer>
 
+                <ImageWrapper key={index}>
+                    <Image
+                        src={service.serviceImageOne.image.asset.url}
+                        alt={service.title}
+                    />
+                </ImageWrapper>
                 <PartiesContainer>
                     <PartiesHeader>Lilla designpaketet fest/event</PartiesHeader>
                     <PartiesInfo>Designkonsultation till fest och event på plats i lokal under 1h. Vi skapar med grund i
@@ -91,12 +138,27 @@ const Services = () => {
                     </WeddingRentalContainer>
             </InfoContainer>
 
-
+        ))}
         </Section>
     )
 };
 
 export default Services;
+
+const ImageWrapper = styled.div `
+    align-items: center;
+    justify-content: center;
+`
+
+const Image = styled.img `
+    height: auto;
+    object-fit: contain;
+    max-width: 60vw;
+
+    @media (min-width: 992px) {
+        
+    }
+`
 
 
 const Section = styled.section `
