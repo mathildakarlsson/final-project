@@ -33,10 +33,6 @@ const Services = () => {
             })     
     }, []);
 
-    
-
-
-
 
     return (
         <Section>
