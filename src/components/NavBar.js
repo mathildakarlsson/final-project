@@ -21,7 +21,7 @@ const NavBar = ({ toggle }) => {
                                 src={logo}
                                 className="logo"
                                 style={logoStyle}
-                                alt="logo"
+                                alt="Nordic Spells Decor logotype"
                             />
                         </NavLink>
                     </LogoContainer>
@@ -33,6 +33,7 @@ const NavBar = ({ toggle }) => {
                         <StarLink to='/wishlist' 
                             activeClassName='active'
                             style={linkStyle}
+                            alt="wishlist"
                             >
                                 <div>
                                     <StarIcon />
