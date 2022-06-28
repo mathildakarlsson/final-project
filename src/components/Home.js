@@ -102,7 +102,7 @@ const Home = () => {
                      </ImageWrapper>
                 </ImageContainer>
             ))}
-                <div className="elfsight-app-55ce35a0-0d2a-41cf-a6be-b1ff2d427fcf"></div>
+                {/* <div className="elfsight-app-55ce35a0-0d2a-41cf-a6be-b1ff2d427fcf"></div> */}
         </HomeContainer>
     )
 };

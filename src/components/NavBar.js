@@ -94,7 +94,7 @@ const Nav = styled.nav`
     display: flex;
     justify-content: space-between;
     position: fixed;
-    width: 100vw;
+    width: 100%;
     max-height: 120px;
     z-index: 999;
     box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);

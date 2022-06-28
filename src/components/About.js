@@ -50,7 +50,7 @@ const About = () => {
                 {aboutUsData && aboutUsData.map((aboutUs, index) => (
                     <Wrapper key={index}>
                         <ContentWrapper>
-                            <AboutHeaderMobile><LetterSpan>O</LetterSpan>UR &nbsp;<LetterSpan>S</LetterSpan>TORY</AboutHeaderMobile>
+                            <MainHeaderMobile>OUR STORY</MainHeaderMobile>
                             <Image
                                     src={aboutUs.photoOne.image.asset.url}
                                     alt={aboutUs.title}
@@ -74,7 +74,7 @@ const About = () => {
                                 alt={aboutUs.title}
                             />
                             <TextWrapper>
-                                <AboutHeaderMobile><LetterSpan>C</LetterSpan>aroline,</AboutHeaderMobile>
+                                <AboutHeaderMobile>Caroline,</AboutHeaderMobile>
                                 <AboutHeaderMobile>kreativ designer</AboutHeaderMobile>
                                 <AboutHeader><LetterSpan>C</LetterSpan>aroline,</AboutHeader>
                                 <AboutHeader>kreativ designer</AboutHeader>
@@ -92,7 +92,7 @@ const About = () => {
                                 alt={aboutUs.title}
                             />
                             <TextWrapper>
-                            <AboutHeaderMobile><LetterSpan>L</LetterSpan>innéa, florist</AboutHeaderMobile>
+                            <AboutHeaderMobile>Linnéa, florist</AboutHeaderMobile>
                             <AboutHeader><LetterSpan>L</LetterSpan>innéa, florist</AboutHeader>
                                 <AboutText>
                                     Linnéa heter jag och jag är kreativ designer i Nordic Spells Decor. Jag fullkomligt älskar chansen att få ta tag i nya kreativa projekt och låta idéerna flöda! Om du önskar hjälp med att planera dekorationen ditt drömevent eller bara någon att bolla tankar kring dekoration med så finns jag här!
@@ -124,10 +124,15 @@ const Wrapper = styled.div `
 const ContentWrapper = styled.div `
     display: flex;
     flex-direction: column;
-    margin: 50px;
+    margin: 50px 0;
     align-items: center;
 
-    @media (min-width: 800px) {
+    @media (min-width: 668px) {
+        width: 70vw;
+        justify-content: center;
+    }
+
+    @media (min-width: 960px) {
         flex-direction: row;
         margin: 50px 0 0 0;
     }
@@ -137,16 +142,23 @@ const TextWrapper = styled.div `
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    justify-self: center;
+    align-self: center;
 `
 
 const Image = styled.img `
     width: auto;
     object-fit: contain;
-    max-height: 90vh;
-    margin-top: 50px;
+    max-height: 75vh;
+    /* margin-top: 50px; */
     
-    @media (min-width: 800px) {
+    @media (min-width: 668px) {
         margin: 0 70px;
+        max-height: 80vh;
+    }
+
+    @media (min-width: 960px) {
+        max-height: 90vh;
     }
 `
 
@@ -157,34 +169,56 @@ const AboutHeader = styled.h1 `
     display: flex;
     align-items: baseline;
     display: none;
+    font-weight: 200;
 
-    @media (min-width: 800px) {
-        font-size: 50px;
+    @media (min-width: 960px) {
+        font-size: 40px;
         display: flex;
     }
 `
 const AboutHeaderMobile = styled.h1 `
-    align-self: center;
     font-weight: 300;
-    font-size: 38px;
+    font-size: 40px;
     display: flex;
     align-items: baseline;
     display: flex;
-    /* padding-bottom: 50px; */
-    /* padding-top: 10px; */
+    font-weight: 200;
+    /* text-align: center; */
+    justify-self: center;
+    align-self: center;
+    padding-top: 10px;
+    flex-direction: row;
+    flex-wrap: wrap;
     
-    @media (min-width: 668px) {
+    @media (min-width: 960px) {
         display: none;
     }
 `
 
+const MainHeaderMobile = styled.h1 `
+    font-weight: 300;
+    font-size: 40px;
+    display: flex;
+    align-items: baseline;
+    display: flex;
+    font-weight: 200;
+    padding-bottom: 30px;
+    width: auto;
+    flex-direction: row;
+    letter-spacing: .05em;
 
+
+    @media (min-width: 960px) {
+        display: none;
+    }
+`
 
 const LetterSpan = styled.div `
     font-size: 45px;
+    font-weight: 200;
 
     @media (min-width: 668px) {
-        font-size: 60px;
+        font-size: 55px;
     }
 `
 
@@ -193,11 +227,15 @@ const AboutText = styled.p`
     margin: 12px 0;
     line-height: 28px;
     padding-top: 15px;
-    width: 70vw;
+    width: 60vw;
     
     @media (min-width: 668px) {
-        max-width: 40vw;
         font-size: 16px;
-        letter-spacing: .03em
+        letter-spacing: .03em;
+        max-width: 100vw;
+    }
+
+    @media (min-width: 960px) {
+        max-width: 440px;
     }
 `
