@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import sanityClient from '../client.js';
 import { wishlist } from '../reducers/wishlist';
@@ -15,6 +15,12 @@ const SingleRentalsItem = () => {
 
     const handleAddItem = () => {
         dispatch(wishlist.actions.addItem(singleProduct))
+    }
+
+    const navigate = useNavigate();
+
+    const onBackButtonClick = ()=> {
+        navigate(-1);
     }
 
     useEffect(() => {
@@ -52,30 +58,31 @@ const SingleRentalsItem = () => {
 
     if (!singleProduct) return <div>Loading...</div>
 
-        return (
-            <Main>
-                <ArticleContainer>
-                      <Header>{singleProduct.title}</Header>
-                        <CardContainer>
-                            
-                                <img src={singleProduct.mainImage.asset.url}
-                                    alt={singleProduct.title}
-                                />
-                    
-                                <Info>Pris: {singleProduct.defaultProductVariant.price} {singleProduct.defaultProductVariant.sku}/dag</Info>
-                                <Info>Storlek: {singleProduct.defaultProductVariant.dimensions}</Info>
-                                <Info>Antal i lager: {singleProduct.defaultProductVariant.quantity}st</Info>
-                                <Info>Beskrivning: {singleProduct.defaultProductVariant.description}</Info>   
-                            
-                            <AddButton
-                                disabled={singleProduct.inventory === 0}
-                                onClick={handleAddItem}>
-                                Lägg till i önskelistan
-                            </AddButton>
-                        </CardContainer>
-                </ArticleContainer>
-            </Main>
-        )
+    return (
+        <Main>
+            <ArticleContainer>
+            <GoBackButton onClick={onBackButtonClick}>Tillbaka</GoBackButton>
+                <Header>{singleProduct.title}</Header>
+                <CardContainer>
+
+                    <img src={singleProduct.mainImage.asset.url}
+                        alt={singleProduct.title}
+                    />
+
+                    <Info>Pris: {singleProduct.defaultProductVariant.price} {singleProduct.defaultProductVariant.sku}/dag</Info>
+                    <Info>Storlek: {singleProduct.defaultProductVariant.dimensions}</Info>
+                    <Info>Antal i lager: {singleProduct.defaultProductVariant.quantity}st</Info>
+                    <Info>Beskrivning: {singleProduct.defaultProductVariant.description}</Info>
+
+                    <AddButton
+                        disabled={singleProduct.inventory === 0}
+                        onClick={handleAddItem}>
+                        Lägg till i önskelistan
+                    </AddButton>
+                </CardContainer>
+            </ArticleContainer>
+        </Main>
+    )
 };
 
 export default SingleRentalsItem;
@@ -150,6 +157,27 @@ const AddButton = styled.button`
     transition: 0.7s ease;
     /* height: 30px; */
     }
+`
+
+const GoBackButton = styled.button`
+width: 100%;
+margin: 2rem 0 2rem 0;
+cursor: pointer;
+border: none;
+font-size: 16px;
+
+padding: 1rem;
+color: black;
+background-color: rgb(197,191,184);
+text-transform: uppercase;
+font-weight: 450;
+
+&:hover {
+background-color: black;
+color: white;
+transition: 0.7s ease;
+/* height: 30px; */
+}
 `
 ;
 
