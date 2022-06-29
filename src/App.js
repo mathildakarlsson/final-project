@@ -3,15 +3,14 @@ import { Provider } from 'react-redux'
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 
-import Home from './components/Home';
-import SingleRentalsItem from './components/SingleRentalsItem';
-import Rentals from './components/Rentals';
-import BookingForm from './components/BookingForm';
-import SuccessPage from './components/SuccessPage';
-import About from './components/About';
-import Flowers from './components/Flowers';
-import Contact from './components/Contact';
-import Services from './components/Services';
+import Home from './pages/Home';
+import SingleRentalsItem from './pages/SingleRentalsItem';
+import Rentals from './pages/Rentals';
+import BookingForm from './pages/BookingForm';
+import About from './pages/About';
+import Flowers from './pages/Flowers';
+import Contact from './pages/Contact';
+import Services from './pages/Services';
 import Header from './components/Header';
 import Footer from './components/Footer';
 
@@ -48,7 +47,6 @@ export const App = () => {
           <Route element={<Home />} path='/'/>
           <Route element={<SingleRentalsItem />} path='product/:slug' />
           <Route element={<Rentals />} path='/rentals' />
-          <Route element={<SuccessPage />} path='/success' />
           <Route element={<Services />} path='/services' />
           <Route element={<Flowers />} path='/flowers' />
           <Route element={<About />} path='/about' />

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import styled from 'styled-components';
 
-import WishListItem from './WishListItem';
+import WishListItem from '../components/WishListItem';
 import swal from 'sweetalert';
 
 const BookingForm = () => {
