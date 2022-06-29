@@ -74,8 +74,8 @@ const About = () => {
                                 alt={aboutUs.title}
                             />
                             <TextWrapper>
-                                <AboutHeaderMobile>Caroline,</AboutHeaderMobile>
-                                <AboutHeaderMobile>kreativ designer</AboutHeaderMobile>
+                            <Title><AboutHeaderMobile>Caroline,</AboutHeaderMobile>
+                                <AboutHeaderMobile>kreativ designer</AboutHeaderMobile></Title>
                                 <AboutHeader><LetterSpan>C</LetterSpan>aroline,</AboutHeader>
                                 <AboutHeader>kreativ designer</AboutHeader>
                                 <AboutText>
@@ -92,19 +92,19 @@ const About = () => {
                                 alt={aboutUs.title}
                             />
                             <TextWrapper>
-                            <AboutHeaderMobile>Linnéa, florist</AboutHeaderMobile>
+                            <Title><AboutHeaderMobile>Linnéa, florist</AboutHeaderMobile></Title>
                             <AboutHeader><LetterSpan>L</LetterSpan>innéa, florist</AboutHeader>
                                 <AboutText>
-                                Linnéa heter jag och jag är florist i Nordic Spells Decor. Jag är 33 år och bor tillsammans i Göteborg med min man Gustav och min son Oscar. Sedan jag var liten har blommor varit en given del av mitt liv.
-                                 Jag älskar blommor – att skapa vackra buketter och arrangemang, att odla och driva upp dom små liven och att i olika sammanhang höja mysfaktorn och trivseln med blommor och grönt. Växter gör mig klyschigt nog lyckligare! 
-                                I takt med att jag under åren insett att jag är en kreativ person som behöver få skapa för att må bra har jag tagit små steg för att låta kreativiteten få mer plats.
+                                    Linnéa heter jag och jag är florist i Nordic Spells Decor. Jag är 33 år och bor tillsammans i Göteborg med min man Gustav och min son Oscar. Sedan jag var liten har blommor varit en given del av mitt liv.
+                                    Jag älskar blommor – att skapa vackra buketter och arrangemang, att odla och driva upp dom små liven och att i olika sammanhang höja mysfaktorn och trivseln med blommor och grönt. Växter gör mig klyschigt nog lyckligare! 
+                                    I takt med att jag under åren insett att jag är en kreativ person som behöver få skapa för att må bra har jag tagit små steg för att låta kreativiteten få mer plats.
                                 </AboutText>
                                 <AboutText>
-                                Så plötsligt en dag kom chansen att tillsammans med Carro på riktigt få göra det jag älskar - skapa med blommor! Drömmen har gått i uppfyllelse och jag hoppas att jag genom Nordic Spells Decor får möjlighet att med blommor 
-                                och grönt höja mysfaktorn och stämningen på många event framöver <span role="img" aria-label="leaves">🍃</span>
+                                    Så plötsligt en dag kom chansen att tillsammans med Carro på riktigt få göra det jag älskar - skapa med blommor! Drömmen har gått i uppfyllelse och jag hoppas att jag genom Nordic Spells Decor får möjlighet att med blommor 
+                                    och grönt höja mysfaktorn och stämningen på många event framöver <span role="img" aria-label="leaves">🍃</span>
                                 </AboutText>
                                 <AboutText>
-                                Har du funderingar, frågor, tankar eller drömmar om hur du vill använda blommor och grönt till just ditt event -  hör av dig så bollar vi och hittar en personlig lösning!
+                                    Har du funderingar, frågor, tankar eller drömmar om hur du vill använda blommor och grönt till just ditt event -  hör av dig så bollar vi och hittar en personlig lösning!
                                 </AboutText>
                             </TextWrapper>
                         </ContentWrapper>
@@ -116,7 +116,20 @@ const About = () => {
 
 export default About;
 
+const Title = styled.div `
+    padding-top: 20px;
+
+    @media (min-width: 668px) {
+        display: flex;
+        padding-top: 35px;
+        justify-content: center;
+    }
+`
+
 const AboutContainer = styled.section `
+    display: flex;
+    justify-content: center;
+    
 
 `
 
@@ -125,6 +138,7 @@ const Wrapper = styled.div `
     padding-top: 90px;
     flex-direction: column;
     margin: 50px;
+    
 `
 
 const ContentWrapper = styled.div `
@@ -136,6 +150,7 @@ const ContentWrapper = styled.div `
     @media (min-width: 668px) {
         width: 70vw;
         justify-content: center;
+        align-items: center;
     }
 
     @media (min-width: 960px) {
@@ -156,7 +171,6 @@ const Image = styled.img `
     width: auto;
     object-fit: contain;
     max-height: 75vh;
-    /* margin-top: 50px; */
     
     @media (min-width: 668px) {
         margin: 0 70px;
@@ -176,6 +190,7 @@ const AboutHeader = styled.h1 `
     align-items: baseline;
     display: none;
     font-weight: 200;
+    
 
     @media (min-width: 960px) {
         font-size: 40px;
@@ -184,7 +199,7 @@ const AboutHeader = styled.h1 `
 `
 const AboutHeaderMobile = styled.h1 `
     font-weight: 300;
-    font-size: 40px;
+    font-size: 30px;
     display: flex;
     align-items: baseline;
     display: flex;
@@ -192,9 +207,11 @@ const AboutHeaderMobile = styled.h1 `
     /* text-align: center; */
     justify-self: center;
     align-self: center;
-    padding-top: 10px;
+    /* padding-top: 20px; */
     flex-direction: row;
     flex-wrap: wrap;
+
+    
     
     @media (min-width: 960px) {
         display: none;
@@ -212,6 +229,11 @@ const MainHeaderMobile = styled.h1 `
     width: auto;
     flex-direction: row;
     letter-spacing: .05em;
+
+    @media (min-width: 680px) {
+        font-size: 60px;
+    }
+
 
 
     @media (min-width: 960px) {
@@ -239,6 +261,7 @@ const AboutText = styled.p`
         font-size: 16px;
         letter-spacing: .03em;
         max-width: 100vw;
+        justify-content: center;
     }
 
     @media (min-width: 960px) {

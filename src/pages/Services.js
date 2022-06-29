@@ -272,7 +272,6 @@ const Info = styled.h4 `
     
     @media (min-width: 900px) {
         background-color: white;
-
     }
 `
 
