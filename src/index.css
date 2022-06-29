@@ -67,11 +67,12 @@ body {
   height: auto;
   padding-top: 100px;
   overflow: scroll;
+  display: none;
 }
 
 .slides {
-  width: 500%;
-  height: 500px;
+  /* width: 500%; */
+  /* height: 500px; */
   display: flex;
 }
 
@@ -90,11 +91,12 @@ body {
   width: 100vw;
   height: auto;
   overflow: scroll;
+  padding-top: 115px;
 }
 
 .mobile-slides {
   width: 500%;
-  height: 700px;
+  /* height: 700px; */
   display: flex;
 }
 
@@ -103,13 +105,14 @@ body {
 }
 
 .mobile-slide {
-  width: 20%;
+  /* width: 20%; */
   transition: 2s;
 }
 
 .mobile-slide img {
-  width: 370px;
-  height: 700px;
+  width: auto;
+  height: 83vh;
+  object-fit: contain;
 }
 
 /* TABLET SIZE  */
