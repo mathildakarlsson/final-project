@@ -92,6 +92,7 @@ const Services = () => {
                     />
                 </ImageWrapper>
                 <PartiesContainer>
+                    <PartiesBackground>
                     <PartiesHeader>Lilla designpaketet fest/event</PartiesHeader>
                     <PartiesInfo>Designkonsultation till fest och event på plats i lokal under 1h. Vi skapar med grund i
                         era önskemål en personlig dekorationsidé och ni får en moodboard med designideér som inspiration för dekoreringen
@@ -121,6 +122,7 @@ const Services = () => {
                         14 250:-</PartiesInfo>
                     <PartiesInfo>Om så önskas finns möjlighet att lägga till hyrsakspaketet nedan alternativt välja
                         individuella hyrsaker till dess specifika kostnad. Även blomsterarrangemang går att beställa och ni får då en offert av oss att ta ställning till.</PartiesInfo>
+                    </PartiesBackground>
                 </PartiesContainer>
 
                 <WeddingRentalContainer>
@@ -147,7 +149,7 @@ const ImageWrapper = styled.div `
 const Image = styled.img `
     height: auto;
     object-fit: contain;
-    max-width: 70vw;
+    max-width: 90vw;
     padding-bottom: 50px;
 
     @media (min-width: 992px) {
@@ -155,11 +157,15 @@ const Image = styled.img `
     }
 `
 
+const PartiesBackground = styled.div `
+
+
+`
+
 
 const Section = styled.section `
     display: flex;
     flex-direction: column;
-    margin: 1rem;
 `
 
 const InfoContainer = styled.div `
@@ -167,19 +173,25 @@ const InfoContainer = styled.div `
     display: flex;
     flex-direction: column;
     text-align: center;
-    align-self: center;
-    justify-self: center;
     overflow: hidden;
+    justify-content: center;
+    align-items: center;
 
     @media (min-width: 668px) {
         width: 800px;
+    }
+
+    @media (min-width: 900px) {
+        width: 1000px;
+        align-self: center;
+        background-color: white;
     }
 `
 
 const Header = styled.h1 `
     text-transform: uppercase;
     font-weight: 300;
-    padding-bottom: 2.5rem;
+    padding: 3rem 0;
     font-size: 32px;
     letter-spacing: .15em;
 
@@ -192,7 +204,7 @@ const Header = styled.h1 `
 
 const ExtraInfo = styled.p `
     font-weight: 300;
-    margin: 12px 35px;
+    margin: 12px 0;
     line-height: 28px;
     padding-bottom: 2rem;
 
@@ -205,12 +217,14 @@ const ExtraInfo = styled.p `
 const WeddingHeader = styled.h1 `
     text-transform: uppercase;
     font-weight: 300;
-    font-size: 25px;
+    font-size: 23px;
     letter-spacing: .15em;
+    max-width: 90vw;
 
     @media (min-width: 668px) {
         font-size: 30px;
         letter-spacing: .2em;
+        padding: 3rem 0 1.5rem 0;
     }
 
 `
@@ -221,19 +235,25 @@ const WeddingRentalContainer = styled.div`
 
 const PartiesContainer = styled.div`
     background-color: white;
-    padding: 2rem;
+    padding: 2rem 10rem;
+
+    @media (min-width: 668px) {
+        padding: 2rem 5rem;
+    }
 `
 
 const PartiesHeader = styled.h1 `
     text-transform: uppercase;
     font-weight: 300;
-    font-size: 25px;
+    font-size: 23px;
     letter-spacing: .15em;
     background-color: white;
     margin-top: 2rem;
+    max-width: 90vw;
 
     @media (min-width: 668px) {
         font-size: 30px;
+        margin: 3rem 0 1.5rem 0;
         letter-spacing: .2em;
     }
 
@@ -248,6 +268,11 @@ const Info = styled.h4 `
     @media (min-width: 668px) {
         font-size: 18px;
         letter-spacing: .03em;
+    }
+    
+    @media (min-width: 900px) {
+        background-color: white;
+
     }
 `
 
