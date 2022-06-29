@@ -1,10 +1,30 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import swal from 'sweetalert';
-import contactImage from '../assets/Young and Wild_Stylad bröllopsfotografering_Sneak peek_2.jpg'
+import sanityClient from '../client.js';
 
 
 const Contact = () => {
+    const [homePage, setHomePage] = useState(null);
+
+    useEffect(() => {
+        sanityClient.fetch(
+            `*[_type == "homePage"] {
+                _id,
+                contactImage{
+                    image{
+                        asset->{
+                            url,
+                        },
+                    },
+                },
+            }`
+        )
+            .then((data) => {
+                setHomePage(data)
+                console.log(data)
+            })     
+    }, []);
 
     const [mailerState, setMailerState] = useState({
         name: "",
@@ -70,83 +90,84 @@ const Contact = () => {
 
     return (
        
-            <div>
-                <FormHeader>Don't be a stranger!</FormHeader>
-                <FormText>Skriv till oss om dina önskemål så återkommer vi inom det närmaste.</FormText>
-            
-        <FormyForm>
-        <ImageWrapper>
-                <Image
-                    src={contactImage}
-                    alt="Linnea och Caroline"
-                />
-            </ImageWrapper>
-            <Formwrapper>
-                <form
-                    onSubmit={submitEmail}
-                >
-                    <div>
-                        <ul>
-                            <li>
-                                <label className="custom-field">
-                                    Namn
-                                    <input
-                                        type="text"
-                                        name="name"
-                                        value={mailerState.name}
-                                        onChange={handleStateChange}
-                                        required
-                                    />
-                                </label>
-                            </li>
+        <div>
+            <FormHeader>Don't be a stranger!</FormHeader>
+            <FormText>Skriv till oss om dina önskemål så återkommer vi inom det närmaste.</FormText>
+            {homePage && homePage.map((contact, index) => (
+                <ImageWrapper key={index}>
+                    <Image
+                        src={contact.contactImage.image.asset.url}
+                        alt={contact.title}
+                    />
+                </ImageWrapper>
+            ))}
+            <FormyForm>
+                <Formwrapper>
+                    <form
+                        onSubmit={submitEmail}
+                    >
+                        <div>
+                            <ul>
+                                <li>
+                                    <label className="custom-field">
+                                        Namn
+                                        <input
+                                            type="text"
+                                            name="name"
+                                            value={mailerState.name}
+                                            onChange={handleStateChange}
+                                            required
+                                        />
+                                    </label>
+                                </li>
 
-                            <li>
-                                <label className="custom-field">
-                                    Telefonnummer
-                                    <input
-                                        type="tel"
-                                        name="phonenumber"
-                                        value={mailerState.phonenumber}
-                                        onChange={handleStateChange}
-                                    />
-                                </label>
-                            </li>
+                                <li>
+                                    <label className="custom-field">
+                                        Telefonnummer
+                                        <input
+                                            type="tel"
+                                            name="phonenumber"
+                                            value={mailerState.phonenumber}
+                                            onChange={handleStateChange}
+                                        />
+                                    </label>
+                                </li>
 
-                            <li>
-                                <label className="custom-field">
-                                    Email
-                                    <input
-                                        type="email"
-                                        name="email"
-                                        value={mailerState.email}
+                                <li>
+                                    <label className="custom-field">
+                                        Email
+                                        <input
+                                            type="email"
+                                            name="email"
+                                            value={mailerState.email}
+                                            onChange={handleStateChange}
+                                            required
+                                        />
+                                    </label>
+                                </li>
+                                <li>
+                                    <label className="custom-field">
+                                        Meddelande
+                                    </label>
+                                    <textarea
+                                        name="message"
+                                        maxLength="2000"
+                                        rows="10"
+                                        value={mailerState.message}
                                         onChange={handleStateChange}
-                                        required
-                                    />
-                                </label>
-                            </li>
-                            <li>
-                                <label className="custom-field">
-                                    Meddelande
-                                </label>
-                                <textarea
-                                    name="message"
-                                    maxLength="2000"
-                                    rows="10"
-                                    value={mailerState.message}
-                                    onChange={handleStateChange}
-                                >
-                                </textarea>
-                            </li>
-                            <li>
-                                <ButtonWrapper>
-                                    <FormButton type="submit">Skicka</FormButton>
-                                </ButtonWrapper>
-                            </li>
-                        </ul>
-                    </div>
-                </form>
-            </Formwrapper>
-        </FormyForm>
+                                    >
+                                    </textarea>
+                                </li>
+                                <li>
+                                    <ButtonWrapper>
+                                        <FormButton type="submit">Skicka</FormButton>
+                                    </ButtonWrapper>
+                                </li>
+                            </ul>
+                        </div>
+                    </form>
+                </Formwrapper>
+            </FormyForm>
         </div>
     )
 };
