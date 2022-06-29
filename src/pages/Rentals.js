@@ -104,7 +104,7 @@ const ButtonContainer = styled.div `
     grid-template-columns: repeat(2, 1fr);
     flex-direction: row;
     flex-wrap: wrap;
-    max-width: 70vw;
+    max-width: 90vw;
     justify-content: center;
     align-self: center;
     gap: 20px;
@@ -266,13 +266,13 @@ const RentalsInfoText = styled.h1 `
 
 const CardContainer = styled.div`
     background-color: white;
-    width: 55vh;
+    width: 40vh;
     padding: 1rem 1rem 1rem 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 1.5rem;
+    margin-top: 1.5rem;
 
     @media (min-width: 668px) {
         width: 35vh;
