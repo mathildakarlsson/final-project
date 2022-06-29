@@ -56,8 +56,8 @@ const Rentals = () => {
         <Main>
             <ArticleContainer>
                 <Header>Hyrsaker</Header>
-                <Info>Yes! Dags att välja dekoration!
-                    Lägg sådant du önskar i din önskelista och skicka den sen till oss så återkommer vi med
+                <Info>Yes! Dags att välja dekoration!</Info>
+                <Info>Lägg sådant du önskar i din önskelista och skicka den sen till oss så återkommer vi med
                     offert för dig att ta ställning till.</Info>
                     <RentalsContainer> 
                         <ButtonContainer>
@@ -120,71 +120,75 @@ const ButtonContainer = styled.div `
 
     @media (min-width: 1024px) {
         grid-template-columns: repeat(8, auto);
-        gap: 20px;
+        gap: 0;
+        max-width: 80vw;
     }
 
 `
 
 // -------------- Alternative styling for buttons ------------- //
 
-// const FilteringButtons = styled.button`
-//     font-weight: 400;
-//     margin: 10px;
-//     border: none;
-//     outline: none;
-//     font-size: 13px;
-//     background: none;
-//     transition: ease .5s;
-//     cursor: pointer;
-//     text-transform: uppercase;
-//     color: #6E6D6C;
-
-//     @media (min-width: 768px) {
-//         font-size: 15px;
-//         width: 170px;
-//     }
-
-//     &:hover {
-//         text-decoration: underline;
-//         text-underline-offset: .3em;
-//         color: black;
-//     }
-
-//     &.active {
-//         text-decoration: underline;
-//         text-underline-offset: .3em;
-//         color: black;
-//     }
-// `
-
 const FilteringButtons = styled.button`
-  font-weight: 400;
-  border: none;
-  outline: none;
-  height: auto;
-  font-size: 15px;
-  background: #6E6D6C;
-  color: white;
-  padding: 7px;
-  transition: all .25s ease-in-out;
-  width: 160px;
-  cursor: pointer;
+    font-weight: 400;
+    margin: 10px;
+    border: none;
+    outline: none;
+    font-size: 13px;
+    background: none;
+    transition: ease .5s;
+    cursor: pointer;
+    text-transform: uppercase;
+    color: #6E6D6C;
 
-  @media (min-width: 1024px) {
-    width: auto;
-    padding: 7px 13px;
-}
+    @media (min-width: 768px) {
+        font-size: 15px;
+        width: 170px;
+    }
 
-  &:hover {
-    background: black;
-  }
+    &:hover {
+        text-decoration: underline;
+        text-underline-offset: .3em;
+        color: black;
+    }
+
+    &.active {
+        text-decoration: underline;
+        text-underline-offset: .3em;
+        color: black;
+    }
 `
+
+// const FilteringButtons = styled.button`
+//   font-weight: 400;
+//   border: none;
+//   outline: none;
+//   height: auto;
+//   font-size: 15px;
+//   background: #6E6D6C;
+//   color: white;
+//   padding: 7px;
+//   transition: all .25s ease-in-out;
+//   width: 160px;
+//   cursor: pointer;
+
+//   @media (min-width: 1024px) {
+//     width: auto;
+//     padding: 7px 13px;
+// }
+
+//   &:hover {
+//     background: black;
+//   }
+// `
 
 const Main = styled.main`
     display: flex;
     flex-direction: column;
     margin: 1rem;
-    background-color: white;
+    justify-content: center;
+    align-items: center;
+    /* background-color: white; */
+width: 100vw;
 `
 
 const ArticleContainer = styled.article`
@@ -195,7 +199,7 @@ const ArticleContainer = styled.article`
     text-align: center;
     align-self: center;
     justify-self: center;
-    max-width: 100vw;
+    max-width: 80vw;
 `
 
 const Header = styled.h1 `
@@ -229,8 +233,14 @@ const ItemContainer = styled.div `
     flex-direction: column;
     grid-template-columns: repeat(1, 1fr);
 
+    @media (min-width: 600px) {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
     @media (min-width: 768px) {
         grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
     }
 
     @media (min-width: 1024px) {
@@ -242,6 +252,9 @@ const ItemContainer = styled.div `
 const RentalsContainer = styled.div`
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
 
     @media (min-width: 768px) {
     }
@@ -257,6 +270,7 @@ const RentalsInfoText = styled.h1 `
     letter-spacing: .15em;
     background-color: white;
 
+
     @media (min-width: 668px) {
         font-size: 15px;
         letter-spacing: .2em;
@@ -267,7 +281,7 @@ const RentalsInfoText = styled.h1 `
 const CardContainer = styled.div`
     background-color: white;
     width: 40vh;
-    padding: 1rem 1rem 1rem 0;
+    padding: 1rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -275,8 +289,8 @@ const CardContainer = styled.div`
     margin-top: 1.5rem;
 
     @media (min-width: 668px) {
-        width: 35vh;
-        padding: .5rem 0.5rem 0.5rem 0;
+        width: 30vh;
+        padding: .5rem;
     }
 
 `

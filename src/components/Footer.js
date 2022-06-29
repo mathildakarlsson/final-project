@@ -22,6 +22,7 @@ const Container = styled.section `
     align-items: center;
     margin-top: 100px;
     flex-direction: column;
+    width: 100vw;
 `
 
 const Header = styled.p `
