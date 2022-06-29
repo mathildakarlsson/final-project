@@ -90,9 +90,9 @@ const Contact = () => {
 
     return (
        
-        <div>
+        <Container>
             <FormHeader>Don't be a stranger!</FormHeader>
-            <FormText>Skriv till oss om dina önskemål så återkommer vi inom det närmaste.</FormText>
+            <FormText>Skriv till oss om dina önskemål här nedan så återkommer vi inom det närmaste.</FormText>
             {homePage && homePage.map((contact, index) => (
                 <ImageWrapper key={index}>
                     <Image
@@ -107,7 +107,7 @@ const Contact = () => {
                         onSubmit={submitEmail}
                     >
                         <div>
-                            <ul>
+                            <List>
                                 <li>
                                     <label className="custom-field">
                                         Namn
@@ -163,20 +163,33 @@ const Contact = () => {
                                         <FormButton type="submit">Skicka</FormButton>
                                     </ButtonWrapper>
                                 </li>
-                            </ul>
+                            </List>
                         </div>
                     </form>
                 </Formwrapper>
             </FormyForm>
-        </div>
+        </Container>
     )
 };
 
 export default Contact;
 
+const Container = styled.section `
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+`
+const List = styled.ul `
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+`
 
 const FormyForm = styled.section`
-padding-top: 8rem;
+padding-top: 25px;
 display: flex;
 flex-direction: column;
 
@@ -192,10 +205,11 @@ flex-direction: column;
 const Image = styled.img `
     height: auto;
     object-fit: contain;
-    max-width: 44vw;
+    max-width: 80vw;
     
     @media (min-width: 800px) {
         padding-top: 34px;
+        max-width: 60vw;
     }
 `
 
@@ -211,13 +225,14 @@ const FormHeader = styled.h2 `
     padding-bottom: 20px;
     text-transform: uppercase;
     letter-spacing: .15em;
+    padding-top: 150px;
     
     @media (min-width: 668px) {
         text-align: center;
         font-size: 35px;
         letter-spacing: .2em;
         padding-bottom: 0;
-        padding-top: 150px;
+        padding-top: 180px;
         justify-content: center;
       }
 `
@@ -227,12 +242,12 @@ const FormText = styled.p`
     /* justify-content: center; */
     font-size: 16px;
     font-weight: 305;
-    margin-top: 1rem;
+    margin: 1rem;
     line-height: 1.8em;
-    padding-bottom: 1rem;
+    padding-bottom: 50px;
+    text-align: center;
 
     @media (min-width: 668px) {
-        text-align: center;
         justify-content: center;
       }
     
@@ -257,8 +272,8 @@ const FormButton = styled.button`
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
-    margin: 2rem 0 2rem 0;
+    width: 170px;
+    margin: 2rem 0;
     cursor: pointer;
     border: none;
     font-size: 16px;
