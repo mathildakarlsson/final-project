@@ -1,3 +1,6 @@
+//This page will be added to the website later on in the process
+
+
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import sanityClient from '../client.js';

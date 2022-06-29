@@ -28,8 +28,6 @@ const Services = () => {
         )
             .then((data) => {
                 setHomePage(data)
-             
-                // console.log(data)
             })     
     }, []);
 
@@ -149,10 +147,11 @@ const ImageWrapper = styled.div `
 const Image = styled.img `
     height: auto;
     object-fit: contain;
-    max-width: 60vw;
+    max-width: 70vw;
+    padding-bottom: 50px;
 
     @media (min-width: 992px) {
-        
+    max-width: 60vw;
     }
 `
 
@@ -165,12 +164,12 @@ const Section = styled.section `
 
 const InfoContainer = styled.div `
     padding: 8rem 2rem 0 2rem;
-    margin: 0px 30px;
     display: flex;
     flex-direction: column;
     text-align: center;
     align-self: center;
     justify-self: center;
+    overflow: hidden;
 
     @media (min-width: 668px) {
         width: 800px;
@@ -193,7 +192,7 @@ const Header = styled.h1 `
 
 const ExtraInfo = styled.p `
     font-weight: 300;
-    margin: 12px 0;
+    margin: 12px 35px;
     line-height: 28px;
     padding-bottom: 2rem;
 
@@ -242,7 +241,7 @@ const PartiesHeader = styled.h1 `
 
 const Info = styled.h4 `
     font-weight: 300;
-    margin: 12px 0;
+    margin: 12px 15px;
     line-height: 28px;
     padding-bottom: 2.5rem;
 
