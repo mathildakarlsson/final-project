@@ -29,7 +29,7 @@ const Services = () => {
             .then((data) => {
                 setHomePage(data)
              
-                console.log(data)
+                // console.log(data)
             })     
     }, []);
 
