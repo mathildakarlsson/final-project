@@ -23,17 +23,9 @@ a {
   color: black;
 }
 
-  /* a:hover {
-    font-weight: 500;
-  } */
-
   ul {
     list-style-type: none;
   }
-
-  /* .active {
-   font-weight: 500;
-  } */
 
   .logo {
     height: 100px;
@@ -46,9 +38,9 @@ a {
     background-color: #f1eeeb00;
   }
 
-  /* -------- INSTAGRAM EMBED ------- */
+  /* -------- INSTAGRAM EMBED save for later ------- */
 
-.elfsight-app-55ce35a0-0d2a-41cf-a6be-b1ff2d427fcf {
+/* .elfsight-app-55ce35a0-0d2a-41cf-a6be-b1ff2d427fcf {
   display: none;
 
 }
@@ -61,11 +53,9 @@ a {
     margin-left: 50px;
     width: 100vw;
   }
-}
+} */
 
 /* ------------ Navbar ------------- */
-
-  
   .container {
     display: flex;
     flex-direction: row;
@@ -150,30 +140,6 @@ a {
     margin: 5px;
   }
 
-  /* WISHLIST */
-
-  /* .wishlist-ul {
-    list-style-type: none;
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    gap: 90px;
-  }
-
-
-  .wishlist {
-    padding-top: 150px;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    align-items: center;
-  }
-
-  .total {
-    padding-top: 60px;
-    font-size: 16px;
-    font-weight: 600;
-  } */
-
 /* BOOKING FORM STYLING */
 
 .get-in-touch-1 {
@@ -207,12 +173,6 @@ a {
   margin: 15px 15px 15px 0;
 }
 
-/* .about-image {
-  height: 800px;
-  width: 500px;
-  padding: 150px 0 0 50px;
-} */
-
 textarea {
   border: none;
   background: white;
@@ -233,22 +193,9 @@ textarea {
     width: 20rem;
 
   }
-
-  /* .form-products {
-    list-style-type: none;
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
-  } */
   
 }
 
-/* @media (min-width: 1024px) {
-  .form-products {
-    list-style-type: none;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr)
-  }
-} */
 
 .swal-button {
   width: 8rem;
