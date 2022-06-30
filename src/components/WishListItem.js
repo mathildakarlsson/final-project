@@ -17,6 +17,7 @@ const WishListItem = ({ product }) => {
 
     return(
         <Main>
+            {/* <ArticleContainer> */}
             <CardContainer>
                 <div>
                     <Image
@@ -32,6 +33,7 @@ const WishListItem = ({ product }) => {
                     <RemoveButton onClick={removeItem}>- Ta bort</RemoveButton>
                 </ButtonWrapper>
             </CardContainer>
+            {/* </ArticleContainer> */}
         </Main>
     )
 };

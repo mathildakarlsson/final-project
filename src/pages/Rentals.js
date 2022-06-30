@@ -69,16 +69,16 @@ const Rentals = () => {
                         {filterProducts && filterProducts.map((product, index) => (
                             <CardContainer key={index}>
                                 <Link to={"/product/" + product.slug.current} key={product.slug.current}>
-                                    <ProductSpan key={index}>
-                                        <img
+                                    <span className="product-span" key={index}>
+                                        <img className="product-image"
                                             src={product.mainImage.asset.url}
                                             alt={product.title}
                                         />
-                                        <TitleSpan key={index}> 
+                                        <span className="title-span" key={index}> 
                                             <RentalsInfoText>{product.title}</RentalsInfoText>
-                                        </TitleSpan>
+                                        </span>
                                         <RentalsInfoText>{product.defaultProductVariant.price} {product.defaultProductVariant.sku}/dag</RentalsInfoText>
-                                    </ProductSpan>
+                                    </span>
                                 </Link> 
                                 <AddButton
                                     disabled={product.inventory === 0}
@@ -195,25 +195,24 @@ const ArticleContainer = styled.article`
     max-width: 80vw;
 `
 
-const TitleSpan = styled.span `
-    display:block;
-    position:relative;
-    display: flex; 
-    justify-content: center;
-    justify-items: end;
-    padding: 4px;
-    background-color: white;
+// const TitleSpan = styled.span `
+//     display:block;
+//     position:relative;
+//     display: flex; 
+//     justify-content: center;
+//     justify-items: end;
+//     padding: 4px;
+//     background-color: white;
 
-`
+// `
 
-const ProductSpan = styled.span `
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: white;
-    height: 220px;
-
-`
+// const ProductSpan = styled.span `
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     background-color: white;
+//     height: 220px;
+// `
 
 const Header = styled.h1 `
     text-transform: uppercase;
@@ -228,7 +227,6 @@ const Header = styled.h1 `
         letter-spacing: .2em;
         padding-top: 50px;
     }
-
 `
 
 const Info = styled.h4 `
@@ -306,6 +304,7 @@ const AddButton = styled.button`
     margin: 15px 0 0 0;
     border: none;
     font-size: 16px;
+    
     padding: 1rem;
     color: black;
     background-color: rgb(197,191,184);
