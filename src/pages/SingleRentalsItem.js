@@ -118,11 +118,11 @@ const Header = styled.h1 `
 
 const CardContainer = styled.div`
     background-color: white;
-    width: 55vh;
+    width: 55vw;
     padding: 1rem;
 
     @media (min-width: 1024px) {
-        width: 100vh;
+        width: 100vw;
     }
 `
 

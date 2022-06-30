@@ -176,20 +176,20 @@ const BookingForm = () => {
             </Formwrapper>
 
             <section>
-                <article>
+                <Container>
                     <RentalsTextContainer>
                         <RentalsInfoText>Total kostnad: {totalPrice} SEK</RentalsInfoText>
                     </RentalsTextContainer>
                     <ItemContainer>
-                        <ul className="form-products">
+                        <FormProducts>
                             {products.map((product, index) => {
                                 return (
                                     <WishListItem key={index} product={product} />
                                 )
                             })}
-                        </ul>
+                        </FormProducts>
                     </ItemContainer>
-                </article>
+                </Container>
             </section>
         </FormContainer>
     )
@@ -197,13 +197,52 @@ const BookingForm = () => {
 
 export default BookingForm;
 
-const ItemContainer = styled.div `
+const Container = styled.article `
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    width: auto;
+    flex-direction: column;
 
+`
+
+const ItemContainer = styled.div `
+   
+
+`
+
+const FormProducts = styled.ul `
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    /* justify-content: center; */
+    /* width: 40vw; */
+    
+
+    @media (min-width: 600px) {
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+
+    /* @media (min-width: 768px) {
+        grid-template-columns: repeat(3, 1fr);
+
+    } */
+
+    @media (min-width: 1100px) {
+        /* display: grid; */
+        grid-template-columns: repeat(3, 1fr);
+    }
+/* 
+    @media (min-width: 1024px) {
+        grid-template-columns: repeat(3, 1fr);
+        width: 30vh;
+    } */
 `
 
 
 const FormContainer = styled.section`
     padding-top: 8rem;
+
     
     @media (min-width: 768px) {
         padding-top: 10rem;

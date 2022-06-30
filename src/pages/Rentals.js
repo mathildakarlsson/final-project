@@ -118,12 +118,6 @@ const ButtonContainer = styled.div `
         max-width: 90vw;
     }
 
-    @media (min-width: 1024px) {
-        grid-template-columns: repeat(8, auto);
-        gap: 0;
-        max-width: 80vw;
-    }
-
 `
 
 // -------------- Alternative styling for buttons ------------- //
@@ -208,10 +202,12 @@ const Header = styled.h1 `
     padding-bottom: 2.5rem;
     font-size: 32px;
     letter-spacing: .15em;
+    padding-top: 30px;
 
     @media (min-width: 768px) {
         font-size: 40px;
         letter-spacing: .2em;
+        padding-top: 50px;
     }
 
 `
@@ -246,6 +242,7 @@ const ItemContainer = styled.div `
     @media (min-width: 1024px) {
         /* display: grid; */
         grid-template-columns: repeat(4, 1fr);
+        gap: 30px;
     }
 `
 

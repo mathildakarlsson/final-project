@@ -82,12 +82,12 @@ const CardContainer = styled.div`
     align-self: center;
 
     @media (min-width: 668px) {
-        width: 35vw;
+        width: 30vw;
         max-height: 400px;
     }
     
     @media (min-width: 1024px) {
-        width: 22vw;
+        width: 25vw;
     }
 `
 
