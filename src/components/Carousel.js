@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import sanityClient from '../client.js';
+import styled from 'styled-components';
 
 
 const Carousel = () => {
@@ -120,93 +121,148 @@ const Carousel = () => {
 
         /* --------- IMAGE CAROUSEL WILL CHANGE CODE----------- */
     <>
-        <div className="slider">
+        <Slider>
             {carouselData && carouselData.map((carousel, index) => (
-                <div key={index} className="slides">  
-                    <div className="slide">
-                        <img
+                <Slides key={index}>  
+                    <Slide>
+                        <Image
                             src={carousel.desktopTwo.image.asset.url}
                             alt="carousel two"
                         />
-                    </div>
-                    <div className="slide first">
-                        <img
+                    </Slide>
+                    <Slide>
+                        <Image
                             src={carousel.desktopOne.image.asset.url}
                             alt="carousel one"
                         />
-                    </div>
-                    <div className="slide">
-                        <img
+                    </Slide>
+                    <Slide>
+                        <Image
                             src={carousel.desktopSix.image.asset.url}
                             alt="carousel six"
                         />
-                    </div>
-                    <div className="slide">
-                        <img
+                    </Slide>
+                    <Slide>
+                        <Image
                             src={carousel.desktopThree.image.asset.url}
                             alt="carousel three"
                         />
-                    </div>
-                    <div className="slide">
-                        <img
+                    </Slide>
+                    <Slide>
+                        <Image
                             src={carousel.desktopFour.image.asset.url}
                             alt="carousel four"
                         />
-                    </div>
-                    <div className="slide">
-                        <img
+                    </Slide>
+                    <Slide>
+                        <Image
                             src={carousel.desktopFive.image.asset.url}
                             alt="carousel five"
                         />
-                    </div>
-                </div>
+                    </Slide>
+                </Slides>
             ))}
-        </div>
+        </Slider>
 
-        <div className="mobile-slider">
+        <MobileSlider>
             {carouselData && carouselData.map((mobileCarousel, index) => (
-                <div key={index} className="mobile-slides">
-                    <div className="mobile-slide first">
-                        <img
+                <Slides key={index}>
+                    <Slide>
+                        <Image
                             src={mobileCarousel.mobileOne.image.asset.url}
                             alt="carousel one"
                         />
-                    </div>
-                    <div className="mobile-slide">
-                        <img
+                    </Slide>
+                    <Slide>
+                        <Image
                             src={mobileCarousel.mobileTwo.image.asset.url}
                             alt="carousel two"
                         />
-                    </div>
-                    <div className="mobile-slide">
-                        <img
+                    </Slide>
+                    <Slide>
+                        <Image
                             src={mobileCarousel.mobileThree.image.asset.url}
                             alt="carousel three"
                         />
-                    </div>
-                    <div className="mobile-slide">
-                        <img
+                    </Slide>
+                    <Slide>
+                        <Image
                             src={mobileCarousel.mobileFour.image.asset.url}
                             alt="carousel four"
                         />
-                    </div>
-                    <div className="mobile-slide">
-                        <img
+                    </Slide>
+                    <Slide>
+                        <Image
                             src={mobileCarousel.mobileFive.image.asset.url}
                             alt="carousel five"
                         />
-                    </div>
-                    <div className="mobile-slide">
-                        <img
+                    </Slide>
+                    <Slide>
+                        <Image
                             src={mobileCarousel.mobileSix.image.asset.url}
                             alt="carousel six"
                         />
-                    </div>
-                </div>
+                    </Slide>
+                </Slides>
             ))}
-        </div>
+        </MobileSlider>
     </>
     )
 };
 
 export default Carousel;
+
+
+const Slider = styled.section `
+    width: 100vw;
+    height: auto;
+    overflow: scroll;
+    padding-top: 115px;
+    display: none;
+  
+    @media (min-width: 668px) {
+        display: block;
+    }
+`
+
+const MobileSlider = styled.section `
+    width: 100vw;
+    height: auto;
+    padding-top: 100px;
+    overflow: scroll;
+
+  
+    @media (min-width: 668px) {
+        display: none;
+    }
+`
+
+const Slides = styled.div `
+    width: 500%;
+    display: flex;
+
+    @media (min-width: 668px) {
+        width: auto;
+    }
+
+`
+
+const Slide = styled.div `
+    width: auto;
+    transition: 2s;
+
+    @media (min-width: 668px) {
+        /* width: 20%; */
+    }
+
+`
+
+const Image = styled.img `
+    width: auto;
+    height: 83vh;
+    object-fit: contain;
+
+    @media (min-width: 668px) {
+        height: 70vh;
+    }
+`
