@@ -111,15 +111,15 @@ a {
     margin: auto;
   }
 
-  .product-span {
+  /* .product-span {
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: white;
     height: 220px;
-  }
+  } */
 
-  .title-span {
+  /* .title-span {
     display:block;
     position:relative;
     display: flex; 
@@ -128,32 +128,25 @@ a {
     padding: 4px;
     background-color: white;
 
-  }
+  } */
 
-  .product-image {
-    object-fit: cover;
-    width: 150px;
-    height: 150px;
-    background-color: white;
 
-  }
-
-  .product-title {
+  /* .product-title {
     font-size: 20px;
     text-align: center;
     margin: 5px;
     background-color: white;
 
-  }
+  } */
 
-  .qty-button {
+  /* .qty-button {
     width: 50px;
     margin: 5px;
-  }
+  } */
 
   /* WISHLIST */
 
-  .wishlist-ul {
+  /* .wishlist-ul {
     list-style-type: none;
     display: grid;
     grid-template-columns: repeat(3,1fr);
@@ -173,7 +166,7 @@ a {
     padding-top: 60px;
     font-size: 16px;
     font-weight: 600;
-  }
+  } */
 
 /* BOOKING FORM STYLING */
 

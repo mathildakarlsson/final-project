@@ -61,14 +61,12 @@ const SingleRentalsItem = () => {
     return (
         <Main>
             <ArticleContainer>
-            <GoBackButton onClick={onBackButtonClick}>Tillbaka</GoBackButton>
+                <GoBackButton onClick={onBackButtonClick}>Tillbaka</GoBackButton>
                 <Header>{singleProduct.title}</Header>
                 <CardContainer>
-
                     <img src={singleProduct.mainImage.asset.url}
                         alt={singleProduct.title}
                     />
-
                     <Info>Pris: {singleProduct.defaultProductVariant.price} {singleProduct.defaultProductVariant.sku}/dag</Info>
                     <Info>Storlek: {singleProduct.defaultProductVariant.dimensions}</Info>
                     <Info>Antal i lager: {singleProduct.defaultProductVariant.quantity}st</Info>
@@ -101,6 +99,25 @@ const ArticleContainer = styled.article`
     text-align: center;
     align-self: center;
     justify-self: center;
+`
+
+const GoBackButton = styled.button`
+    width: 100%;
+    margin: 2rem 0 2rem 0;
+    cursor: pointer;
+    border: none;
+    font-size: 16px;
+    padding: 1rem;
+    color: black;
+    background-color: rgb(197,191,184);
+    text-transform: uppercase;
+    font-weight: 450;
+
+    &:hover {
+        background-color: black;
+        color: white;
+        transition: 0.7s ease;
+    }
 `
 
 const Header = styled.h1 `
@@ -144,7 +161,6 @@ const AddButton = styled.button`
     cursor: pointer;
     border: none;
     font-size: 16px;
-
     padding: 1rem;
     color: black;
     background-color: rgb(197,191,184);
@@ -152,32 +168,8 @@ const AddButton = styled.button`
     font-weight: 450;
     
     &:hover {
-    background-color: black;
-    color: white;
-    transition: 0.7s ease;
-    /* height: 30px; */
+        background-color: black;
+        color: white;
+        transition: 0.7s ease;
     }
 `
-
-const GoBackButton = styled.button`
-width: 100%;
-margin: 2rem 0 2rem 0;
-cursor: pointer;
-border: none;
-font-size: 16px;
-
-padding: 1rem;
-color: black;
-background-color: rgb(197,191,184);
-text-transform: uppercase;
-font-weight: 450;
-
-&:hover {
-background-color: black;
-color: white;
-transition: 0.7s ease;
-/* height: 30px; */
-}
-`
-;
-

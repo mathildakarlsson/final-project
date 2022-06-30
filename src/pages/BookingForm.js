@@ -80,11 +80,8 @@ const BookingForm = () => {
         <FormContainer>
             <FormHeader>SKICKA IN DIN ÖNSKELISTA</FormHeader>
             <FormText>Skriv till oss om dina önskemål så återkommer vi inom det närmaste. Förfrågan är inte bindande.</FormText>
-
             <Formwrapper>
-                <form
-                    onSubmit={submitEmail}
-                >
+                <form onSubmit={submitEmail}>
                     <div>
                         <ul>
                             <li>
@@ -169,7 +166,6 @@ const BookingForm = () => {
                                     <FormButton type="submit">Skicka</FormButton>
                                 </ButtonWrapper>
                             </li>
-
                         </ul>
                     </div>
                 </form>
@@ -180,7 +176,7 @@ const BookingForm = () => {
                     <RentalsTextContainer>
                         <RentalsInfoText>Total kostnad: {totalPrice} SEK</RentalsInfoText>
                     </RentalsTextContainer>
-                    <ItemContainer>
+                    <div>
                         <FormProducts>
                             {products.map((product, index) => {
                                 return (
@@ -188,7 +184,7 @@ const BookingForm = () => {
                                 )
                             })}
                         </FormProducts>
-                    </ItemContainer>
+                    </div>
                 </Container>
             </section>
         </FormContainer>
@@ -197,52 +193,8 @@ const BookingForm = () => {
 
 export default BookingForm;
 
-const Container = styled.article `
-    display: flex;
-    justify-content: center;
-    /* align-items: center; */
-    width: auto;
-    flex-direction: column;
-
-`
-
-const ItemContainer = styled.div `
-   
-
-`
-
-const FormProducts = styled.ul `
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    /* justify-content: center; */
-    /* width: 40vw; */
-    
-
-    @media (min-width: 600px) {
-        grid-template-columns: repeat(2, 1fr);
-
-    }
-
-    /* @media (min-width: 768px) {
-        grid-template-columns: repeat(3, 1fr);
-
-    } */
-
-    @media (min-width: 1100px) {
-        /* display: grid; */
-        grid-template-columns: repeat(3, 1fr);
-    }
-/* 
-    @media (min-width: 1024px) {
-        grid-template-columns: repeat(3, 1fr);
-        width: 30vh;
-    } */
-`
-
-
 const FormContainer = styled.section`
     padding-top: 8rem;
-
     
     @media (min-width: 768px) {
         padding-top: 10rem;
@@ -264,7 +216,6 @@ const FormHeader = styled.h2 `
         letter-spacing: .2em;
       }
 `
-
 const FormText = styled.p`
     display: flex;
     justify-content: center;
@@ -279,6 +230,7 @@ const Formwrapper = styled.div`
     justify-content: center;
     margin-top: 1rem;
 `
+
 const ButtonWrapper = styled.div`
     display: flex;
     justify-content: center;
@@ -293,7 +245,6 @@ const FormButton = styled.button`
     cursor: pointer;
     border: none;
     font-size: 16px;
-
     padding: 1rem;
     color: black;
     background-color: rgb(179,99,90);
@@ -305,6 +256,13 @@ const FormButton = styled.button`
         color: white;
         transition: 0.7s ease;
     }
+`
+
+const Container = styled.article `
+    display: flex;
+    justify-content: center;
+    width: auto;
+    flex-direction: column;
 `
 
 const RentalsTextContainer = styled.div`
@@ -328,4 +286,16 @@ const RentalsInfoText = styled.h1 `
     }
 `
 
-;
+const FormProducts = styled.ul `
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+
+    @media (min-width: 600px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (min-width: 1100px) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+`

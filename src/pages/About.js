@@ -47,92 +47,79 @@ const About = () => {
 
     return (
         <AboutContainer>
-                {aboutUsData && aboutUsData.map((aboutUs, index) => (
-                    <Wrapper key={index}>
-                        <ContentWrapper>
-                            <MainHeaderMobile>OUR STORY</MainHeaderMobile>
-                            <Image
-                                    src={aboutUs.photoOne.image.asset.url}
-                                    alt={aboutUs.title}
-                            />
-                            <TextWrapper>
-                                <AboutHeader><LetterSpan>O</LetterSpan>UR &nbsp;<LetterSpan>S</LetterSpan>TORY</AboutHeader>
-                                <AboutText>
-                                    Att en råkall februarikväll kunde vara så fylld av hopp och förväntan. Bland sömniga trädgårdar och gatlyktors sken växte tanken om ett företag, snällt mot plånboken och miljön, samtidigt drömlikt och modigt i sitt utförande.
-                                </AboutText>
-                                <AboutText>
-                                    Linnéa florist med förkärlek för naturen och svalkande bad. Caroline, kreatör som trivs med pulsen i staden och förundras av vackra byggnader. Olika, men lika i kärleken för skapandet, frihetslängtan, för färg och form och för att få se glädjen i människors ögon när dröm blir verklighet.
-                                </AboutText>
-                                <AboutText>
-                                    Vi blev Nordic Spells Decor. Visionen var och förblir, att genom säsongens växter, återbruk av vackra ting och kreativitet få vara Västkustens förmedlare av dekoration till personliga och pintrestvänliga event!
-                                </AboutText>
-                            </TextWrapper>
-                        </ContentWrapper>
-                        <ContentWrapper>
-                            <Image
-                                src={aboutUs.photoTwo.image.asset.url}
-                                alt={aboutUs.title}
-                            />
-                            <TextWrapper>
-                            <Title><AboutHeaderMobile>Caroline,</AboutHeaderMobile>
-                                <AboutHeaderMobile>kreativ designer</AboutHeaderMobile></Title>
-                                <AboutHeader><LetterSpan>C</LetterSpan>aroline,</AboutHeader>
-                                <AboutHeader>kreativ designer</AboutHeader>
-                                <AboutText>
-                                    Caroline heter jag och jag är kreativ designer i Nordic Spells Decor. Jag fullkomligt älskar chansen att få ta tag i nya kreativa projekt och låta idéerna flöda! Om du önskar hjälp med att planera dekorationen ditt drömevent eller bara någon att bolla tankar kring dekoration med så finns jag här!
-                                </AboutText>
-                                <AboutText>
-                                    Extra svag är jag för dekoration med attityd och personlighet, för kontraster och för dekoration som förstärker identiteten hos dig som kund! Jag tror starkt på omgivningens kraft att påverka stämningar, så varför inte ge den en extra knuff mot känslan du vill att dina gäster ska minnas när de tänker tillbaka om tio, tjugo år?
-                                </AboutText>
-                            </TextWrapper>
-                        </ContentWrapper>
-                        <ContentWrapper>
-                            <Image
-                                src={aboutUs.photoThree.image.asset.url}
-                                alt={aboutUs.title}
-                            />
-                            <TextWrapper>
-                            <Title><AboutHeaderMobile>Linnéa, florist</AboutHeaderMobile></Title>
-                            <AboutHeader><LetterSpan>L</LetterSpan>innéa, florist</AboutHeader>
-                                <AboutText>
-                                    Linnéa heter jag och jag är florist i Nordic Spells Decor. Jag är 33 år och bor tillsammans i Göteborg med min man Gustav och min son Oscar. Sedan jag var liten har blommor varit en given del av mitt liv.
-                                    Jag älskar blommor – att skapa vackra buketter och arrangemang, att odla och driva upp dom små liven och att i olika sammanhang höja mysfaktorn och trivseln med blommor och grönt. Växter gör mig klyschigt nog lyckligare! 
-                                    I takt med att jag under åren insett att jag är en kreativ person som behöver få skapa för att må bra har jag tagit små steg för att låta kreativiteten få mer plats.
-                                </AboutText>
-                                <AboutText>
-                                    Så plötsligt en dag kom chansen att tillsammans med Carro på riktigt få göra det jag älskar - skapa med blommor! Drömmen har gått i uppfyllelse och jag hoppas att jag genom Nordic Spells Decor får möjlighet att med blommor 
-                                    och grönt höja mysfaktorn och stämningen på många event framöver <span role="img" aria-label="leaves">🍃</span>
-                                </AboutText>
-                                <AboutText>
-                                    Har du funderingar, frågor, tankar eller drömmar om hur du vill använda blommor och grönt till just ditt event -  hör av dig så bollar vi och hittar en personlig lösning!
-                                </AboutText>
-                            </TextWrapper>
-                        </ContentWrapper>
-                    </Wrapper>
-                ))}
+            {aboutUsData && aboutUsData.map((aboutUs, index) => (
+                <Wrapper key={index}>
+                    <ContentWrapper>
+                        <MainHeaderMobile>OUR STORY</MainHeaderMobile>
+                        <Image
+                            src={aboutUs.photoOne.image.asset.url}
+                            alt={aboutUs.title}
+                        />
+                        <TextWrapper>
+                            <AboutHeader><LetterSpan>O</LetterSpan>UR &nbsp;<LetterSpan>S</LetterSpan>TORY</AboutHeader>
+                            <AboutText>
+                                Att en råkall februarikväll kunde vara så fylld av hopp och förväntan. Bland sömniga trädgårdar och gatlyktors sken växte tanken om ett företag, snällt mot plånboken och miljön, samtidigt drömlikt och modigt i sitt utförande.
+                            </AboutText>
+                            <AboutText>
+                                Linnéa florist med förkärlek för naturen och svalkande bad. Caroline, kreatör som trivs med pulsen i staden och förundras av vackra byggnader. Olika, men lika i kärleken för skapandet, frihetslängtan, för färg och form och för att få se glädjen i människors ögon när dröm blir verklighet.
+                            </AboutText>
+                            <AboutText>
+                                Vi blev Nordic Spells Decor. Visionen var och förblir, att genom säsongens växter, återbruk av vackra ting och kreativitet få vara Västkustens förmedlare av dekoration till personliga och pintrestvänliga event!
+                            </AboutText>
+                        </TextWrapper>
+                    </ContentWrapper>
+                    <ContentWrapper>
+                        <Image
+                            src={aboutUs.photoTwo.image.asset.url}
+                            alt={aboutUs.title}
+                        />
+                        <TextWrapper>
+                        <Title><AboutHeaderMobile>Caroline,</AboutHeaderMobile>
+                            <AboutHeaderMobile>kreativ designer</AboutHeaderMobile></Title>
+                            <AboutHeader><LetterSpan>C</LetterSpan>aroline,</AboutHeader>
+                            <AboutHeader>kreativ designer</AboutHeader>
+                            <AboutText>
+                                Caroline heter jag och jag är kreativ designer i Nordic Spells Decor. Jag fullkomligt älskar chansen att få ta tag i nya kreativa projekt och låta idéerna flöda! Om du önskar hjälp med att planera dekorationen ditt drömevent eller bara någon att bolla tankar kring dekoration med så finns jag här!
+                            </AboutText>
+                            <AboutText>
+                                Extra svag är jag för dekoration med attityd och personlighet, för kontraster och för dekoration som förstärker identiteten hos dig som kund! Jag tror starkt på omgivningens kraft att påverka stämningar, så varför inte ge den en extra knuff mot känslan du vill att dina gäster ska minnas när de tänker tillbaka om tio, tjugo år?
+                            </AboutText>
+                        </TextWrapper>
+                    </ContentWrapper>
+                    <ContentWrapper>
+                        <Image
+                            src={aboutUs.photoThree.image.asset.url}
+                            alt={aboutUs.title}
+                        />
+                        <TextWrapper>
+                        <Title><AboutHeaderMobile>Linnéa, florist</AboutHeaderMobile></Title>
+                        <AboutHeader><LetterSpan>L</LetterSpan>innéa, florist</AboutHeader>
+                            <AboutText>
+                                Linnéa heter jag och jag är florist i Nordic Spells Decor. Jag är 33 år och bor tillsammans i Göteborg med min man Gustav och min son Oscar. Sedan jag var liten har blommor varit en given del av mitt liv.
+                                Jag älskar blommor – att skapa vackra buketter och arrangemang, att odla och driva upp dom små liven och att i olika sammanhang höja mysfaktorn och trivseln med blommor och grönt. Växter gör mig klyschigt nog lyckligare! 
+                                I takt med att jag under åren insett att jag är en kreativ person som behöver få skapa för att må bra har jag tagit små steg för att låta kreativiteten få mer plats.
+                            </AboutText>
+                            <AboutText>
+                                Så plötsligt en dag kom chansen att tillsammans med Carro på riktigt få göra det jag älskar - skapa med blommor! Drömmen har gått i uppfyllelse och jag hoppas att jag genom Nordic Spells Decor får möjlighet att med blommor 
+                                och grönt höja mysfaktorn och stämningen på många event framöver <span role="img" aria-label="leaves">🍃</span>
+                            </AboutText>
+                            <AboutText>
+                                Har du funderingar, frågor, tankar eller drömmar om hur du vill använda blommor och grönt till just ditt event -  hör av dig så bollar vi och hittar en personlig lösning!
+                            </AboutText>
+                        </TextWrapper>
+                    </ContentWrapper>
+                </Wrapper>
+            ))}
         </AboutContainer>
     )
 };
 
 export default About;
 
-const Title = styled.div `
-    padding-top: 20px;
-
-    @media (min-width: 668px) {
-        display: flex;
-        padding-top: 35px;
-        justify-content: center;
-    }
-`
-
 const AboutContainer = styled.section `
     display: flex;
     justify-content: center;
-    
-
 `
-
 const Wrapper = styled.div `
     display: flex;
     padding-top: 90px;
@@ -159,65 +146,15 @@ const ContentWrapper = styled.div `
     }
 `
 
-const TextWrapper = styled.div `
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    justify-self: center;
-    align-self: center;
-`
+const Title = styled.div `
+    padding-top: 20px;
 
-const Image = styled.img `
-    width: auto;
-    object-fit: contain;
-    max-height: 75vh;
-    
     @media (min-width: 668px) {
-        margin: 0 70px;
-        max-height: 80vh;
-    }
-
-    @media (min-width: 960px) {
-        max-height: 90vh;
-    }
-`
-
-const AboutHeader = styled.h1 `
-    align-self: center;
-    font-weight: 300;
-    font-size: 30px;
-    display: flex;
-    align-items: baseline;
-    display: none;
-    font-weight: 200;
-    
-
-    @media (min-width: 960px) {
-        font-size: 40px;
         display: flex;
+        padding-top: 35px;
+        justify-content: center;
     }
 `
-const AboutHeaderMobile = styled.h1 `
-    font-weight: 300;
-    font-size: 30px;
-    display: flex;
-    align-items: baseline;
-    display: flex;
-    font-weight: 200;
-    /* text-align: center; */
-    justify-self: center;
-    align-self: center;
-    /* padding-top: 20px; */
-    flex-direction: row;
-    flex-wrap: wrap;
-
-    
-    
-    @media (min-width: 960px) {
-        display: none;
-    }
-`
-
 const MainHeaderMobile = styled.h1 `
     font-weight: 300;
     font-size: 40px;
@@ -234,7 +171,58 @@ const MainHeaderMobile = styled.h1 `
         font-size: 60px;
     }
 
+    @media (min-width: 960px) {
+        display: none;
+    }
+`
+const Image = styled.img `
+    width: auto;
+    object-fit: contain;
+    max-height: 75vh;
+    
+    @media (min-width: 668px) {
+        margin: 0 70px;
+        max-height: 80vh;
+    }
 
+    @media (min-width: 960px) {
+        max-height: 90vh;
+    }
+`
+
+const TextWrapper = styled.div `
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    justify-self: center;
+    align-self: center;
+`
+
+const AboutHeader = styled.h1 `
+    align-self: center;
+    font-weight: 300;
+    font-size: 30px;
+    display: flex;
+    align-items: baseline;
+    display: none;
+    font-weight: 200;
+    
+    @media (min-width: 960px) {
+        font-size: 40px;
+        display: flex;
+    }
+`
+const AboutHeaderMobile = styled.h1 `
+    font-weight: 300;
+    font-size: 30px;
+    display: flex;
+    align-items: baseline;
+    display: flex;
+    font-weight: 200;
+    justify-self: center;
+    align-self: center;
+    flex-direction: row;
+    flex-wrap: wrap;
 
     @media (min-width: 960px) {
         display: none;

@@ -17,32 +17,21 @@ const WishListItem = ({ product }) => {
 
     return(
         <Main>
-            {/* <ArticleContainer> */}
-                <CardContainer>
-                    <div>
-                    <img className="product-image"
-                            src={product.mainImage.asset.url}
-                            alt={product.title}
-                        />
-                        <RentalsInfoText>{product.title}</RentalsInfoText> 
-                        <RentalsInfoText>x {product.quantity}</RentalsInfoText>
-                        <RentalsInfoText>{product.price * product.quantity} SEK/dag</RentalsInfoText>
-                     
-                    </div>
-                    <ButtonWrapper>
-                        <AddButton
-                            onClick={addItem} 
-                        >
-                            + Lägg till
-                        </AddButton>
-                        <RemoveButton
-                            onClick={removeItem}
-                        >
-                            - Ta bort
-                        </RemoveButton>
-                    </ButtonWrapper>
-                </CardContainer>
-            {/* </ArticleContainer> */}
+            <CardContainer>
+                <div>
+                    <Image
+                        src={product.mainImage.asset.url}
+                        alt={product.title}
+                    />
+                    <RentalsInfoText>{product.title}</RentalsInfoText> 
+                    <RentalsInfoText>x {product.quantity}</RentalsInfoText>
+                    <RentalsInfoText>{product.price * product.quantity} SEK/dag</RentalsInfoText>
+                </div>
+                <ButtonWrapper>
+                    <AddButton onClick={addItem}>+ Lägg till</AddButton>
+                    <RemoveButton onClick={removeItem}>- Ta bort</RemoveButton>
+                </ButtonWrapper>
+            </CardContainer>
         </Main>
     )
 };
@@ -54,23 +43,6 @@ const Main = styled.main`
     flex-direction: column;
     margin: 1rem;
 `
-
-const ButtonWrapper = styled.div `
-    width: inherit;
-    justify-self: center;
-    align-self: center;
-`
-
-// const ArticleContainer = styled.article`
-    /* margin: 0px 30px;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    align-self: center;
-    justify-self: center;
-    background-color: red; */
-// `
-
 const CardContainer = styled.div`
     background-color: white;
     width: 70vw;
@@ -86,11 +58,16 @@ const CardContainer = styled.div`
         max-height: 400px;
     }
     
-    @media (min-width: 1024px) {
+    @media (min-width: 1100px) {
         width: 25vw;
     }
 `
-
+const Image  = styled.img `
+    object-fit: cover;
+    width: 150px;
+    height: 150px;
+    background-color: white;
+`
 const RentalsInfoText = styled.h1 `
     text-transform: uppercase;
     font-weight: 300;
@@ -102,7 +79,12 @@ const RentalsInfoText = styled.h1 `
         font-size: 15px;
         letter-spacing: .2em;
     }
+`
 
+const ButtonWrapper = styled.div `
+    width: inherit;
+    justify-self: center;
+    align-self: center;
 `
 
 const AddButton = styled.button`
@@ -111,7 +93,6 @@ const AddButton = styled.button`
     border: none;
     font-size: 15px;
     margin-top: 0.5rem;
-
     padding: 1rem;
     color: black;
     background-color: rgb(197,191,184);
@@ -122,7 +103,6 @@ const AddButton = styled.button`
         background-color: black;
         color: white;
         transition: 0.7s ease;
-        /* height: 30px; */
     }
 `
 
@@ -131,7 +111,6 @@ const RemoveButton = styled.button`
     cursor: pointer;
     border: none;
     font-size: 15px;
-
     padding: 1rem;
     color: black;
     background-color: rgb(179,99,90);
@@ -142,6 +121,5 @@ const RemoveButton = styled.button`
         background-color: black;
         color: white;
         transition: 0.7s ease;
-        /* height: 30px; */
     }
 `

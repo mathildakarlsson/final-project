@@ -35,12 +35,11 @@ const Flowers = () => {
 
     return (
         <Section>
-                <InfoContainer>
-                    <Header>Blommor</Header>
-                    <Info>Nordic Spells Decor erbjuder liv och rörelse till bröllop och event genom säsongens blommor och blad! Blomsterbågar, bordsdekoration, buketter, kransar, corsager och mycket där till.</Info>
-                    <Info>Välkommen att höra av dig till oss med dina önskemål så återkommer vi med offert för dig att ta ställning. Låt dig gärna inspireras av bilderna här!</Info>
-                </InfoContainer>
-
+            <InfoContainer>
+                <Header>Blommor</Header>
+                <Info>Nordic Spells Decor erbjuder liv och rörelse till bröllop och event genom säsongens blommor och blad! Blomsterbågar, bordsdekoration, buketter, kransar, corsager och mycket där till.</Info>
+                <Info>Välkommen att höra av dig till oss med dina önskemål så återkommer vi med offert för dig att ta ställning. Låt dig gärna inspireras av bilderna här!</Info>
+            </InfoContainer>
             <Container>
                 {flowersData && flowersData.map((nested) => nested.flowerImagesMobile.map((flowerImagesMobile, index) => (
                     <ImageContainer key={index}>
@@ -52,7 +51,7 @@ const Flowers = () => {
                     </ImageContainer>
                 )))}
             </Container>
-            </Section>
+        </Section>
     )
 };
 
@@ -61,8 +60,6 @@ export default Flowers;
 const Section = styled.section `
     display: flex;
     flex-direction: column;
-
-
 `
 
 const InfoContainer = styled.div `
@@ -90,7 +87,6 @@ const Header = styled.h1 `
         font-size: 37px;
         letter-spacing: .2em;
     }
-
 `
 
 const Info = styled.h4 `

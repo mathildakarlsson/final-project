@@ -44,7 +44,6 @@ const Home = () => {
         )
             .then((data) => {
                 setHomePage(data)
-             
                 console.log(data)
             })     
     }, []);
@@ -102,7 +101,7 @@ const Home = () => {
                      </ImageWrapper>
                 </ImageContainer>
             ))}
-                {/* <div className="elfsight-app-55ce35a0-0d2a-41cf-a6be-b1ff2d427fcf"></div> */}
+                {/* instagram embed - save for later <div className="elfsight-app-55ce35a0-0d2a-41cf-a6be-b1ff2d427fcf"></div>*/}
         </HomeContainer>
     )
 };
@@ -135,7 +134,6 @@ const Header = styled.h1 `
     }
 `
 
-
 const Info = styled.h4 `
     font-weight: 300;
     margin: 12px 0;
@@ -156,20 +154,16 @@ const Overlay = styled.div `
     left: 0;
     transition: 0.5s ease;
     background-color: rgba(0,0,0,0.5);
-    
     z-index: 5;
-
-  
 
     @media (min-width: 992px) {
         opacity: 0;
         
         &:hover {
-        opacity: 100;
+            opacity: 100;
         }
     } 
 `
-
 
 const ImageWrapper = styled.div `
     position: relative;

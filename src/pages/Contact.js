@@ -46,9 +46,6 @@ const Contact = () => {
         e.preventDefault();
         console.log({ data });
 
-        // "https://final-project-nsd.herokuapp.com/send"
-
-
         const response = await fetch("https://final-project-nsd.herokuapp.com/send", {
             method: "POST",
             headers: {
@@ -89,23 +86,20 @@ const Contact = () => {
 
 
     return (
-       
         <Container>
             <FormHeader>Don't be a stranger!</FormHeader>
             <FormText>Skriv till oss om dina önskemål här nedan så återkommer vi inom det närmaste.</FormText>
             {homePage && homePage.map((contact, index) => (
-                <ImageWrapper key={index}>
+                <div key={index}>
                     <Image
                         src={contact.contactImage.image.asset.url}
                         alt={contact.title}
                     />
-                </ImageWrapper>
+                </div>
             ))}
-            <FormyForm>
+            <FormContainer>
                 <Formwrapper>
-                    <form
-                        onSubmit={submitEmail}
-                    >
+                    <form onSubmit={submitEmail}>
                         <div>
                             <List>
                                 <li>
@@ -145,6 +139,7 @@ const Contact = () => {
                                         />
                                     </label>
                                 </li>
+
                                 <li>
                                     <label className="custom-field">
                                         Meddelande
@@ -158,16 +153,18 @@ const Contact = () => {
                                     >
                                     </textarea>
                                 </li>
+
                                 <li>
                                     <ButtonWrapper>
                                         <FormButton type="submit">Skicka</FormButton>
                                     </ButtonWrapper>
                                 </li>
+
                             </List>
                         </div>
                     </form>
                 </Formwrapper>
-            </FormyForm>
+            </FormContainer>
         </Container>
     )
 };
@@ -179,8 +176,20 @@ const Container = styled.section `
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
 `
+const FormContainer = styled.section`
+    padding-top: 25px;
+    display: flex;
+    flex-direction: column;
+
+    @media (min-width: 768px) {
+        padding-top: 0;
+        flex-direction: row;
+        justify-content: space-evenly;
+        margin-top: 100px;
+    }
+`
+ 
 const List = styled.ul `
     display: flex;
     flex-direction: column;
@@ -188,20 +197,6 @@ const List = styled.ul `
     align-items: center;
 `
 
-const FormyForm = styled.section`
-padding-top: 25px;
-display: flex;
-flex-direction: column;
-
-@media (min-width: 768px) {
-    padding-top: 0;
-    flex-direction: row;
-    justify-content: space-evenly;
-    margin-top: 100px;
-    /* align-items: center; */
-  }
- 
-`
 const Image = styled.img `
     height: auto;
     object-fit: contain;
@@ -213,13 +208,9 @@ const Image = styled.img `
     }
 `
 
-const ImageWrapper = styled.div `
-`
-
 
 const FormHeader = styled.h2 `
     display: flex;
-    /* justify-content: center; */
     font-weight: 300;
     font-size: 25px;
     padding-bottom: 20px;
@@ -234,12 +225,11 @@ const FormHeader = styled.h2 `
         padding-bottom: 0;
         padding-top: 180px;
         justify-content: center;
-      }
+    }
 `
 
 const FormText = styled.p`
     display: flex;
-    /* justify-content: center; */
     font-size: 16px;
     font-weight: 305;
     margin: 1rem;
@@ -249,8 +239,7 @@ const FormText = styled.p`
 
     @media (min-width: 668px) {
         justify-content: center;
-      }
-    
+    }
 `
 const Formwrapper = styled.div`
     display: flex;
@@ -260,7 +249,7 @@ const Formwrapper = styled.div`
 
     @media (min-width: 668px) {
         margin-top: 0;
-      }
+    }
 `
 
 const ButtonWrapper = styled.div`
@@ -277,7 +266,6 @@ const FormButton = styled.button`
     cursor: pointer;
     border: none;
     font-size: 16px;
-
     padding: 1rem;
     color: black;
     background-color: rgb(179,99,90);
@@ -285,11 +273,8 @@ const FormButton = styled.button`
     font-weight: 450;
     
     &:hover {
-    background-color: black;
-    color: white;
-    transition: 0.7s ease;
-    /* height: 30px; */
+        background-color: black;
+        color: white;
+        transition: 0.7s ease;
     }
 `
-
-;

@@ -72,16 +72,16 @@ const Rentals = () => {
                         {filterProducts && filterProducts.map((product, index) => (
                             <CardContainer key={index}>
                                 <Link to={"/product/" + product.slug.current} key={product.slug.current}>
-                                    <span className="product-span" key={index}>
-                                        <img className="product-image"
+                                    <ProductSpan key={index}>
+                                        <img
                                             src={product.mainImage.asset.url}
                                             alt={product.title}
                                         />
-                                        <span className="title-span" key={index}> 
+                                        <TitleSpan key={index}> 
                                             <RentalsInfoText>{product.title}</RentalsInfoText>
-                                        </span>
+                                        </TitleSpan>
                                         <RentalsInfoText>{product.defaultProductVariant.price} {product.defaultProductVariant.sku}/dag</RentalsInfoText>
-                                    </span>
+                                    </ProductSpan>
                                 </Link> 
                                 <AddButton
                                     disabled={product.inventory === 0}
@@ -194,6 +194,26 @@ const ArticleContainer = styled.article`
     align-self: center;
     justify-self: center;
     max-width: 80vw;
+`
+
+const TitleSpan = styled.span `
+    display:block;
+    position:relative;
+    display: flex; 
+    justify-content: center;
+    justify-items: end;
+    padding: 4px;
+    background-color: white;
+
+`
+
+const ProductSpan = styled.span `
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    height: 220px;
+
 `
 
 const Header = styled.h1 `
