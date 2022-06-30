@@ -3,50 +3,6 @@ import styled from 'styled-components/macro'
 import { Link } from 'react-router-dom'
 import { MdClose } from 'react-icons/md'
 
-const SidebarContainer = styled.aside`
-  position: fixed;
-  z-index: 1000;
-  width: 100%;
-  height: 100%;
-  background: #F1EEEB;
-  display: grid;
-  align-items: center;
-  transition: 0.5s ease-in-out;
-  opacity: ${({ isOpen }) => (isOpen ? '100%' : '0')};
-  top: ${({ isOpen }) => (isOpen ? '0' : '-100%')};
-`
-const HamburgerClosingIcon = styled(MdClose)`
-  cursor: pointer;
-  color: #6E6D6C;
-`
-
-const ClosingIcon = styled.div`
-  position: absolute;
-  top: 2rem;
-  right: 2rem;
-  background: transparent;
-  font-size: 3rem;
-`
-
-const SidebarList = styled.ul`
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  gap: 1.5rem;
-  text-align: center;
-`
-
-const SideLinks = styled(Link)`
-  font-size: 1.5rem;
-  text-decoration: none;
-  color: #6E6D6C;
-  cursor: pointer;
-  
-  &:hover {
-    color: #B3635A;
-    transition: 0.3s ease-in-out;
-  }
-`
-
 const Sidebar = ({ isOpen, toggle }) => {
   return (
     <div>
@@ -87,3 +43,47 @@ const Sidebar = ({ isOpen, toggle }) => {
 }
 
 export default Sidebar;
+
+const SidebarContainer = styled.aside`
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
+    height: 100%;
+    background: #F1EEEB;
+    display: grid;
+    align-items: center;
+    transition: 0.5s ease-in-out;
+    opacity: ${({ isOpen }) => (isOpen ? '100%' : '0')};
+    top: ${({ isOpen }) => (isOpen ? '0' : '-100%')};
+`
+const HamburgerClosingIcon = styled(MdClose)`
+    cursor: pointer;
+    color: #6E6D6C;
+`
+
+const ClosingIcon = styled.div`
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    background: transparent;
+    font-size: 3rem;
+`
+
+const SidebarList = styled.ul`
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1.5rem;
+    text-align: center;
+`
+
+const SideLinks = styled(Link)`
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: #6E6D6C;
+    cursor: pointer;
+    
+    &:hover {
+        color: #B3635A;
+        transition: 0.3s ease-in-out;
+    }
+`

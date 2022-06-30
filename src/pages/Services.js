@@ -49,41 +49,55 @@ const Services = () => {
                 </ImageWrapper>
 
                 <WeddingRentalContainer>
-                <WeddingHeader>Lilla designpaketet bröllop</WeddingHeader>
-                <Info>Skapa ert drömbröllop med lite stöd i den första fasen av bröllopsplaneringen. Vi gör
-                    ett besök på vigsel- och festplats under 1,5 h, skapar med grund i era önskemål en
-                    personlig dekorationsidé och ni får en moodboard med designexempel som inspiration för
-                    dekoreringen av bröllopet, 2500:-</Info>
+                    <WeddingHeader>Lilla designpaketet bröllop</WeddingHeader>
+                    <Info>
+                        Skapa ert drömbröllop med lite stöd i den första fasen av bröllopsplaneringen. Vi gör
+                        ett besök på vigsel- och festplats under 1,5 h, skapar med grund i era önskemål en
+                        personlig dekorationsidé och ni får en moodboard med designexempel som inspiration för
+                        dekoreringen av bröllopet, 2500:-
+                    </Info>
 
-                <WeddingHeader>Mellanstora dekorationspaketet bröllop</WeddingHeader>
-                <Info>Vi gör ett besök på vigsel- och festplats under 1,5 h, skapar med grund i era önskemål
-                    en personlig dekorationsidé och ni får en moodboard med tankarna som inspiration för
-                    dekoreringen av bröllopet.</Info>
-                <Info>Två ytterligare 1h avstämningar kring dekorationen där vi skapar en tydlig plan för
-                    införskaffande och utförandet av dekoreringen. Vi hjälper er med val kring färg, form
-                    och material. Ni får med er en personligt skapad checklista att använda när det blir dags.
-                    6250:-</Info>
-                <Info>Om så önskas finns möjlighet att lägga till hyrsakspaketet nedan alternativt välja
-                    individuella hyrsaker till dess specifika kostnad.
-                    Även blomsterarrangemang går att beställa och ni får då en offert av oss att ta ställning till.</Info>
+                    <WeddingHeader>Mellanstora dekorationspaketet bröllop</WeddingHeader>
+                    <Info>
+                        Vi gör ett besök på vigsel- och festplats under 1,5 h, skapar med grund i era önskemål
+                        en personlig dekorationsidé och ni får en moodboard med tankarna som inspiration för
+                        dekoreringen av bröllopet.    
+                    </Info>
+                    <Info>
+                        Två ytterligare 1h avstämningar kring dekorationen där vi skapar en tydlig plan för
+                        införskaffande och utförandet av dekoreringen. Vi hjälper er med val kring färg, form
+                        och material. Ni får med er en personligt skapad checklista att använda när det blir dags.
+                        6250:-
+                    </Info>
+                    <Info>
+                        Om så önskas finns möjlighet att lägga till hyrsakspaketet nedan alternativt välja
+                        individuella hyrsaker till dess specifika kostnad.
+                        Även blomsterarrangemang går att beställa och ni får då en offert av oss att ta ställning till.
+                    </Info>
 
-                <WeddingHeader>Stora dekorationspaketet bröllop</WeddingHeader>
-                <Info>Vi gör ett besök på vigsel- och festplats under 1,5 h, skapar med grund i era önskemål
-                    en personlig dekorationsidé och ni får en moodboard med tankarna som inspiration för
-                    dekoreringen av bröllopet.
-                    Två ytterligare 1h avstämningar kring dekorationen där vi skapar en tydlig plan för
-                    utförandet av dekorationen tillsammans. Vi hjälper er med val kring färg, form och
-                    material.</Info>
+                    <WeddingHeader>Stora dekorationspaketet bröllop</WeddingHeader>
+                    <Info>
+                        Vi gör ett besök på vigsel- och festplats under 1,5 h, skapar med grund i era önskemål
+                        en personlig dekorationsidé och ni får en moodboard med tankarna som inspiration för
+                        dekoreringen av bröllopet.
+                        Två ytterligare 1h avstämningar kring dekorationen där vi skapar en tydlig plan för
+                        utförandet av dekorationen tillsammans. Vi hjälper er med val kring färg, form och
+                        material.
+                    </Info>
 
-                <Info>När det är dags för bröllop ingår 8h dekoration av två personer på plats där vi
-                    förverkligar dekorationsplanen vi skapat tillsammans med er. Vid behov kan det finnas möjlighet
-                    att lägga till extra timmar för en kostnad av 1000:-/h för två personers jobb.
-                    15 000:-</Info>
+                    <Info>
+                        När det är dags för bröllop ingår 8h dekoration av två personer på plats där vi
+                        förverkligar dekorationsplanen vi skapat tillsammans med er. Vid behov kan det finnas möjlighet
+                        att lägga till extra timmar för en kostnad av 1000:-/h för två personers jobb.
+                        15 000:-
+                    </Info>
 
-                <Info>Om så önskas finns möjlighet att lägga till hyrsakspaketet nedan alternativt välja
-                    individuella hyrsaker till dess specifika kostnad. Även blomsterarrangemang går att beställa
-                    och ni får då en offert av oss att ta ställning till.</Info>
-                    </WeddingRentalContainer>
+                    <Info>
+                        Om så önskas finns möjlighet att lägga till hyrsakspaketet nedan alternativt välja
+                        individuella hyrsaker till dess specifika kostnad. Även blomsterarrangemang går att beställa
+                        och ni får då en offert av oss att ta ställning till.
+                    </Info>
+                </WeddingRentalContainer>
 
                 <ImageWrapper key={index}>
                     <Image
@@ -91,49 +105,67 @@ const Services = () => {
                         alt={service.title}
                     />
                 </ImageWrapper>
+
                 <PartiesContainer>
-                    <PartiesBackground>
-                    <PartiesHeader>Lilla designpaketet fest/event</PartiesHeader>
-                    <PartiesInfo>Designkonsultation till fest och event på plats i lokal under 1h. Vi skapar med grund i
-                        era önskemål en personlig dekorationsidé och ni får en moodboard med designideér som inspiration för dekoreringen
-                        av festen/eventet 1750:-.</PartiesInfo>
+                    <div>
+                        <PartiesHeader>Lilla designpaketet fest/event</PartiesHeader>
+                        <PartiesInfo>
+                            Designkonsultation till fest och event på plats i lokal under 1h. Vi skapar med grund i
+                            era önskemål en personlig dekorationsidé och ni får en moodboard med designideér som inspiration för dekoreringen
+                            av festen/eventet 1750:-.
+                            </PartiesInfo>
 
-                    <PartiesHeader>Mellanstora dekorationspaketet fest/event</PartiesHeader>
-                    <PartiesInfo>Designkonsultation till fest och event på plats i lokal under 1h. Vi skapar med grund i
-                        era önskemål en personlig dekorationsidé och ni får en moodboard med tankarna som inspiration för dekoreringen av festen/eventet.
-                        Två ytterligare 1h avstämningar kring dekorationen där vi skapar en tydlig plan för
-                        utförandet av dekorationen tillsammans. Vi hjälper er med val kring färg, form och
-                        material. Ni får med er en personligt skapad checklista att använda när det blir dags.
-                        5 250:-</PartiesInfo>
-                    <PartiesInfo>Om så önskas finns möjlighet att lägga till hyrsakspaketet nedan alternativt välja
-                        individuella hyrsaker till dess specifika kostnad. Även blomsterarrangemang går att beställa och ni får då en offert av oss att ta ställning till.</PartiesInfo>
+                        <PartiesHeader>Mellanstora dekorationspaketet fest/event</PartiesHeader>
+                        <PartiesInfo>
+                            Designkonsultation till fest och event på plats i lokal under 1h. Vi skapar med grund i
+                            era önskemål en personlig dekorationsidé och ni får en moodboard med tankarna som inspiration för dekoreringen av festen/eventet.
+                            Två ytterligare 1h avstämningar kring dekorationen där vi skapar en tydlig plan för
+                            utförandet av dekorationen tillsammans. Vi hjälper er med val kring färg, form och
+                            material. Ni får med er en personligt skapad checklista att använda när det blir dags.
+                            5 250:-
+                        </PartiesInfo>
+
+                        <PartiesInfo>
+                            Om så önskas finns möjlighet att lägga till hyrsakspaketet nedan alternativt välja
+                            individuella hyrsaker till dess specifika kostnad. Även blomsterarrangemang går att beställa och ni får då en offert av oss att ta ställning till.
+                        </PartiesInfo>
 
 
-                    <PartiesHeader>Stora dekorationspaketet fest/event</PartiesHeader>
-                    <PartiesInfo>Designkonsultation till fest och event på plats i lokal under 1h. Vi skapar med grund i
-                        era önskemål en personlig dekorationsidé och ni får en moodboard med tankarna som
-                        inspiration för dekoreringen av festen/eventet.
-                        Två ytterligare 1h avstämningar kring dekorationen där vi skapar en tydlig plan för
-                        utförandet av dekorationen tillsammans. Vi hjälper er med val kring färg, form och
-                        material.
-                        När det är dags för festen ingår 8h dekoration av två personer på plats där vi
-                        förverkligar dekorationsplanen vi skapat tillsammans med er. Vid behov kan det finnas
-                        möjlighet att lägga till extra timmar för en kostnad av 1000:-/h för två personers jobb.
-                        14 250:-</PartiesInfo>
-                    <PartiesInfo>Om så önskas finns möjlighet att lägga till hyrsakspaketet nedan alternativt välja
-                        individuella hyrsaker till dess specifika kostnad. Även blomsterarrangemang går att beställa och ni får då en offert av oss att ta ställning till.</PartiesInfo>
-                    </PartiesBackground>
+                        <PartiesHeader>Stora dekorationspaketet fest/event</PartiesHeader>
+                        <PartiesInfo>
+                            Designkonsultation till fest och event på plats i lokal under 1h. Vi skapar med grund i
+                            era önskemål en personlig dekorationsidé och ni får en moodboard med tankarna som
+                            inspiration för dekoreringen av festen/eventet.
+                            Två ytterligare 1h avstämningar kring dekorationen där vi skapar en tydlig plan för
+                            utförandet av dekorationen tillsammans. Vi hjälper er med val kring färg, form och
+                            material.
+                            När det är dags för festen ingår 8h dekoration av två personer på plats där vi
+                            förverkligar dekorationsplanen vi skapat tillsammans med er. Vid behov kan det finnas
+                            möjlighet att lägga till extra timmar för en kostnad av 1000:-/h för två personers jobb.
+                            14 250:-
+                        </PartiesInfo>
+
+                        <PartiesInfo>
+                            Om så önskas finns möjlighet att lägga till hyrsakspaketet nedan alternativt välja
+                            individuella hyrsaker till dess specifika kostnad. Även blomsterarrangemang går att beställa och ni får då en offert av oss att ta ställning till.
+                        </PartiesInfo>
+                    </div>
                 </PartiesContainer>
 
                 <WeddingRentalContainer>
-                <RentalHeader>Hyrsakspaketet</RentalHeader>
-                <Info>Låna allt du vill från vårt förråd till ditt event. 10 000:-. Som kund hämtar och lämnar du själv själv varorna i Nordic Spells förråd. Val av hyrsaker bokas senast 1,5 månad innan event, efter det kan inte Nordic Spells Decor garantera att hyrasaken finns i lager det specifika datumet.
-                    Lånetiden är tre dagar.</Info>
-                    <Info>Dekoration av lokal, 1000:-/timme för två personers jobb.</Info>
-                    <Info>Specialbeställda dekorationer som skyltar, vimplar och blomsterarrangemang pris efter överenskommelse.</Info>
-                    </WeddingRentalContainer>
+                    <RentalHeader>Hyrsakspaketet</RentalHeader>
+                    <Info>
+                        Låna allt du vill från vårt förråd till ditt event. 10 000:-. Som kund hämtar och lämnar du själv själv varorna i Nordic Spells förråd. Val av hyrsaker bokas senast 1,5 månad innan event, efter det kan inte Nordic Spells Decor garantera att hyrasaken finns i lager det specifika datumet.
+                        Lånetiden är tre dagar.
+                    </Info>
+                    <Info>
+                        Dekoration av lokal, 1000:-/timme för två personers jobb.
+                    </Info>
+                    <Info>
+                        Specialbeställda dekorationer som skyltar, vimplar och blomsterarrangemang pris efter överenskommelse.
+                    </Info>
+                </WeddingRentalContainer>
             </InfoContainer>
-
         ))}
         </Section>
     )
@@ -156,12 +188,6 @@ const Image = styled.img `
     max-width: 60vw;
     }
 `
-
-const PartiesBackground = styled.div `
-
-
-`
-
 
 const Section = styled.section `
     display: flex;

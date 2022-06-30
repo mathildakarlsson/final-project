@@ -1,19 +1,16 @@
 /* eslint-disable */
 import React, { useState, useEffect } from 'react';
 import sanityClient from '../client.js';
+import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux'
 import { wishlist } from '../reducers/wishlist';
-
-import styled from 'styled-components';
-
 
 const Rentals = () => {
     const [productData, setProductData] = useState();
     const [category, setCategory] = useState();
     const [filterProducts, setFilterProducts] = useState([]);
     const dispatch = useDispatch()
-
 
     useEffect(() => {
         sanityClient.fetch(
@@ -117,10 +114,7 @@ const ButtonContainer = styled.div `
         grid-template-columns: repeat(4, 1fr);
         max-width: 90vw;
     }
-
 `
-
-// -------------- Alternative styling for buttons ------------- //
 
 const FilteringButtons = styled.button`
     font-weight: 400;
@@ -152,6 +146,8 @@ const FilteringButtons = styled.button`
     }
 `
 
+// -------------- saving alternative styling for buttons ------------- //
+
 // const FilteringButtons = styled.button`
 //   font-weight: 400;
 //   border: none;
@@ -175,14 +171,17 @@ const FilteringButtons = styled.button`
 //   }
 // `
 
+
+// -------------- saving alternative styling for buttons ------------- //
+
+
 const Main = styled.main`
     display: flex;
     flex-direction: column;
     margin: 1rem;
     justify-content: center;
     align-items: center;
-    /* background-color: white; */
-width: 100vw;
+    width: 100vw;
 `
 
 const ArticleContainer = styled.article`
@@ -260,7 +259,6 @@ const ItemContainer = styled.div `
     }
 
     @media (min-width: 1024px) {
-        /* display: grid; */
         grid-template-columns: repeat(4, 1fr);
         gap: 30px;
     }
@@ -272,12 +270,6 @@ const RentalsContainer = styled.div`
     justify-content: center;
     align-items: center;
     margin: 10px;
-
-    @media (min-width: 768px) {
-    }
-
-    @media (min-width: 1024px) {
-    }
 `
 
 const RentalsInfoText = styled.h1 `
@@ -287,12 +279,10 @@ const RentalsInfoText = styled.h1 `
     letter-spacing: .15em;
     background-color: white;
 
-
     @media (min-width: 668px) {
         font-size: 15px;
         letter-spacing: .2em;
     }
-
 `
 
 const CardContainer = styled.div`
@@ -309,7 +299,6 @@ const CardContainer = styled.div`
         width: 30vh;
         padding: .5rem;
     }
-
 `
 
 const AddButton = styled.button`
@@ -317,7 +306,6 @@ const AddButton = styled.button`
     margin: 15px 0 0 0;
     border: none;
     font-size: 16px;
-    
     padding: 1rem;
     color: black;
     background-color: rgb(197,191,184);

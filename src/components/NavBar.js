@@ -9,7 +9,6 @@ import { TotalWishlistItems } from "./TotalWishlistItems";
 
 
 const NavBar = ({ toggle }) => {
-
     return (
         <Nav>
             <NavContainer>
@@ -103,12 +102,13 @@ const Nav = styled.nav`
 `
 
 const NavContainer = styled.div`
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  @media (min-width: 668px) {
-    max-width: 1300px;
-  }
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    @media (min-width: 668px) {
+        max-width: 1300px;
+    }
 `
 
 const LogoContainer = styled.div `
@@ -124,37 +124,37 @@ const LinkContainer = styled.div `
 `
 
 const Hamburger = styled.div`
-  display: block;
-  position: absolute;
-  top: 0;
-  right: 0;
-  transform: translate(-100%, 70%);
-  font-size: 2.5rem;
-  cursor: pointer;
-  
-  @media (min-width: 830px) {
-    display: none;
-  }
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(-100%, 70%);
+    font-size: 2.5rem;
+    cursor: pointer;
+    
+    @media (min-width: 830px) {
+        display: none;
+    }
 `
 
 const HamburgerIcon = styled(MdMenu)`
-  cursor: pointer;
-  color: #fff;
+    cursor: pointer;
+    color: #fff;
 `
 
 const StarIcon = styled(GiFallingStar)`
-  cursor: pointer;
-  color: #fff;
-  font-size: 2.5rem;
+    cursor: pointer;
+    color: #fff;
+    font-size: 2.5rem;
 `
 
 const NavMenu = styled.ul`
-  display: none;
+    display: none;
   
-  @media (min-width: 830px) {
-    display: flex;
-    align-items: center;
-  }
+    @media (min-width: 830px) {
+        display: flex;
+        align-items: center;
+    }
 `
 
 const NavLinks = styled(Link)`
@@ -169,7 +169,6 @@ const NavLinks = styled(Link)`
   }
 `
 const StarLink = styled(Link)`
-    /* display: block; */
     position: absolute;
     top: 2rem;
     right: 4rem;
