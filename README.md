@@ -1,70 +1,51 @@
-# Getting Started with Create React App
+# Final Project - Nordic Spells Decor website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This was our final project at the Technigo bootcamp. We built a website for the Swedish company Nordic Spells Decor who provides wedding and event decoration services to their customers. 
+On the site you can also add rental decoration items to a wishlist and email this to the company together with a form.  
 
-## Available Scripts
+## Project
 
-In the project directory, you can run:
+We started out by doing an extensive project brief and timeplan which we presented to the company and also discussed the different options for a headless CMS to easily change some of the content such as images and products when the project is finished. 
 
-### `npm start`
+We decided to use the Sanity CMS and spent the first time setting up our Sanity Studio and learning the GROQ query language to fetch the products the customers can add to their wishlist.
+Then we created a cart in React Redux to add, remove and store the products selected for the wishlist.
+Afterwards we worked on a solution to email this wishlist together with a form where the customer filled in information to the company email, and here we use Nodemailer. 
+This and also fetching images in an array for the Flowers section was the hardest part for us, so after finally and happily clearing this we moved on to building the other routes/pages and styling them.  
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The images and styling for the website was provided by and made in close dialogue with the company.
+The site is responsive for mobile, tablet and desktop with a mobile first approach. 
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### What we will continue to work on until website launch:
 
-### `npm test`
+We will develop the website further according to our clients needs and plan implementing more features like a cookies pop-up, free-consultation pop-up, an accordion with booking terms, UI features like a loader, host the website with a domain service, and also continue to work on the styling. 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+We aim to make the site accessable and use semantic HTML and tested it with WAVE and W3 validator.
 
-### `npm run build`
+Cross-browser testing: Crome, Safari, Firefox, Edge.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+In Firefox the buttons for the decor rental items are a bit bigger so we will look into this. 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Tech used in this project:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Sanity CMS and GROQ
+- Node.js
+- Express
+- Nodemailer
+- React
+- Redux
+- Javascript ES6
+- Styled Components 
+- React icons
+- Elfsight
+- Sweetalerts
 
-### `npm run eject`
+### View it live
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Backend repository: https://github.com/Kras053/final-project-backend
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Frontend repository: https://github.com/Kras053/final-project
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Heroku deploy: https://final-project-nsd.herokuapp.com/
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Website deploy: https://nordicspellsdecor.netlify.app/
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
