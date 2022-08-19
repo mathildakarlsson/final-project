@@ -54,7 +54,10 @@ const Services = () => {
                         Skapa ert drömbröllop med lite stöd i den första fasen av bröllopsplaneringen. Vi gör
                         ett besök på vigsel- och festplats under 1,5 h, skapar med grund i era önskemål en
                         personlig dekorationsidé och ni får en moodboard med designexempel som inspiration för
-                        dekoreringen av bröllopet, 2500:-
+                        dekoreringen av bröllopet.
+                    </Info>
+                    <Info>
+                        2500:-
                     </Info>
 
                     <WeddingHeader>Mellanstora dekorationspaketet bröllop</WeddingHeader>
