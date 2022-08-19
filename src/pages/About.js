@@ -95,16 +95,15 @@ const About = () => {
                         <Title><AboutHeaderMobile>Linnéa, florist</AboutHeaderMobile></Title>
                         <AboutHeader><LetterSpan>L</LetterSpan>innéa, florist</AboutHeader>
                             <AboutText>
-                                Linnéa heter jag och jag är florist i Nordic Spells Decor. Jag är 33 år och bor tillsammans i Göteborg med min man Gustav och min son Oscar. Sedan jag var liten har blommor varit en given del av mitt liv.
-                                Jag älskar blommor – att skapa vackra buketter och arrangemang, att odla och driva upp dom små liven och att i olika sammanhang höja mysfaktorn och trivseln med blommor och grönt. Växter gör mig klyschigt nog lyckligare! 
-                                I takt med att jag under åren insett att jag är en kreativ person som behöver få skapa för att må bra har jag tagit små steg för att låta kreativiteten få mer plats.
+                            Linnéa heter jag och jag är florist i Nordic Spells Decor. Sedan jag var liten har blommor varit en given del av mitt liv. 
+                            Jag älskar blommor – att skapa vackra buketter och arrangemang, att odla och driva upp dom små liven och att i olika sammanhang 
+                            höja mysfaktorn och trivseln med blommor och grönt. Växter gör mig klyschigt nog lyckligare! I takt med att jag under åren insett att 
+                            jag är en kreativ person som behöver få skapa för att må bra har jag tagit små steg för att låta kreativiteten få mer plats.
                             </AboutText>
                             <AboutText>
-                                Så plötsligt en dag kom chansen att tillsammans med Carro på riktigt få göra det jag älskar - skapa med blommor! Drömmen har gått i uppfyllelse och jag hoppas att jag genom Nordic Spells Decor får möjlighet att med blommor 
-                                och grönt höja mysfaktorn och stämningen på många event framöver <span role="img" aria-label="leaves">🍃</span>
-                            </AboutText>
-                            <AboutText>
-                                Har du funderingar, frågor, tankar eller drömmar om hur du vill använda blommor och grönt till just ditt event -  hör av dig så bollar vi och hittar en personlig lösning!
+                            Så plötsligt en dag kom chansen att tillsammans med Carro på riktigt få göra det jag älskar - skapa med blommor!
+                             Genom Nordic Spells Decor får jag leva ut min kreativitet - dröm!
+                            Har du funderingar, frågor, tankar eller drömmar om hur du vill använda blommor och grönt till just ditt event -  hör av dig så bollar vi och hittar en personlig lösning!
                             </AboutText>
                         </TextWrapper>
                     </ContentWrapper>

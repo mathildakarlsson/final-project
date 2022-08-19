@@ -5,8 +5,14 @@ const Footer = () => {
     return (
         <Container>
             <Header>Tack till våra fotografer!</Header>
-            <Header>Sandra Lööf - youngandwild.wedding, </Header>
-            <Header>Felicia Engberg och Rebecka Wendesten</Header>
+            <Header>
+            <a href="https://www.instagram.com/youngandwild.wedding/">Sandra Lööf</a>, 
+            <a href="https://www.instagram.com/fotografjennifernilsson/">Jennifer Nilsson</a>
+            </Header>
+            <Header>
+            <a href="">Felicia Engberg</a> samt 
+            <a href="https://www.rebeckawendesten.com/">Rebecka Wendesten</a>
+            </Header>
         </Container>
     )
 };

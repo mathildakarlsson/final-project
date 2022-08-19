@@ -61,24 +61,24 @@ const Home = () => {
                 <ImageContainer key={index}>
                     <ImageWrapper>
                         <NavLink to='/flowers'>
-                                <Image
-                                    src={homePage.homeOne.image.asset.url}
-                                    alt={homePage.title}
-                                />
-                                <Overlay></Overlay>
-                                <CardInfo>BLOMMOR</CardInfo>
-                            </NavLink>
-                        </ImageWrapper>
-                        <ImageWrapper>
-                            <NavLink to='/services'>
-                                <Image
-                                    src={homePage.homeTwo.image.asset.url}
-                                    alt={homePage.title}
-                                />
-                                <Overlay></Overlay>
-                                <CardInfo>TJÄNSTER</CardInfo>
-                            </NavLink>
-                        </ImageWrapper>
+                            <Image
+                                src={homePage.homeOne.image.asset.url}
+                                alt={homePage.title}
+                            />
+                            <Overlay></Overlay>
+                            <CardInfo>BLOMMOR</CardInfo>
+                        </NavLink>
+                    </ImageWrapper>
+                    <ImageWrapper>
+                        <NavLink to='/services'>
+                            <Image
+                                src={homePage.homeTwo.image.asset.url}
+                                alt={homePage.title}
+                            />
+                            <Overlay></Overlay>
+                            <CardInfo>TJÄNSTER</CardInfo>
+                        </NavLink>
+                    </ImageWrapper>
                         <ImageWrapper>
                             <NavLink to='/rentals'>
                                 <Image

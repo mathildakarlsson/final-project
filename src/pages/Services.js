@@ -56,9 +56,9 @@ const Services = () => {
                         personlig dekorationsidé och ni får en moodboard med designexempel som inspiration för
                         dekoreringen av bröllopet.
                     </Info>
-                    <Info>
+                    <PriceInfo>
                         2500:-
-                    </Info>
+                    </PriceInfo>
 
                     <WeddingHeader>Mellanstora dekorationspaketet bröllop</WeddingHeader>
                     <Info>
@@ -92,8 +92,10 @@ const Services = () => {
                         När det är dags för bröllop ingår 8h dekoration av två personer på plats där vi
                         förverkligar dekorationsplanen vi skapat tillsammans med er. Vid behov kan det finnas möjlighet
                         att lägga till extra timmar för en kostnad av 1000:-/h för två personers jobb.
-                        15 000:-
                     </Info>
+                    <PriceInfo>
+                        15 000:-
+                    </PriceInfo>
 
                     <Info>
                         Om så önskas finns möjlighet att lägga till hyrsakspaketet nedan alternativt välja
@@ -115,8 +117,11 @@ const Services = () => {
                         <PartiesInfo>
                             Designkonsultation till fest och event på plats i lokal under 1h. Vi skapar med grund i
                             era önskemål en personlig dekorationsidé och ni får en moodboard med designideér som inspiration för dekoreringen
-                            av festen/eventet 1750:-.
-                            </PartiesInfo>
+                            av festen/eventet.
+                        </PartiesInfo>
+                        <PriceInfo>
+                            1 750:-
+                        </PriceInfo>
 
                         <PartiesHeader>Mellanstora dekorationspaketet fest/event</PartiesHeader>
                         <PartiesInfo>
@@ -125,14 +130,15 @@ const Services = () => {
                             Två ytterligare 1h avstämningar kring dekorationen där vi skapar en tydlig plan för
                             utförandet av dekorationen tillsammans. Vi hjälper er med val kring färg, form och
                             material. Ni får med er en personligt skapad checklista att använda när det blir dags.
-                            5 250:-
                         </PartiesInfo>
+                        <PriceInfo>
+                            5 250:-
+                        </PriceInfo>
 
                         <PartiesInfo>
                             Om så önskas finns möjlighet att lägga till hyrsakspaketet nedan alternativt välja
                             individuella hyrsaker till dess specifika kostnad. Även blomsterarrangemang går att beställa och ni får då en offert av oss att ta ställning till.
                         </PartiesInfo>
-
 
                         <PartiesHeader>Stora dekorationspaketet fest/event</PartiesHeader>
                         <PartiesInfo>
@@ -145,8 +151,10 @@ const Services = () => {
                             När det är dags för festen ingår 8h dekoration av två personer på plats där vi
                             förverkligar dekorationsplanen vi skapat tillsammans med er. Vid behov kan det finnas
                             möjlighet att lägga till extra timmar för en kostnad av 1000:-/h för två personers jobb.
-                            14 250:-
                         </PartiesInfo>
+                        <PriceInfo>
+                            14 250:-
+                        </PriceInfo>
 
                         <PartiesInfo>
                             Om så önskas finns möjlighet att lägga till hyrsakspaketet nedan alternativt välja
@@ -297,6 +305,24 @@ const Info = styled.h4 `
     @media (min-width: 668px) {
         font-size: 18px;
         letter-spacing: .03em;
+        padding-bottom: 1rem;
+    }
+    
+    @media (min-width: 900px) {
+        background-color: white;
+    }
+`
+
+const PriceInfo = styled.h4 `
+    font-weight: 400;
+    margin: 0;
+    line-height: 28px;
+    padding-bottom: 2.5rem;
+
+    @media (min-width: 668px) {
+        font-size: 20px;
+        letter-spacing: .03em;
+        padding-bottom: 2.5rem;
     }
     
     @media (min-width: 900px) {
@@ -314,6 +340,7 @@ const PartiesInfo = styled.h4 `
     @media (min-width: 668px) {
         font-size: 18px;
         letter-spacing: .03em;
+        padding-bottom: 1rem;
     }
 ` 
 const RentalHeader = styled.h1 `
