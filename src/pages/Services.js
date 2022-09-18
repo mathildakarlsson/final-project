@@ -222,6 +222,8 @@ const InfoContainer = styled.div `
         width: 1000px;
         align-self: center;
         background-color: white;
+        margin-top: 10rem;
+        padding: 2rem 2rem 0 2rem;
     }
 `
 
