@@ -275,7 +275,7 @@ const RentalsInfoText = styled.h1 `
     font-weight: 300;
     font-size: 20px;
     letter-spacing: .15em;
-    background-color: white;
+    /* background-color: blue; */
 
     @media (min-width: 668px) {
         font-size: 15px;
@@ -284,7 +284,7 @@ const RentalsInfoText = styled.h1 `
 `
 
 const CardContainer = styled.div`
-    background-color: white;
+    /* background-color: white; */
     width: 40vh;
     padding: 1rem;
     display: flex;
