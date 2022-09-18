@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import sanityClient from '../client.js';
+import { NavLink, Link } from 'react-router-dom'; 
 
 
 const Services = () => {
@@ -96,12 +97,17 @@ const Services = () => {
                     <PriceInfo>
                         15 000:-
                     </PriceInfo>
-
                     <Info>
                         Om så önskas finns möjlighet att lägga till hyrsakspaketet nedan alternativt välja
                         individuella hyrsaker till dess specifika kostnad. Även blomsterarrangemang går att beställa
                         och ni får då en offert av oss att ta ställning till.
                     </Info>
+                    <ContactLink to='/contact' 
+                        activeClassName='active'
+                        style={linkStyle}
+                        >
+                            Skicka förfrågan
+                    </ContactLink>
                 </WeddingRentalContainer>
 
                 <ImageWrapper key={index}>
@@ -161,6 +167,12 @@ const Services = () => {
                             individuella hyrsaker till dess specifika kostnad. Även blomsterarrangemang går att beställa och ni får då en offert av oss att ta ställning till.
                         </PartiesInfo>
                     </div>
+                    <ContactLink to='/contact' 
+                        activeClassName='active'
+                        style={linkStyle}
+                        >
+                            Skicka förfrågan
+                    </ContactLink>
                 </PartiesContainer>
 
                 <WeddingRentalContainer>
@@ -175,6 +187,12 @@ const Services = () => {
                     <Info>
                         Specialbeställda dekorationer som skyltar, vimplar och blomsterarrangemang pris efter överenskommelse.
                     </Info>
+                    <ContactLink to='/contact' 
+                        activeClassName='active'
+                        style={linkStyle}
+                        >
+                            Skicka förfrågan
+                    </ContactLink>
                 </WeddingRentalContainer>
             </InfoContainer>
         ))}
@@ -183,6 +201,30 @@ const Services = () => {
 };
 
 export default Services;
+
+const ContactLink = styled(Link)`
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  padding: 0 .5rem;
+  cursor: pointer;
+  border-bottom: 3px solid white;
+  margin: 1rem;
+  
+  :hover {
+    border-bottom: 3px solid rgb(179,99,90);
+  }
+`
+
+const linkStyle = {
+    color: "black",
+    fontSize: "16px",
+    fontWeight: "400",
+    textTransform: "uppercase",
+    paddingBottom: "1rem",
+    letterSpacing: ".2em",
+    textAlign: "center",
+}
 
 const ImageWrapper = styled.div `
     align-items: center;
@@ -270,11 +312,17 @@ const WeddingHeader = styled.h1 `
 
 const WeddingRentalContainer = styled.div`
     padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 `
 
 const PartiesContainer = styled.div`
     background-color: white;
     padding: 2rem 10rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
     @media (min-width: 668px) {
         padding: 2rem 5rem;
@@ -350,7 +398,6 @@ const RentalHeader = styled.h1 `
     font-weight: 300;
     font-size: 25px;
     letter-spacing: .15em;
-    padding-top: 2rem;
 
     @media (min-width: 668px) {
         font-size: 30px;
