@@ -178,6 +178,10 @@ const Image = styled.img `
     object-fit: contain;
     max-height: 80vh;
 
+    @media (min-width: 668px) {
+        max-height: 70vh;
+    }
+
     @media (min-width: 992px) {
         max-height: 100vh;
     }
@@ -201,8 +205,12 @@ const CardInfo = styled.div `
 
     @media (min-width: 668px) {
         bottom: 10%;
-        font-size: 36px;
+        font-size: 30px;
         max-width: 18vw;
+    }
+
+    @media (min-width: 992px) {
+        font-size: 36px;
     }
 `
 

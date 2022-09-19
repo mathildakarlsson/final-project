@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import sanityClient from '../client.js';
-import { NavLink, Link } from 'react-router-dom'; 
+import { Link } from 'react-router-dom'; 
 
 
 const Services = () => {
@@ -208,7 +208,7 @@ const ContactLink = styled(Link)`
   text-decoration: none;
   padding: 0 .5rem;
   cursor: pointer;
-  border-bottom: 3px solid white;
+  border-bottom: 3px solid rgba(255, 255, 255, 0);
   margin: 1rem;
   
   :hover {
@@ -238,7 +238,7 @@ const Image = styled.img `
     padding-bottom: 50px;
 
     @media (min-width: 992px) {
-    max-width: 60vw;
+        max-width: 60vw;
     }
 `
 

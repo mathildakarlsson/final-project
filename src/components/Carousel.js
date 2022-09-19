@@ -38,34 +38,6 @@ const Carousel = () => {
                         },
                     },
                 },
-                mobileFive{
-                    image{
-                        asset->{
-                            url,
-                        },
-                    },
-                },
-                mobileSix{
-                    image{
-                        asset->{
-                            url,
-                        },
-                    },
-                },
-                mobileSeven{
-                    image{
-                        asset->{
-                            url,
-                        },
-                    },
-                },
-                mobileEight{
-                    image{
-                        asset->{
-                            url,
-                        },
-                    },
-                },
                 desktopOne{
                     image{
                         asset->{
@@ -185,13 +157,13 @@ const Carousel = () => {
                             alt="carousel three"
                         />
                     </Slide>
-                    <Slide>
+                    {/* <Slide>
                         <Image
                             src={mobileCarousel.mobileFour.image.asset.url}
                             alt="carousel four"
                         />
-                    </Slide>
-                    <Slide>
+                    </Slide> */}
+                    {/* <Slide>
                         <Image
                             src={mobileCarousel.mobileFive.image.asset.url}
                             alt="carousel five"
@@ -202,7 +174,7 @@ const Carousel = () => {
                             src={mobileCarousel.mobileSix.image.asset.url}
                             alt="carousel six"
                         />
-                    </Slide>
+                    </Slide> */}
                 </Slides>
             ))}
         </MobileSlider>
@@ -258,11 +230,14 @@ const Slide = styled.div `
 `
 
 const Image = styled.img `
-    width: auto;
-    height: 83vh;
+    width: 100vw;
+    height: auto;
     object-fit: contain;
+    margin-top: 9rem;
 
     @media (min-width: 668px) {
         height: 70vh;
+        width: auto;
+        margin-top: 0;
     }
 `

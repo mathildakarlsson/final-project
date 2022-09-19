@@ -67,7 +67,7 @@ const SingleRentalsItem = () => {
                     <img src={singleProduct.mainImage.asset.url}
                         alt={singleProduct.title}
                     />
-                    <Info>Pris: {singleProduct.defaultProductVariant.price} {singleProduct.defaultProductVariant.sku}/dag</Info>
+                    <Info>Pris: {singleProduct.defaultProductVariant.price} {singleProduct.defaultProductVariant.sku}</Info>
                     <Info>Storlek: {singleProduct.defaultProductVariant.dimensions}</Info>
                     <Info>Antal i lager: {singleProduct.defaultProductVariant.quantity}st</Info>
                     <Info>Beskrivning: {singleProduct.defaultProductVariant.description}</Info>

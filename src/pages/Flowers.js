@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import sanityClient from '../client.js';
+import { Link } from 'react-router-dom'; 
 
 
 const Flowers = () => {
@@ -39,6 +40,12 @@ const Flowers = () => {
                 <Header>Blommor</Header>
                 <Info>Nordic Spells Decor erbjuder liv och rörelse till bröllop och event genom säsongens blommor och blad! Blomsterbågar, bordsdekoration, buketter, kransar, corsager och mycket där till.</Info>
                 <Info>Välkommen att höra av dig till oss med dina önskemål så återkommer vi med offert för dig att ta ställning. Låt dig gärna inspireras av bilderna här!</Info>
+                <ContactLink to='/contact' 
+                    activeClassName='active'
+                    style={linkStyle}
+                    >
+                        Skicka förfrågan
+                </ContactLink>
             </InfoContainer>
             <Container>
                 {flowersData && flowersData.map((nested) => nested.flowerImagesMobile.map((flowerImagesMobile, index) => (
@@ -57,6 +64,30 @@ const Flowers = () => {
 
 export default Flowers;
 
+const ContactLink = styled(Link)`
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  padding: 0 .5rem;
+  cursor: pointer;
+  border-bottom: 3px solid rgba(255, 255, 255, 0);
+  margin: 1rem;
+  
+  :hover {
+    border-bottom: 3px solid rgb(179,99,90);
+  }
+`
+
+const linkStyle = {
+    color: "black",
+    fontSize: "16px",
+    fontWeight: "400",
+    textTransform: "uppercase",
+    paddingBottom: "1rem",
+    letterSpacing: ".2em",
+    textAlign: "center",
+}
+
 const Section = styled.section `
     display: flex;
     flex-direction: column;
@@ -70,6 +101,7 @@ const InfoContainer = styled.div `
     text-align: center;
     align-self: center;
     justify-self: center;
+    align-items: center;
 
     @media (min-width: 668px) {
         width: 800px;

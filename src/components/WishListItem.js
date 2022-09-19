@@ -26,7 +26,7 @@ const WishListItem = ({ product }) => {
                     />
                     <RentalsInfoText>{product.title}</RentalsInfoText> 
                     <RentalsInfoText>x {product.quantity}</RentalsInfoText>
-                    <RentalsInfoText>{product.price * product.quantity} SEK/dag</RentalsInfoText>
+                    <RentalsInfoText>{product.price * product.quantity} SEK</RentalsInfoText>
                 </div>
                 <ButtonWrapper>
                     <AddButton onClick={addItem}>+ Lägg till</AddButton>

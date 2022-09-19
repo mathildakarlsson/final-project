@@ -77,7 +77,7 @@ const Rentals = () => {
                                         <span className="title-span" key={index}> 
                                             <RentalsInfoText>{product.title}</RentalsInfoText>
                                         </span>
-                                        <RentalsInfoText>{product.defaultProductVariant.price} {product.defaultProductVariant.sku}/dag</RentalsInfoText>
+                                        <RentalsInfoText>{product.defaultProductVariant.price} {product.defaultProductVariant.sku}</RentalsInfoText>
                                     </span>
                                 </Link> 
                                 <AddButton
