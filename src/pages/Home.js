@@ -181,7 +181,7 @@ const Image = styled.img `
     max-height: 80vh;
 
     @media (min-width: 668px) {
-        max-height: 70vh;
+        max-height: 45vh;
     }
 
     @media (min-width: 992px) {
@@ -198,7 +198,7 @@ const CardInfo = styled.div `
     bottom: 1%;
     height: 8vh;
     font-weight: 300;
-    line-height: 28px;
+    /* line-height: 28px; */
     color: white;
     font-size: 30px;
     letter-spacing: .15em;

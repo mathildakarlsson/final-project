@@ -29,8 +29,8 @@ const WishListItem = ({ product }) => {
                     <RentalsInfoText>{product.price * product.quantity} SEK</RentalsInfoText>
                 </div>
                 <ButtonWrapper>
-                    <AddButton onClick={addItem}>+ Lägg till</AddButton>
-                    <RemoveButton onClick={removeItem}>- Ta bort</RemoveButton>
+                    <RemoveButton onClick={removeItem}>-</RemoveButton>
+                    <AddButton onClick={addItem}>+</AddButton>
                 </ButtonWrapper>
             </CardContainer>
             {/* </ArticleContainer> */}
@@ -46,7 +46,7 @@ const Main = styled.main`
     margin: 1rem;
 `
 const CardContainer = styled.div`
-    background-color: white;
+    /* background-color: white; */
     width: 70vw;
     display: flex;
     flex-direction: column;
@@ -68,14 +68,15 @@ const Image  = styled.img `
     object-fit: cover;
     width: 150px;
     height: 150px;
-    background-color: white;
+    /* background-color: white; */
 `
 const RentalsInfoText = styled.h1 `
     text-transform: uppercase;
     font-weight: 300;
     font-size: 15px;
     letter-spacing: .15em;
-    background-color: white;
+    /* background-color: white; */
+    padding-bottom: 5px;
 
     @media (min-width: 668px) {
         font-size: 15px;
@@ -85,43 +86,47 @@ const RentalsInfoText = styled.h1 `
 
 const ButtonWrapper = styled.div `
     width: inherit;
-    justify-self: center;
-    align-self: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 50px;
+    /* align-items: baseline; */
+    background-color: rgb(197,191,184);
+    padding: 8px 0;
 `
 
 const AddButton = styled.button`
-    width: inherit;
+    /* width: inherit; */
     cursor: pointer;
     border: none;
-    font-size: 15px;
-    margin-top: 0.5rem;
-    padding: 1rem;
+    font-size: 20px;
+    /* margin-top: 0.5rem; */
+    /* padding: 1rem; */
     color: black;
     background-color: rgb(197,191,184);
     text-transform: uppercase;
-    font-weight: 450;
+    font-weight: 400;
     
     &:hover {
-        background-color: black;
-        color: white;
+        font-weight: 500;
         transition: 0.7s ease;
     }
 `
 
 const RemoveButton = styled.button`
-    width: 100%;
+    /* width: 100%; */
     cursor: pointer;
     border: none;
-    font-size: 15px;
-    padding: 1rem;
+    font-size: 23px;
+    /* padding: 1rem; */
     color: black;
-    background-color: rgb(179,99,90);
+    background-color: rgb(197,191,184);
+    /* background-color: rgb(179,99,90); */
     text-transform: uppercase;
-    font-weight: 450;
+    font-weight: 400;
     
     &:hover {
-        background-color: black;
-        color: white;
+        font-weight: 500;
         transition: 0.7s ease;
     }
 `
