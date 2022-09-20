@@ -68,6 +68,11 @@ const Rentals = () => {
                         <ItemContainer>
                         {filterProducts && filterProducts.map((product, index) => (
                             <CardContainer key={index}>
+                                <AddButton
+                                    disabled={product.inventory === 0}
+                                    onClick={() => dispatch(wishlist.actions.addItem(product))}>
+                                    +                                
+                                </AddButton>
                                 <Link to={"/product/" + product.slug.current} key={product.slug.current}>
                                     <span className="product-span" key={index}>
                                         <img className="product-image"
@@ -80,11 +85,6 @@ const Rentals = () => {
                                         <RentalsInfoText>{product.defaultProductVariant.price} {product.defaultProductVariant.sku}</RentalsInfoText>
                                     </span>
                                 </Link> 
-                                <AddButton
-                                    disabled={product.inventory === 0}
-                                    onClick={() => dispatch(wishlist.actions.addItem(product))}>
-                                    Lägg i önskelistan
-                                </AddButton>
                             </CardContainer> 
                         ))}
                         </ItemContainer>
@@ -245,6 +245,7 @@ const ItemContainer = styled.div `
     display: grid;
     flex-direction: column;
     grid-template-columns: repeat(1, 1fr);
+    
 
     @media (min-width: 600px) {
         grid-template-columns: repeat(2, 1fr);
@@ -292,29 +293,50 @@ const CardContainer = styled.div`
     justify-content: center;
     align-items: center;
     margin-top: 1.5rem;
+    position: relative;
 
     @media (min-width: 668px) {
         width: 30vh;
         padding: .5rem;
     }
 `
-
 const AddButton = styled.button`
-    width: 100%;
-    margin: 15px 0 0 0;
+    width: 25px;
     border: none;
-    font-size: 16px;
-    
-    padding: 1rem;
-    color: black;
-    background-color: rgb(197,191,184);
-    text-transform: uppercase;
-    font-weight: 450;
+    font-size: 22px;                                                                                                            
+    font-weight: 400;
     cursor: pointer;
+    color: black;
+    background-color: rgb(0,0,0,0);
+    position: absolute;
+    z-index: 100;
+    top: 1%;
+    right: 13%;    
     
     &:hover {
-        background-color: black;
-        color: white;
         transition: 0.7s ease;
+        color: rgb(197,191,184);
     }
 `
+
+// --------- saving former styling for buttons ----------- //
+// const AddButton = styled.button`
+//     width: 100%;
+//     margin: 15px 0 0 0;
+//     border: none;
+//     font-size: 16px;
+    
+//     padding: 1rem;
+//     color: black;
+//     background-color: rgb(197,191,184);
+//     text-transform: uppercase;
+//     font-weight: 450;
+//     cursor: pointer;
+    
+//     &:hover {
+//         background-color: black;
+//         color: white;
+//         transition: 0.7s ease;
+//     }
+// `
+// --------- saving former styling for buttons ----------- //

@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { NavLink } from 'react-router-dom'; 
+import { NavLink, Router } from 'react-router-dom'; 
 import styled from 'styled-components';
 import sanityClient from '../client.js';
 import Carousel from '../components/Carousel';
+
 
 
 const Home = () => {
@@ -60,6 +61,7 @@ const Home = () => {
             {homePage && homePage.map((homePage, index) => (
                 <ImageContainer key={index}>
                     <ImageWrapper>
+
                         <NavLink to='/flowers'>
                             <Image
                                 src={homePage.homeOne.image.asset.url}

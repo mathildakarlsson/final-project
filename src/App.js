@@ -11,10 +11,13 @@ import About from './pages/About';
 import Flowers from './pages/Flowers';
 import Contact from './pages/Contact';
 import Services from './pages/Services';
+
 import Header from './components/Header';
 import Footer from './components/Footer';
 
 import { wishlist } from './reducers/wishlist'
+
+import ScrollToTop from './utils/ScrollToTop';
 
 const reducer = combineReducers({
 	wishlist: wishlist.reducer,
@@ -43,6 +46,7 @@ export const App = () => {
     <Provider store={store}>
       <BrowserRouter>
         <Header />
+        <ScrollToTop />
         <Routes>
           <Route element={<Home />} path='/'/>
           <Route element={<SingleRentalsItem />} path='product/:slug' />
