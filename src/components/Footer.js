@@ -20,8 +20,10 @@ const Footer = () => {
                 </Header>
             </div>
             <SoMeContainer>
-            <a href="https://www.instagram.com/nordicspellsdecor/?hl=en"><IgIcon /></a>
-            <a href="https://www.facebook.com/nordicspellsdecor/"><FbIcon /></a>
+                <a href="https://www.instagram.com/nordicspellsdecor/?hl=en">Test</a>
+                <a href="https://www.facebook.com/nordicspellsdecor/">Test</a>
+                <IgIcon />
+                <FbIcon />
             </SoMeContainer>
         </Container>
     )
