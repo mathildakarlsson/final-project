@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { NavLink, Router } from 'react-router-dom'; 
+import { NavLink } from 'react-router-dom'; 
 import styled from 'styled-components';
 import sanityClient from '../client.js';
 import Carousel from '../components/Carousel';
