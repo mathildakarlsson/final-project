@@ -10,34 +10,6 @@ const Carousel = () => {
         sanityClient.fetch(
             `*[_type == "carousel"] {
                 _id,
-                mobileOne{
-                    image{
-                        asset->{
-                            url,
-                        },
-                    },
-                },
-                mobileTwo{
-                    image{
-                        asset->{
-                            url,
-                        },
-                    },
-                },
-                mobileThree{
-                    image{
-                        asset->{
-                            url,
-                        },
-                    },
-                },
-                mobileFour{
-                    image{
-                        asset->{
-                            url,
-                        },
-                    },
-                },
                 desktopOne{
                     image{
                         asset->{
@@ -98,13 +70,13 @@ const Carousel = () => {
                 <Slides key={index}>  
                     <Slide>
                         <Image
-                            src={carousel.desktopTwo.image.asset.url}
+                            src={carousel.desktopFour.image.asset.url}
                             alt="carousel two"
                         />
                     </Slide>
                     <Slide>
                         <Image
-                            src={carousel.desktopOne.image.asset.url}
+                            src={carousel.desktopTwo.image.asset.url}
                             alt="carousel one"
                         />
                     </Slide>
@@ -116,19 +88,19 @@ const Carousel = () => {
                     </Slide>
                     <Slide>
                         <Image
-                            src={carousel.desktopThree.image.asset.url}
+                            src={carousel.desktopFive.image.asset.url}
                             alt="carousel three"
                         />
                     </Slide>
                     <Slide>
                         <Image
-                            src={carousel.desktopFour.image.asset.url}
+                            src={carousel.desktopThree.image.asset.url}
                             alt="carousel four"
                         />
                     </Slide>
                     <Slide>
                         <Image
-                            src={carousel.desktopFive.image.asset.url}
+                            src={carousel.desktopOne.image.asset.url}
                             alt="carousel five"
                         />
                     </Slide>
@@ -136,7 +108,7 @@ const Carousel = () => {
             ))}
         </Slider>
 
-        <MobileSlider>
+        {/* <MobileSlider>
             {carouselData && carouselData.map((mobileCarousel, index) => (
                 <Slides key={index}>
                     <Slide>
@@ -156,7 +128,7 @@ const Carousel = () => {
                             src={mobileCarousel.mobileThree.image.asset.url}
                             alt="carousel three"
                         />
-                    </Slide>
+                    </Slide> */}
                     {/* <Slide>
                         <Image
                             src={mobileCarousel.mobileFour.image.asset.url}
@@ -175,9 +147,9 @@ const Carousel = () => {
                             alt="carousel six"
                         />
                     </Slide> */}
-                </Slides>
+                {/* </Slides>
             ))}
-        </MobileSlider>
+        </MobileSlider> */}
     </>
     )
 };
@@ -190,24 +162,24 @@ const Slider = styled.section `
     height: auto;
     overflow: scroll;
     padding-top: 115px;
-    display: none;
+    /* display: none;
   
     @media (min-width: 668px) {
         display: block;
-    }
+    } */
 `
 
-const MobileSlider = styled.section `
-    width: 100vw;
-    height: auto;
-    padding-top: 100px;
-    overflow: scroll;
+// const MobileSlider = styled.section `
+//     width: 100vw;
+//     height: auto;
+//     padding-top: 100px;
+//     overflow: scroll;
 
   
-    @media (min-width: 668px) {
-        display: none;
-    }
-`
+//     @media (min-width: 668px) {
+//         display: none;
+//     }
+// `
 
 const Slides = styled.div `
     width: 500%;
@@ -241,3 +213,32 @@ const Image = styled.img `
         margin-top: 0;
     }
 `
+
+// mobileOne{
+//     image{
+//         asset->{
+//             url,
+//         },
+//     },
+// },
+// mobileTwo{
+//     image{
+//         asset->{
+//             url,
+//         },
+//     },
+// },
+// mobileThree{
+//     image{
+//         asset->{
+//             url,
+//         },
+//     },
+// },
+// mobileFour{
+//     image{
+//         asset->{
+//             url,
+//         },
+//     },
+// },

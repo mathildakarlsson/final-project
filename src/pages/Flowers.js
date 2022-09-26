@@ -83,7 +83,7 @@ const linkStyle = {
     fontSize: "16px",
     fontWeight: "400",
     textTransform: "uppercase",
-    paddingBottom: "1rem",
+    paddingBottom: ".5rem",
     letterSpacing: ".2em",
     textAlign: "center",
 }
