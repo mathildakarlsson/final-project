@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 import logo from '../assets/NSDlogga.png';
 import { MdMenu } from 'react-icons/md'
-import { GiFallingStar } from 'react-icons/gi'
+import { BsFillBasket3Fill } from 'react-icons/bs'
 import { Link } from 'react-router-dom'; 
 import { TotalWishlistItems } from "./TotalWishlistItems";
 
@@ -29,18 +29,18 @@ const NavBar = ({ toggle }) => {
                         <Hamburger onClick={toggle}>
                             <HamburgerIcon />
                         </Hamburger>
-                        <StarLink to='/wishlist' 
+                        <BasketLink to='/wishlist' 
                             activeClassName='active'
                             style={linkStyle}
                             alt="wishlist"
                             >
                                 <div>
-                                    <StarIcon />
-                                </div>
-                                <div>
                                     <TotalWishlistItems />
                                 </div>
-                        </StarLink>
+                                <div>
+                                    <BasketIcon />
+                                </div>
+                        </BasketLink>
                         <NavMenu>
                             <NavLinks to='/rentals' 
                                 activeClassName='active'
@@ -118,9 +118,9 @@ const LogoContainer = styled.div `
 
 const LinkContainer = styled.div `
     display: flex;
-    gap: 30px;
-    margin: 45px 70px 0 0;
+    margin-right: 70px;
     z-index: 999;
+    align-items: center;
 `
 
 const Hamburger = styled.div`
@@ -142,10 +142,10 @@ const HamburgerIcon = styled(MdMenu)`
     color: #fff;
 `
 
-const StarIcon = styled(GiFallingStar)`
+const BasketIcon = styled(BsFillBasket3Fill)`
     cursor: pointer;
-    color: #fff;
-    font-size: 2.5rem;
+    color: #6E6D6C;
+    font-size: 1.5rem;
 `
 
 const NavMenu = styled.ul`
@@ -168,10 +168,10 @@ const NavLinks = styled(Link)`
     border-bottom: 3px solid white;
   }
 `
-const StarLink = styled(Link)`
-    position: absolute;
+const BasketLink = styled(Link)`
+    /* position: absolute;
     top: 2rem;
-    right: 4rem;
+    right: 4rem; */
     transform: translate(-50%, 25%);
     display: flex;
     flex-direction: row;

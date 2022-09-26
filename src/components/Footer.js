@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import { AiOutlineInstagram } from 'react-icons/ai'
-
 import { FiFacebook } from 'react-icons/fi'
 
 
