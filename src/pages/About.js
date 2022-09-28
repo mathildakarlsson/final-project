@@ -69,10 +69,10 @@ const About = () => {
                         </TextWrapper>
                     </ContentWrapper>
                     <ContentWrapper>
-                        <TextWrapper>
+                        <MobileTextWrapper>
                             <Title>
-                                <AboutHeaderMobile>Caroline,</AboutHeaderMobile>
-                                <AboutHeaderMobile>kreativ designer</AboutHeaderMobile>
+                                <AboutHeaderMobile>Caroline, &nbsp;</AboutHeaderMobile>
+                                <AboutHeaderMobile>&nbsp;kreativ designer</AboutHeaderMobile>
                             </Title>
                             <AboutHeader><LetterSpan>C</LetterSpan>aroline,</AboutHeader>
                             <AboutHeader>kreativ designer</AboutHeader>
@@ -82,11 +82,24 @@ const About = () => {
                             <AboutText>
                                 Extra svag är jag för dekoration med attityd och personlighet, för kontraster och för dekoration som förstärker identiteten hos dig som kund! Jag tror starkt på omgivningens kraft att påverka stämningar, så varför inte ge den en extra knuff mot känslan du vill att dina gäster ska minnas när de tänker tillbaka om tio, tjugo år?
                             </AboutText>
-                        </TextWrapper>
+                        </MobileTextWrapper>
                         <Image
                             src={aboutUs.photoTwo.image.asset.url}
                             alt={aboutUs.title}
                         />
+                        <DesktopTextWrapper>
+                            <Title>
+                                <AboutHeaderMobile>Caroline, kreativ designer</AboutHeaderMobile>
+                            </Title>
+                            <AboutHeader><LetterSpan>C</LetterSpan>aroline,</AboutHeader>
+                            <AboutHeader>kreativ designer</AboutHeader>
+                            <AboutText>
+                                Caroline heter jag och jag är kreativ designer i Nordic Spells Decor. Jag fullkomligt älskar chansen att få ta tag i nya kreativa projekt och låta idéerna flöda! Om du önskar hjälp med att planera dekorationen ditt drömevent eller bara någon att bolla tankar kring dekoration med så finns jag här!
+                            </AboutText>
+                            <AboutText>
+                                Extra svag är jag för dekoration med attityd och personlighet, för kontraster och för dekoration som förstärker identiteten hos dig som kund! Jag tror starkt på omgivningens kraft att påverka stämningar, så varför inte ge den en extra knuff mot känslan du vill att dina gäster ska minnas när de tänker tillbaka om tio, tjugo år?
+                            </AboutText>
+                        </DesktopTextWrapper>
                     </ContentWrapper>
                     <ContentWrapper>
                         <Image
@@ -182,12 +195,39 @@ const Image = styled.img `
     max-height: 75vh;
     
     @media (min-width: 668px) {
-        margin: 0 70px;
+        margin: 0 20px;
         max-height: 80vh;
     }
 
     @media (min-width: 960px) {
         max-height: 90vh;
+    }
+`
+
+const MobileTextWrapper = styled.div `
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    justify-self: center;
+    align-self: center;
+    margin: 0 20px;
+    display: none;
+
+    @media (min-width: 960px) {
+        display: flex;
+    }
+`
+
+const DesktopTextWrapper = styled.div `
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    justify-self: center;
+    align-self: center;
+    margin: 0 20px;
+
+    @media (min-width: 960px) {
+        display: none;
     }
 `
 
@@ -197,6 +237,7 @@ const TextWrapper = styled.div `
     align-items: center;
     justify-self: center;
     align-self: center;
+    margin: 0 20px;
 `
 
 const AboutHeader = styled.h1 `
@@ -214,16 +255,8 @@ const AboutHeader = styled.h1 `
     }
 `
 const AboutHeaderMobile = styled.h1 `
-    font-weight: 300;
     font-size: 30px;
-    display: flex;
-    align-items: baseline;
-    display: flex;
     font-weight: 200;
-    justify-self: center;
-    align-self: center;
-    flex-direction: row;
-    flex-wrap: wrap;
 
     @media (min-width: 960px) {
         display: none;
