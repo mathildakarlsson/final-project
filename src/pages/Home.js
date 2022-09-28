@@ -157,6 +157,7 @@ const Overlay = styled.div `
     transition: 0.5s ease;
     background-color: rgba(0,0,0,0.5);
     z-index: 5;
+    max-height: 99%;
 
     @media (min-width: 992px) {
         opacity: 0;

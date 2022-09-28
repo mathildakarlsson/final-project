@@ -69,13 +69,11 @@ const About = () => {
                         </TextWrapper>
                     </ContentWrapper>
                     <ContentWrapper>
-                        <Image
-                            src={aboutUs.photoTwo.image.asset.url}
-                            alt={aboutUs.title}
-                        />
                         <TextWrapper>
-                        <Title><AboutHeaderMobile>Caroline,</AboutHeaderMobile>
-                            <AboutHeaderMobile>kreativ designer</AboutHeaderMobile></Title>
+                            <Title>
+                                <AboutHeaderMobile>Caroline,</AboutHeaderMobile>
+                                <AboutHeaderMobile>kreativ designer</AboutHeaderMobile>
+                            </Title>
                             <AboutHeader><LetterSpan>C</LetterSpan>aroline,</AboutHeader>
                             <AboutHeader>kreativ designer</AboutHeader>
                             <AboutText>
@@ -85,6 +83,10 @@ const About = () => {
                                 Extra svag är jag för dekoration med attityd och personlighet, för kontraster och för dekoration som förstärker identiteten hos dig som kund! Jag tror starkt på omgivningens kraft att påverka stämningar, så varför inte ge den en extra knuff mot känslan du vill att dina gäster ska minnas när de tänker tillbaka om tio, tjugo år?
                             </AboutText>
                         </TextWrapper>
+                        <Image
+                            src={aboutUs.photoTwo.image.asset.url}
+                            alt={aboutUs.title}
+                        />
                     </ContentWrapper>
                     <ContentWrapper>
                         <Image
