@@ -9,14 +9,10 @@ const Footer = () => {
         <Container>
             <div>
                 <Header>Tack till våra fotografer!</Header>
-                <Header>
-                    <a href="https://www.instagram.com/youngandwild.wedding/">Sandra Lööf</a>, 
-                    <a href="https://www.instagram.com/fotografjennifernilsson/">Jennifer Nilsson</a>
-                </Header>
-                <Header>
-                    <p>Felicia Engberg</p> samt 
-                    <a href="https://www.rebeckawendesten.com/">Rebecka Wendesten</a>
-                </Header>
+                <ContactInfo><a href="https://www.instagram.com/youngandwild.wedding/">Sandra Lööf</a></ContactInfo>
+                <ContactInfo><a href="https://www.instagram.com/fotografjennifernilsson/">Jennifer Nilsson</a></ContactInfo>
+                <ContactInfo><p>Felicia Engberg</p></ContactInfo>
+                <ContactInfo><a href="https://www.rebeckawendesten.com/">Rebecka Wendesten</a></ContactInfo>
             </div>
             <SoMeContainer>
                 <a href="https://www.instagram.com/nordicspellsdecor/?hl=en"><IgIcon /></a>
@@ -29,25 +25,40 @@ const Footer = () => {
 export default Footer;
 
 const Container = styled.section `
-    height: 25vh;
+    min-height: 30vh;
     background-color: #C5BFB8;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     margin-top: 100px;
-    flex-direction: row;
+    flex-direction: column;
     width: 100vw;
+
+    @media (min-width: 668px) {
+        flex-direction: row;
+    }
 `
 
-const Header = styled.p `
+const Header = styled.h4 `
+    text-align: center;
+    font-weight: 400;
+    font-size: 20px;
+    padding: 1rem;
+`
+
+const ContactInfo = styled.p `
     text-align: center;
     font-weight: 300;
-    font-size: 16px;
+
+    &:hover {
+        font-weight: 500;
+    }
 `
 
 const SoMeContainer = styled.div `
     display: flex;
     gap: 20px;
+    padding: 1rem 0;
 `
 
 const IgIcon = styled(AiOutlineInstagram)`

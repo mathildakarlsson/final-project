@@ -169,13 +169,11 @@ const NavLinks = styled(Link)`
   }
 `
 const BasketLink = styled(Link)`
-    /* position: absolute;
-    top: 2rem;
-    right: 4rem; */
     transform: translate(-50%, 25%);
     display: flex;
     flex-direction: row;
     align-items: center;
+    padding-right: 10px;
     
     @media (min-width: 830px) {  
         display: none;
