@@ -99,7 +99,6 @@ const ArticleContainer = styled.article`
     text-align: center;
     align-self: center;
     justify-self: center;
-
 `
 
 const GoBackButton = styled.button`
@@ -135,7 +134,6 @@ const Header = styled.h1 `
 `
 
 const CardContainer = styled.div`
-    background-color: white;
     width: 55vw;
     padding: 1rem;
 `
