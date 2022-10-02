@@ -202,14 +202,14 @@ const Slide = styled.div `
 `
 
 const Image = styled.img `
-    width: auto;
-    height: 40vh;
+    width: 100vw;
+    height: auto;
     object-fit: contain;
     margin-top: 6rem;
 
     @media (min-width: 668px) {
-        height: 70vh;
-        width: auto;
+        height: auto;
+        width: 50vw;
         margin-top: 0;
     }
 `
