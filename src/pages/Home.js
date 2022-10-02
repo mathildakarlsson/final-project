@@ -111,7 +111,7 @@ const Home = () => {
 export default Home;
 
 const InfoContainer = styled.div `
-    padding: 100px 0 80px 0;
+    padding: 4rem 0 1rem 0;
     margin: 0px 30px;
     display: flex;
     flex-direction: column;
@@ -127,7 +127,7 @@ const InfoContainer = styled.div `
 const Header = styled.h1 `
     text-transform: uppercase;
     font-weight: 300;
-    font-size: 30px;
+    font-size: 27px;
     letter-spacing: .15em;
 
     @media (min-width: 668px) {

@@ -136,8 +136,6 @@ const FilteringButtons = styled.button`
     }
 
     &:hover {
-        /* text-decoration: underline;
-        text-underline-offset: .3em; */
         color: black;
     }
 
