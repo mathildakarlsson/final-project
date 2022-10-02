@@ -58,13 +58,13 @@ const Rentals = () => {
                     offert för dig att ta ställning till.</Info>
                     <RentalsContainer> 
                         <ButtonContainer>
-                            <FilteringButtons activeClassName='active' onClick={() => filterByCategory("Visa alla")}>Visa alla</FilteringButtons>
                             {category && category.map((category, index) => (
                                 <div key={index}>
                                     <FilteringButtons activeClassName='active' onClick={() => filterByCategory(category)}>{category}</FilteringButtons>
                                 </div>
                             ))}
                         </ButtonContainer>
+                            <FilteringButtons activeClassName='active' onClick={() => filterByCategory("Visa alla")}>Visa alla</FilteringButtons>
                         <ItemContainer>
                         {filterProducts && filterProducts.map((product, index) => (
                             <CardContainer key={index}>
@@ -97,28 +97,28 @@ const Rentals = () => {
 export default Rentals;
 
 const ButtonContainer = styled.div `
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    /* grid-template-columns: repeat(2, 1fr); */
     flex-direction: row;
     flex-wrap: wrap;
     max-width: 90vw;
     justify-content: center;
     align-self: center;
-    gap: 20px;
+    gap: 10px;
     justify-content: baseline;
-    margin: 25px 0 10px 0;
+    /* margin: 25px 0 10px 0; */
     overflow: hidden;
 
     @media (min-width: 768px) {
-        margin: 30px 0;
-        grid-template-columns: repeat(4, 1fr);
+        margin: 15px 0;
+        /* grid-template-columns: repeat(7, 1fr); */
         max-width: 90vw;
     }
 `
 
 const FilteringButtons = styled.button`
     font-weight: 400;
-    margin: 10px;
+    /* margin: 10px; */
     border: none;
     outline: none;
     font-size: 13px;
@@ -127,15 +127,17 @@ const FilteringButtons = styled.button`
     cursor: pointer;
     text-transform: uppercase;
     color: #6E6D6C;
+    letter-spacing: .18em;
+    margin-bottom: 10px;
 
     @media (min-width: 768px) {
         font-size: 15px;
-        width: 170px;
+        /* width: 170px; */
     }
 
     &:hover {
-        text-decoration: underline;
-        text-underline-offset: .3em;
+        /* text-decoration: underline;
+        text-underline-offset: .3em; */
         color: black;
     }
 
@@ -144,6 +146,12 @@ const FilteringButtons = styled.button`
         text-underline-offset: .3em;
         color: black;
     }
+
+    &:after {
+        content: " |"
+    }
+
+
 `
 
 // -------------- saving alternative styling for buttons ------------- //
@@ -236,7 +244,7 @@ const Info = styled.h4 `
     padding-bottom: 1rem;
 
     @media (min-width: 768px) {
-        font-size: 20px;
+        font-size: 18px;
         letter-spacing: .03em;
     }
 `
