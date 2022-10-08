@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 import sanityClient from '../client.js';
 import Carousel from '../components/Carousel';
-import Portfolio from '../components/Portfolio'
+// import Portfolio from '../components/Portfolio'
 
 
 
@@ -104,7 +104,7 @@ const Home = () => {
                      </ImageWrapper>
                 </ImageContainer>
             ))}
-            <Portfolio />
+            {/* <Portfolio /> */}
                 {/* instagram embed - save for later <div className="elfsight-app-55ce35a0-0d2a-41cf-a6be-b1ff2d427fcf"></div>*/}
         </HomeContainer>
     )
