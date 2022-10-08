@@ -20,7 +20,7 @@ body {
 
 a {
   text-decoration: none;
-  color: black;
+  color: white;
 }
 
   ul {
@@ -124,7 +124,7 @@ a {
       width: 150px;
       height: 150px;
       background-color: white;
-  }
+    }
 
 
   .product-title {

@@ -64,7 +64,8 @@ const Rentals = () => {
                                 </div>
                             ))}
                         </ButtonContainer>
-                            <FilteringButtons activeClassName='active' onClick={() => filterByCategory("Visa alla")}>Visa alla</FilteringButtons>
+                            <ShowAllFilteringButton activeClassName='active' onClick={() => filterByCategory("Visa alla")}>| Visa alla</ShowAllFilteringButton>
+                            <MobileShowAllFilteringButton activeClassName='active' onClick={() => filterByCategory("Visa alla")}>Visa alla</MobileShowAllFilteringButton>
                         <ItemContainer>
                         {filterProducts && filterProducts.map((product, index) => (
                             <CardContainer key={index}>
@@ -75,6 +76,7 @@ const Rentals = () => {
                                 </AddButton>
                                 <Link to={"/product/" + product.slug.current} key={product.slug.current}>
                                     <span className="product-span" key={index}>
+                                            
                                         <img className="product-image"
                                             src={product.mainImage.asset.url}
                                             alt={product.title}
@@ -148,9 +150,74 @@ const FilteringButtons = styled.button`
     &:after {
         content: " |"
     }
-
-
 `
+
+const ShowAllFilteringButton = styled.button`
+    display: none;
+    font-weight: 400;
+    /* margin: 10px; */
+    border: none;
+    outline: none;
+    font-size: 13px;
+    background: none;
+    transition: ease .5s;
+    cursor: pointer;
+    text-transform: uppercase;
+    color: #6E6D6C;
+    letter-spacing: .18em;
+    margin-bottom: 10px;
+
+    @media (min-width: 768px) {
+        font-size: 15px;
+        /* width: 170px; */
+        display: block;
+    }
+
+    &:hover {
+        color: black;
+    }
+
+    &.active {
+        text-decoration: underline;
+        text-underline-offset: .3em;
+        color: black;
+    }
+
+    &:after {
+        content: " |"
+    }
+`
+
+const MobileShowAllFilteringButton = styled.button`
+    font-weight: 400;
+    /* margin: 10px; */
+    border: none;
+    outline: none;
+    font-size: 13px;
+    background: none;
+    transition: ease .5s;
+    cursor: pointer;
+    text-transform: uppercase;
+    color: #6E6D6C;
+    letter-spacing: .18em;
+    margin-bottom: 10px;
+
+    @media (min-width: 768px) {
+        display: none;
+    }
+
+    &:hover {
+        color: black;
+    }
+
+    &.active {
+        text-decoration: underline;
+        text-underline-offset: .3em;
+        color: black;
+    }
+`
+
+
 
 // -------------- saving alternative styling for buttons ------------- //
 
@@ -283,6 +350,7 @@ const RentalsInfoText = styled.h1 `
     font-size: 20px;
     letter-spacing: .15em;
     /* background-color: blue; */
+    color: black;
 
     @media (min-width: 668px) {
         font-size: 15px;
@@ -307,13 +375,13 @@ const CardContainer = styled.div`
     }
 `
 const AddButton = styled.button`
-    width: 25px;
+    width: 35px;
     border: none;
     font-size: 22px;                                                                                                            
     font-weight: 400;
     cursor: pointer;
-    color: black;
-    background-color: rgb(0,0,0,0);
+    color: white;
+    background-color: #C5BFB8;
     position: absolute;
     z-index: 100;
     top: 1%;
@@ -321,7 +389,7 @@ const AddButton = styled.button`
     
     &:hover {
         transition: 0.7s ease;
-        color: rgb(197,191,184);
+        color: black;
     }
 `
 

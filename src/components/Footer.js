@@ -9,9 +9,9 @@ const Footer = () => {
         <Container>
             <div>
                 <Header>Tack till våra fotografer!</Header>
-                <ContactInfo><a href="https://www.instagram.com/youngandwild.wedding/">Sandra Lööf</a></ContactInfo>
-                <ContactInfo><a href="https://www.instagram.com/fotografjennifernilsson/">Jennifer Nilsson</a></ContactInfo>
-                <ContactInfo><p>Felicia Engberg</p></ContactInfo>
+                <ContactInfo><a href="https://www.youngandwild.se/brollop/">Sandra Lööf</a></ContactInfo>
+                <ContactInfo><a href="https://fotografjennifernilsson.se/brollopsfotografering/">Jennifer Nilsson</a></ContactInfo>
+                <ContactInfo><a href="https://www.feliciaenberg.com/">Felicia Enberg</a></ContactInfo>
                 <ContactInfo><a href="https://www.rebeckawendesten.com/">Rebecka Wendesten</a></ContactInfo>
             </div>
             <SoMeContainer>
@@ -44,11 +44,13 @@ const Header = styled.h4 `
     font-weight: 400;
     font-size: 20px;
     padding: 1rem;
+    color: #F1EEEB;
 `
 
 const ContactInfo = styled.p `
     text-align: center;
     font-weight: 300;
+    color: #F1EEEB;
 
     &:hover {
         font-weight: 500;
@@ -63,23 +65,23 @@ const SoMeContainer = styled.div `
 
 const IgIcon = styled(AiOutlineInstagram)`
     cursor: pointer;
-    color: black;
+    color: #F1EEEB;
     font-size: 2rem;
 
     &:hover {
         cursor: pointer;
-        color: #F1EEEB;
+        color: black;
         transition: .2s ease;
     }
 `
 const FbIcon = styled(FiFacebook)`
     cursor: pointer;
-    color: black;
+    color: #F1EEEB;
     font-size: 2rem;
 
     &:hover {
         cursor: pointer;
-        color: #F1EEEB;
+        color: black;
         transition: .2s ease;
     }
 `

@@ -174,7 +174,7 @@ const BookingForm = () => {
             <section>
                 <Container>
                     <RentalsTextContainer>
-                        <RentalsInfoText>Total kostnad: {totalPrice} SEK</RentalsInfoText>
+                        <RentalsInfoText>Total kostnad inkl. moms: {totalPrice} SEK</RentalsInfoText>
                     </RentalsTextContainer>
                     <div>
                         <FormProducts>
@@ -240,7 +240,7 @@ const FormButton = styled.button`
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    width: 170px;
     margin: 2rem 0 2rem 0;
     cursor: pointer;
     border: none;

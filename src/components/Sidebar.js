@@ -24,7 +24,7 @@ const Sidebar = ({ isOpen, toggle }) => {
               Blommor
             </SideLinks>
             <SideLinks to='/services'>
-              Tjänster
+              Designpaket
             </SideLinks> 
             <SideLinks to='/about'>
               Om oss

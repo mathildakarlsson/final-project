@@ -58,7 +58,7 @@ const NavBar = ({ toggle }) => {
                                 activeClassName='active'
                                 style={linkStyle}
                             >
-                                Tjänster
+                                Designpaket
                             </NavLinks>
                             <NavLinks to='/about' 
                                 activeClassName='active'
@@ -144,7 +144,7 @@ const HamburgerIcon = styled(MdMenu)`
 
 const BasketIcon = styled(BsFillBasket3Fill)`
     cursor: pointer;
-    color: #6E6D6C;
+    color: #C5BFB8;
     font-size: 1.5rem;
 `
 

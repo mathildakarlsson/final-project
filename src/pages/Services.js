@@ -37,7 +37,7 @@ const Services = () => {
         <Section>
             {homePage && homePage.map((service, index) => (
             <InfoContainer>
-                <Header>Tjänster</Header>
+                <Header>Designpaket</Header>
                 <ExtraInfo>För bokningsförfrågningar gällande paketen nedan gå till kontaktformuläret 
                     och skriv ner dina önskemål. Förfrågan är inte bindande.
                     Priserna nedan inkluderar 25% moms.
@@ -50,7 +50,7 @@ const Services = () => {
                 </ImageWrapper>
 
                 <WeddingRentalContainer>
-                    <WeddingHeader>Lilla designpaketet bröllop</WeddingHeader>
+                    <WeddingHeader>Lilla designpaketetet bröllop</WeddingHeader>
                     <Info>
                         Skapa ert drömbröllop med lite stöd i den första fasen av bröllopsplaneringen. Vi gör
                         ett besök på vigsel- och festplats under 1,5 h, skapar med grund i era önskemål en
@@ -61,25 +61,27 @@ const Services = () => {
                         2500:-
                     </PriceInfo>
 
-                    <WeddingHeader>Mellanstora dekorationspaketet bröllop</WeddingHeader>
+                    <WeddingHeader>Mellanstora designpaketet bröllop</WeddingHeader>
                     <Info>
                         Vi gör ett besök på vigsel- och festplats under 1,5 h, skapar med grund i era önskemål
                         en personlig dekorationsidé och ni får en moodboard med tankarna som inspiration för
-                        dekoreringen av bröllopet.    
+                        dekoreringen av bröllopet.
                     </Info>
                     <Info>
                         Två ytterligare 1h avstämningar kring dekorationen där vi skapar en tydlig plan för
                         införskaffande och utförandet av dekoreringen. Vi hjälper er med val kring färg, form
-                        och material. Ni får med er en personligt skapad checklista att använda när det blir dags.
-                        6250:-
+                        och material. Ni får med er en personligt skapad checklista att använda när det blir dags. 
                     </Info>
+                    <PriceInfo>
+                        6250:-
+                    </PriceInfo>
                     <Info>
                         Om så önskas finns möjlighet att lägga till hyrsakspaketet nedan alternativt välja
                         individuella hyrsaker till dess specifika kostnad.
                         Även blomsterarrangemang går att beställa och ni får då en offert av oss att ta ställning till.
                     </Info>
 
-                    <WeddingHeader>Stora dekorationspaketet bröllop</WeddingHeader>
+                    <WeddingHeader>Stora designpaketet bröllop</WeddingHeader>
                     <Info>
                         Vi gör ett besök på vigsel- och festplats under 1,5 h, skapar med grund i era önskemål
                         en personlig dekorationsidé och ni får en moodboard med tankarna som inspiration för
@@ -129,7 +131,7 @@ const Services = () => {
                             1 750:-
                         </PriceInfo>
 
-                        <PartiesHeader>Mellanstora dekorationspaketet fest/event</PartiesHeader>
+                        <PartiesHeader>Mellanstora designpaketet fest/event</PartiesHeader>
                         <PartiesInfo>
                             Designkonsultation till fest och event på plats i lokal under 1h. Vi skapar med grund i
                             era önskemål en personlig dekorationsidé och ni får en moodboard med tankarna som inspiration för dekoreringen av festen/eventet.
@@ -146,7 +148,7 @@ const Services = () => {
                             individuella hyrsaker till dess specifika kostnad. Även blomsterarrangemang går att beställa och ni får då en offert av oss att ta ställning till.
                         </PartiesInfo>
 
-                        <PartiesHeader>Stora dekorationspaketet fest/event</PartiesHeader>
+                        <PartiesHeader>Stora designpaketet fest/event</PartiesHeader>
                         <PartiesInfo>
                             Designkonsultation till fest och event på plats i lokal under 1h. Vi skapar med grund i
                             era önskemål en personlig dekorationsidé och ni får en moodboard med tankarna som

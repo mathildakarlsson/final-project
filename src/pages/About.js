@@ -91,8 +91,7 @@ const About = () => {
                             <Title>
                                 <AboutHeaderMobile>Caroline, kreativ designer</AboutHeaderMobile>
                             </Title>
-                            <AboutHeader><LetterSpan>C</LetterSpan>aroline,</AboutHeader>
-                            <AboutHeader>kreativ designer</AboutHeader>
+                            <AboutHeader><LetterSpan>C</LetterSpan>aroline, kreativ designer</AboutHeader>
                             <AboutText>
                                 Caroline heter jag och jag är kreativ designer i Nordic Spells Decor. Jag fullkomligt älskar chansen att få ta tag i nya kreativa projekt och låta idéerna flöda! Om du önskar hjälp med att planera dekorationen ditt drömevent eller bara någon att bolla tankar kring dekoration med så finns jag här!
                             </AboutText>
@@ -134,12 +133,12 @@ const AboutContainer = styled.section `
     display: flex;
     justify-content: center;
 `
+
 const Wrapper = styled.div `
     display: flex;
     padding-top: 90px;
     flex-direction: column;
     margin: 50px;
-    
 `
 
 const ContentWrapper = styled.div `
@@ -210,7 +209,6 @@ const MobileTextWrapper = styled.div `
     align-items: center;
     justify-self: center;
     align-self: center;
-    margin: 0 20px;
     display: none;
 
     @media (min-width: 960px) {
@@ -248,15 +246,18 @@ const AboutHeader = styled.h1 `
     align-items: baseline;
     display: none;
     font-weight: 200;
+    text-align: center;
     
     @media (min-width: 960px) {
         font-size: 40px;
+        text-align: center;
         display: flex;
     }
 `
 const AboutHeaderMobile = styled.h1 `
     font-size: 30px;
     font-weight: 200;
+    text-align: center;
 
     @media (min-width: 960px) {
         display: none;
@@ -277,13 +278,15 @@ const AboutText = styled.p`
     margin: 12px 0;
     line-height: 28px;
     padding-top: 15px;
-    width: 60vw;
+    width: 80vw;
+    text-align: center;
     
     @media (min-width: 668px) {
         font-size: 16px;
         letter-spacing: .03em;
         max-width: 100vw;
         justify-content: center;
+        text-align: left;
     }
 
     @media (min-width: 960px) {
