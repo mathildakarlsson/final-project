@@ -258,7 +258,7 @@ const Main = styled.main`
 `
 
 const ArticleContainer = styled.article`
-    padding: 8rem 2rem 0 2rem;
+    padding: 10rem 2rem 0 2rem;
     margin: 0px 30px;
     display: flex;
     flex-direction: column;
@@ -293,20 +293,25 @@ const Header = styled.h1 `
     padding-bottom: 2.5rem;
     font-size: 32px;
     letter-spacing: .15em;
-    padding-top: 30px;
+    // padding-top: 30px;
 
-    @media (min-width: 768px) {
-        font-size: 40px;
+    // @media (min-width: 768px) {
+    //     font-size: 40px;
+    //     letter-spacing: .2em;
+    //     padding-top: 50px;
+    // }
+
+    @media (min-width: 668px) {
+        font-size: 37px;
         letter-spacing: .2em;
-        padding-top: 50px;
     }
 `
 
 const Info = styled.h4 `
     font-weight: 300;
-    margin: 12px 0;
+    // margin: 12px 0;
     line-height: 28px;
-    padding-bottom: 1rem;
+    padding-bottom: 2rem;
 
     @media (min-width: 768px) {
         font-size: 18px;
@@ -320,20 +325,34 @@ const ItemContainer = styled.div `
     grid-template-columns: repeat(1, 1fr);
     
 
-    @media (min-width: 600px) {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 10px;
-    }
+    // @media (min-width: 600px) {
+    //     grid-template-columns: repeat(2, 1fr);
+    //     gap: 10px;
+    // }
 
+    // @media (min-width: 768px) {
+    //     grid-template-columns: repeat(3, 1fr);
+    //     gap: 10px;
+    // }
+
+    
     @media (min-width: 768px) {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 10px;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
     }
 
+    // @media (min-width: 1024px) {
+    //     grid-template-columns: repeat(4, 1fr);
+    //     gap: 30px;
+    // }
+
+    
     @media (min-width: 1024px) {
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(3, 1fr);
         gap: 30px;
     }
+
+    
 `
 
 const RentalsContainer = styled.div`
@@ -347,10 +366,11 @@ const RentalsContainer = styled.div`
 const RentalsInfoText = styled.h1 `
     text-transform: uppercase;
     font-weight: 300;
-    font-size: 20px;
+    font-size: 15px;
     letter-spacing: .15em;
     /* background-color: blue; */
     color: black;
+    margin-top: 0.5rem;
 
     @media (min-width: 668px) {
         font-size: 15px;
@@ -359,9 +379,9 @@ const RentalsInfoText = styled.h1 `
 `
 
 const CardContainer = styled.div`
-    /* background-color: white; */
-    width: 40vh;
-    padding: 1rem;
+    background-color: white; 
+    // width: 40vh;
+    padding: 2rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -369,13 +389,13 @@ const CardContainer = styled.div`
     margin-top: 1.5rem;
     position: relative;
 
-    @media (min-width: 668px) {
-        width: 30vh;
-        padding: .5rem;
-    }
+    // @media (min-width: 668px) {
+    //     width: 30vh;
+    //     padding: .5rem;
+    // }
 `
 const AddButton = styled.button`
-    width: 35px;
+    width: 2.3rem;
     border: none;
     font-size: 22px;                                                                                                            
     font-weight: 400;
@@ -384,8 +404,8 @@ const AddButton = styled.button`
     background-color: #C5BFB8;
     position: absolute;
     z-index: 100;
-    top: 1%;
-    right: 13%;    
+    top: 5%;
+    right: 5%;
     
     &:hover {
         transition: 0.7s ease;
