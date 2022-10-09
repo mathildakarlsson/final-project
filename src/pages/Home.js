@@ -122,7 +122,7 @@ const InfoContainer = styled.div `
     justify-self: center;
 
     @media (min-width: 668px) {
-        width: 900px;
+        width: 95%;
     }
 `
 
