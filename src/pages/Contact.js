@@ -87,7 +87,7 @@ const Contact = () => {
 
     return (
         <Container>
-            <FormHeader>Don't be a stranger!</FormHeader>
+            <Header>Don't be a stranger!</Header>
             <FormText>Skriv till oss om dina önskemål här nedan så återkommer vi inom det närmaste.</FormText>
             {homePage && homePage.map((contact, index) => (
                 <div key={index}>
@@ -175,10 +175,10 @@ const Container = styled.section `
     display: flex;
     flex-direction: column;
     justify-content: center;
+    padding-top: 170px;
     align-items: center;
 `
 const FormContainer = styled.section`
-    padding-top: 25px;
     display: flex;
     flex-direction: column;
 
@@ -208,23 +208,16 @@ const Image = styled.img `
     }
 `
 
-
-const FormHeader = styled.h2 `
-    display: flex;
-    font-weight: 300;
-    font-size: 25px;
-    padding-bottom: 20px;
+const Header = styled.h1 `
     text-transform: uppercase;
+    font-weight: 300;
+    padding-bottom: 15px;
+    font-size: 32px;
     letter-spacing: .15em;
-    padding-top: 150px;
-    
+
     @media (min-width: 668px) {
-        text-align: center;
-        font-size: 35px;
+        font-size: 37px;
         letter-spacing: .2em;
-        padding-bottom: 0;
-        padding-top: 180px;
-        justify-content: center;
     }
 `
 
@@ -234,7 +227,7 @@ const FormText = styled.p`
     font-weight: 305;
     margin: 1rem;
     line-height: 1.8em;
-    padding-bottom: 50px;
+    padding-bottom: 20px;
     text-align: center;
 
     @media (min-width: 668px) {

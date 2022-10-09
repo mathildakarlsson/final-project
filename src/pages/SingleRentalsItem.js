@@ -93,18 +93,18 @@ export default SingleRentalsItem;
 const Main = styled.main`
     display: flex;
     flex-direction: column;
-    margin: 1rem;
+    /* margin: 1rem; */
 `
 
 const ArticleContainer = styled.article`
-    padding: 8rem 2rem 0 2rem;
+    padding: 170px 2rem 0 2rem;
     margin: 0px 30px;
     display: flex;
     flex-direction: column;
     text-align: center;
     align-self: center;
     justify-self: center;
-    `
+`
 
 const ButtonContainer =  styled.div `
     display: flex;

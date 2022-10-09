@@ -100,7 +100,6 @@ export default Rentals;
 
 const ButtonContainer = styled.div `
     display: flex;
-    /* grid-template-columns: repeat(2, 1fr); */
     flex-direction: row;
     flex-wrap: wrap;
     max-width: 90vw;
@@ -108,19 +107,16 @@ const ButtonContainer = styled.div `
     align-self: center;
     gap: 10px;
     justify-content: baseline;
-    /* margin: 25px 0 10px 0; */
     overflow: hidden;
 
     @media (min-width: 768px) {
         margin: 15px 0;
-        /* grid-template-columns: repeat(7, 1fr); */
         max-width: 90vw;
     }
 `
 
 const FilteringButtons = styled.button`
     font-weight: 400;
-    /* margin: 10px; */
     border: none;
     outline: none;
     font-size: 13px;
@@ -134,7 +130,6 @@ const FilteringButtons = styled.button`
 
     @media (min-width: 768px) {
         font-size: 15px;
-        /* width: 170px; */
     }
 
     &:hover {
@@ -155,7 +150,6 @@ const FilteringButtons = styled.button`
 const ShowAllFilteringButton = styled.button`
     display: none;
     font-weight: 400;
-    /* margin: 10px; */
     border: none;
     outline: none;
     font-size: 13px;
@@ -169,7 +163,6 @@ const ShowAllFilteringButton = styled.button`
 
     @media (min-width: 768px) {
         font-size: 15px;
-        /* width: 170px; */
         display: block;
     }
 
@@ -190,7 +183,6 @@ const ShowAllFilteringButton = styled.button`
 
 const MobileShowAllFilteringButton = styled.button`
     font-weight: 400;
-    /* margin: 10px; */
     border: none;
     outline: none;
     font-size: 13px;
@@ -217,49 +209,17 @@ const MobileShowAllFilteringButton = styled.button`
     }
 `
 
-
-
-// -------------- saving alternative styling for buttons ------------- //
-
-// const FilteringButtons = styled.button`
-//   font-weight: 400;
-//   border: none;
-//   outline: none;
-//   height: auto;
-//   font-size: 15px;
-//   background: #6E6D6C;
-//   color: white;
-//   padding: 7px;
-//   transition: all .25s ease-in-out;
-//   width: 160px;
-//   cursor: pointer;
-
-//   @media (min-width: 1024px) {
-//     width: auto;
-//     padding: 7px 13px;
-// }
-
-//   &:hover {
-//     background: black;
-//   }
-// `
-
-
-// -------------- saving alternative styling for buttons ------------- //
-
-
 const Main = styled.main`
     display: flex;
     flex-direction: column;
-    margin: 1rem;
+    /* margin: 1rem; */
     justify-content: center;
     align-items: center;
     width: 100vw;
 `
 
 const ArticleContainer = styled.article`
-    padding: 10rem 2rem 0 2rem;
-    margin: 0px 30px;
+    padding: 170px 2rem 0 2rem;
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -287,19 +247,13 @@ const ArticleContainer = styled.article`
 //     height: 220px;
 // `
 
+
 const Header = styled.h1 `
     text-transform: uppercase;
     font-weight: 300;
-    padding-bottom: 2.5rem;
+    padding-bottom: 30px;
     font-size: 32px;
     letter-spacing: .15em;
-    // padding-top: 30px;
-
-    // @media (min-width: 768px) {
-    //     font-size: 40px;
-    //     letter-spacing: .2em;
-    //     padding-top: 50px;
-    // }
 
     @media (min-width: 668px) {
         font-size: 37px;
@@ -311,7 +265,7 @@ const Info = styled.h4 `
     font-weight: 300;
     // margin: 12px 0;
     line-height: 28px;
-    padding-bottom: 2rem;
+    padding-bottom: 3rem;
 
     @media (min-width: 768px) {
         font-size: 18px;
