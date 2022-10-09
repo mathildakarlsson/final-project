@@ -69,25 +69,24 @@ const About = () => {
                         </TextWrapper>
                     </ContentWrapper>
                     <ContentWrapper>
-                        <MobileTextWrapper>
+                        <DesktopTextWrapper>
                             <Title>
                                 <AboutHeaderMobile>Caroline, &nbsp;</AboutHeaderMobile>
                                 <AboutHeaderMobile>&nbsp;kreativ designer</AboutHeaderMobile>
                             </Title>
-                            <AboutHeader><LetterSpan>C</LetterSpan>aroline,</AboutHeader>
-                            <AboutHeader>kreativ designer</AboutHeader>
+                            <AboutHeader><LetterSpan>C</LetterSpan>aroline, kreativ designer</AboutHeader>
                             <AboutText>
                                 Caroline heter jag och jag är kreativ designer i Nordic Spells Decor. Jag fullkomligt älskar chansen att få ta tag i nya kreativa projekt och låta idéerna flöda! Om du önskar hjälp med att planera dekorationen ditt drömevent eller bara någon att bolla tankar kring dekoration med så finns jag här!
                             </AboutText>
                             <AboutText>
                                 Extra svag är jag för dekoration med attityd och personlighet, för kontraster och för dekoration som förstärker identiteten hos dig som kund! Jag tror starkt på omgivningens kraft att påverka stämningar, så varför inte ge den en extra knuff mot känslan du vill att dina gäster ska minnas när de tänker tillbaka om tio, tjugo år?
                             </AboutText>
-                        </MobileTextWrapper>
+                        </DesktopTextWrapper>
                         <Image
                             src={aboutUs.photoTwo.image.asset.url}
                             alt={aboutUs.title}
                         />
-                        <DesktopTextWrapper>
+                        <MobileTextWrapper>
                             <Title>
                                 <AboutHeaderMobile>Caroline, kreativ designer</AboutHeaderMobile>
                             </Title>
@@ -98,7 +97,7 @@ const About = () => {
                             <AboutText>
                                 Extra svag är jag för dekoration med attityd och personlighet, för kontraster och för dekoration som förstärker identiteten hos dig som kund! Jag tror starkt på omgivningens kraft att påverka stämningar, så varför inte ge den en extra knuff mot känslan du vill att dina gäster ska minnas när de tänker tillbaka om tio, tjugo år?
                             </AboutText>
-                        </DesktopTextWrapper>
+                        </MobileTextWrapper>
                     </ContentWrapper>
                     <ContentWrapper>
                         <Image
@@ -203,12 +202,8 @@ const Image = styled.img `
     }
 `
 
-const MobileTextWrapper = styled.div `
+const DesktopTextWrapper = styled.div `
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    justify-self: center;
-    align-self: center;
     display: none;
 
     @media (min-width: 960px) {
@@ -216,7 +211,7 @@ const MobileTextWrapper = styled.div `
     }
 `
 
-const DesktopTextWrapper = styled.div `
+const MobileTextWrapper = styled.div `
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -239,17 +234,16 @@ const TextWrapper = styled.div `
 `
 
 const AboutHeader = styled.h1 `
-    align-self: center;
+    /* align-self: center; */
     font-weight: 300;
-    font-size: 30px;
     display: flex;
     align-items: baseline;
     display: none;
     font-weight: 200;
-    text-align: center;
+    font-size: 30px;
+    text-align: left;
     
     @media (min-width: 960px) {
-        font-size: 40px;
         text-align: center;
         display: flex;
     }
