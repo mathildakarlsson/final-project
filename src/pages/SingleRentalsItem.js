@@ -4,6 +4,9 @@ import { useDispatch } from 'react-redux';
 import sanityClient from '../client.js';
 import { wishlist } from '../reducers/wishlist';
 
+import { AiOutlineArrowLeft } from 'react-icons/ai'
+
+
 import styled from 'styled-components';
 
 
@@ -61,7 +64,9 @@ const SingleRentalsItem = () => {
     return (
         <Main>
             <ArticleContainer>
-                <GoBackButton onClick={onBackButtonClick}>Tillbaka</GoBackButton>
+                <ButtonContainer>
+                    <GoBackButton onClick={onBackButtonClick}><ArrowButton /></GoBackButton>
+                </ButtonContainer>
                 <Header>{singleProduct.title}</Header>
                 <CardContainer>
                     <img src={singleProduct.mainImage.asset.url}
@@ -99,25 +104,35 @@ const ArticleContainer = styled.article`
     text-align: center;
     align-self: center;
     justify-self: center;
+    `
+
+const ButtonContainer =  styled.div `
+    display: flex;
+    width: 100%;
+    justify-content: right;
+
+    @media (min-width: 668px) {
+        justify-content: left;
+    }
+
+`
+
+const ArrowButton = styled(AiOutlineArrowLeft)`
+    cursor: pointer;
+    color: black;
+    font-size: 1.8rem;
+    
+    &:hover {
+        transition: .2s ease;
+        font-size: 2rem;
+    }
 `
 
 const GoBackButton = styled.button`
-    width: 100%;
-    margin: 2rem 0 2rem 0;
+    width: 30px;
     cursor: pointer;
     border: none;
-    font-size: 16px;
     padding: 1rem;
-    color: black;
-    background-color: rgb(197,191,184);
-    text-transform: uppercase;
-    font-weight: 450;
-
-    &:hover {
-        background-color: black;
-        color: white;
-        transition: 0.7s ease;
-    }
 `
 
 const Header = styled.h1 `
@@ -151,7 +166,7 @@ const Info = styled.h4 `
 `
 
 const AddButton = styled.button`
-    width: 100%;
+    width: 170px;
     margin: 2rem 0 2rem 0;
     cursor: pointer;
     border: none;
