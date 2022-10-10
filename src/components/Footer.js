@@ -3,7 +3,9 @@ import styled from 'styled-components';
 import { AiOutlineInstagram } from 'react-icons/ai'
 import { FiFacebook } from 'react-icons/fi'
 // import { Link } from 'react-router-dom'
-import { AiOutlineMail } from 'react-icons/ai'
+// import { TfiEmail } from 'react-icons/tfi'
+import { BsEnvelope } from 'react-icons/bs'
+
 
 
 const Footer = () => {
@@ -111,7 +113,7 @@ const FbIcon = styled(FiFacebook)`
     }
  `
 
- const EmIcon = styled(AiOutlineMail)`
+ const EmIcon = styled(BsEnvelope)`
  cursor: pointer;
     color: #F1EEEB;
     font-size: 2rem;
