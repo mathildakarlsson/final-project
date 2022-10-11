@@ -120,6 +120,18 @@ const About = () => {
                             </AboutText>
                         </TextWrapper>
                     </ContentWrapper>
+                    <ContentWrapper>
+                        <TextWrapper>
+                        <Title><AboutHeaderMobile>Samarbetspartners</AboutHeaderMobile></Title>
+                        <AboutHeader><LetterSpan>S</LetterSpan>amarbetspartners</AboutHeader>
+                            <AboutText>
+                            Slutligen vill vi bara ta ett ögonblick och nämna våra fantastiska samarbetspartners. De gör arbetet med Nordic Spells Decor, om möjligt, ännu roligare!
+                            </AboutText>
+                            <AboutText>
+                            Mathilda Karlsson och Louisa Lundgren,  tack för vår hemsida som vi älskar så mycket!
+                            </AboutText>
+                        </TextWrapper>
+                    </ContentWrapper>
                 </Wrapper>
             ))}
         </AboutContainer>
