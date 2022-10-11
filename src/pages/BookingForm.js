@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import styled from 'styled-components';
 
 import WishListItem from '../components/WishListItem';
-import swal from 'sweetalert';
+// import swal from 'sweetalert';
 
 const BookingForm = () => {
     const products = useSelector((store) => store.wishlist.items)
@@ -47,18 +47,20 @@ const BookingForm = () => {
             const resData = await res;
             console.log(resData);
             if (resData.status === "success") {
-                swal({
-                    title: 'Din förfrågan har skickats till Nordic Spells Decor!',
-                    text: 'Tack för ditt mail! Vi hör av oss inom kort när vi sett över dina önskemål och tillgänglighet!',
-                    button: 'Ok',
-                });
+                // swal({
+                //     title: 'Din förfrågan har skickats till Nordic Spells Decor!',
+                //     text: 'Tack för ditt mail! Vi hör av oss inom kort när vi sett över dina önskemål och tillgänglighet!',
+                //     button: 'Ok',
+                // });
+                alert('Din förfrågan har skickats till Nordic Spells Decor.\nTack för ditt mail!\nVi hör av oss inom kort när vi sett över dina önskemål och tillgänglighet!')
 
             } else if (resData.status === "fail") {
-                swal({
-                    title: 'Din förfrågan kunde inte skickas.',
-                    text: 'Ajdå, något verkar ha gått fel! Kontakta oss gärna direkt på nordicspellsdecor@gmail.com så pratar vi vidare där!',
-                    button: 'Ok',
-                });
+                // swal({
+                //     title: 'Din förfrågan kunde inte skickas.',
+                //     text: 'Ajdå, något verkar ha gått fel! Kontakta oss gärna direkt på nordicspellsdecor@gmail.com så pratar vi vidare där!',
+                //     button: 'Ok',
+                // });
+                alert('Din förfrågan kunde inte skickas.\nAjdå, något verkar ha gått fel!\nKontakta oss gärna direkt på nordicspellsdecor@gmail.com så pratar vi vidare där!')
             }
         })
         .then(() => {

@@ -197,7 +197,7 @@ textarea {
 }
 
 
-.swal-button {
+/* .swal-button {
   width: 8rem;
   margin: 15px 0 65px 0;
   cursor: pointer;
@@ -211,6 +211,7 @@ textarea {
   font-weight: 450;
 }
 
+/*
 .swal-button:hover {
   background-color: black;
   transition: 0.7s;
@@ -230,4 +231,5 @@ textarea {
   margin: 22px;
   text-align: center;
   color: black;
-}
+} */
+
