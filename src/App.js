@@ -16,11 +16,14 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 
 import { wishlist } from './reducers/wishlist'
+// import { ui } from './reducers/ui'
+
 
 import ScrollToTop from './utils/ScrollToTop';
 
 const reducer = combineReducers({
 	wishlist: wishlist.reducer,
+  // ui: ui.reducer
 });
 
 

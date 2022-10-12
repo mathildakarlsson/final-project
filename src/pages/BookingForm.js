@@ -4,6 +4,7 @@ import styled from 'styled-components';
 
 import WishListItem from '../components/WishListItem';
 // import swal from 'sweetalert';
+import Loading from '../components/Loading'
 
 const BookingForm = () => {
     const products = useSelector((store) => store.wishlist.items)
@@ -21,6 +22,8 @@ const BookingForm = () => {
         products: {},
     });
 
+    const [done, setDone] = useState(undefined)
+
     const handleStateChange = (e) => {
         setMailerState((prevState) => ({
             ...prevState,
@@ -34,7 +37,9 @@ const BookingForm = () => {
 
         const data = mailerState;
         data.products = {products}
-         
+
+        setDone(undefined)
+
         const response = await fetch("https://final-project-nsd.herokuapp.com/send2", {
             method: "POST",
             headers: {
@@ -46,6 +51,10 @@ const BookingForm = () => {
         .then(async (res) => {
             const resData = await res;
             console.log(resData);
+            
+            setDone(true)
+
+            
             if (resData.status === "success") {
                 // swal({
                 //     title: 'Din förfrågan har skickats till Nordic Spells Decor!',
@@ -74,6 +83,7 @@ const BookingForm = () => {
                 message: "",
                 products: {},
             });
+            
         });
     };
 
@@ -172,6 +182,14 @@ const BookingForm = () => {
                     </div>
                 </form>
             </Formwrapper>
+
+            <div>
+                {!done ? (
+                    <Loading/>
+                ) : (
+                    <p>not loading anymore</p>
+                )}
+            </div>
 
             <section>
                 <Container>
