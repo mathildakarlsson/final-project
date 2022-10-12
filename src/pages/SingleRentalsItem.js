@@ -138,14 +138,14 @@ const GoBackButton = styled.button`
 const Header = styled.h1 `
     text-transform: uppercase;
     font-weight: 300;
-    padding-bottom: 2.5rem;
-    font-size: 32px;
+    padding-bottom: 1.5rem;
+    font-size: 25px;
     letter-spacing: .15em;
 
-    @media (min-width: 668px) {
-        font-size: 37px;
-        letter-spacing: .2em;
-    }
+    // @media (min-width: 668px) {
+    //     font-size: 30px;
+    //     letter-spacing: .2em;
+    // }
 `
 
 const CardContainer = styled.div`
@@ -154,15 +154,29 @@ const CardContainer = styled.div`
 `
 
 const Info = styled.h4 `
-    padding: .8rem;
+    padding-top: .5rem;
     font-weight: 300;
-    margin: 12px 0;
+    margin: 12px 0 12px 19px;
     line-height: 28px;
+    text-align: left;
 
-    @media (min-width: 668px) {
-        font-size: 18px;
-        letter-spacing: .03em;
+    @media (min-width: 525px) {
+    // font-size: 18px;
+    // letter-spacing: .03em;
+    // padding-top: 1.5rem;
+        margin-left: 35px;
     }
+
+    @media (min-width: 868px) {
+        // font-size: 18px;
+        // letter-spacing: .03em;
+        // padding-top: 1.5rem;
+        padding-left: 75px;
+        }
+
+    @media (min-width: 1024px) {
+        padding-left: 150px;
+            }
 `
 
 const AddButton = styled.button`
