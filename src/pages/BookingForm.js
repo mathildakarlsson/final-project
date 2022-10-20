@@ -22,7 +22,7 @@ const BookingForm = () => {
         products: {},
     });
 
-    const [done, setDone] = useState(undefined)
+    const [isLoading, setIsLoading] = useState(false)
 
     const handleStateChange = (e) => {
         setMailerState((prevState) => ({
@@ -32,13 +32,12 @@ const BookingForm = () => {
     } 
 
     const submitEmail = async (e) => {
+        setIsLoading(true)
         e.preventDefault();
         console.log({ mailerState });
 
         const data = mailerState;
         data.products = {products}
-
-        setDone(undefined)
 
         const response = await fetch("https://final-project-nsd.herokuapp.com/send2", {
             method: "POST",
@@ -52,8 +51,7 @@ const BookingForm = () => {
             const resData = await res;
             console.log(resData);
             
-            setDone(true)
-
+            setIsLoading(false)
             
             if (resData.status === "success") {
                 // swal({
@@ -62,6 +60,8 @@ const BookingForm = () => {
                 //     button: 'Ok',
                 // });
                 alert('Din förfrågan har skickats till Nordic Spells Decor.\nTack för ditt mail!\nVi hör av oss inom kort när vi sett över dina önskemål och tillgänglighet!')
+                // setMailerState(true)
+                window.location.reload();
 
             } else if (resData.status === "fail") {
                 // swal({
@@ -83,7 +83,6 @@ const BookingForm = () => {
                 message: "",
                 products: {},
             });
-            
         });
     };
 
@@ -183,11 +182,11 @@ const BookingForm = () => {
                 </form>
             </Formwrapper>
 
-            <div>
-                {!done ? (
+               <div>
+                {isLoading ? (
                     <Loading/>
                 ) : (
-                    <p>not loading anymore</p>
+                    <p> </p>
                 )}
             </div>
 
