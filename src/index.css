@@ -211,7 +211,7 @@ textarea {
   100% { transform: rotate(360deg); }
 }
 
-/* .swal-button {
+.swal-button {
   width: 8rem;
   margin: 15px 0 65px 0;
   cursor: pointer;
@@ -225,11 +225,12 @@ textarea {
   font-weight: 450;
 }
 
-/*
+/* 
 .swal-button:hover {
-  background-color: black;
+  color: black;
+  background-color: #B3635A;
   transition: 0.7s;
-}
+} */
 
 .swal-title {
   margin: 0px;
@@ -245,5 +246,5 @@ textarea {
   margin: 22px;
   text-align: center;
   color: black;
-} */
+} 
 
