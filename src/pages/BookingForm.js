@@ -182,13 +182,13 @@ const BookingForm = () => {
                 </form>
             </Formwrapper>
 
-               <div>
+               <Formwrapper>
                 {isLoading ? (
                     <Loading/>
                 ) : (
                     <p> </p>
                 )}
-            </div>
+            </Formwrapper>
 
             <section>
                 <Container>
