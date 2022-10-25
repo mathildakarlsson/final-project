@@ -6,6 +6,9 @@ import WishListItem from '../components/WishListItem';
 import swal from 'sweetalert';
 import Loading from '../components/Loading'
 
+import Accordion from "../components/Accordion";
+import { accordionData } from "../components/data";
+
 const BookingForm = () => {
     const products = useSelector((store) => store.wishlist.items)
     const totalPrice = useSelector((store) => (
@@ -141,7 +144,7 @@ const BookingForm = () => {
                                         name="startdate"
                                         value={mailerState.startdate}
                                         onChange={handleStateChange}
-                                    required
+                                        required
                                     />
                                 </label>
                             </li>
@@ -172,6 +175,13 @@ const BookingForm = () => {
                                 >
                                 </textarea>
                             </li>
+                            
+                            <ul className="accordion">
+                                {accordionData.map(({ heading, content }) => (
+                                    <Accordion heading={heading} content={content} />
+                                ))}
+                            </ul>
+
                             <li>
                                 <ButtonWrapper>
                                     <FormButton type="submit">Skicka</FormButton>
@@ -182,9 +192,9 @@ const BookingForm = () => {
                 </form>
             </Formwrapper>
 
-               <Formwrapper>
+            <Formwrapper>
                 {isLoading ? (
-                    <Loading/>
+                    <Loading />
                 ) : (
                     <p> </p>
                 )}
