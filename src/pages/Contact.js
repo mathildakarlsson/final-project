@@ -214,6 +214,7 @@ const Header = styled.h1 `
     padding-bottom: 15px;
     font-size: 32px;
     letter-spacing: .15em;
+    text-align: center;
 
     @media (min-width: 668px) {
         font-size: 37px;

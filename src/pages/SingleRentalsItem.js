@@ -141,42 +141,32 @@ const Header = styled.h1 `
     padding-bottom: 1.5rem;
     font-size: 25px;
     letter-spacing: .15em;
+    width: 60vw;
 
-    // @media (min-width: 668px) {
-    //     font-size: 30px;
-    //     letter-spacing: .2em;
-    // }
+    @media (min-width: 668px) {
+        width: 100vw;
+    }
 `
 
 const CardContainer = styled.div`
-    width: 55vw;
-    padding: 1rem;
+    width: 60vw;
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+
+    @media (min-width: 525px) {
+        align-self: center;
+    }
 `
 
 const Info = styled.h4 `
     padding-top: .5rem;
     font-weight: 300;
-    margin: 12px 0 12px 19px;
+    margin: 12px 0 12px 0px;
     line-height: 28px;
     text-align: left;
+    width: 80vw;
 
-    @media (min-width: 525px) {
-    // font-size: 18px;
-    // letter-spacing: .03em;
-    // padding-top: 1.5rem;
-        margin-left: 35px;
-    }
-
-    @media (min-width: 868px) {
-        // font-size: 18px;
-        // letter-spacing: .03em;
-        // padding-top: 1.5rem;
-        padding-left: 75px;
-        }
-
-    @media (min-width: 1024px) {
-        padding-left: 150px;
-            }
 `
 
 const AddButton = styled.button`
@@ -190,6 +180,7 @@ const AddButton = styled.button`
     background-color: rgb(197,191,184);
     text-transform: uppercase;
     font-weight: 450;
+    align-self: center;
     
     &:hover {
         background-color: black;
