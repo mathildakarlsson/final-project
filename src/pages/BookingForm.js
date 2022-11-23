@@ -175,7 +175,18 @@ const BookingForm = () => {
                                 >
                                 </textarea>
                             </li>
-                            
+
+                            <li>
+                                <input
+                                    type="checkbox"
+                                    name="checkbox"
+                                    required
+                                />
+                                <label className="custom-field-checkbox">
+                                    Jag accepterar personuppgiftspolicyn.
+                                </label>
+                            </li>
+
                             <ul className="accordion">
                                 {accordionData.map(({ heading, content }) => (
                                     <Accordion heading={heading} content={content} />
