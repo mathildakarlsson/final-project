@@ -15,6 +15,7 @@ const Home = () => {
             `*[_type == "homePage"] {
                 _id,
                 homeOne{
+                    photographer,
                     image{
                         asset->{
                             url,
@@ -53,13 +54,16 @@ const Home = () => {
     return (
         <HomeContainer>
             <Carousel />
-            <InfoContainer>
+            {homePage && homePage.map((homePage, index) => (
+            <InfoContainer key ={index}>
                     <Header>Vi är</Header>
                     <Header>Nordic Spells Decor</Header>
-                    <Info>Ett team entusiastiska kreatörer. Vi kombinerar eventdesign, floristtjänster och handplockade hyrsaker för att skapa personliga och pintrestvänliga event! Hyr dekoration av oss, beställ blomsterarrangemang eller låt oss skapa hela atmosfären.</Info>
+                    <Info>{homePage.homeOne.photographer}</Info>
+                    {/* <Info>Ett team entusiastiska kreatörer. Vi kombinerar eventdesign, floristtjänster och handplockade hyrsaker för att skapa personliga och pintrestvänliga event! Hyr dekoration av oss, beställ blomsterarrangemang eller låt oss skapa hela atmosfären.</Info> */}
                     <Info>Vi gör din dag alldeles särskilt mycket du!</Info>
             </InfoContainer>
-            {homePage && homePage.map((homePage, index) => (
+                    ))}
+                {homePage && homePage.map((homePage, index) => (
                 <ImageContainer key={index}>
                     <ImageWrapper>
 
@@ -103,6 +107,7 @@ const Home = () => {
                         </NavLink>
                      </ImageWrapper>
                 </ImageContainer>
+                // </div>
             ))}
             {/* <Portfolio /> */}
                 {/* instagram embed - save for later <div className="elfsight-app-55ce35a0-0d2a-41cf-a6be-b1ff2d427fcf"></div>*/}
